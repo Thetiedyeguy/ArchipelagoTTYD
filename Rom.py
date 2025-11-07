@@ -314,7 +314,7 @@ def locations_to_dict(locations: Iterable[Location]) -> Dict[str, Tuple]:
     return result
 
 def sanitize_string(input_string) -> str:
-    input_string = input_string.replace('<3', 'Ð') # Use the built in heart symbol
+    input_string = input_string.replace('<3', 'Ð').replace('\\', '\\\\') # Use the built in heart symbol and make sure escape sequences don't happen
     allowed_chars = ' !"#$%&\'()=~|-^\\[]P{};:+*/?_,.@`abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789‘’‚“”„Œœ¡¤ª«²³º»¼½¾¿ÀÁÂÄÇÈÉÊËÌÍÎÏÐÑÒÓÔÖ×ØÙÚÛÜÞßàáâäçèéêëìíîïñòóôöùúûü'
     filtered_chars = [char for char in input_string if char in allowed_chars]
     return "".join(filtered_chars)
