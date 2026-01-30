@@ -62,8 +62,15 @@ def get_vanilla_item_names(locations: typing.List[LocationData]) -> typing.List[
 
 
 shadow_queen: typing.List[LocationData] = [
-    LocationData("Shadow Queen", None, Rels.las, [])
+    LocationData(
+        name="Shadow Queen",
+        id=None,
+        rel=Rels.las,
+        offsets=[],
+        tags=["shadow_queen"]
+    )
 ]
+
 
 all_locations: typing.List[LocationData] = import_locations() + shadow_queen
 

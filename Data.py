@@ -4,6 +4,8 @@ from enum import Enum
 from BaseClasses import ItemClassification
 
 
+warp_table = {}
+
 class Rels(Enum):
     aaa = "aaa"
     aji = "aji"

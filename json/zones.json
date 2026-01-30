@@ -1,0 +1,611 @@
+[
+    {
+        "name": "Rogueport Docks - North",
+        "map": "gor_00",
+        "bero": "n_bero",
+        "target": "Rogueport Center - South",
+        "region": "docks",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Center - South",
+        "map": "gor_01",
+        "bero": "s_bero",
+        "target": "Rogueport Docks - North",
+        "region": "rogue_center",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Center - East",
+        "map": "gor_01",
+        "bero": "e_bero",
+        "target": "Rogueport East - West",
+        "region": "rogue_center",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Center - West",
+        "map": "gor_01",
+        "bero": "w_bero",
+        "target": "Rogueport West - East",
+        "region": "rogue_center",
+        "rules": {
+            "has": "Contact Lens"
+        }
+    },
+    {
+        "name": "Rogueport East - West",
+        "map": "gor_02",
+        "bero": "w_bero",
+        "target": "Rogueport Center - East",
+        "region": "rogue_east",
+        "rules": null
+    },
+    {
+        "name": "Rogueport East - Pipe",
+        "map": "gor_02",
+        "bero": "dokan",
+        "target": "Rogueport Sewers East - Pipe1",
+        "region": "rogue_east",
+        "rules": null
+    },
+    {
+        "name": "Rogueport West - East",
+        "map": "gor_03",
+        "bero": "e_bero",
+        "target": "Rogueport Center - West",
+        "region": "rogue_west",
+        "rules": null
+    },
+    {
+        "name": "Rogueport West - North",
+        "map": "gor_03",
+        "bero": "n_bero",
+        "target": "Rogueport Blimp - South",
+        "region": "rogue_west",
+        "rules": null
+    },
+    {
+        "name": "Rogueport West - Pipe",
+        "map": "gor_03",
+        "bero": "dokan_1",
+        "target": "Rogueport Sewers West - Surface Pipe",
+        "region": "rogue_west_tall",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Blimp - South",
+        "map": "gor_04",
+        "bero": "s_bero",
+        "target": "Rogueport West - North",
+        "region": "blimp",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Blimp - Train",
+        "map": "gor_04",
+        "bero": "n_bero",
+        "target": "Vanilla",
+        "region": "blimp",
+        "rules": {
+            "has": "Train Ticket"
+        }
+    },
+    {
+        "name": "Rogueport Blimp - Blimp",
+        "map": "gor_04",
+        "bero": "hikousen_return",
+        "target": "Vanilla",
+        "region": "blimp",
+        "rules": {
+            "has": "Blimp Ticket"
+        }
+    },
+    {
+        "name": "Rogueport Sewers East - Pipe1",
+        "map": "tik_01",
+        "bero": "dokan_2",
+        "target": "Rogueport East - Pipe",
+        "region": "sewer_east",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East - West",
+        "map": "tik_01",
+        "bero": "w_bero_1",
+        "target": "Rogueport Sewers Town - East",
+        "region": "sewer_east",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East - House1",
+        "map": "tik_01",
+        "bero": "e_bero",
+        "target": "Rogueport Sewers Stats",
+        "region": "sewer_east_bobbery",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East - Pipe2",
+        "map": "tik_01",
+        "bero": "dokan_1",
+        "target": "Rogueport Sewers East Enemy Hall - Entrance Pipe",
+        "region": "sewer_east",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East - House2",
+        "map": "tik_01",
+        "bero": "w_dero2",
+        "target": "Rogueport Sewers Fortune",
+        "region": "sewer_east_fortune",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East - East",
+        "map": "tik_01",
+        "bero": "e_bero_1",
+        "target": "Rogueport Sewers Blooper - West",
+        "region": "sewer_east_plane",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East - East Top",
+        "map": "tik_01",
+        "bero": "e_bero_2",
+        "target": "Rogueport Sewers Blooper - West Top",
+        "region": "sewer_east_top",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Stats",
+        "map": "tik_11",
+        "bero": "w_bero",
+        "target": "Rogueport Sewers East - House1",
+        "region": "sewer_stats",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Fortune",
+        "map": "tik_12",
+        "bero": "e_bero",
+        "target": "Rogueport Sewers East - House2",
+        "region": "sewer_fortune",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Blooper - West",
+        "map": "tik_02",
+        "bero": "w_bero_1",
+        "target": "Rogueport Sewers East - East",
+        "region": "blooper",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Blooper - West Top",
+        "map": "tik_02",
+        "bero": "w_bero_2",
+        "target": "Rogueport Sewers East - East Top",
+        "region": "blooper",
+        "rules": {
+            "and": [
+                {
+                    "function": "ultra_boots"
+                },
+                {
+                    "has": "Bobbery"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Rogueport Sewers Storage",
+        "map": "tik_13",
+        "bero": "e_bero",
+        "target": "Rogueport Sewers Blooper - House",
+        "region": "sewer_storage",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Blooper - House",
+        "map": "tik_02",
+        "bero": "w_bero",
+        "target": "Rogueport Sewers Storage",
+        "region": "blooper",
+        "rules": {
+            "function": "ultra_boots"
+        }
+    },
+    {
+        "name": "Rogueport Sewers Blooper - Pipe",
+        "map": "tik_02",
+        "bero": "dokan",
+        "target": "Vanilla",
+        "region": "blooper_pipe",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Town - East",
+        "map": "tik_00",
+        "bero": "e_bero",
+        "target": "Rogueport Sewers East - West",
+        "region": "sewer_town_dazzle",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Town - Teleporter",
+        "map": "tik_00",
+        "bero": null,
+        "target": "Vanilla",
+        "region": "sewer_town_teleporter",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Town - West",
+        "map": "tik_00",
+        "bero": "w_bero",
+        "target": "Rogueport Sewers West - East",
+        "region": "sewer_town",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West - East",
+        "map": "tik_07",
+        "bero": "e_bero",
+        "target": "Rogueport Sewers Town - West",
+        "region": "sewer_west",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West - Door",
+        "map": "tik_07",
+        "bero": "n_bero",
+        "target": "Rogueport Sewers Twilight - Door",
+        "region": "sewer_west_west",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West - Fahr Outpost Pipe",
+        "map": "tik_07",
+        "bero": "dokan_1",
+        "target": "Vanilla",
+        "region": "sewer_west_fahr",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West - Grate",
+        "map": "tik_07",
+        "bero": null,
+        "target": "One Way",
+        "src_region": "rogue_west",
+        "region": "sewer_west",
+        "rules": {
+            "has": "Paper Mode"
+        }
+    },
+    {
+        "name": "Rogueport Sewers West - Surface Pipe",
+        "map": "tik_07",
+        "bero": "dokan_4",
+        "target": "Rogueport West - Pipe",
+        "region": "sewer_west_bottom",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West - Lower Pipe",
+        "map": "tik_07",
+        "bero": "dokan_2",
+        "target": "Rogueport Sewers West Enemy Hall - Entrance Pipe",
+        "region": "sewer_west_bottom",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Twilight - Door",
+        "map": "tik_08",
+        "bero": "s_bero",
+        "target": "Rogueport Sewers West - Door",
+        "region": "rogue_twilight",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Twilight - Pipe",
+        "map": "tik_08",
+        "bero": "dokan",
+        "target": "Vanilla",
+        "region": "rogue_twilight",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Enemy Hall - Entrance Pipe",
+        "map": "tik_15",
+        "bero": "dokan_2",
+        "target": "Rogueport Sewers East - Pipe2",
+        "region": "sewer_east_enemy",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Enemy Hall - Barred Door",
+        "map": "tik_15",
+        "bero": "n_bero",
+        "target": "Rogueport Sewers Spiked Room",
+        "region": "sewer_east_enemy_barred_door",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Spiked Room",
+        "map": "tik_21",
+        "bero": "s_bero",
+        "target": "Rogueport Sewers East Enemy Hall - Barred Door",
+        "region": "sewer_spikes",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Enemy Hall - Pipe",
+        "map": "tik_15",
+        "bero": "dokan_1",
+        "target": "Rogueport Sewers Black Key Room - Entrance Pipe",
+        "region": "sewer_east_enemy",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Enemy Hall - Warp Room Door",
+        "map": "tik_15",
+        "bero": "w_bero_2",
+        "target": "Rogueport Sewers East Warp Room - East Door",
+        "region": "sewer_east_enemy",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Enemy Hall - West Canal Door",
+        "map": "tik_15",
+        "bero": "w_bero_1",
+        "target": "Rogueport Sewers East Warp Room - East Canal Door",
+        "region": "sewer_east_enemy_canal",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Enemy Hall - East Canal Door",
+        "map": "tik_15",
+        "bero": "e_bero_1",
+        "target": "Rogueport Sewers Spania Room",
+        "region": "sewer_east_enemy_canal",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Warp Room - East Door",
+        "map": "tik_16",
+        "bero": "e_bero_2",
+        "target": "Rogueport Sewers East Enemy Hall - Warp Room Door",
+        "region": "sewer_east_warp_right",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Warp Room - West Door",
+        "map": "tik_16",
+        "bero": "w_bero_2",
+        "target": "Rogueport Sewers West Warp Room - East Door",
+        "region": "sewer_east_warp_left",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Warp Room - CH One Warp",
+        "map": "tik_16",
+        "bero": "dokan_2",
+        "target": "Vanilla",
+        "region": "sewer_east_warp_top",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Warp Room - CH Two Warp",
+        "map": "tik_16",
+        "bero": "dokan_1",
+        "target": "Vanilla",
+        "region": "sewer_east_warp_top",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Warp Room - East Canal Door",
+        "map": "tik_16",
+        "bero": "e_bero_1",
+        "target": "Rogueport Sewers East Enemy Hall - West Canal Door",
+        "region": "sewer_east_warp_canal",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers East Warp Room - West Canal Door",
+        "map": "tik_16",
+        "bero": "w_bero_1",
+        "target": "Rogueport Sewers West Warp Room - East Canal Door",
+        "region": "sewer_east_warp_canal",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West Warp Room - East Door",
+        "map": "tik_17",
+        "bero": "e_bero_2",
+        "target": "Rogueport Sewers East Warp Room - West Door",
+        "region": "sewer_west_warp_right",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West Warp Room - West Door",
+        "map": "tik_17",
+        "bero": "w_bero_2",
+        "target": "Rogueport Sewers West Enemy Hall - Warp Room Door",
+        "region": "sewer_west_warp_left",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West Warp Room - CH Five Warp",
+        "map": "tik_17",
+        "bero": "dokan_2",
+        "target": "Vanilla",
+        "region": "sewer_west_warp_top",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West Warp Room - CH Six Warp",
+        "map": "tik_17",
+        "bero": "dokan_1",
+        "target": "Vanilla",
+        "region": "sewer_west_warp_top",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West Warp Room - East Canal Door",
+        "map": "tik_17",
+        "bero": "e_bero_1",
+        "target": "Rogueport Sewers East Warp Room - West Canal Door",
+        "region": "sewer_west_warp_canal",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West Warp Room - West Canal Door",
+        "map": "tik_17",
+        "bero": "w_bero_1",
+        "target": "Rogueport Sewers West Enemy Hall - Canal Door",
+        "region": "sewer_west_warp_canal",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West Enemy Hall - Warp Room Door",
+        "map": "tik_18",
+        "bero": "e_bero_2",
+        "target": "Rogueport Sewers West Warp Room - West Door",
+        "region": "sewer_west_enemy",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West Enemy Hall - Entrance Pipe",
+        "map": "tik_18",
+        "bero": "dokan_2",
+        "target": "Rogueport Sewers West - Lower Pipe",
+        "region": "sewer_west_enemy",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers West Enemy Hall - Canal Door",
+        "map": "tik_18",
+        "bero": "e_bero_1",
+        "target": "Rogueport Sewers West Warp Room - West Canal Door",
+        "region": "sewer_west_enemy_flurrie",
+        "rules": {
+            "has": "Boat Mode"
+        }
+    },
+    {
+        "name": "Rogueport Sewers Spania Room",
+        "map": "tik_20",
+        "bero": "w_bero",
+        "target": "Rogueport Sewers East Enemy Hall - East Canal Door",
+        "region": "spania",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Pit Room - One Way Pipe",
+        "map": "tik_06",
+        "bero": "dokan_2",
+        "target": "One Way",
+        "src_region": "sewer_west_enemy_flurrie",
+        "region": "sewer_pit",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Pit Room - Door",
+        "map": "tik_06",
+        "bero": "e_bero",
+        "target": "TTYD - Pit Door",
+        "region": "sewer_pit",
+        "rules": null
+    },
+    {
+        "name": "TTYD - Pit Door",
+        "map": "tik_05",
+        "bero": "w_bero",
+        "target": "Rogueport Sewers Pit Room - Door",
+        "region": "ttyd",
+        "rules": {
+            "and":[
+                {
+                    "has":"Paper Mode"
+                },
+                {
+                    "has":"Plane Mode"
+                }
+            ]
+        }
+    },
+    {
+        "name": "TTYD - Entrance",
+        "map": "tik_05",
+        "bero": "e_bero",
+        "target": "Rogueport Sewers Black Key Room - TTYD Door",
+        "region": "ttyd",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Black Key Room - TTYD Door",
+        "map": "tik_04",
+        "bero": "w_bero",
+        "target": "TTYD - Entrance",
+        "region": "rogue_black_key",
+        "rules": {
+            "or":[
+                {
+                    "has":"Plane Mode"
+                },
+                {
+                    "function":"super_hammer"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Rogueport Sewers Black Key Room - Entrance Pipe",
+        "map": "tik_04",
+        "bero": "dokan",
+        "target": "Rogueport Sewers East Enemy Hall - Pipe",
+        "region": "rogue_black_key",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Black Key Room - Puni Door",
+        "map": "tik_04",
+        "bero": "n_bero_1",
+        "target": "Rogueport Sewers Puni Room - Entrance",
+        "region": "rogue_black_key_puni",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Black Key Room - Curse Door",
+        "map": "tik_04",
+        "bero": "n_bero_5",
+        "target": "Rogueport Sewers Curse Room",
+        "region": "rogue_black_key",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Curse Room",
+        "map": "tik_19",
+        "bero": "s_bero",
+        "target": "Rogueport Sewers Black Key Room - Curse Door",
+        "region": "sewer_curse",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Puni Room - Entrance",
+        "map": "tik_03",
+        "bero": "s_bero_1",
+        "target": "Rogueport Sewers Black Key Room - Puni Door",
+        "region": "sewer_puni",
+        "rules": null
+    },
+    {
+        "name": "Rogueport Sewers Puni Room - CH 2 Pipe",
+        "map": "tik_03",
+        "bero": "dokan",
+        "target": "Vanilla",
+        "region": "sewer_puni_exit",
+        "rules": null
+    }
+]

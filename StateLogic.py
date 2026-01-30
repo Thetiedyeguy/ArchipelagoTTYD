@@ -9,6 +9,9 @@ if typing.TYPE_CHECKING:
 def westside(state, player):
     return state.has("Contact Lens", player) or state.has("Bobbery", player) or tube_curse(state, player) or ultra_hammer(state, player)
 
+def fallen_pipe(state, player):
+    return state.has("Bobbery", player) or tube_curse(state, player)
+
 
 def super_hammer(state, player):
     return state.has("Progressive Hammer", player, 1)
@@ -69,8 +72,7 @@ def steeple(state, player):
 
 
 def keelhaul_key(state, player):
-    return ((state.has("Yoshi", player) and tube_curse(state, player) and state.has("Old Letter", player))
-            or (ultra_hammer(state, player) and super_boots(state, player)))
+    return (state.has("Yoshi", player) and tube_curse(state, player) and state.has("Old Letter", player))
 
 
 def pirates_grotto(state, player):

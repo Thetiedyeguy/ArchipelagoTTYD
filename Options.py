@@ -37,6 +37,12 @@ class PalaceStars(Range):
     range_end = 7
     default = 7
 
+class LoadingZoneShuffle(Toggle):
+    """
+    Randomizes loading zones.
+    """
+    display_name = "Loading Zone Shuffle"
+
 
 class StarShuffle(Choice):
     """
@@ -332,6 +338,7 @@ class TTYDOptions(PerGameCommonOptions):
     goal: Goal
     goal_stars: GoalStars
     palace_stars: PalaceStars
+    loading_zone_shuffle: LoadingZoneShuffle
     star_shuffle: StarShuffle
     tattlesanity: TattleSanityOption
     piecesanity: Piecesanity

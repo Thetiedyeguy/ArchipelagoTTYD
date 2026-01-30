@@ -166,6 +166,13 @@ class TTYDWorld(World):
         create_regions(self)
         connect_regions(self)
         register_indirect_connections(self)
+        print("finding regions")
+        state = self.multiworld.get_all_state(False)
+        for region in self.multiworld.regions:
+            if region.player != self.player:
+                continue
+            if not state.can_reach_region(region.name, self.player):
+                print("Unreachable region:", region.name)
         for chapter in self.limited_chapters:
             self.limited_chapter_locations.update([self.get_location(location_id_to_name[location]) for location in limited_location_ids[chapter - 1]])
         if self.options.tattlesanity:

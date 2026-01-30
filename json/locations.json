@@ -8,7 +8,8 @@
     ],
     "vanilla_item": 77772092,
     "tags": [
-      "rogueport"
+      "rogueport",
+      "docks"
     ]
   },
   {
@@ -21,7 +22,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "panel"
+      "panel",
+      "docks"
     ]
   },
   {
@@ -34,7 +36,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "star_piece"
+      "star_piece",
+      "docks"
     ]
   },
   {
@@ -46,7 +49,8 @@
     ],
     "vanilla_item": 77772078,
     "tags": [
-      "rogueport"
+      "rogueport",
+      "rogue_center"
     ]
   },
   {
@@ -58,7 +62,8 @@
     ],
     "vanilla_item": 77772124,
     "tags": [
-      "rogueport"
+      "rogueport",
+      "rogue_center"
     ]
   },
   {
@@ -72,7 +77,8 @@
     "vanilla_item": 77772059,
     "tags": [
       "rogueport",
-      "shop"
+      "shop",
+      "rogue_center"
     ]
   },
   {
@@ -86,7 +92,8 @@
     "vanilla_item": 77772068,
     "tags": [
       "rogueport",
-      "shop"
+      "shop",
+      "rogue_center"
     ]
   },
   {
@@ -100,7 +107,8 @@
     "vanilla_item": 77772088,
     "tags": [
       "rogueport",
-      "shop"
+      "shop",
+      "rogue_center"
     ]
   },
   {
@@ -114,7 +122,8 @@
     "vanilla_item": 77772120,
     "tags": [
       "rogueport",
-      "shop"
+      "shop",
+      "rogue_center"
     ]
   },
   {
@@ -128,7 +137,8 @@
     "vanilla_item": 77772169,
     "tags": [
       "rogueport",
-      "shop"
+      "shop",
+      "rogue_center"
     ]
   },
   {
@@ -141,7 +151,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "panel"
+      "panel",
+      "rogue_center"
     ]
   },
   {
@@ -154,7 +165,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "panel"
+      "panel",
+      "rogue_center"
     ]
   },
   {
@@ -167,7 +179,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "star_piece"
+      "star_piece",
+      "rogue_center"
     ]
   },
   {
@@ -180,7 +193,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "star_piece"
+      "star_piece",
+      "rogue_center"
     ]
   },
   {
@@ -193,7 +207,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "star_piece"
+      "star_piece",
+      "rogue_center"
     ]
   },
   {
@@ -207,7 +222,8 @@
     "vanilla_item": 77772193,
     "tags": [
       "rogueport",
-      "shop"
+      "shop",
+      "rogue_center"
     ]
   },
   {
@@ -219,7 +235,8 @@
     ],
     "vanilla_item": 77772190,
     "tags": [
-      "rogueport"
+      "rogueport",
+      "rogue_center"
     ]
   },
   {
@@ -231,7 +248,8 @@
     ],
     "vanilla_item": 77772147,
     "tags": [
-      "rogueport"
+      "rogueport",
+      "rogue_east"
     ]
   },
   {
@@ -243,7 +261,8 @@
     ],
     "vanilla_item": 77772046,
     "tags": [
-      "rogueport"
+      "rogueport",
+      "rogue_east"
     ]
   },
   {
@@ -256,7 +275,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "rogueport",
-      "shine"
+      "shine",
+      "rogue_east"
     ]
   },
   {
@@ -269,7 +289,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "rogueport",
-      "shine"
+      "shine",
+      "rogue_east"
     ]
   },
   {
@@ -282,7 +303,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "rogueport",
-      "shine"
+      "shine",
+      "rogue_east"
     ]
   },
   {
@@ -295,7 +317,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "star_piece"
+      "star_piece",
+      "rogue_east"
     ]
   },
   {
@@ -308,7 +331,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "panel"
+      "panel",
+      "rogue_east"
     ]
   },
   {
@@ -321,7 +345,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "star_piece"
+      "star_piece",
+      "rogue_east"
     ]
   },
   {
@@ -334,7 +359,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "star_piece"
+      "star_piece",
+      "rogue_east"
     ]
   },
   {
@@ -347,7 +373,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport",
-      "panel"
+      "panel",
+      "rogue_east"
     ]
   },
   {
@@ -359,7 +386,8 @@
     ],
     "vanilla_item": 77772013,
     "tags": [
-      "rogueport_westside"
+      "rogueport_westside",
+      "rogue_west"
     ]
   },
   {
@@ -372,7 +400,8 @@
     "vanilla_item": 77772199,
     "tags": [
       "rogueport_westside",
-      "chapter_5"
+      "chapter_5",
+      "rogue_west"
     ]
   },
   {
@@ -385,7 +414,8 @@
     "vanilla_item": 77772045,
     "tags": [
       "rogueport_westside",
-      "shop"
+      "shop",
+      "rogue_west"
     ]
   },
   {
@@ -398,7 +428,8 @@
     "vanilla_item": 77772049,
     "tags": [
       "rogueport_westside",
-      "shop"
+      "shop",
+      "rogue_west"
     ]
   },
   {
@@ -411,7 +442,8 @@
     "vanilla_item": 77772108,
     "tags": [
       "rogueport_westside",
-      "shop"
+      "shop",
+      "rogue_west"
     ]
   },
   {
@@ -423,7 +455,8 @@
     ],
     "vanilla_item": 77772120,
     "tags": [
-      "rogueport_westside"
+      "rogueport_westside",
+      "rogue_west"
     ]
   },
   {
@@ -436,7 +469,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "rogueport_westside",
-      "shine"
+      "shine",
+      "rogue_west"
     ]
   },
   {
@@ -449,7 +483,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "rogueport_westside",
-      "shine"
+      "shine",
+      "rogue_west"
     ]
   },
   {
@@ -462,7 +497,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport_westside",
-      "star_piece"
+      "star_piece",
+      "rogue_west"
     ]
   },
   {
@@ -475,7 +511,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport_westside",
-      "star_piece"
+      "star_piece",
+      "rogue_west"
     ]
   },
   {
@@ -488,7 +525,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport_westside",
-      "star_piece"
+      "star_piece",
+      "rogue_west"
     ]
   },
   {
@@ -501,7 +539,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport_westside",
-      "panel"
+      "panel",
+      "rogue_west"
     ]
   },
   {
@@ -514,7 +553,8 @@
     "vanilla_item": 77772191,
     "tags": [
       "rogueport_westside",
-      "shop"
+      "shop",
+      "rogue_west"
     ]
   },
   {
@@ -527,7 +567,8 @@
     "vanilla_item": 77772195,
     "tags": [
       "rogueport_westside",
-      "shop"
+      "shop",
+      "rogue_west"
     ]
   },
   {
@@ -540,7 +581,8 @@
     "vanilla_item": 77772209,
     "tags": [
       "rogueport_westside",
-      "shop"
+      "shop",
+      "rogue_west"
     ]
   },
   {
@@ -554,7 +596,8 @@
     "tags": [
       "rogueport_westside",
       "chapter_3",
-      "star_piece"
+      "star_piece",
+      "blimp"
     ]
   },
   {
@@ -567,7 +610,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "rogueport_westside",
-      "panel"
+      "panel",
+      "blimp"
     ]
   },
   {
@@ -580,7 +624,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers",
-      "star_piece"
+      "star_piece",
+      "sewer_town"
     ]
   },
   {
@@ -593,7 +638,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers",
-      "panel"
+      "panel",
+      "sewer_east"
     ]
   },
   {
@@ -605,7 +651,8 @@
     ],
     "vanilla_item": 77772043,
     "tags": [
-      "sewers"
+      "sewers",
+      "sewer_east"
     ]
   },
   {
@@ -618,7 +665,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "sewers",
-      "shine"
+      "shine",
+      "blooper"
     ]
   },
   {
@@ -630,7 +678,8 @@
     ],
     "vanilla_item": 77772040,
     "tags": [
-      "sewers"
+      "sewers",
+      "sewer_puni"
     ]
   },
   {
@@ -643,7 +692,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers",
-      "panel"
+      "panel",
+      "sewer_puni"
     ]
   },
   {
@@ -655,7 +705,8 @@
     ],
     "vanilla_item": 77772008,
     "tags": [
-      "sewers"
+      "sewers",
+      "rogue_black_key"
     ]
   },
   {
@@ -667,7 +718,8 @@
     ],
     "vanilla_item": 77772085,
     "tags": [
-      "sewers"
+      "sewers",
+      "rogue_black_key"
     ]
   },
   {
@@ -679,7 +731,8 @@
     ],
     "vanilla_item": 77772148,
     "tags": [
-      "sewers"
+      "sewers",
+      "rogue_black_key"
     ]
   },
   {
@@ -692,7 +745,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers",
-      "star_piece"
+      "star_piece",
+      "rogue_black_key"
     ]
   },
   {
@@ -705,7 +759,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "sewers",
-      "shine"
+      "shine",
+      "ttyd"
     ]
   },
   {
@@ -718,7 +773,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers",
-      "panel"
+      "panel",
+      "ttyd"
     ]
   },
   {
@@ -731,7 +787,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers",
-      "star_piece"
+      "star_piece",
+      "sewer_storage"
     ]
   },
   {
@@ -743,7 +800,8 @@
     ],
     "vanilla_item": 77772059,
     "tags": [
-      "sewers"
+      "sewers",
+      "sewer_east_enemy"
     ]
   },
   {
@@ -755,7 +813,8 @@
     ],
     "vanilla_item": 77772120,
     "tags": [
-      "sewers"
+      "sewers",
+      "sewer_east_enemy"
     ]
   },
   {
@@ -768,7 +827,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "sewers",
-      "shine"
+      "shine",
+      "sewer_east_warp_top"
     ]
   },
   {
@@ -780,7 +840,8 @@
     ],
     "vanilla_item": 77772066,
     "tags": [
-      "sewers_westside"
+      "sewers_westside",
+      "sewer_west_warp_top"
     ]
   },
   {
@@ -792,7 +853,8 @@
     ],
     "vanilla_item": 77772137,
     "tags": [
-      "sewers"
+      "sewers",
+      "sewer_curse"
     ]
   },
   {
@@ -805,7 +867,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers",
-      "panel"
+      "panel",
+      "sewer_curse"
     ]
   },
   {
@@ -817,7 +880,8 @@
     ],
     "vanilla_item": 77772174,
     "tags": [
-      "sewers"
+      "sewers",
+      "sewer_spikes"
     ]
   },
   {
@@ -830,7 +894,8 @@
     "vanilla_item": 77772072,
     "tags": [
       "sewers_westside",
-      "shop"
+      "shop",
+      "sewer_town"
     ]
   },
   {
@@ -843,7 +908,8 @@
     "vanilla_item": 77772073,
     "tags": [
       "sewers_westside",
-      "shop"
+      "shop",
+      "sewer_town"
     ]
   },
   {
@@ -856,7 +922,8 @@
     "vanilla_item": 77772079,
     "tags": [
       "sewers_westside",
-      "shop"
+      "shop",
+      "sewer_town"
     ]
   },
   {
@@ -869,7 +936,8 @@
     "vanilla_item": 77772101,
     "tags": [
       "sewers_westside",
-      "shop"
+      "shop",
+      "sewer_town"
     ]
   },
   {
@@ -882,7 +950,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "sewers_westside",
-      "shine"
+      "shine",
+      "sewer_town"
     ]
   },
   {
@@ -895,7 +964,8 @@
     "vanilla_item": 77772171,
     "tags": [
       "sewers_westside",
-      "shop"
+      "shop",
+      "sewer_town"
     ]
   },
   {
@@ -907,7 +977,8 @@
     ],
     "vanilla_item": 77772172,
     "tags": [
-      "sewers_westside"
+      "sewers_westside",
+      "sewer_town"
     ]
   },
   {
@@ -920,7 +991,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers_westside",
-      "star_piece"
+      "star_piece",
+      "sewer_town"
     ]
   },
   {
@@ -933,7 +1005,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers_westside",
-      "panel"
+      "panel",
+      "sewer_town"
     ]
   },
   {
@@ -946,7 +1019,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers_westside",
-      "star_piece"
+      "star_piece",
+      "sewer_town"
     ]
   },
   {
@@ -959,7 +1033,8 @@
     "vanilla_item": 77772204,
     "tags": [
       "sewers_westside",
-      "shop"
+      "shop",
+      "sewer_town"
     ]
   },
   {
@@ -972,7 +1047,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "sewers_westside",
-      "shine"
+      "shine",
+      "sewer_west_west"
     ]
   },
   {
@@ -985,7 +1061,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers_westside",
-      "star_piece"
+      "star_piece",
+      "sewer_west_west"
     ]
   },
   {
@@ -997,7 +1074,8 @@
     ],
     "vanilla_item": 77772079,
     "tags": [
-      "sewers_westside_ground"
+      "sewers_westside_ground",
+      "sewer_west_enemy"
     ]
   },
   {
@@ -1009,7 +1087,8 @@
     ],
     "vanilla_item": 77772171,
     "tags": [
-      "sewers_westside_ground"
+      "sewers_westside_ground",
+      "sewer_west_enemy"
     ]
   },
   {
@@ -1021,7 +1100,8 @@
     ],
     "vanilla_item": 77772042,
     "tags": [
-      "sewers_westside_ground"
+      "sewers_westside_ground",
+      "spania"
     ]
   },
   {
@@ -1034,7 +1114,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "sewers_westside_ground",
-      "shine"
+      "shine",
+      "spania"
     ]
   },
   {
@@ -1047,7 +1128,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "sewers_westside_ground",
-      "shine"
+      "shine",
+      "spania"
     ]
   },
   {
@@ -1060,7 +1142,8 @@
     "vanilla_item": 77772162,
     "tags": [
       "sewers_westside_ground",
-      "shine"
+      "shine",
+      "spania"
     ]
   },
   {
@@ -1072,7 +1155,8 @@
     ],
     "vanilla_item": 77772063,
     "tags": [
-      "sewers_westside_ground"
+      "sewers_westside_ground",
+      "sewer_west_bottom"
     ]
   },
   {
@@ -1085,7 +1169,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "sewers_westside_ground",
-      "star_piece"
+      "star_piece",
+      "sewer_west_bottom"
     ]
   },
   {
@@ -6277,7 +6362,8 @@
     "vanilla_item": 77772177,
     "tags": [
       "pit",
-      "star_piece"
+      "star_piece",
+      "sewer_pit"
     ]
   },
   {
@@ -6420,7 +6506,8 @@
     "vanilla_item": 77772006,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6433,7 +6520,8 @@
     "vanilla_item": 77772029,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6446,7 +6534,8 @@
     "vanilla_item": 77772148,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6459,7 +6548,8 @@
     "vanilla_item": 77772083,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6472,7 +6562,8 @@
     "vanilla_item": 77772084,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6485,7 +6576,8 @@
     "vanilla_item": 77772085,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6498,7 +6590,8 @@
     "vanilla_item": 77772100,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6511,7 +6604,8 @@
     "vanilla_item": 77772087,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6524,7 +6618,8 @@
     "vanilla_item": 77772061,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6537,7 +6632,8 @@
     "vanilla_item": 77772134,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6550,7 +6646,8 @@
     "vanilla_item": 77772152,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6563,7 +6660,8 @@
     "vanilla_item": 77772062,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6576,7 +6674,8 @@
     "vanilla_item": 77772063,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6589,7 +6688,8 @@
     "vanilla_item": 77772142,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   },
   {
@@ -6602,7 +6702,8 @@
     "vanilla_item": 77772143,
     "tags": [
       "rogueport",
-      "dazzle"
+      "dazzle",
+      "sewer_town_dazzle"
     ]
   }
 ]
