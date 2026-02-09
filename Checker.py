@@ -1,96 +1,171 @@
-from collections import Counter, defaultdict
-import importlib
-json = importlib.import_module("json")
+import json
+import os
+import re
+import time
 
-IGNORE_TARGETS = {"Vanilla", "One Way"}
+DOORS_FILE = "files/zones.json"
+REGIONS_FILE = "files/regions.json"
+DOLPHIN_LOG = os.path.expanduser("~/Documents/Dolphin Emulator/Logs/dolphin.log")
 
-
-def debug_loading_zones(loading_zones):
-    errors = False
-
-    print(f"Total loading zones (before filtering): {len(loading_zones)}")
-
-    # Filter zones we actually care about
-    vanilla_zones = [
-        z for z in loading_zones
-        if z.get("target") == "Vanilla"
-    ]
-
-    one_way_zones = [
-        z for z in loading_zones
-        if z.get("target") == "One Way"
-    ]
-
-    # Filter zones we actually care about
-    filtered_zones = [
-        z for z in loading_zones
-        if z.get("target") not in IGNORE_TARGETS
-    ]
-
-    print(f"Total Vanilla zones (after filtering): {len(vanilla_zones)}")
-    print(f"Total One Way zones (after filtering): {len(one_way_zones)}")
-    print(f"Total loading zones (after filtering): {len(filtered_zones)}")
-
-    # -------------------------
-    # 1. Check unique names
-    # -------------------------
-    name_counts = Counter(z["name"] for z in filtered_zones)
-    duplicate_names = {name: count for name, count in name_counts.items() if count > 1}
-
-    if duplicate_names:
-        errors = True
-        print("\n❌ Duplicate loading zone names found:")
-        for name, count in duplicate_names.items():
-            print(f"  - '{name}' appears {count} times")
-    else:
-        print("\n✅ All loading zone names are unique")
-
-    # -------------------------
-    # 2. Check target references
-    # -------------------------
-    target_counts = Counter(z["target"] for z in filtered_zones)
-
-    missing_references = []
-    multiple_references = []
-
-    for name in name_counts:
-        count = target_counts.get(name, 0)
-        if count == 0:
-            missing_references.append(name)
-        elif count > 1:
-            multiple_references.append((name, count))
-
-    if missing_references:
-        errors = True
-        print("\n❌ Loading zones never referenced as a target:")
-        for name in missing_references:
-            print(f"  - {name}")
-
-    if multiple_references:
-        errors = True
-        print("\n❌ Loading zones referenced more than once as a target:")
-        for name, count in multiple_references:
-            print(f"  - {name} referenced {count} times")
-
-    if not missing_references and not multiple_references:
-        print("\n✅ All loading zones are referenced exactly once")
-
-    # -------------------------
-    # Summary
-    # -------------------------
-    if errors:
-        print("\n⚠️ Problems found. See output above.")
-    else:
-        print("\n🎉 No issues found. Loading zones look consistent!")
+MAP_RE = re.compile(r"map=([^\s]+)\s+bero=([^\s]+)")
 
 
-# -------------------------------------------------
-# Example usage
-# -------------------------------------------------
+def load_json(path):
+    if not os.path.exists(path):
+        return []
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_json(path, data):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=4)
+
+
+def tail_file(path):
+    with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        f.seek(0, os.SEEK_END)
+        while True:
+            line = f.readline()
+            if not line:
+                time.sleep(0.2)
+                continue
+            yield line
+
+
+def prompt_with_default(label, default):
+    if default:
+        value = input(f"{label} [{default}]: ").strip()
+        return value if value else default
+    return input(f"{label}: ").strip()
+
+
+def prompt_rules():
+    choice = input("Rule type (has / function / can_reach / or / and / null): ").strip()
+
+    if not choice or choice == "null":
+        return None
+
+    if choice in ("has", "function", "can_reach"):
+        return {choice: input(f"{choice}: ").strip()}
+
+    if choice in ("or", "and"):
+        rules = []
+        print(f"Nested rules for '{choice}' (empty line to finish)")
+        while True:
+            sub = prompt_rules()
+            if sub is None:
+                break
+            rules.append(sub)
+        return {choice: rules}
+
+    print("Invalid rule type.")
+    return prompt_rules()
+
+
+def main():
+    doors = load_json(DOORS_FILE)
+    regions = load_json(REGIONS_FILE)
+
+    known_pairs = {(d["map"], d["bero"]) for d in doors}
+    known_names = {d["name"] for d in doors}
+    region_lookup = {r["tag"]: r for r in regions}
+
+    last_name = None
+    last_target = None
+    last_region_tag = None
+    last_region_chapter = None
+
+    print("Watching Dolphin OSReport log…")
+
+    for line in tail_file(DOLPHIN_LOG):
+        if "[MAP LOADING]" not in line:
+            continue
+
+        match = MAP_RE.search(line)
+        if not match:
+            continue
+
+        map_name, bero = match.groups()
+
+        if (map_name, bero) in known_pairs:
+            continue
+
+        print(f"\nNew map detected: map={map_name}, bero={bero}")
+
+        # Name defaults to last target
+        name = prompt_with_default("Name", last_target)
+
+        # Target defaults to last name
+        while True:
+            target = prompt_with_default("Target", last_name)
+
+            if target == "One Way":
+                break
+
+            if target in known_names:
+                break
+
+            confirm = input(
+                f"Target '{target}' does not match an existing name. "
+                "Press Enter to confirm, or type a new target: "
+            ).strip()
+
+            if confirm == "":
+                break
+
+            target = confirm
+
+        entry = {
+            "name": name,
+            "map": map_name,
+            "bero": bero,
+            "target": target,
+        }
+
+        if target == "One Way":
+            entry["src_region"] = input("Source region: ").strip()
+
+        entry["rules"] = prompt_rules()
+
+        # Region defaults to last entry's region
+        region_tag = prompt_with_default("Region tag", last_region_tag)
+        entry["region"] = region_tag
+
+        if region_tag not in region_lookup:
+            print("New region detected.")
+            region_name = input("Region name: ").strip()
+
+            chapter = prompt_with_default(
+                "Chapter",
+                last_region_chapter
+            )
+
+            region_data = {
+                "name": region_name,
+                "tag": region_tag,
+                "chapter": chapter
+            }
+
+            regions.append(region_data)
+            region_lookup[region_tag] = region_data
+            save_json(REGIONS_FILE, regions)
+
+            last_region_chapter = chapter
+
+        doors.append(entry)
+        save_json(DOORS_FILE, doors)
+
+        # Update state
+        known_pairs.add((map_name, bero))
+        known_names.add(name)
+
+        last_name = name
+        last_target = target
+        last_region_tag = region_tag
+
+        print("Entry saved.")
+
+
 if __name__ == "__main__":
-    # Replace this with however you load your data
-    # e.g. from JSON, regions dict, etc.
-    with open("files/zones.json", "r", encoding="utf-8") as f:
-        loading_zones = json.load(f)
-
-    debug_loading_zones(loading_zones)
+    main()

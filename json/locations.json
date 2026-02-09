@@ -1183,7 +1183,8 @@
     "vanilla_item": 77772059,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_meadow_bridge_east"
     ]
   },
   {
@@ -1196,7 +1197,8 @@
     "vanilla_item": 77772121,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_meadow_bridge_east"
     ]
   },
   {
@@ -1209,7 +1211,8 @@
     "vanilla_item": 77772104,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_meadow_bridge_east"
     ]
   },
   {
@@ -1222,7 +1225,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_fort_one_exterior"
     ]
   },
   {
@@ -1236,7 +1240,8 @@
     "tags": [
       "petal_right",
       "chapter_1",
-      "star_piece"
+      "star_piece",
+      "petal_fort_one_exterior"
     ]
   },
   {
@@ -1249,7 +1254,8 @@
     "vanilla_item": 77772139,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_fort_one_exterior"
     ]
   },
   {
@@ -1262,7 +1268,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_fort_two_exterior"
     ]
   },
   {
@@ -1275,7 +1282,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_fort_two_exterior"
     ]
   },
   {
@@ -1288,7 +1296,8 @@
     "vanilla_item": 77772139,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_fort_two_exterior"
     ]
   },
   {
@@ -1301,7 +1310,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_fort_three_exterior"
     ]
   },
   {
@@ -1314,7 +1324,8 @@
     "vanilla_item": 77772059,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_fort_three_exterior"
     ]
   },
   {
@@ -1327,7 +1338,8 @@
     "vanilla_item": 77772099,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_fort_three_exterior"
     ]
   },
   {
@@ -1340,7 +1352,8 @@
     "vanilla_item": 77772117,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_sewers_west_key"
     ]
   },
   {
@@ -1353,7 +1366,8 @@
     "vanilla_item": 77772119,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_sewers_entrance"
     ]
   },
   {
@@ -1366,7 +1380,8 @@
     "vanilla_item": 77772186,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petal_sewers_east_key"
     ]
   },
   {
@@ -1380,7 +1395,8 @@
     "tags": [
       "petal_right",
       "chapter_1",
-      "shop"
+      "shop",
+      "petalburg_west"
     ]
   },
   {
@@ -1394,7 +1410,8 @@
     "tags": [
       "petal_right",
       "chapter_1",
-      "shop"
+      "shop",
+      "petalburg_west"
     ]
   },
   {
@@ -1408,7 +1425,8 @@
     "tags": [
       "petal_right",
       "chapter_1",
-      "shop"
+      "shop",
+      "petalburg_west"
     ]
   },
   {
@@ -1422,7 +1440,8 @@
     "tags": [
       "petal_right",
       "chapter_1",
-      "shop"
+      "shop",
+      "petalburg_west"
     ]
   },
   {
@@ -1436,7 +1455,8 @@
     "tags": [
       "petal_right",
       "chapter_1",
-      "shop"
+      "shop",
+      "petalburg_west"
     ]
   },
   {
@@ -1450,7 +1470,8 @@
     "tags": [
       "petal_right",
       "chapter_1",
-      "shop"
+      "shop",
+      "petalburg_west"
     ]
   },
   {
@@ -1464,7 +1485,8 @@
     "tags": [
       "petal_right",
       "chapter_1",
-      "panel"
+      "panel",
+      "petalburg_west"
     ]
   },
   {
@@ -1477,7 +1499,8 @@
     "vanilla_item": 77772114,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petalburg_east"
     ]
   },
   {
@@ -1491,7 +1514,8 @@
     "tags": [
       "petal_right",
       "chapter_1",
-      "panel"
+      "panel",
+      "petalburg_east"
     ]
   },
   {
@@ -1507,7 +1531,8 @@
     "vanilla_item": 77772201,
     "tags": [
       "petal_right",
-      "chapter_1"
+      "chapter_1",
+      "petalburg_east"
     ]
   },
   {
@@ -1520,7 +1545,8 @@
     "vanilla_item": 77772120,
     "tags": [
       "petal_left",
-      "chapter_1"
+      "chapter_1",
+      "petal_meadow_entrance"
     ]
   },
   {
@@ -1533,7 +1559,8 @@
     "vanilla_item": 77772120,
     "tags": [
       "petal_left",
-      "chapter_1"
+      "chapter_1",
+      "petal_meadow_entrance"
     ]
   },
   {
@@ -1547,7 +1574,8 @@
     "tags": [
       "petal_left",
       "chapter_1",
-      "star_piece"
+      "star_piece",
+      "petal_meadow_entrance"
     ]
   },
   {
@@ -1560,7 +1588,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "petal_left",
-      "chapter_1"
+      "chapter_1",
+      "petal_meadow_bridge_west"
     ]
   },
   {
@@ -1573,7 +1602,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "petal_left",
-      "chapter_1"
+      "chapter_1",
+      "petal_meadow_bridge_west"
     ]
   },
   {
@@ -1587,7 +1617,8 @@
     "tags": [
       "petal_left",
       "chapter_1",
-      "star_piece"
+      "star_piece",
+      "petal_meadow_bridge_west"
     ]
   },
   {
@@ -1600,7 +1631,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "petal_left",
-      "chapter_1"
+      "chapter_1",
+      "petal_meadow_field"
     ]
   },
   {
@@ -1613,7 +1645,8 @@
     "vanilla_item": 77772031,
     "tags": [
       "petal_left",
-      "chapter_1"
+      "chapter_1",
+      "petal_meadow_field"
     ]
   },
   {
@@ -1626,7 +1659,8 @@
     "vanilla_item": 77772084,
     "tags": [
       "petal_left",
-      "chapter_1"
+      "chapter_1",
+      "petal_meadow_field"
     ]
   },
   {
@@ -1640,7 +1674,8 @@
     "vanilla_item": 77772089,
     "tags": [
       "petal_left",
-      "chapter_1"
+      "chapter_1",
+      "petal_meadow_field"
     ]
   },
   {
@@ -1653,7 +1688,8 @@
     "vanilla_item": 77772094,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_drawbridge_west_bottom"
     ]
   },
   {
@@ -1666,7 +1702,8 @@
     "vanilla_item": 77772140,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_entrance"
     ]
   },
   {
@@ -1679,7 +1716,8 @@
     "vanilla_item": 77772025,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_red_bones"
     ]
   },
   {
@@ -1693,7 +1731,8 @@
     "tags": [
       "hooktails_castle",
       "chapter_1",
-      "panel"
+      "panel",
+      "hooktail_red_bones"
     ]
   },
   {
@@ -1706,7 +1745,8 @@
     "vanilla_item": 77772025,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_stair_switch"
     ]
   },
   {
@@ -1720,7 +1760,8 @@
     "tags": [
       "hooktails_castle",
       "chapter_1",
-      "shine"
+      "shine",
+      "hooktail_stair_switch"
     ]
   },
   {
@@ -1734,7 +1775,8 @@
     "tags": [
       "hooktails_castle",
       "chapter_1",
-      "star_piece"
+      "star_piece",
+      "hooktail_stair_switch"
     ]
   },
   {
@@ -1748,7 +1790,8 @@
     "tags": [
       "hooktails_castle",
       "chapter_1",
-      "star_piece"
+      "star_piece",
+      "hooktail_stair_switch_upper"
     ]
   },
   {
@@ -1761,7 +1804,8 @@
     "vanilla_item": 77772025,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_stair_central_upper"
     ]
   },
   {
@@ -1774,7 +1818,8 @@
     "vanilla_item": 77772107,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_stair_central_upper"
     ]
   },
   {
@@ -1788,7 +1833,8 @@
     "tags": [
       "hooktails_castle",
       "chapter_1",
-      "shine"
+      "shine",
+      "hooktail_stair_central_upper"
     ]
   },
   {
@@ -1802,7 +1848,8 @@
     "tags": [
       "hooktails_castle",
       "chapter_1",
-      "star_piece"
+      "star_piece",
+      "hooktail_nook"
     ]
   },
   {
@@ -1815,7 +1862,8 @@
     "vanilla_item": 77772132,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_prison"
     ]
   },
   {
@@ -1828,7 +1876,8 @@
     "vanilla_item": 77772005,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_prison"
     ]
   },
   {
@@ -1841,7 +1890,8 @@
     "vanilla_item": 77772009,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_spikes"
     ]
   },
   {
@@ -1854,7 +1904,8 @@
     "vanilla_item": 77772108,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_life_shroom_upper"
     ]
   },
   {
@@ -1881,7 +1932,8 @@
     "vanilla_item": 77772044,
     "tags": [
       "hooktails_castle",
-      "star"
+      "star",
+      "hooktail_room"
     ]
   },
   {
@@ -1894,7 +1946,8 @@
     "vanilla_item": 77772025,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_storeroom"
     ]
   },
   {
@@ -1907,7 +1960,8 @@
     "vanilla_item": 77772088,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_storeroom"
     ]
   },
   {
@@ -1920,7 +1974,8 @@
     "vanilla_item": 77772120,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_storeroom"
     ]
   },
   {
@@ -1934,7 +1989,8 @@
     "tags": [
       "hooktails_castle",
       "chapter_1",
-      "shine"
+      "shine",
+      "hooktail_storeroom"
     ]
   },
   {
@@ -1947,7 +2003,8 @@
     "vanilla_item": 77772206,
     "tags": [
       "hooktails_castle",
-      "chapter_1"
+      "chapter_1",
+      "hooktail_up_arrow"
     ]
   },
   {
@@ -1962,7 +2019,8 @@
     "vanilla_item": 77772123,
     "tags": [
       "boggly_woods",
-      "chapter_2"
+      "chapter_2",
+      "boggly_sirens"
     ]
   },
   {
@@ -1975,7 +2033,8 @@
     "vanilla_item": 77772088,
     "tags": [
       "boggly_woods",
-      "chapter_2"
+      "chapter_2",
+      "boggly_sirens"
     ]
   },
   {
@@ -1988,7 +2047,8 @@
     "vanilla_item": 77772169,
     "tags": [
       "boggly_woods",
-      "chapter_2"
+      "chapter_2",
+      "boggly_sirens"
     ]
   },
   {
@@ -2001,7 +2061,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "boggly_woods",
-      "chapter_2"
+      "chapter_2",
+      "boggly_tree_view"
     ]
   },
   {
@@ -2014,7 +2075,8 @@
     "vanilla_item": 77772099,
     "tags": [
       "boggly_woods",
-      "chapter_2"
+      "chapter_2",
+      "boggly_tree_view"
     ]
   },
   {
@@ -2027,7 +2089,8 @@
     "vanilla_item": 77772127,
     "tags": [
       "boggly_woods",
-      "chapter_2"
+      "chapter_2",
+      "boggly_plane_panel"
     ]
   },
   {
@@ -2040,7 +2103,8 @@
     "vanilla_item": 77772151,
     "tags": [
       "boggly_woods",
-      "chapter_2"
+      "chapter_2",
+      "boggly_plane_panel_upper"
     ]
   },
   {
@@ -2054,7 +2118,8 @@
     "tags": [
       "boggly_woods",
       "chapter_2",
-      "shine"
+      "shine",
+      "boggly_plane_panel"
     ]
   },
   {
@@ -2068,7 +2133,8 @@
     "tags": [
       "boggly_woods",
       "chapter_2",
-      "star_piece"
+      "star_piece",
+      "boggly_plane_panel"
     ]
   },
   {
@@ -2082,7 +2148,8 @@
     "tags": [
       "boggly_woods",
       "chapter_2",
-      "star_piece"
+      "star_piece",
+      "boggly_flurrie_outside"
     ]
   },
   {
@@ -2096,7 +2163,8 @@
     "tags": [
       "boggly_woods",
       "chapter_2",
-      "star_piece"
+      "star_piece",
+      "boggly_flurrie_outside_grass"
     ]
   },
   {
@@ -2109,7 +2177,8 @@
     "vanilla_item": 77772209,
     "tags": [
       "boggly_woods",
-      "chapter_2"
+      "chapter_2",
+      "boggly_flurrie_outside_grass"
     ]
   },
   {
@@ -2122,7 +2191,8 @@
     "vanilla_item": 77772064,
     "tags": [
       "boggly_woods",
-      "chapter_2"
+      "chapter_2",
+      "boggly_flurrie"
     ]
   },
   {
@@ -2136,7 +2206,8 @@
     "tags": [
       "boggly_woods",
       "chapter_2",
-      "panel"
+      "panel",
+      "boggly_flurrie_backroom"
     ]
   },
   {
@@ -2149,7 +2220,8 @@
     "vanilla_item": 77772188,
     "tags": [
       "boggly_woods",
-      "chapter_2"
+      "chapter_2",
+      "boggly_flurrie_backroom"
     ]
   },
   {
@@ -2162,7 +2234,8 @@
     "vanilla_item": 77772066,
     "tags": [
       "boggly_woods",
-      "chapter_2"
+      "chapter_2",
+      "boggly_outside_tree"
     ]
   },
   {
@@ -2175,7 +2248,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_entrance"
     ]
   },
   {
@@ -2190,7 +2264,8 @@
     "vanilla_item": 77772055,
     "tags": [
       "great_tree",
-      "star"
+      "star",
+      "tree_entrance"
     ]
   },
   {
@@ -2203,7 +2278,8 @@
     "vanilla_item": 77772122,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_entrance"
     ]
   },
   {
@@ -2216,7 +2292,8 @@
     "vanilla_item": 77772150,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_entrance"
     ]
   },
   {
@@ -2230,7 +2307,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "panel"
+      "panel",
+      "tree_ten_puni"
     ]
   },
   {
@@ -2244,7 +2322,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "panel"
+      "panel",
+      "tree_red_blue_cage"
     ]
   },
   {
@@ -2257,7 +2336,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_red_key"
     ]
   },
   {
@@ -2270,7 +2350,8 @@
     "vanilla_item": 77772120,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_red_key"
     ]
   },
   {
@@ -2284,7 +2365,8 @@
     "vanilla_item": 77772154,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_red_key"
     ]
   },
   {
@@ -2297,7 +2379,8 @@
     "vanilla_item": 77772204,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_red_key"
     ]
   },
   {
@@ -2311,7 +2394,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "shine"
+      "shine",
+      "tree_bubble"
     ]
   },
   {
@@ -2324,7 +2408,8 @@
     "vanilla_item": 77772196,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_bubble"
     ]
   },
   {
@@ -2337,7 +2422,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_zigzag"
     ]
   },
   {
@@ -2350,7 +2436,8 @@
     "vanilla_item": 77772041,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_zigzag"
     ]
   },
   {
@@ -2364,7 +2451,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "star_piece"
+      "star_piece",
+      "tree_zigzag"
     ]
   },
   {
@@ -2378,7 +2466,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "shop"
+      "shop",
+      "tree_shop"
     ]
   },
   {
@@ -2392,7 +2481,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "shop"
+      "shop",
+      "tree_shop"
     ]
   },
   {
@@ -2406,7 +2496,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "shop"
+      "shop",
+      "tree_shop"
     ]
   },
   {
@@ -2420,7 +2511,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "shop"
+      "shop",
+      "tree_shop"
     ]
   },
   {
@@ -2434,7 +2526,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "shop"
+      "shop",
+      "tree_shop"
     ]
   },
   {
@@ -2448,7 +2541,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "shop"
+      "shop",
+      "tree_shop"
     ]
   },
   {
@@ -2461,7 +2555,8 @@
     "vanilla_item": 77772014,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_blue_key"
     ]
   },
   {
@@ -2474,7 +2569,8 @@
     "vanilla_item": 77772027,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_blue_key"
     ]
   },
   {
@@ -2488,7 +2584,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "shine"
+      "shine",
+      "tree_blue_key"
     ]
   },
   {
@@ -2501,7 +2598,8 @@
     "vanilla_item": 77772202,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_boots"
     ]
   },
   {
@@ -2514,7 +2612,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_boots"
     ]
   },
   {
@@ -2528,7 +2627,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "star_piece"
+      "star_piece",
+      "tree_trunk"
     ]
   },
   {
@@ -2541,7 +2641,8 @@
     "vanilla_item": 77772120,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_hundred_puni"
     ]
   },
   {
@@ -2555,7 +2656,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "star_piece"
+      "star_piece",
+      "tree_ambush"
     ]
   },
   {
@@ -2568,7 +2670,8 @@
     "vanilla_item": 77772045,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_pool"
     ]
   },
   {
@@ -2582,7 +2685,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "shine"
+      "shine",
+      "tree_pool"
     ]
   },
   {
@@ -2595,7 +2699,8 @@
     "vanilla_item": 77772166,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_pool"
     ]
   },
   {
@@ -2609,7 +2714,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "star_piece"
+      "star_piece",
+      "tree_fake_pedestal"
     ]
   },
   {
@@ -2622,7 +2728,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_lower_duplex"
     ]
   },
   {
@@ -2636,7 +2743,8 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "shine"
+      "shine",
+      "tree_middle_duplex"
     ]
   },
   {
@@ -2649,7 +2757,8 @@
     "vanilla_item": 77772144,
     "tags": [
       "great_tree",
-      "chapter_2"
+      "chapter_2",
+      "tree_upper_duplex"
     ]
   },
   {

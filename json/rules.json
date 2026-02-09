@@ -9,86 +9,18 @@
       }
     ]
   },
-  "Boggly Woods Plane Panel Room: Quake Hammer": {
-    "has": "Plane Mode"
-  },
-  "Boggly Woods Outside Flurrie's House: Star Piece 1": {
-    "has": "Plane Mode"
-  },
   "Boggly Woods Shadow Sirens Room: Necklace": {
-    "and": [
-      {
-        "has": "Plane Mode"
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
-  },
-  "Boggly Woods Outside Flurrie's House: Star Piece 2": {
-    "and": [
-      {
-        "has": "Plane Mode"
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
-  },
-  "Boggly Woods Outside Flurrie's House: Volt Shroom": {
-    "and": [
-      {
-        "has": "Plane Mode"
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
+    "can_reach": "Boggly Woods Flurrie's House: Flurrie"
   },
   "Boggly Woods Flurrie's House: Flurrie": {
-    "and": [
-      {
-        "has": "Plane Mode"
-      },
-      {
-        "has": "Paper Mode"
-      },
-      {
-        "has": "Necklace"
-      }
-    ]
-  },
-  "Boggly Woods Flurrie's House Backroom: Super Appeal P": {
-    "and": [
-      {
-        "has": "Plane Mode"
-      },
-      {
-        "has": "Paper Mode"
-      },
-      {
-        "has": "Necklace"
-      }
-    ]
+    "has": "Necklace"
+
   },
   "Boggly Woods Flurrie's House Backroom: Star Piece": {
-    "and": [
-      {
-        "has": "Plane Mode"
-      },
-      {
-        "has": "Paper Mode"
-      },
-      {
-        "has": "Necklace"
-      },
-      {
-        "function": "super_boots"
-      }
-    ]
+    "function": "super_boots"
   },
   "Boggly Woods Outside Great Tree: FP Plus": {
-    "function": "super_boots"
+    "can_reach": "Rogueport Sewers East Pipe Room: Shine Sprite"
   },
   "Great Tree Entrance: Mystic Egg": {
     "can_reach": "Great Tree Entrance: Emerald Star"
@@ -436,205 +368,6 @@
   "Great Tree Entrance: Puni Orb": {
     "has": "Red Key"
   },
-  "Great Tree Bubble Room: Shine Sprite": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      }
-    ]
-  },
-  "Great Tree Bubble Room: Thunder Rage": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      }
-    ]
-  },
-  "Great Tree Zigzag Room: Coin": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      }
-    ]
-  },
-  "Great Tree Zigzag Room: Damage Dodge P": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      }
-    ]
-  },
-  "Great Tree Zigzag Room: Star Piece": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      }
-    ]
-  },
-  "Great Tree Shop: Honey Syrup": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      }
-    ]
-  },
-  "Great Tree Shop: HP Drain": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      }
-    ]
-  },
-  "Great Tree Shop: Ice Storm": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      }
-    ]
-  },
-  "Great Tree Shop: Mini Mr. Mini": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      }
-    ]
-  },
-  "Great Tree Shop: Mushroom": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      }
-    ]
-  },
-  "Great Tree Shop: Mystery": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      }
-    ]
-  },
-  "Great Tree Blue Key Room: Blue Key": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      }
-    ]
-  },
-  "Great Tree Super Boots Room: Super Boots": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      }
-    ]
-  },
-  "Great Tree 100-Puni Pedestal: Coin": {
-    "and": [
-      {
-        "has": "Red Key"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      },
-      {
-        "has": "Blue Key"
-      }
-    ]
-  },
-  "Great Tree 100-Puni Pedestal: Star Piece": {
-    "and": [
-      {
-        "has": "Red Key"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      },
-      {
-        "has": "Blue Key"
-      }
-    ]
-  },
-  "Great Tree Fake Pedestal: Star Piece": {
-    "and": [
-      {
-        "has": "Red Key"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      },
-      {
-        "has": "Blue Key"
-      }
-    ]
-  },
   "Great Tree Entrance: Emerald Star": {
     "and": [
       {
@@ -644,16 +377,7 @@
         "has": "Puni Orb"
       },
       {
-        "has": "Flurrie"
-      },
-      {
         "has": "Blue Key"
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "function": "super_boots"
       }
     ]
   },
@@ -666,177 +390,24 @@
         "has": "Puni Orb"
       },
       {
-        "has": "Flurrie"
-      },
-      {
         "has": "Blue Key"
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "function": "super_boots"
-      }
-    ]
-  },
-  "Great Tree Escape Ambush Room: Star Piece": {
-    "and": [
-      {
-        "has": "Red Key"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      },
-      {
-        "has": "Blue Key"
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "function": "super_boots"
       }
     ]
   },
   "Great Tree Pool Room: Dizzy Dial": {
-    "and": [
-      {
-        "has": "Red Key"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      },
-      {
-        "has": "Blue Key"
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "function": "super_boots"
-      }
-    ]
+    "has": "Koops"
   },
   "Great Tree Pool Room: Shine Sprite": {
-    "and": [
-      {
-        "has": "Red Key"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      },
-      {
-        "has": "Blue Key"
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "function": "super_boots"
-      }
-    ]
+    "has": "Koops"
   },
   "Great Tree Pool Room: Shrink Stomp": {
-    "and": [
-      {
-        "has": "Red Key"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      },
-      {
-        "has": "Blue Key"
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "function": "super_boots"
-      }
-    ]
-  },
-  "Great Tree Lower Duplex: Coin": {
-    "and": [
-      {
-        "has": "Red Key"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      },
-      {
-        "has": "Blue Key"
-      },
-      {
-        "function": "super_boots"
-      }
-    ]
-  },
-  "Great Tree Middle Duplex: Shine Sprite": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "has": "Flurrie"
-      },
-      {
-        "has": "Plane Mode"
-      }
-    ]
+    "has": "Koops"
   },
   "Great Tree Blue Key Room: Charge": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "function": "super_boots"
-      },
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Koops"
-          }
-        ]
-      }
-    ]
+    "function": "super_boots"
   },
   "Great Tree Blue Key Room: Shine Sprite": {
-    "and": [
-      {
-        "function": "key_any"
-      },
-      {
-        "has": "Puni Orb"
-      },
-      {
-        "function": "super_boots"
-      }
-    ]
+    "function": "super_boots"
   },
   "Great Tree 10-Puni Pedestal: Star Piece": {
     "function": "super_boots"
@@ -851,45 +422,11 @@
       }
     ]
   },
-  "Hooktail's Castle Entrance: Power Bounce": {
-    "or": [
-      {
-        "has": "Yoshi"
-      },
-      {
-        "has": "Plane Mode"
-      }
-    ]
-  },
   "Hooktail's Castle Red Bones Room: Castle Key": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
+    "has": "Paper Mode"
   },
   "Hooktail's Castle Red Bones Room: Star Piece": {
     "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
       {
         "has": "Paper Mode"
       },
@@ -899,156 +436,31 @@
     ]
   },
   "Hooktail's Castle Stair Switch Room: Castle Key": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      }
-    ]
-  },
-  "Hooktail's Castle Stair Switch Room: Shine Sprite": {
-    "or": [
-      {
-        "has": "Yoshi"
-      },
-      {
-        "has": "Plane Mode"
-      }
-    ]
+    "has": "Koops"
   },
   "Hooktail's Castle Stair Switch Room: Star Piece 1": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      }
-    ]
+    "has": "Koops"
   },
   "Hooktail's Castle Stair Switch Room: Star Piece 2": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 2
-      }
-    ]
-  },
-  "Hooktail's Castle Stair Central Staircase: Castle Key": {
-    "and": [
-      {
-        "has": "Plane Mode"
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 3
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
+    "has": "Koops"
   },
   "Hooktail's Castle Stair Central Staircase: Last Stand P": {
-    "and": [
-      {
-        "has": "Plane Mode"
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 3
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
-  },
-  "Hooktail's Castle Stair Central Staircase: Shine Sprite": {
-    "and": [
-      {
-        "has": "Plane Mode"
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 3
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
-  },
-  "Hooktail's Castle Stair Central Staircase: Star Piece": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      }
-    ]
+    "has": "Koops"
   },
   "Hooktail's Castle Prison Entrance: Paper Mode": {
     "and": [
       {
         "or": [
           {
-            "has": "Yoshi"
+            "has": "Koops"
           },
           {
-            "has": "Plane Mode"
+            "has": "Paper Mode"
+          },
+          {
+            "has": "Bobbery"
           }
         ]
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 1
       },
       {
         "has": "Black Key (Paper)"
@@ -1056,220 +468,25 @@
     ]
   },
   "Hooktail's Castle Prison Entrance: Attack FX R": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 1
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
-  },
-  "Hooktail's Castle Spikes Room: Black Key (Paper)": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 1
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
+    "has": "Paper Mode"
   },
   "Hooktail's Castle Life Shroom Room: Life Shroom": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "and": [
-              {
-                "has": "Plane Mode"
-              },
-              {
-                "has": "Paper Mode"
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 2
-      }
-    ]
+    "has": "Paper Mode"
   },
   "Hooktail's Castle Plane Rafters Room: Star Piece": {
     "and": [
       {
-        "has": "Plane Mode"
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 3
+        "or": [
+          {
+            "has": "Koops"
+          },
+          {
+            "has": "Bobbery"
+          }
+        ]
       },
       {
         "has": "Paper Mode"
-      }
-    ]
-  },
-  "Hooktail's Castle Hooktail's Room: Diamond Star": {
-    "and": [
-      {
-        "has": "Plane Mode"
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 4
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
-  },
-  "Hooktail's Castle Storeroom: Castle Key": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 2
-      }
-    ]
-  },
-  "Hooktail's Castle Storeroom: Honey Syrup": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 2
-      }
-    ]
-  },
-  "Hooktail's Castle Storeroom: Mushroom": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 2
-      }
-    ]
-  },
-  "Hooktail's Castle Storeroom: Shine Sprite": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 2
-      }
-    ]
-  },
-  "Hooktail's Castle Up Arrow Room: Up Arrow": {
-    "and": [
-      {
-        "or": [
-          {
-            "has": "Yoshi"
-          },
-          {
-            "has": "Plane Mode"
-          }
-        ]
-      },
-      {
-        "has": "Koops"
-      },
-      {
-        "has": "Castle Key",
-        "count": 1
-      },
-      {
-        "has": "Bobbery"
       }
     ]
   },

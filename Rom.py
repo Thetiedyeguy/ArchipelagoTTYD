@@ -120,6 +120,8 @@ class TTYDPatchExtension(APPatchExtension):
         caller.patcher.dol.data.write(seed_options["star_shuffle"].to_bytes(1, "big"))
         caller.patcher.dol.data.seek(0x24B)
         caller.patcher.dol.data.write(seed_options["dazzle_rewards"].to_bytes(1, "big"))
+        caller.patcher.dol.data.seek(0x24C)
+        caller.patcher.dol.data.write(seed_options["loading_zone"].to_bytes(1, "big"))
         caller.patcher.dol.data.seek(0x260)
         caller.patcher.dol.data.write(seed_options["yoshi_name"].encode("utf-8")[0:8] + b"\x00")
         caller.patcher.dol.data.seek(0xEB6B6)

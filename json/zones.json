@@ -85,7 +85,7 @@
         "name": "Rogueport Blimp - Train",
         "map": "gor_04",
         "bero": "n_bero",
-        "target": "Vanilla",
+        "target": "",
         "region": "blimp",
         "rules": {
             "has": "Train Ticket"
@@ -95,7 +95,7 @@
         "name": "Rogueport Blimp - Blimp",
         "map": "gor_04",
         "bero": "hikousen_return",
-        "target": "Vanilla",
+        "target": "Glitzville Main Square - Blimp",
         "region": "blimp",
         "rules": {
             "has": "Blimp Ticket"
@@ -220,7 +220,7 @@
         "name": "Rogueport Sewers Blooper - Pipe",
         "map": "tik_02",
         "bero": "dokan",
-        "target": "Vanilla",
+        "target": "Petal Meadows Entrance - Entrance Pipe",
         "region": "blooper_pipe",
         "rules": null
     },
@@ -236,7 +236,7 @@
         "name": "Rogueport Sewers Town - Teleporter",
         "map": "tik_00",
         "bero": null,
-        "target": "Vanilla",
+        "target": "",
         "region": "sewer_town_teleporter",
         "rules": null
     },
@@ -268,7 +268,7 @@
         "name": "Rogueport Sewers West - Fahr Outpost Pipe",
         "map": "tik_07",
         "bero": "dokan_1",
-        "target": "Vanilla",
+        "target": "",
         "region": "sewer_west_fahr",
         "rules": null
     },
@@ -311,7 +311,7 @@
         "name": "Rogueport Sewers Twilight - Pipe",
         "map": "tik_08",
         "bero": "dokan",
-        "target": "Vanilla",
+        "target": "",
         "region": "rogue_twilight",
         "rules": null
     },
@@ -360,6 +360,7 @@
         "map": "tik_15",
         "bero": "w_bero_1",
         "target": "Rogueport Sewers East Warp Room - East Canal Door",
+        "is_vanilla": true,
         "region": "sewer_east_enemy_canal",
         "rules": null
     },
@@ -368,6 +369,7 @@
         "map": "tik_15",
         "bero": "e_bero_1",
         "target": "Rogueport Sewers Spania Room",
+        "is_vanilla": true,
         "region": "sewer_east_enemy_canal",
         "rules": null
     },
@@ -391,7 +393,7 @@
         "name": "Rogueport Sewers East Warp Room - CH One Warp",
         "map": "tik_16",
         "bero": "dokan_2",
-        "target": "Vanilla",
+        "target": "Petalburg Eastside - Warp Pipe",
         "region": "sewer_east_warp_top",
         "rules": null
     },
@@ -399,7 +401,7 @@
         "name": "Rogueport Sewers East Warp Room - CH Two Warp",
         "map": "tik_16",
         "bero": "dokan_1",
-        "target": "Vanilla",
+        "target": "Boggly Woods Outside Great Tree - Pipe",
         "region": "sewer_east_warp_top",
         "rules": null
     },
@@ -408,6 +410,7 @@
         "map": "tik_16",
         "bero": "e_bero_1",
         "target": "Rogueport Sewers East Enemy Hall - West Canal Door",
+        "is_vanilla": true,
         "region": "sewer_east_warp_canal",
         "rules": null
     },
@@ -416,6 +419,7 @@
         "map": "tik_16",
         "bero": "w_bero_1",
         "target": "Rogueport Sewers West Warp Room - East Canal Door",
+        "is_vanilla": true,
         "region": "sewer_east_warp_canal",
         "rules": null
     },
@@ -439,7 +443,7 @@
         "name": "Rogueport Sewers West Warp Room - CH Five Warp",
         "map": "tik_17",
         "bero": "dokan_2",
-        "target": "Vanilla",
+        "target": "",
         "region": "sewer_west_warp_top",
         "rules": null
     },
@@ -447,7 +451,7 @@
         "name": "Rogueport Sewers West Warp Room - CH Six Warp",
         "map": "tik_17",
         "bero": "dokan_1",
-        "target": "Vanilla",
+        "target": "",
         "region": "sewer_west_warp_top",
         "rules": null
     },
@@ -456,6 +460,7 @@
         "map": "tik_17",
         "bero": "e_bero_1",
         "target": "Rogueport Sewers East Warp Room - West Canal Door",
+        "is_vanilla": true,
         "region": "sewer_west_warp_canal",
         "rules": null
     },
@@ -464,6 +469,7 @@
         "map": "tik_17",
         "bero": "w_bero_1",
         "target": "Rogueport Sewers West Enemy Hall - Canal Door",
+        "is_vanilla": true,
         "region": "sewer_west_warp_canal",
         "rules": null
     },
@@ -488,6 +494,7 @@
         "map": "tik_18",
         "bero": "e_bero_1",
         "target": "Rogueport Sewers West Warp Room - West Canal Door",
+        "is_vanilla": true,
         "region": "sewer_west_enemy_flurrie",
         "rules": {
             "has": "Boat Mode"
@@ -498,6 +505,7 @@
         "map": "tik_20",
         "bero": "w_bero",
         "target": "Rogueport Sewers East Enemy Hall - East Canal Door",
+        "is_vanilla": true,
         "region": "spania",
         "rules": null
     },
@@ -525,12 +533,12 @@
         "target": "Rogueport Sewers Pit Room - Door",
         "region": "ttyd",
         "rules": {
-            "and":[
+            "and": [
                 {
-                    "has":"Paper Mode"
+                    "has": "Paper Mode"
                 },
                 {
-                    "has":"Plane Mode"
+                    "has": "Plane Mode"
                 }
             ]
         }
@@ -550,12 +558,12 @@
         "target": "TTYD - Entrance",
         "region": "rogue_black_key",
         "rules": {
-            "or":[
+            "or": [
                 {
-                    "has":"Plane Mode"
+                    "has": "Plane Mode"
                 },
                 {
-                    "function":"super_hammer"
+                    "function": "super_hammer"
                 }
             ]
         }
@@ -604,8 +612,1342 @@
         "name": "Rogueport Sewers Puni Room - CH 2 Pipe",
         "map": "tik_03",
         "bero": "dokan",
-        "target": "Vanilla",
+        "target": "Boggly Woods Entrance - Pipe",
         "region": "sewer_puni_exit",
         "rules": null
+    },
+    {
+        "name": "Petal Meadows Entrance - Entrance Pipe",
+        "map": "hei_00",
+        "bero": "dokan_2",
+        "target": "Rogueport Sewers Blooper - Pipe",
+        "rules": null,
+        "region": "petal_meadow_entrance"
+    },
+    {
+        "name": "filler",
+        "map": "<null>",
+        "bero": "<null>",
+        "target": "filler",
+        "rules": null,
+        "region": "rogue_center"
+    },
+    {
+        "name": "Petal Meadows Field - West",
+        "map": "hei_13",
+        "bero": "w_bero",
+        "target": "Petal Meadows Entrance - East",
+        "rules": null,
+        "region": "petal_meadow_field"
+    },
+    {
+        "name": "Exit Combat",
+        "map": "8ME01",
+        "bero": "<null>",
+        "target": "filler",
+        "rules": null,
+        "region": "rogue_center"
+    },
+    {
+        "name": "Petal Meadows Entrance - East",
+        "map": "hei_00",
+        "bero": "e_bero",
+        "target": "Petal Meadows Field - West",
+        "rules": null,
+        "region": "petal_meadow_entrance"
+    },
+    {
+        "name": "Petal Meadows Bridge Room - West",
+        "map": "hei_01",
+        "bero": "w_bero",
+        "target": "Petal Meadows Field - East",
+        "rules": null,
+        "region": "petal_meadow_bridge_west"
+    },
+    {
+        "name": "Petal Meadows Field - East",
+        "map": "hei_13",
+        "bero": "e_bero",
+        "target": "Petal Meadows Bridge Room - West",
+        "rules": null,
+        "region": "petal_meadow_field"
+    },
+    {
+        "name": "Petalburg Westside - West",
+        "map": "nok_00",
+        "bero": "w_bero",
+        "target": "Petal Meadows Bridge Room - East",
+        "rules": null,
+        "region": "petalburg_west"
+    },
+    {
+        "name": "Petal Meadows Bridge Room - East",
+        "map": "hei_01",
+        "bero": "e_bero",
+        "target": "Petalburg Westside - West",
+        "rules": null,
+        "region": "petal_meadow_bridge_east"
+    },
+    {
+        "name": "Petalburg Eastside - West",
+        "map": "nok_01",
+        "bero": "w_bero",
+        "target": "Petalburg Westside - East",
+        "rules": null,
+        "region": "petalburg_east"
+    },
+    {
+        "name": "Petalburg Westside - East",
+        "map": "nok_00",
+        "bero": "e_bero",
+        "target": "Petalburg Eastside - West",
+        "rules": null,
+        "region": "petalburg_west"
+    },
+    {
+        "name": "Petalburg Eastside - Warp Pipe",
+        "map": "nok_01",
+        "bero": "dokan_1",
+        "target": "Rogueport Sewers East Warp Room - CH One Warp",
+        "rules": {
+            "and": [
+                {
+                    "can_reach": "Rogueport Sewers East Pipe Room: Shine Sprite"
+                },
+                {
+                    "function": "super_boots"
+                }
+            ]
+        },
+        "region": "petalburg_east"
+    },
+    {
+        "name": "Petal Meadows First Fort Exterior - West",
+        "map": "hei_02",
+        "bero": "w_bero",
+        "target": "Petalburg Eastside - East",
+        "rules": null,
+        "region": "petal_fort_one_exterior"
+    },
+    {
+        "name": "Petalburg Eastside - East",
+        "map": "nok_01",
+        "bero": "e_bero",
+        "target": "Petal Meadows First Fort Exterior - West",
+        "rules": null,
+        "region": "petalburg_east"
+    },
+    {
+        "name": "Petal Meadows First Fort - West",
+        "map": "hei_03",
+        "bero": "w_bero",
+        "target": "Petal Meadows First Fort Exterior - East",
+        "rules": null,
+        "region": "petal_fort_one"
+    },
+    {
+        "name": "Petal Meadows First Fort Exterior - East",
+        "map": "hei_02",
+        "bero": "e_bero",
+        "target": "Petal Meadows First Fort - West",
+        "rules": null,
+        "region": "petal_fort_one_exterior"
+    },
+    {
+        "name": "Petal Meadows Second Fort Exterior - West",
+        "map": "hei_04",
+        "bero": "w_bero",
+        "target": "Petal Meadows First Fort - East",
+        "rules": null,
+        "region": "petal_fort_two_exterior"
+    },
+    {
+        "name": "Petal Meadows First Fort - East",
+        "map": "hei_03",
+        "bero": "e_bero",
+        "target": "Petal Meadows Second Fort Exterior - West",
+        "rules": null,
+        "region": "petal_fort_one"
+    },
+    {
+        "name": "Petal Meadows Second Fort Exterior - East",
+        "map": "hei_04",
+        "bero": "e_bero",
+        "target": "Petal Meadows Second Fort - West",
+        "rules": null,
+        "region": "petal_fort_two_exterior"
+    },
+    {
+        "name": "Petal Meadows Second Fort - West",
+        "map": "hei_05",
+        "bero": "w_bero",
+        "target": "Petal Meadows Second Fort Exterior - East",
+        "rules": null,
+        "region": "petal_fort_two"
+    },
+    {
+        "name": "Petal Meadows Third Fort Exterior - West",
+        "map": "hei_06",
+        "bero": "w_bero",
+        "target": "Petal Meadows Second Fort - East",
+        "rules": null,
+        "region": "petal_fort_three_exterior"
+    },
+    {
+        "name": "Petal Meadows Second Fort - East",
+        "map": "hei_05",
+        "bero": "e_bero",
+        "target": "Petal Meadows Third Fort Exterior - West",
+        "rules": null,
+        "region": "petal_fort_two"
+    },
+    {
+        "name": "Petal Meadows Third Fort - East",
+        "map": "hei_07",
+        "bero": "w_bero",
+        "target": "Petal Meadows Third Fort Exterior - East",
+        "rules": null,
+        "region": "petal_fort_three"
+    },
+    {
+        "name": "Petal Meadows Third Fort Exterior - East",
+        "map": "hei_06",
+        "bero": "e_bero",
+        "target": "Petal Meadows Third Fort - East",
+        "rules": null,
+        "region": "petal_fort_three_exterior"
+    },
+    {
+        "name": "Petal Meadows Sewers Entrance - Entrance Pipe",
+        "map": "hei_10",
+        "bero": "dokan",
+        "target": "Petal Meadows Third Fort - Pipe",
+        "rules": null,
+        "region": "petal_sewers_entrance"
+    },
+    {
+        "name": "Petal Meadows Third Fort - Pipe",
+        "map": "hei_07",
+        "bero": "dokan",
+        "target": "Petal Meadows Sewers Entrance - Entrance Pipe",
+        "rules": null,
+        "region": "petal_fort_three"
+    },
+    {
+        "name": "Petal Meadows Sewers East Enemy Hall - West",
+        "map": "hei_11",
+        "bero": "w_bero",
+        "target": "Petal Meadows Sewers Entrance - East",
+        "rules": null,
+        "region": "petal_sewers_east_hall"
+    },
+    {
+        "name": "Petal Meadows Sewers Entrance - East",
+        "map": "hei_10",
+        "bero": "e_bero",
+        "target": "Petal Meadows Sewers East Enemy Hall - West",
+        "rules": null,
+        "region": "petal_sewers_entrance"
+    },
+    {
+        "name": "Petal Meadows Sewers East Key Room - West",
+        "map": "hei_12",
+        "bero": "w_bero",
+        "target": "Petal Meadows Sewers East Enemy Hall - East",
+        "rules": null,
+        "region": "petal_sewers_east_key"
+    },
+    {
+        "name": "Petal Meadows Sewers East Enemy Hall - East",
+        "map": "hei_11",
+        "bero": "e_bero",
+        "target": "Petal Meadows Sewers East Key Room - West",
+        "rules": null,
+        "region": "petal_sewers_east_hall"
+    },
+    {
+        "name": "Petal Meadows Sewers West Enemy Hall - East",
+        "map": "hei_09",
+        "bero": "e_bero",
+        "target": "Petal Meadows Sewers Entrance - West",
+        "rules": null,
+        "region": "petal_sewers_west_hall"
+    },
+    {
+        "name": "Petal Meadows Sewers Entrance - West",
+        "map": "hei_10",
+        "bero": "w_bero",
+        "target": "Petal Meadows Sewers West Enemy Hall - East",
+        "rules": null,
+        "region": "petal_sewers_entrance"
+    },
+    {
+        "name": "Petal Meadows Sewers West Key Room - East",
+        "map": "hei_08",
+        "bero": "e_bero",
+        "target": "Petal  Meadows Sewers West Enemy Hall - West",
+        "rules": null,
+        "region": "petal_sewers_west_key"
+    },
+    {
+        "name": "Petal  Meadows Sewers West Enemy Hall - West",
+        "map": "hei_09",
+        "bero": "w_bero",
+        "target": "Petal Meadows Sewers West Key Room - East",
+        "rules": null,
+        "region": "petal_sewers_west_hall"
+    },
+    {
+        "name": "Hooktail's Castle Vestibule - West",
+        "map": "gon_00",
+        "bero": "w_bero",
+        "target": "Petal Meadows Entrance - Hooktail's Castle Pipe",
+        "rules": null,
+        "region": "hooktail_vestibule"
+    },
+    {
+        "name": "Petal Meadows Entrance - Hooktail's Castle Pipe",
+        "map": "hei_00",
+        "bero": "a_usiro_bero",
+        "target": "Hooktail's Castle Vestibule - West",
+        "rules": {
+            "and": [
+                {
+                    "has": "Moon Stone"
+                },
+                {
+                    "has": "Sun Stone"
+                },
+                {
+                    "or": [
+                        {
+                            "has": "Koops"
+                        },
+                        {
+                            "has": "Bobbery"
+                        }
+                    ]
+                }
+            ]
+        },
+        "region": "petal_meadow_entrance"
+    },
+    {
+        "name": "Hooktail's Castle Drawbridge - West Bottom",
+        "map": "gon_01",
+        "bero": "w_bero_1",
+        "target": "Hooktail's Castle Vestibule - East",
+        "rules": null,
+        "region": "hooktail_drawbridge_bottom"
+    },
+    {
+        "name": "Hooktail's Castle Vestibule - East",
+        "map": "gon_00",
+        "bero": "e_bero_1",
+        "target": "Hooktail's Castle Drawbridge - West Bottom",
+        "rules": null,
+        "region": "hooktail_vestibule"
+    },
+    {
+        "name": "Hooktail's Castle Drawbridge - West Top",
+        "map": "gon_01",
+        "bero": "w_bero_2",
+        "target": "Hooktail's Castle Vestibule - East Top",
+        "rules": null,
+        "region": "hooktail_drawbridge_top_east"
+    },
+    {
+        "name": "Hooktail's Castle Vestibule - East Top",
+        "map": "gon_00",
+        "bero": "e_bero_3",
+        "target": "Hooktail's Castle Drawbridge - West Top",
+        "rules": null,
+        "region": "hooktail_vestibule"
+    },
+    {
+        "name": "Hooktail's Castle Entrance - West Bottom",
+        "map": "gon_02",
+        "bero": "w_bero",
+        "target": "Hooktail's Castle Drawbridge - East Bottom",
+        "rules": null,
+        "region": "hooktail_entrance"
+    },
+    {
+        "name": "Hooktail's Castle Drawbridge - East Bottom",
+        "map": "gon_01",
+        "bero": "e_bero",
+        "target": "Hooktail's Castle Entrance - West Bottom",
+        "rules": null,
+        "region": "hooktail_drawbridge_east_bottom"
+    },
+    {
+        "name": "Hooktail's Castle Drawbridge East Top",
+        "map": "gon_01",
+        "bero": "e_bero_2",
+        "target": "Hooktail's Castle Entrance West Top",
+        "rules": null,
+        "region": "hooktail_drawbridge_east_top"
+    },
+    {
+        "name": "Hooktail's Castle Entrance West Top",
+        "map": "gon_02",
+        "bero": "w_bero2",
+        "target": "Hooktail's Castle Drawbridge East Top",
+        "rules": null,
+        "region": "hooktail_entrance"
+    },
+    {
+        "name": "Hooktail's Castle Red Bones Room - West",
+        "map": "gon_03",
+        "bero": "w_bero",
+        "target": "Hooktail's Castle Entrance - East",
+        "rules": null,
+        "region": "hooktail_red_bones"
+    },
+    {
+        "name": "Hooktail's Castle Entrance - East",
+        "map": "gon_02",
+        "bero": "e_bero",
+        "target": "Hooktail's Castle Red Bones Room - West",
+        "rules": null,
+        "region": "hooktail_entrance"
+    },
+    {
+        "name": "Hooktail's Castle Stair Switch Room - West",
+        "map": "gon_04",
+        "bero": "w_bero_1",
+        "target": "Hooktail's Castle Red Bones Room - East",
+        "rules": null,
+        "region": "hooktail_stair_switch"
+    },
+    {
+        "name": "Hooktail's Castle Red Bones Room - East",
+        "map": "gon_03",
+        "bero": "e_bero",
+        "target": "Hooktail's Castle Stair Switch Room - West",
+        "rules": null,
+        "region": "hooktail_stair_switch"
+    },
+    {
+        "name": "Hooktail's Castle Nook - West",
+        "map": "gon_05",
+        "bero": "w_bero_2",
+        "target": "Hooktail's Castle Stair Switch Room - East Top",
+        "rules": null,
+        "region": "hooktail_nook"
+    },
+    {
+        "name": "Hooktail's Castle Stair Switch Room - East Top",
+        "map": "gon_04",
+        "bero": "e_bero_2",
+        "target": "Hooktail's Castle Nook - West",
+        "rules": {
+            "has": "Koops"
+        },
+        "region": "hooktail_stair_switch"
+    },
+    {
+        "name": "Hooktail's Castle Stair Central Staircase - West",
+        "map": "gon_05",
+        "bero": "w_bero_1",
+        "target": "Hooktail's Castle Stair Switch Room - East Bottom",
+        "rules": null,
+        "region": "hooktail_stair_central"
+    },
+    {
+        "name": "Hooktail's Castle Stair Switch Room - East Bottom",
+        "map": "gon_04",
+        "bero": "e_bero_1",
+        "target": "Hooktail's Castle Stair Central Staircase - West",
+        "rules": {
+            "has": "Castle Key"
+        },
+        "region": "hooktail_stair_switch"
+    },
+    {
+        "name": "Hooktail's Castle Prison - East",
+        "map": "gon_06",
+        "bero": "w_bero",
+        "target": "Hooktail's Castle Central Staircase - East",
+        "rules": {
+            "has": "Paper Mode"
+        },
+        "region": "hooktail_prison"
+    },
+    {
+        "name": "Hooktail's Castle Central Staircase - East",
+        "map": "gon_05",
+        "bero": "e_bero",
+        "target": "Hooktail's Castle Prison - East",
+        "rules": null,
+        "region": "hooktail_stair_central"
+    },
+    {
+        "name": "Hooktail's Castle Spikes Room - West",
+        "map": "gon_07",
+        "bero": "w_bero",
+        "target": "Hooktail's Castle Prison - East",
+        "rules": null,
+        "region": "hooktail_spikes"
+    },
+    {
+        "name": "Hooktail's Castle Prison - East",
+        "map": "gon_06",
+        "bero": "e_bero",
+        "target": "Hooktail's Castle Spikes Room - West",
+        "rules": {
+            "or": [
+                {
+                    "has": "Koops"
+                },
+                {
+                    "has": "Paper Mode"
+                }
+            ]
+        },
+        "region": "hooktail_prison"
+    },
+    {
+        "name": "Hooktail's Castle Up Arrow Room - West",
+        "map": "gon_13",
+        "bero": "w_bero",
+        "target": "Hooktail's Castle Spikes Room - East",
+        "rules": null,
+        "region": "hooktail_up_arrow"
+    },
+    {
+        "name": "Hooktail's Castle Spikes Room - East",
+        "map": "gon_07",
+        "bero": "e_bero",
+        "target": "Hooktail's Castle Up Arrow Room - West",
+        "rules": {
+            "has": "Bobbery"
+        },
+        "region": "hooktail_spikes"
+    },
+    {
+        "name": "Hooktail's Castle Stair Switch Room Upper Level - East",
+        "map": "gon_04",
+        "bero": "e_bero_3",
+        "target": "Hooktail's Castle Central Staircase - West Top",
+        "rules": {
+            "has": "koops"
+        },
+        "region": "hooktail_stair_switch_upper"
+    },
+    {
+        "name": "Hooktail's Castle Central Staircase - West Top",
+        "map": "gon_05",
+        "bero": "w_bero_3",
+        "target": "Hooktail's Castle Stair Switch Room Upper Level - East",
+        "rules": {
+            "or": [
+                {
+                    "has": "Koops"
+                },
+                {
+                    "has": "Bobbery"
+                }
+            ]
+        },
+        "region": "hooktail_stair_central"
+    },
+    {
+        "name": "Hooktail's Castle Life Shroom Room - East Bottom",
+        "map": "gon_08",
+        "bero": "e_bero_1",
+        "target": "Hooktail's Castle Stair Switch Room Upper Level - West",
+        "rules": null,
+        "region": "hooktail_life_shroom"
+    },
+    {
+        "name": "Hooktail's Castle Stair Switch Room Upper Level - West",
+        "map": "gon_04",
+        "bero": "w_bero_2",
+        "target": "Hooktail's Castle Life Shroom Room - East Bottom",
+        "rules": {
+            "has": "Koops"
+        },
+        "region": "hooktail_stair_switch_upper"
+    },
+    {
+        "name": "Hooktail's Castle Storeroom - East",
+        "map": "gon_12",
+        "bero": "e_bero",
+        "target": "Hooktail's Castle Life Shroom Room - West",
+        "rules": null,
+        "region": "hooktail_storeroom"
+    },
+    {
+        "name": "Hooktail's Castle Life Shroom Room - West",
+        "map": "gon_08",
+        "bero": "w_bero",
+        "target": "Hooktail's Castle Storeroom - East",
+        "rules": {
+            "or": [
+                {
+                    "has": "Koops"
+                },
+                {
+                    "has": "Yoshi"
+                },
+                {
+                    "has": "Bobbery"
+                }
+            ]
+        },
+        "region": "hooktail_life_shroom_upper"
+    },
+    {
+        "name": "Hooktail's Castle Plane Rafters Room - West",
+        "map": "gon_09",
+        "bero": "w_bero",
+        "target": "Hooktai's Castle Life Shroom Room - East Top",
+        "rules": null,
+        "region": "hooktail_plane_rafter"
+    },
+    {
+        "name": "Hooktai's Castle Life Shroom Room - East Top",
+        "map": "gon_08",
+        "bero": "e_bero_2",
+        "target": "Hooktail's Castle Plane Rafters Room - West",
+        "rules": {
+            "and": [
+                {
+                    "has": "Castle Key"
+                },
+                {
+                    "or": [
+                        {
+                            "has": "Koops"
+                        },
+                        {
+                            "has": "Bobbery"
+                        },
+                        {
+                            "has": "Yoshi"
+                        }
+                    ]
+                }
+            ]
+        },
+        "region": "hooktail_life_shroom_upper"
+    },
+    {
+        "name": "Hooktail's Castle Central Staircase Upper Level - West Bottom",
+        "map": "gon_05",
+        "bero": "w_bero_4",
+        "target": "Hooktail's Castle Plane Rafters Room - East",
+        "rules": null,
+        "region": "hooktail_stair_central_upper"
+    },
+    {
+        "name": "Hooktail's Castle Plane Rafters Room - East",
+        "map": "gon_09",
+        "bero": "e_bero",
+        "target": "Hooktail's Castle Central Staircase Upper Level - West Bottom",
+        "rules": {
+            "and": [
+                {
+                    "has": "Plane Mode"
+                },
+                {
+                    "or": [
+                        {
+                            "has": "Koops"
+                        },
+                        {
+                            "has": "Bobbery"
+                        }
+                    ]
+                }
+            ]
+        },
+        "region": "hooktail_plane_rafter"
+    },
+    {
+        "name": "Hooktail's Castle Hooktail's Room Exterior - East",
+        "map": "gon_10",
+        "bero": "e_bero",
+        "target": "Hooktail's Castle Central Staircase Upper Level - West Top",
+        "rules": null,
+        "region": "hooktail_room_exterior"
+    },
+    {
+        "name": "Hooktail's Castle Central Staircase Upper Level - West Top",
+        "map": "gon_05",
+        "bero": "w_bero_5",
+        "target": "Hooktail's Castle Hooktail's Room Exterior - East",
+        "rules": {
+            "has": "Castle Key"
+        },
+        "region": "hooktail_stair_central_upper"
+    },
+    {
+        "name": "Hooktail's Castle Hooktail's Room - West",
+        "map": "gon_11",
+        "bero": "w_bero",
+        "target": "Hooktail's Castle Hooktail's Room Exterior - West",
+        "rules": null,
+        "region": "hooktail_room"
+    },
+    {
+        "name": "Hooktail's Castle Hooktail's Room Exterior - West",
+        "map": "gon_10",
+        "bero": "w_bero",
+        "target": "Hooktail's Castle Hooktail's Room - West",
+        "rules": null,
+        "region": "hooktail_room_exterior"
+    },
+    {
+        "name": "Boggly Woods Entrance - Pipe",
+        "map": "win_06",
+        "bero": "dokan1",
+        "target": "Rogueport Sewers Puni Room - CH 2 Pipe",
+        "rules": null,
+        "region": "boggly_entrance"
+    },
+    {
+        "name": "Boggly Woods Shadow Sirens Room - West",
+        "map": "win_00",
+        "bero": "w_bero",
+        "target": "Boggly Woods Entrance - East",
+        "rules": null,
+        "region": "boggly_sirens"
+    },
+    {
+        "name": "Boggly Woods Entrance - East",
+        "map": "win_06",
+        "bero": "e_bero",
+        "target": "Boggly Woods Shadow Sirens Room - West",
+        "rules": null,
+        "region": "boggly_entrance"
+    },
+    {
+        "name": "Boggly Woods Tree View - West",
+        "map": "win_01",
+        "bero": "w_bero",
+        "target": "Boggly Woods Shadow Sirens Room - East",
+        "rules": null,
+        "region": "boggly_tree_view"
+    },
+    {
+        "name": "Boggly Woods Shadow Sirens Room - East",
+        "map": "win_00",
+        "bero": "e_bero",
+        "target": "Boggly Woods Tree View - West",
+        "rules": null,
+        "region": "boggly_sirens"
+    },
+    {
+        "name": "Boggly Woods Plane Panel Room - West",
+        "map": "win_02",
+        "bero": "w_bero",
+        "target": "Boggly Woods Tree View - East",
+        "rules": null,
+        "region": "boggly_plane_panel"
+    },
+    {
+        "name": "Boggly Woods Tree View - East",
+        "map": "win_01",
+        "bero": "e_bero",
+        "target": "Boggly Woods Plane Panel Room - West",
+        "rules": null,
+        "region": "boggly_tree_view"
+    },
+    {
+        "name": "Boggly Woods Outside Flurrie's House - West",
+        "map": "win_03",
+        "bero": "w_bero",
+        "target": "Boggly Woods Plane Panel Room - East",
+        "rules": null,
+        "region": "boggly_flurrie_outside"
+    },
+    {
+        "name": "load game",
+        "map": "dmo_00",
+        "bero": "<null>",
+        "target": "filler",
+        "rules": null,
+        "region": "rogue_center"
+    },
+    {
+        "name": "load title screen",
+        "map": "title",
+        "bero": "<null>",
+        "target": "load game",
+        "rules": null,
+        "region": "rogue_center"
+    },
+    {
+        "name": "load prologue",
+        "map": "aaa_00",
+        "bero": "prologue",
+        "target": "load title screen",
+        "rules": null,
+        "region": "rogue_center"
+    },
+    {
+        "name": "Boggly Woods Plane Panel Room - East",
+        "map": "win_02",
+        "bero": "e_bero",
+        "target": "Boggly Woods Outside Flurrie's House - West",
+        "rules": null,
+        "region": "boggly_plane_panel_upper"
+    },
+    {
+        "name": "Boggly Woods Flurrie's House - West",
+        "map": "win_04",
+        "bero": "w_bero",
+        "target": "Boggly Woods Outside Flurrie's House - Pipe",
+        "rules": null,
+        "region": "boggly_flurrie"
+    },
+    {
+        "name": "Boggly Woods Outside Flurrie's House - Pipe",
+        "map": "win_03",
+        "bero": "n_bero",
+        "target": "Boggly Woods Flurrie's House - West",
+        "rules": null,
+        "region": "boggly_flurrie_outside_grass"
+    },
+    {
+        "name": "Boggly Woods Flurrie's House Backroom - West",
+        "map": "win_05",
+        "bero": "w_bero",
+        "target": "Boggly Woods Flurrie's House - East",
+        "rules": null,
+        "region": "boggly_flurrie_backroom"
+    },
+    {
+        "name": "Boggly Woods Flurrie's House - East",
+        "map": "win_04",
+        "bero": "e_bero",
+        "target": "Boggly Woods Flurrie's House Backroom - West",
+        "rules": {
+            "has": "Necklace"
+        },
+        "region": "boggly_flurrie"
+    },
+    {
+        "name": "Boggly Woods Outside Great Tree - West",
+        "map": "mri_00",
+        "bero": "w_bero",
+        "target": "Boggly Woods Tree View - Pipe",
+        "rules": null,
+        "region": "boggly_outside_tree"
+    },
+    {
+        "name": "Boggly Woods Tree View - Pipe",
+        "map": "win_01",
+        "bero": "n_bero",
+        "target": "Boggly Woods Outside Great Tree - West",
+        "rules": null,
+        "region": "boggly_tree_view"
+    },
+    {
+        "name": "Boggly Woods Outside Great Tree - Pipe",
+        "map": "mri_00",
+        "bero": "dokan_1",
+        "target": "Rogueport Sewers East Warp Room - CH Two Warp",
+        "rules": {
+            "and": [
+                {
+                    "can_reach": "Rogueport Sewers East Pipe Room: Shine Sprite"
+                },
+                {
+                    "function": "super_boots"
+                }
+            ]
+        },
+        "region": "boggly_outside_tree"
+    },
+    {
+        "name": "Great Tree Entrance - West",
+        "map": "mri_01",
+        "bero": "w_bero",
+        "target": "Boggly Woods Outside Great Tree - Great Tree Door",
+        "rules": null,
+        "region": "tree_entrance"
+    },
+    {
+        "name": "Boggly Woods Outside Great Tree - Great Tree Door",
+        "map": "mri_00",
+        "bero": "ne_bero",
+        "target": "Great Tree Entrance - West",
+        "rules": {
+            "has": "Flurrie"
+        },
+        "region": "boggly_outside_tree"
+    },
+    {
+        "name": "Great Tree 10-Puni Pedistal - Pipe Down",
+        "map": "mri_02",
+        "bero": "dokan1",
+        "target": "Great Tree Entrance - Pipe",
+        "rules": null,
+        "region": "tree_ten_puni"
+    },
+    {
+        "name": "Great Tree Entrance - Pipe",
+        "map": "mri_01",
+        "bero": "dokan",
+        "target": "Great Tree 10-Puni Pedistal - Pipe Down",
+        "rules": null,
+        "region": "tree_entrance"
+    },
+    {
+        "name": "Great Tree Upper Duplex - Pipe Bottom",
+        "map": "mri_20",
+        "bero": "dokan2",
+        "target": "Great Tree 10-Puni Pedistal - Pipe Up",
+        "rules": null,
+        "region": "tree_upper_duplex"
+    },
+    {
+        "name": "Great Tree 10-Puni Pedistal - Pipe Up",
+        "map": "mri_02",
+        "bero": "dokan3",
+        "target": "Great Tree Upper Duplex - Pipe Bottom",
+        "rules": null,
+        "region": "tree_ten_puni"
+    },
+    {
+        "name": "Great Tree Red/Blue Cages - Pipe",
+        "map": "mri_03",
+        "bero": "dokan",
+        "target": "Great Tree Upper Duplex - Pipe Up",
+        "rules": null,
+        "region": "tree_red_blue_cage"
+    },
+    {
+        "name": "Great Tree Upper Duplex - Pipe Up",
+        "map": "mri_20",
+        "bero": "dokan1",
+        "target": "Great Tree Red/Blue Cages - Pipe",
+        "rules": null,
+        "region": "tree_upper_duplex"
+    },
+    {
+        "name": "Great Tree Red Key Room - East",
+        "map": "mri_04",
+        "bero": "e_bero",
+        "target": "Great Tree Red/Blue Cages - West",
+        "rules": null,
+        "region": "tree_red_key"
+    },
+    {
+        "name": "Great Tree Red/Blue Cages - West",
+        "map": "mri_03",
+        "bero": "w_bero",
+        "target": "Great Tree Red Key Room - East",
+        "rules": null,
+        "region": "tree_red_blue_cage"
+    },
+    {
+        "name": "Great Tree Bubble Room - Pipe Up",
+        "map": "mri_05",
+        "bero": "dokan3",
+        "target": "Great Tree 10-Puni Pedistal - Pedistal Pipe",
+        "rules": null,
+        "region": "tree_bubble"
+    },
+    {
+        "name": "Great Tree 10-Puni Pedistal - Pedistal Pipe",
+        "map": "mri_02",
+        "bero": "dokan2",
+        "target": "Great Tree Bubble Room - Pipe Up",
+        "rules": {
+            "and": [
+                {
+                    "has": "Puni Orb"
+                },
+                {
+                    "function": "key_any"
+                }
+            ]
+        },
+        "region": "tree_ten_puni"
+    },
+    {
+        "name": "Great Tree Entrance - Locked Door",
+        "map": "mri_01",
+        "bero": "e_bero",
+        "target": "Great Tree Bubble Room - Locked Door",
+        "rules": {
+            "can_reach": "Great Tree Bubble Room: Shine Sprite"
+        },
+        "region": "tree_entrance"
+    },
+    {
+        "name": "Great Tree Bubble Room - Locked Door",
+        "map": "mri_05",
+        "bero": "w_bero",
+        "target": "Great Tree Entrance - Locked Door",
+        "rules": null,
+        "region": "tree_bubble"
+    },
+    {
+        "name": "Great Tree Middle Duplex - Pipe Top",
+        "map": "mri_19",
+        "bero": "dokan1",
+        "target": "Great Tree Bubble Room - Pipe Bottom",
+        "rules": null,
+        "region": "tree_middle_duplex"
+    },
+    {
+        "name": "Great Tree Bubble Room - Pipe Bottom",
+        "map": "mri_05",
+        "bero": "dokan4",
+        "target": "Great Tree Middle Duplex - Pipe Top",
+        "rules": null,
+        "region": "tree_bubble"
+    },
+    {
+        "name": "Great Tree ZigZag Room - Pipe",
+        "map": "mri_06",
+        "bero": "dokan1",
+        "target": "Great Tree Middle Duplex - Pipe Bottom",
+        "rules": null,
+        "region": "tree_zigzag"
+    },
+    {
+        "name": "Great Tree Middle Duplex - Pipe Bottom",
+        "map": "mri_19",
+        "bero": "dokan2",
+        "target": "Great Tree ZigZag Room - Pipe",
+        "rules": null,
+        "region": "tree_middle_duplex"
+    },
+    {
+        "name": "Great Tree 10-Jabbies - West",
+        "map": "mri_08",
+        "bero": "w_bero",
+        "target": "Great Tree ZigZag Room - East",
+        "rules": null,
+        "region": "tree_ten_jabbie"
+    },
+    {
+        "name": "Great Tree ZigZag Room - East",
+        "map": "mri_06",
+        "bero": "e_bero02",
+        "target": "Great Tree 10-Jabbies - West",
+        "rules": null,
+        "region": "tree_zigzag"
+    },
+    {
+        "name": "Great Tree Blue Key Room - West",
+        "map": "mri_09",
+        "bero": "w_bero",
+        "target": "Great Tree 10-Jabbies - East",
+        "rules": null,
+        "region": "tree_blue_key"
+    },
+    {
+        "name": "Great Tree Super Boots Room - South",
+        "map": "mri_10",
+        "bero": "s_bero",
+        "target": "Great Tree Blue Key Room - North",
+        "rules": null,
+        "region": "tree_boots"
+    },
+    {
+        "name": "Great Tree Blue Key Room - North",
+        "map": "mri_09",
+        "bero": "n_bero",
+        "target": "Great Tree Super Boots Room - South",
+        "rules": null,
+        "region": "tree_blue_key"
+    },
+    {
+        "name": "Great Tree 10-Jabbies - East",
+        "map": "mri_08",
+        "bero": "e_bero",
+        "target": "Great Tree Blue Key Room - West",
+        "rules": {
+            "function": "key_any"
+        },
+        "region": "tree_ten_jabbie"
+    },
+    {
+        "name": "Great Tree Shop - East",
+        "map": "mri_07",
+        "bero": "e_bero",
+        "target": "Great Tree ZigZag Room - West Bottom",
+        "rules": null,
+        "region": "tree_shop"
+    },
+    {
+        "name": "Great Tree ZigZag Room - West Bottom",
+        "map": "mri_06",
+        "bero": "w_bero",
+        "target": "Great Tree Shop - East",
+        "rules": {
+            "has": "Flurrie"
+        },
+        "region": "tree_zigzag"
+    },
+    {
+        "name": "Great Tree 100-Jabbies - East",
+        "map": "mri_11",
+        "bero": "e_bero",
+        "target": "Great Tree ZigZag Room - West Top",
+        "rules": null,
+        "region": "tree_hundred_jabbie"
+    },
+    {
+        "name": "Great Tree ZigZag Room - West Top",
+        "map": "mri_06",
+        "bero": "w_bero02",
+        "target": "Great Tree 100-Jabbies - East",
+        "rules": null,
+        "region": "tree_zigzag"
+    },
+    {
+        "name": "Great Tree Large Trunk Room - East Top",
+        "map": "mri_12",
+        "bero": "e_bero",
+        "target": "Great Tree 100-Jabbies - West",
+        "rules": null,
+        "region": "tree_trunk"
+    },
+    {
+        "name": "Great Tree 100-Jabbies - West",
+        "map": "mri_11",
+        "bero": "w_bero",
+        "target": "Great Tree Large Trunk Room - East Top",
+        "rules": {
+            "function": "key_both"
+        },
+        "region": "tree_hundred_jabbie"
+    },
+    {
+        "name": "Great Tree Fake Pedestal - West",
+        "map": "mri_17",
+        "bero": "w_bero",
+        "target": "Great Tree Large Trunk Room - East Bottom",
+        "rules": null,
+        "region": "tree_fake_pedestal"
+    },
+    {
+        "name": "Great Tree Large Trunk Room - East Bottom",
+        "map": "mri_12",
+        "bero": "e_bero_2",
+        "target": "Great Tree Fake Pedestal - West",
+        "rules": null,
+        "region": "tree_trunk"
+    },
+    {
+        "name": "Great Tree Lower Duplex - Pipe Top",
+        "map": "mri_18",
+        "bero": "dokan1",
+        "target": "Great Tree Large Trunk Room - Pipe",
+        "rules": null,
+        "region": "tree_lower_duplex"
+    },
+    {
+        "name": "Great Tree Large Trunk Room - Pipe",
+        "map": "mri_12",
+        "bero": "dokan3",
+        "target": "Great Tree Lower Duplex - Pipe Top",
+        "rules": {
+            "function": "super_boots"
+        },
+        "region": "tree_trunk"
+    },
+    {
+        "name": "Great Tree Pool Room - Pipe Top",
+        "map": "mri_16",
+        "bero": "dokan2",
+        "target": "Great Tree Lower Duplex - Pipe Bottom",
+        "rules": null,
+        "region": "tree_pool"
+    },
+    {
+        "name": "Great Tree 100-Puni Pedestal - Pipe",
+        "map": "mri_13",
+        "bero": "dokan",
+        "target": "Great Tree Pool Room - Pipe Bottom",
+        "rules": null,
+        "region": "tree_hundred_puni"
+    },
+    {
+        "name": "Great Tree Pool Room - Pipe Bottom",
+        "map": "mri_16",
+        "bero": "dokan7",
+        "target": "Great Tree 100-Puni Pedestal - Pipe",
+        "rules": null,
+        "region": "tree_pool"
+    },
+    {
+        "name": "Great Tree Lower Duplex - Pipe Bottom",
+        "map": "mri_18",
+        "bero": "dokan2",
+        "target": "Great Tree Pool Room - Pipe Top",
+        "rules": null,
+        "region": "tree_lower_duplex"
+    },
+    {
+        "name": "Great Tree Emerald Star Room - West",
+        "map": "mri_14",
+        "bero": "w_bero",
+        "target": "Great Tree 100-Puni Pedestal - East",
+        "rules": null,
+        "region": "tree_star_room"
+    },
+    {
+        "name": "Great Tree 100-Puni Pedestal - East",
+        "map": "mri_13",
+        "bero": "e_bero",
+        "target": "Great Tree Emerald Star Room - West",
+        "rules": null,
+        "region": "tree_hundred_puni"
+    },
+    {
+        "name": "Great Tree Ambush Room - Pipe",
+        "map": "mri_15",
+        "bero": "dokan",
+        "target": "Great Tree Emerald Star Room - Pipe",
+        "rules": null,
+        "region": "tree_ambush"
+    },
+    {
+        "name": "Great Tree Emerald Star Room - Pipe",
+        "map": "mri_14",
+        "bero": "dokan",
+        "target": "Great Tree Ambush Room - Pipe",
+        "rules": {
+            "and": [
+                {
+                    "has": "Puni Orb"
+                },
+                {
+                    "function": "key_both"
+                }
+            ]
+        },
+        "region": "tree_star_room"
+    },
+    {
+        "name": "Great Tree ZigZag Room - Locked Door",
+        "map": "mri_06",
+        "bero": "e_bero",
+        "target": "Great Tree Ambush Room - Door",
+        "rules": {
+            "has": "null"
+        },
+        "region": "tree_zigzag"
+    },
+    {
+        "name": "Great Tree Ambush Room - Door",
+        "map": "mri_15",
+        "bero": "w_bero",
+        "target": "Great Tree ZigZag Room - Locked Door",
+        "rules": null,
+        "region": "tree_ambush"
+    },
+    {
+        "name": "filler",
+        "map": "tou_00",
+        "bero": "modoru",
+        "target": "filler",
+        "rules": null,
+        "region": "rogue_center"
+    },
+    {
+        "name": "filler",
+        "map": "tou_00",
+        "bero": "<null>",
+        "target": "filler",
+        "rules": null,
+        "region": "rogue_center"
+    },
+    {
+        "name": "Glitzville Main Square - Blimp",
+        "map": "tou_01",
+        "bero": "<null>",
+        "target": "Rogueport Blimp - Blimp",
+        "rules": null,
+        "region": "glitzville_main_square"
+    },
+    {
+        "name": "Glitzville Lobby - South",
+        "map": "tou_02",
+        "bero": "s_bero",
+        "target": "Glitzville Main Square - North",
+        "rules": null,
+        "region": "glitzville_lobby"
+    },
+    {
+        "name": "Glitzville Main Square - North",
+        "map": "tou_01",
+        "bero": "a_door_mon",
+        "target": "Glitzville Lobby - South",
+        "rules": null,
+        "region": "glitzville_main_square"
+    },
+    {
+        "name": "Glitzville Arena Stands - South Bottom",
+        "map": "tou_03",
+        "bero": "s_bero_1",
+        "target": "Glitzville Lobby - North Bottom",
+        "rules": null,
+        "region": "glitzville_arena_stands_bottom"
+    },
+    {
+        "name": "Glitzville Lobby - North Bottom",
+        "map": "tou_02",
+        "bero": "n_bero_1",
+        "target": "Glitzville Arena Stands - South Bottom",
+        "rules": null,
+        "region": "glitzville_lobby"
+    },
+    {
+        "name": "Glitzville Arena Stands - South Top",
+        "map": "tou_03",
+        "bero": "s_bero_2",
+        "target": "Glitzville Lobby - North Top",
+        "rules": null,
+        "region": "glitzville_arena_stands_top"
+    },
+    {
+        "name": "Glitzville Lobby - North Top",
+        "map": "tou_02",
+        "bero": "n_bero_2",
+        "target": "Glitzville Arena Stands - South Top",
+        "rules": null,
+        "region": "glitzville_lobby"
+    },
+    {
+        "name": "Glitzville Hall - Locker Side Entrance",
+        "map": "tou_04",
+        "bero": "e_bero",
+        "target": "Glitzville Lobby - Northwest",
+        "rules": null,
+        "region": "glitzville_hall"
+    },
+    {
+        "name": "Glitzville Lobby - Northwest",
+        "map": "tou_02",
+        "bero": "n_bero_3",
+        "target": "Glitzville Hall - Locker Side Entrance",
+        "rules": null,
+        "region": "glitzville_lobby"
+    },
+    {
+        "name": "Glitzville Halll - Champ Side Entrance",
+        "map": "tou_04",
+        "bero": "w_bero",
+        "target": "Glitzville Lobby - Northeast",
+        "rules": null,
+        "region": "glitzville_hall"
+    },
+    {
+        "name": "Glitzville Lobby - Northeast",
+        "map": "tou_02",
+        "bero": "n_bero_4",
+        "target": "Glitzville Halll - Champ Side Entrance",
+        "rules": null,
+        "region": "glitzville_lobby"
     }
 ]

@@ -338,7 +338,7 @@ class TTYDOptions(PerGameCommonOptions):
     goal: Goal
     goal_stars: GoalStars
     palace_stars: PalaceStars
-    loading_zone_shuffle: LoadingZoneShuffle
+    loading_zone: LoadingZoneShuffle
     star_shuffle: StarShuffle
     tattlesanity: TattleSanityOption
     piecesanity: Piecesanity

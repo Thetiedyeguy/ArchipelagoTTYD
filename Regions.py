@@ -144,6 +144,27 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         ("Rogueport Sewers Black Key Room Puni Door", "Rogueport Sewers Black Key Room"):
         lambda state: state.has("Paper Mode", world.player),
         ("Rogueport Sewers Puni Room", "Rogueport Sewers Puni Room Exit"): None,
+        ("Petal Meadows Bridge West", "Petal Meadows Bridge East"): None,
+        ("Hooktail's Castle Drawbridge East Bottom", "Hooktail's Castle Drawbridge West Bottom"):
+        lambda state: state.has("Yoshi", world.player),
+        ("Hooktail's Castle Drawbridge West Bottom", "Hooktail's Castle Drawbridge East Bottom"): None,
+        ("Hooktail's Castle Drawbridge East Top", "Hooktail's Castle Drawbridge East Bottom"): None,
+        ("Hooktail's Castle Drawbridge East Top", "Hooktail's Castle Drawbridge West Bottom"): 
+        lambda state: state.has("Plane Mode", world.player),
+        ("Hooktail's Castle Drawbridge West Top", "Hooktail's Castle Drawbridge West Bottom"): None,
+        ("Hooktail's Castle Stair Switch Room Upper Level", "Hooktail's Castle Stair Switch Room"): None,
+        ("Hooktail's Life Shroom Room", "Hooktail's Life Shroom Room Upper Level"):
+        lambda state: StateLogic.partner_press_switch(state, world.player),
+        ("Hooktail's Life Shroom Room Upper Level", "Hooktail's Life Shroom Room"): None,
+        ("Hooktail's Castle Central Staircase Upper Level", "Hooktail's Castle Central Staircase"): None,
+        ("boggly_plane_panel", "boggly_plane_panel_upper"):
+        lambda state: state.has("Plane Mode", world.player),
+        ("boggly_plane_panel_upper", "boggly_plane_panel"): None,
+        ("boggly_flurrie_outside", "boggly_flurrie_outside_grass"):
+        lambda state: state.has("Paper Mode", world.player),
+        ("boggly_flurrie_outside_grass", "boggly_flurrie_outside"):
+        lambda state: state.has("Paper Mode", world.player),
+
         ("Rogueport Sewers Blooper Pipe", "Petal Meadows (Left)"): None,
         ("Petal Meadows (Left)", "Petal Meadows (Right)"): None,\
         ("Rogueport Sewers East Warp Room Top", "Petal Meadows (Right)"): None,
@@ -173,7 +194,7 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         ("Rogueport Sewers West Fahr", "Fahr Outpost"): None,
         ("Fahr Outpost", "X-Naut Fortress"): 
         lambda state: StateLogic.moon,
-        ("ttyd", "Palace of Shadow"): 
+        ("TTYD", "Palace of Shadow"): 
         lambda state: StateLogic.palace(state, world, world.options.palace_stars.value),
         ("Palace of Shadow", "Palace of Shadow (Post-Riddle Tower)"): 
         lambda state: StateLogic.riddle_tower(state, world.player),
@@ -242,28 +263,44 @@ def connect_regions(world: "TTYDWorld"):
     tag_to_region = get_region_name_by_tag()
 
     for z in zones.values():
-        if z["target"] == "Vanilla":
+        if "is_vanilla" in z or not world.options.loading_zone:
             vanilla.append(z)
         elif z["target"] == "One Way":
             one_way.append(z)
+        elif z["target"] == "":
+            continue
         else:
             region = tag_to_region.get(z["region"])
             zones_by_region[region].append(z)
 
     all_regions = set(zones_by_region.keys())
     unreached_regions = all_regions - reachable_regions
-    src_region_contenders = [
-        r for r in all_regions if unused_zones(r)
-    ]
+
+    for src in vanilla:
+        if not (src["target"] == "" or src["target"] == "One Way" or src["target"] == "filler"):
+            dst = zones[src["target"]]
+
+            src_region = tag_to_region[src["region"]]
+            dst_region = tag_to_region[dst["region"]]
+            rule = build_rule_lambda(src.get("rules"), world)
+
+            connect(world, names, src_region, dst_region, rule)
+            add_edge(src_region, dst_region)
+        elif src["target"] == "One Way":
+            source = src["src_region"]
+            target = src["region"]
+            rule = build_rule_lambda(src.get("rules"), world)
+            try:
+                world.multiworld.get_region(source, world.player)
+                world.multiworld.get_region(target, world.player)
+                connect(world, names, source, target, rule)
+            except Exception:
+                continue
 
     while unreached_regions:
         # pick a reachable region with unused zones
         src_region_contenders = [
             r for r in reachable_regions if unused_zones(r)
-        ]
-
-        unused = [
-            unused_zones(r) for r in reachable_regions
         ]
 
         src_region = random.choice(src_region_contenders)
@@ -304,6 +341,7 @@ def connect_regions(world: "TTYDWorld"):
 
     random.shuffle(remaining_zones)
 
+
     assert len(remaining_zones) % 2 == 0
 
     for i in range(0, len(remaining_zones), 2):
@@ -340,7 +378,7 @@ def connect_regions(world: "TTYDWorld"):
         rule = build_rule_lambda(a.get("rules"), world)
         try:
             world.multiworld.get_region(source, world.player)
-            world.multiworld.get_region(source, world.player)
+            world.multiworld.get_region(target, world.player)
             connect(world, names, source, target, rule)
         except Exception:
             continue

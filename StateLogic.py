@@ -131,5 +131,11 @@ def sewer_westside_ground(state, player):
 def key_any(state, player):
     return state.has("Red Key", player) or state.has("Blue Key", player)
 
+def key_both(state, player):
+    return state.has("Red Key", player) and state.has("Blue Key", player)
+
 def chapter_completions(state, player, count):
     return len([location for location in star_locations if state.can_reach(location, "Location", player)]) >= count
+
+def partner_press_switch(state, player):
+    return state.has("Koops", player) or state.has("Bobbery", player)

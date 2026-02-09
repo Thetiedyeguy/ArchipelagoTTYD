@@ -1,0 +1,11 @@
+How to make Castle Keys work?
+Should boss loading zones be randomized?
+warp pipes use can_reach for the shine sprite/chest in the warp rooms?
+how to make punis work.
+how to make the chapter 2 countdown work
+
+
+
+can_reach_region needed:
+    chapter 2 punis cages
+    chapter 2 doors
