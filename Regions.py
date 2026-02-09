@@ -195,14 +195,14 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         ("Fahr Outpost", "X-Naut Fortress"): 
         lambda state: StateLogic.moon,
         ("TTYD", "Palace of Shadow"): 
-        lambda state: StateLogic.palace(state, world, world.options.palace_stars.value),
+        lambda state, star_shuffle=world.options.star_shuffle.value: StateLogic.palace(state, world.player, world.options.goal_stars.value, star_shuffle),
         ("Palace of Shadow", "Palace of Shadow (Post-Riddle Tower)"): 
         lambda state: StateLogic.riddle_tower(state, world.player),
         ("Rogueport Sewers Pit Room", "Pit of 100 Trials"): 
         lambda state: StateLogic.pit(state, world.player),
         ("Menu", "Tattlesanity"): None,
         ("TTYD", "Shadow Queen"):
-        lambda state: StateLogic.palace(state, world, world.options.goal_stars.value)
+        lambda state, star_shuffle=world.options.star_shuffle.value: StateLogic.palace(state, world.player, world.options.goal_stars.value, star_shuffle)
     }
 
     if world.options.blue_pipe_toggle:

@@ -118,6 +118,12 @@ def _build_single_lambda(req: typing.Dict, world: "TTYDWorld") -> typing.Callabl
         elif "can_reach" in r:
             location = r["can_reach"]
             return f'state.can_reach({repr(location)}, "Location", world.player)'
+        elif "can_reach_region" in r:
+            location = r["can_reach"]
+            return f'state.can_reach({repr(location)}, "Region", world.player)'
+        elif "can_reach_entramce" in r:
+            location = r["can_reach"]
+            return f'state.can_reach({repr(location)}, "Entrance", world.player)'
 
         else:
             return "False"

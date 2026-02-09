@@ -1575,7 +1575,7 @@
         "bero": "e_bero",
         "target": "Great Tree Bubble Room - Locked Door",
         "rules": {
-            "can_reach": "Great Tree Bubble Room"
+            "can_reach_region": "Great Tree Bubble Room"
         },
         "region": "tree_entrance"
     },
@@ -1834,7 +1834,7 @@
         "bero": "e_bero",
         "target": "Great Tree Ambush Room - Door",
         "rules": {
-            "can_reach": "Great Tree Ambush Room"
+            "can_reach_region": "Great Tree Ambush Room"
         },
         "region": "tree_zigzag"
     },
@@ -1934,10 +1934,10 @@
         "rules": {
             "or": [
                 {
-                    "can_reach": "Glitzville Arena Stands Bottom"
+                    "can_reach_region": "Glitzville Arena Stands Bottom"
                 },
                 {
-                    "can_reach": "Glitzville Arena Stands Top"
+                    "can_reach_region": "Glitzville Arena Stands Top"
                 }
             ]
         },
@@ -1959,10 +1959,10 @@
         "rules": {
             "or": [
                 {
-                    "can_reach": "Glitzville Arena Stands Bottom"
+                    "can_reach_region": "Glitzville Arena Stands Bottom"
                 },
                 {
-                    "can_reach": "Glitzville Arena Stands Top"
+                    "can_reach_region": "Glitzville Arena Stands Top"
                 }
             ]
         },
@@ -2014,7 +2014,7 @@
         "bero": "s_bero_7",
         "target": "Glitzville Minor League - North",
         "rules": {
-            "can_reach": "Glitzville Promoter's Office"
+            "can_reach_region": "Glitzville Promoter's Office"
         },
         "region": "glitzville_hall"
     },
@@ -2050,10 +2050,10 @@
         "rules": {
             "and": [
                 {
-                    "can_reach": "Glitzville Promoter's Office"
+                    "can_reach_region": "Glitzville Promoter's Office"
                 },
                 {
-                    "can_reach": "Glitzville Minor League"
+                    "can_reach_region": "Glitzville Minor League"
                 },
                 {
                     "has": "Yoshi"
@@ -2134,16 +2134,16 @@
         "rules": {
             "and": [
                 {
-                    "can_reach": "Glitzville Promoter's Office"
+                    "can_reach_region": "Glitzville Promoter's Office"
                 },
                 {
-                    "can_reach": "Glitzville Minor League"
+                    "can_reach_region": "Glitzville Minor League"
                 },
                 {
                     "has": "Yoshi"
                 },
                 {
-                    "can_reach": "Glitzville Major League"
+                    "can_reach_region": "Glitzville Major League"
                 }
             ]
         },
@@ -2206,7 +2206,7 @@
         "bero": "n_bero_2",
         "target": "Glitzville Arena - West",
         "rules": {
-            "can_reach": "Glitzville Promoter's Office - West"
+            "can_reach_entrance": "Glitzville Promoter's Office - West"
         },
         "region": "glitzville_hall"
     },
@@ -2326,7 +2326,7 @@
         "bero": "e_bero",
         "target": "Twilight Trail Entrance - West",
         "rules": {
-            "can_reach": "Twilight Town Leftside"
+            "can_reach_region": "Twilight Town Leftside"
         },
         "region": "twilight_town_right"
     },

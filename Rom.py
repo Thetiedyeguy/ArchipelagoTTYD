@@ -10,7 +10,7 @@ from BaseClasses import Location, ItemClassification
 from worlds.Files import APProcedurePatch, APTokenMixin, APPatchExtension, AutoPatchExtensionRegister
 from .Items import items_by_id, ItemData
 from .Locations import locationName_to_data, location_table, location_id_to_name
-from .Data import Rels, shop_items, item_prices, rel_filepaths, location_to_unit, shop_names, classification_to_color, warp_table
+from .Data import Rels, shop_items, item_prices, rel_filepaths, location_to_unit, shop_names, warp_table
 from .TTYDPatcher import TTYDPatcher
 
 if TYPE_CHECKING:
