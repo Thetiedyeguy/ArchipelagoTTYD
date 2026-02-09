@@ -278,7 +278,7 @@
         "has": "Plane Mode"
       },
       {
-        "can_reach": "Glitzville Main Square"
+        "can_reach_region": "Glitzville Main Square"
       }
     ]
   },
@@ -769,13 +769,14 @@
   "Petal Meadows Bridge Room: Koops": {
     "and": [
       {
-        "can_reach": "Petal Meadows Sewers Entrance"
+        "can_reach_region": "Petal Meadows Sewers Entrance"
       },
       {
-        "can_reach": "Petal Meadows Sewers East Key Room"
+        "can_reach_region": "Petal Meadows Sewers East Key Room"
       },
       {
-        "can_reach": "Petal Meadows Sewers West Key Room"
+        
+        "can_reach_region": "Petal Meadows Sewers West Key Room"
       }
     ]
   },

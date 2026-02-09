@@ -291,7 +291,7 @@ def connect_regions(world: "TTYDWorld"):
             dst_region = tag_to_region[dst["region"]]
             rule = build_rule_lambda(src.get("rules"), world)
 
-            connect(world, names, src_region, dst_region, rule)
+            connect(world, src["name"], src_region, dst_region, rule)
             add_edge(src_region, dst_region)
         elif src["target"] == "One Way":
             source = src["src_region"]
@@ -300,7 +300,7 @@ def connect_regions(world: "TTYDWorld"):
             try:
                 world.multiworld.get_region(source, world.player)
                 world.multiworld.get_region(target, world.player)
-                connect(world, names, source, target, rule)
+                connect(world, src["name"], source, target, rule)
             except Exception:
                 continue
 
@@ -329,8 +329,8 @@ def connect_regions(world: "TTYDWorld"):
         warp_table[(src_target["map"], src_target["bero"])] = (dst_zone["map"], dst_zone["bero"])
         warp_table[(dst_target["map"], dst_target["bero"])] = (src_zone["map"], src_zone["bero"])
 
-        connect(world, names, src_region, dst_region, src_rule)
-        connect(world, names, dst_region, src_region, dst_rule)
+        connect(world, src["name"], src_region, dst_region, src_rule)
+        connect(world, dst["name"], dst_region, src_region, dst_rule)
 
         mark_used(src_zone, dst_zone)
 
@@ -367,8 +367,8 @@ def connect_regions(world: "TTYDWorld"):
         warp_table[(src_target["map"], src_target["bero"])] = (dst_zone["map"], dst_zone["bero"])
         warp_table[(dst_target["map"], dst_target["bero"])] = (src_zone["map"], src_zone["bero"])
 
-        connect(world, names, src_region, dst_region, src_rule)
-        connect(world, names, dst_region, src_region, dst_rule)
+        connect(world, src["name"], src_region, dst_region, src_rule)
+        connect(world, dst["name"], dst_region, src_region, dst_rule)
     
     random.shuffle(one_way)
 
@@ -386,7 +386,7 @@ def connect_regions(world: "TTYDWorld"):
         try:
             world.multiworld.get_region(source, world.player)
             world.multiworld.get_region(target, world.player)
-            connect(world, names, source, target, rule)
+            connect(world, src["name"], source, target, rule)
         except Exception:
             continue
 
@@ -451,7 +451,7 @@ def create_region(world: "TTYDWorld", name: str, locations: list[LocationData]):
 
 
 def connect(world: "TTYDWorld",
-            used_names: typing.Dict[str, int],
+            used_names: typing.Union[typing.Dict[str, int], str],
             source: str,
             target: str,
             rule: typing.Optional[typing.Callable] = None):
@@ -459,11 +459,16 @@ def connect(world: "TTYDWorld",
     source_region = world.multiworld.get_region(source, world.player)
     target_region = world.multiworld.get_region(target, world.player)
 
-    if target not in used_names:
-        used_names[target] = 1
-        name = target
+    if isinstance(used_names, str):
+        name = used_names
+
     else:
-        used_names[target] += 1
-        name = target + (" " * used_names[target])
+        if target not in used_names:
+            used_names[target] = 1
+            name = target
+        else:
+            used_names[target] += 1
+            name = target + (" " * used_names[target])
 
     source_region.connect(target_region, name, rule)
+
