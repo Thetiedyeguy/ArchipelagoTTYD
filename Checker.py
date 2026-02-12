@@ -46,7 +46,7 @@ def prompt_rules():
     if not choice or choice == "null":
         return None
 
-    if choice in ("has", "function", "can_reach"):
+    if choice in ("has", "function", "can_reach", "can_reach_region", "can_reach_entrance"):
         return {choice: input(f"{choice}: ").strip()}
 
     if choice in ("or", "and"):

@@ -78,11 +78,11 @@ def _build_single_lambda(req: typing.Dict, world: "TTYDWorld") -> typing.Callabl
     def build_expression(r):
         if "or" in r:
             conditions = [build_expression(condition) for condition in r["or"]]
-            return f"({' or '.join(conditions)})"
+            return f"({' | '.join(conditions)})"
 
         elif "and" in r:
             conditions = [build_expression(condition) for condition in r["and"]]
-            return f"({' and '.join(conditions)})"
+            return f"({' & '.join(conditions)})"
 
         elif "has" in r:
             has_value = r["has"]

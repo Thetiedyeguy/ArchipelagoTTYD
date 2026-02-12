@@ -157,43 +157,42 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         lambda state: StateLogic.partner_press_switch(state, world.player),
         ("Hooktail's Life Shroom Room Upper Level", "Hooktail's Life Shroom Room"): None,
         ("Hooktail's Castle Central Staircase Upper Level", "Hooktail's Castle Central Staircase"): None,
-        ("boggly_plane_panel", "boggly_plane_panel_upper"):
+        ("Boggly Woods Plane Panel Room", "Boggly Woods Plane Panel Room Upper"):
         lambda state: state.has("Plane Mode", world.player),
-        ("boggly_plane_panel_upper", "boggly_plane_panel"): None,
-        ("boggly_flurrie_outside", "boggly_flurrie_outside_grass"):
+        ("Boggly Woods Plane Panel Room Upper", "Boggly Woods Plane Panel Room"): None,
+        ("Boggly Woods Outside Flurrie's House", "Boggly Woods Outside Flurrie's House Grass Area"):
         lambda state: state.has("Paper Mode", world.player),
-        ("boggly_flurrie_outside_grass", "boggly_flurrie_outside"):
+        ("Boggly Woods Outside Flurrie's House Grass Area", "Boggly Woods Outside Flurrie's House"):
         lambda state: state.has("Paper Mode", world.player),
-
-        ("Rogueport Sewers Blooper Pipe", "Petal Meadows (Left)"): None,
-        ("Petal Meadows (Left)", "Petal Meadows (Right)"): None,\
-        ("Rogueport Sewers East Warp Room Top", "Petal Meadows (Right)"): None,
-        ("Petal Meadows (Left)", "Hooktail's Castle"): 
-        lambda state: StateLogic.hooktails_castle(state, world.player),
-        ("Rogueport Sewers Puni Room Exit", "Boggly Woods"): None,
-        ("Boggly Woods", "Great Tree"): None,
-        ("Great Tree", "Boggly Woods"): None,
-        ("Rogueport Sewers East Warp Room Top", "Great Tree"): None,
-        ("Rogueport Blimp", "Glitzville"): 
-        lambda state: state.has("Blimp Ticket", world.player),
-        ("Rogueport Sewers Twilight", "Twilight Town"): None,
-        ("Twilight Town", "Twilight Trail"): 
-        lambda state: StateLogic.tube_curse(state, world.player),
-        ("Twilight Trail", "Creepy Steeple"): 
-        lambda state: StateLogic.steeple(state, world.player),
-        ("Rogueport Docks", "Keelhaul Key"): 
-        lambda state: StateLogic.keelhaul_key,
-        ("Keelhaul Key", "Pirate's Grotto"): 
-        lambda state: StateLogic.pirates_grotto,
-        ("Rogueport Blimp", "Excess Express"): 
-        lambda state: StateLogic.excess_express,
-        ("Excess Express", "Riverside Station"): 
-        lambda state: StateLogic.riverside,
-        ("Riverside Station", "Poshley Heights"): 
-        lambda state: StateLogic.poshley_heights,
-        ("Rogueport Sewers West Fahr", "Fahr Outpost"): None,
-        ("Fahr Outpost", "X-Naut Fortress"): 
-        lambda state: StateLogic.moon,
+        ("Pirate's Grotto Handle Room Canal", "Pirate's Grotto Handle Room"):
+        lambda state: state.has("Paper Mode", world.player),
+        ("Pirate's Grotto Sluice Gate Upper", "Pirate's Grotto Sluice Gate Upper Canal"):
+        lambda state: state.has("Boat Mode", world.player),
+        ("Pirate's Grotto Sluice Gate Upper Canal", "Pirate's Grotto Sluice Gate Upper"):
+        lambda state: state.has("Boat Mode", world.player),
+        ("Pirate's Grotto Sluice Gate Upper Canal", "Pirate's Grotto Sluice Gate Canal"): None,
+        ("X-Naut Fortress Hall Ground Floor", "X-Naut Fortress Hall Sublevel One"):
+        lambda state: state.has("Elevator Key 1", world.player),
+        ("X-Naut Fortress Hall Sublevel One", "X-Naut Fortress Hall Ground Floor"):
+        lambda state: state.has("Elevator Key 1", world.player),
+        ("X-Naut Fortress Hall Ground Floor", "X-Naut Fortress Hall Sublevel Two"):
+        lambda state: state.has("Elevator Key 1", world.player),
+        ("X-Naut Fortress Hall Sublevel One", "X-Naut Fortress Hall Sublevel Two"):
+        lambda state: state.has("Elevator Key 1", world.player),
+        ("X-Naut Fortress Hall Sublevel Two", "X-Naut Fortress Hall Sublevel One"):
+        lambda state: state.has("Elevator Key 1", world.player),
+        ("X-Naut Fortress Hall Sublevel Two", "X-Naut Fortress Hall Sublevel Three"):
+        lambda state: state.has("Elevator Key 2", world.player),
+        ("X-Naut Fortress Hall Sublevel Three", "X-Naut Fortress Hall Sublevel Two"):
+        lambda state: state.has("Elevator Key 2", world.player),
+        ("X-Naut Fortress Hall Sublevel Two", "X-Naut Fortress Hall Sublevel Four"):
+        lambda state: state.has("Elevator Key 2", world.player),
+        ("X-Naut Fortress Hall Sublevel Four", "X-Naut Fortress Hall Sublevel Two"):
+        lambda state: state.has("Elevator Key 2", world.player),
+        ("X-Naut Fortress Hall Sublevel Three", "X-Naut Fortress Hall Sublevel Four"):
+        lambda state: state.has("Elevator Key 2", world.player),
+        ("X-Naut Fortress Hall Sublevel Four", "X-Naut Fortress Hall Sublevel Three"):
+        lambda state: state.has("Elevator Key 2", world.player),
         ("TTYD", "Palace of Shadow"): 
         lambda state, star_shuffle=world.options.star_shuffle.value: StateLogic.palace(state, world.player, world.options.goal_stars.value, star_shuffle),
         ("Palace of Shadow", "Palace of Shadow (Post-Riddle Tower)"): 

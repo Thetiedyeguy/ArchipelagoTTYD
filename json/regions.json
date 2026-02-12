@@ -235,70 +235,6 @@
         "chapter": "Eight"
     },
     {
-        "name": "Petal Meadows (Left)",
-        "tag": "petal_left"
-    },
-    {
-        "name": "Petal Meadows (Right)",
-        "tag": "petal_right"
-    },
-    {
-        "name": "Hooktail's Castle",
-        "tag": "hooktails_castle"
-    },
-    {
-        "name": "Boggly Woods",
-        "tag": "boggly_woods"
-    },
-    {
-        "name": "Great Tree",
-        "tag": "great_tree"
-    },
-    {
-        "name": "Glitzville",
-        "tag": "glitzville"
-    },
-    {
-        "name": "Twilight Town",
-        "tag": "twilight_town"
-    },
-    {
-        "name": "Twilight Trail",
-        "tag": "twilight_trail"
-    },
-    {
-        "name": "Creepy Steeple",
-        "tag": "creepy_steeple"
-    },
-    {
-        "name": "Keelhaul Key",
-        "tag": "keelhaul_key"
-    },
-    {
-        "name": "Pirate's Grotto",
-        "tag": "pirates_grotto"
-    },
-    {
-        "name": "Excess Express",
-        "tag": "excess_express"
-    },
-    {
-        "name": "Riverside Station",
-        "tag": "riverside"
-    },
-    {
-        "name": "Poshley Heights",
-        "tag": "poshley_heights"
-    },
-    {
-        "name": "Fahr Outpost",
-        "tag": "fahr_outpost"
-    },
-    {
-        "name": "X-Naut Fortress",
-        "tag": "xnaut_fortress"
-    },
-    {
         "name": "Palace of Shadow",
         "tag": "palace"
     },
@@ -748,5 +684,519 @@
         "name": "Twilight Trail Fallen Tree",
         "tag": "twilight_trail_tree",
         "chapter": "Four"
+    },
+    {
+        "name": "Twilight Trail Dark Woods First Room",
+        "tag": "twilight_trail_wood_one",
+        "chapter": "Four"
+    },
+    {
+        "name": "Twilight Trail Dark Woods Second Room",
+        "tag": "twilight_trail_wood_two",
+        "chapter": "Four"
+    },
+    {
+        "name": "Twilight Trail Dark Woods Third Room",
+        "tag": "twilight_trail_wood_three",
+        "chapter": "Four"
+    },
+    {
+        "name": "Twilight Trail Steeple Exterior",
+        "tag": "twilight_trail_steeple",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple Well Entrance",
+        "tag": "steeple_well_entrance",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple Well Buzzy Room",
+        "tag": "steeple_well_buzzy",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple Underground Tube Passage",
+        "tag": "steeple_underground_tube",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple Boo Chest Room Background",
+        "tag": "steeple_boo_background",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple Parrot Room",
+        "tag": "steeple_parrot",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple Boo Chest Room",
+        "tag": "steeple_boo",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple Under Statue",
+        "tag": "steeple_statue",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple Main Hall",
+        "tag": "steeple_main",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple Cookbook Room",
+        "tag": "steeple_cookbook",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple North Hall",
+        "tag": "steeple_north",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple South Hall",
+        "tag": "steeple_south",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple Back Stairs",
+        "tag": "steeple_back_stair",
+        "chapter": "Four"
+    },
+    {
+        "name": "Creepy Steeple Spire",
+        "tag": "steeple_spire",
+        "chapter": "Four"
+    },
+    {
+        "name": "Keelhaul Key Town",
+        "tag": "keelhaul_town",
+        "chapter": "Five"
+    },
+    {
+        "name": "Keelhaul Key Landing Site",
+        "tag": "keelhaul_landing",
+        "chapter": "Five"
+    },
+    {
+        "name": "Keelhaul Key Jungle Entrance",
+        "tag": "keelhaul_jungle_entrance",
+        "chapter": "Five"
+    },
+    {
+        "name": "Keelhaul Key Jungle Winding Climb",
+        "tag": "keelhaul_winding",
+        "chapter": "Five"
+    },
+    {
+        "name": "Keelhaul Key Jungle Bridge",
+        "tag": "keelhaul_jungle_bridge",
+        "chapter": "Five"
+    },
+    {
+        "name": "Keelhaul Key Grotto Entrance",
+        "tag": "keelhaul_grotto_entrance",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Entrance",
+        "tag": "grotto_entrance",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Spring Room",
+        "tag": "grotto_spring",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Handle Room",
+        "tag": "grotto_handle",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Handle Room Canal",
+        "tag": "grotto_handle_canal"
+    },
+    {
+        "name": "Pirate's Grotto Bullet Bill Bridge",
+        "tag": "grotto_bullet_bridge",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Bullet Bill Bridge Canal",
+        "tag": "grotto_bullet_bridge_canal",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Sluice Gate",
+        "tag": "grotto_gate",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Sluice Gate Upper",
+        "tag": "grotto_gate_upper",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Sluice Gate Upper Canal",
+        "tag": "grotto_gate_upper_canal",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Sluice Gate Canal",
+        "tag": "grotto_gate_canal",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Staircase",
+        "tag": "grotto_staircase",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Staircase Canal",
+        "tag": "grotto_staircase_canal",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Parabuzzy Room",
+        "tag": "grotto_parabuzzy",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Spike Wall Room",
+        "tag": "grotto_spike_wall",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Spike Wall Room Canal",
+        "tag": "grotto_spike_wall_canal",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Barrel Room",
+        "tag": "grotto_barrel",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Barrel Room Canal",
+        "tag": "grotto_barrel_canal",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Bullet Bill Steps Room",
+        "tag": "grotto_bullet_step",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Broken Ship Exterior",
+        "tag": "grotto_broken_ship",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Curse Chest Room",
+        "tag": "grotto_curse",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Storeroom",
+        "tag": "grotto_storeroom",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Toad Boat Room",
+        "tag": "grotto_toad",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Cortez's Ship Exterior",
+        "tag": "grotto_cortez_exterior",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Cortez's Ship Hall",
+        "tag": "grotto_cortez_hall",
+        "chapter": "Five"
+    },
+    {
+        "name": "Pirate's Grotto Cortez's Hoard",
+        "tag": "grotto_cortez_hoard",
+        "chapter": "Five"
+    },
+    {
+        "name": "Excess Express Middle Passenger Car",
+        "tag": "express_middle_car",
+        "chapter": "Six"
+    },
+    {
+        "name": "Excess Express Dining Car",
+        "tag": "express_diner",
+        "chapter": "Six"
+    },
+    {
+        "name": "Excess Express Back Passenger Car",
+        "tag": "express_back_car",
+        "chapter": "Six"
+    },
+    {
+        "name": "Excess Express Storage Car",
+        "tag": "express_storage",
+        "chapter": "Six"
+    },
+    {
+        "name": "Excess Express Front Passenger Car",
+        "tag": "express_front_car",
+        "chapter": "Six"
+    },
+    {
+        "name": "Excess Express Locomotive",
+        "tag": "express_locomotive",
+        "chapter": "Six"
+    },
+    {
+        "name": "Riverside Station Drawbridge",
+        "tag": "riverside_drawbridge",
+        "chapter": "Six"
+    },
+    {
+        "name": "Riverside Station Entrance",
+        "tag": "riverside_entrance",
+        "chapter": "Six"
+    },
+    {
+        "name": "Riverside Station Stairs",
+        "tag": "riverside_stairs",
+        "chapter": "Six"
+    },
+    {
+        "name": "Riverside Station Clockwork Room",
+        "tag": "riverside_clockwork",
+        "chapter": "Six"
+    },
+    {
+        "name": "Riverside Station Back Exterior",
+        "tag": "riverside_back",
+        "chapter": "Six"
+    },
+    {
+        "name": "Riverside Station Tube Mode Maze",
+        "tag": "riverside_tube",
+        "chapter": "Six"
+    },
+    {
+        "name": "Riverside Station Elevator Key Room",
+        "tag": "riverside_elevator_key",
+        "chapter": "Six"
+    },
+    {
+        "name": "Riverside Station Goomba Room",
+        "tag": "riverside_goomba",
+        "chapter": "Six"
+    },
+    {
+        "name": "Riverside Station Ultra Boots Room",
+        "tag": "riverside_ultra_boots",
+        "chapter": "Six"
+    },
+    {
+        "name": "Excess Express Roof",
+        "tag": "express_roof",
+        "chapter": "Six"
+    },
+    {
+        "name": "Poshley Heights Station",
+        "tag": "poshley_station",
+        "chapter": "Six"
+    },
+    {
+        "name": "Poshley Heights Downtown",
+        "tag": "poshley_downtown",
+        "chapter": "Six"
+    },
+    {
+        "name": "Poshley Heights Sanctum Exterior",
+        "tag": "poshley_sanctum_exterior",
+        "chapter": "Six"
+    },
+    {
+        "name": "Poshley Sanctum",
+        "tag": "poshley_sanctum",
+        "chapter": "Six"
+    },
+    {
+        "name": "Poshley Heights Sanctum",
+        "tag": "poshley_sanctum_altar",
+        "chapter": "Six"
+    },
+    {
+        "name": "Fahr Outpost Entrance",
+        "tag": "fahr_entrance",
+        "chapter": "Seven"
+    },
+    {
+        "name": "Fahr Outpost West Enemy Room",
+        "tag": "fahr_west_enemy",
+        "chapter": "Seven"
+    },
+    {
+        "name": "Fahr Outpost East Enemy Room",
+        "tag": "fahr_east_enemy",
+        "chapter": "Seven"
+    },
+    {
+        "name": "Fahr Outpost Town Outskirts",
+        "tag": "fahr_town_outskirts",
+        "chapter": "Seven"
+    },
+    {
+        "name": "Fahr Outpost Town",
+        "tag": "fahr_town",
+        "chapter": "Seven"
+    },
+    {
+        "name": "Moon Landing Site",
+        "tag": "moon_landing",
+        "chapter": "Seven"
+    },
+    {
+        "name": "Moon West Room 1",
+        "tag": "moon_west_one",
+        "chapter": "Seven"
+    },
+    {
+        "name": "Moon West Room 2",
+        "tag": "moon_west_two",
+        "chapter": "Seven"
+    },
+    {
+        "name": "Moon Fortress View",
+        "tag": "moon_fortress_view",
+        "chapter": "Seven"
+    },
+    {
+        "name": "Moon East Room 1",
+        "tag": "moon_east_one",
+        "chapter": "Seven"
+    },
+    {
+        "name": "Moon East Room 2",
+        "tag": "moon_east_two",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Escalator",
+        "tag": "fortress_escalator",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Entrance",
+        "tag": "fortress_entrance",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Hall Ground Floor",
+        "tag": "fortress_hall_ground",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Eleveator Key Room",
+        "tag": "fortress_elevator_key",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Crane Room",
+        "tag": "fortress_crane",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Hall Sublevel One",
+        "tag": "fortress_hall_sublevel_one",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Quiz Room",
+        "tag": "fortress_quiz",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Card Key Room A",
+        "tag": "fortress_card_a",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Hall Sublevel Two",
+        "tag": "fortress_hall_sublevel_two",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Potion Lab",
+        "tag": "fortress_potion",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Teleporter Room",
+        "tag": "fortress_teleporter",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Vents Room",
+        "tag": "fortress_vents",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Changing Room",
+        "tag": "fortress_changing",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Intermission Meeting Room",
+        "tag": "fortress_intermission_meeting",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Office",
+        "tag": "fortress_office",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Card Key Room B",
+        "tag": "fortress_card_b",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Hall Sublevel 3",
+        "tag": "fortress_hall_sublevel_three",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Triple Card Key Room",
+        "tag": "fortress_triple_card",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Peach's Room",
+        "tag": "fortress_peach_room",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Hall Sublevel 4",
+        "tag": "fortress_hall_sublevel_four",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Peach's Bathroom",
+        "tag": "fortress_peach_bathroom",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Factory",
+        "tag": "fortress_factory",
+        "chapter": "Seven"
+    },
+    {
+        "name": "X-Naut Fortress Boss Room",
+        "tag": "fortress_boss",
+        "chapter": "Seven"
     }
 ]

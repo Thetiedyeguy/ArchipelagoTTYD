@@ -1689,7 +1689,7 @@
     "tags": [
       "hooktails_castle",
       "chapter_1",
-      "hooktail_drawbridge_west_bottom"
+      "hooktail_drawbridge_bottom"
     ]
   },
   {
@@ -1919,7 +1919,8 @@
     "tags": [
       "hooktails_castle",
       "chapter_1",
-      "star_piece"
+      "star_piece",
+      "hooktail_plane_rafter"
     ]
   },
   {
@@ -3253,7 +3254,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_town_left"
     ]
   },
   {
@@ -3266,7 +3268,8 @@
     "vanilla_item": 77772133,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_town_left"
     ]
   },
   {
@@ -3280,7 +3283,8 @@
     "tags": [
       "twilight_town",
       "chapter_4",
-      "star_piece"
+      "star_piece",
+      "twilight_town_left"
     ]
   },
   {
@@ -3294,7 +3298,8 @@
     "tags": [
       "twilight_town",
       "chapter_4",
-      "star_piece"
+      "star_piece",
+      "twilight_town_left"
     ]
   },
   {
@@ -3307,7 +3312,8 @@
     "vanilla_item": 77772192,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_town_left"
     ]
   },
   {
@@ -3320,7 +3326,8 @@
     "vanilla_item": 77772208,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_town_left"
     ]
   },
   {
@@ -3333,7 +3340,8 @@
     "vanilla_item": 77772017,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_town_right"
     ]
   },
   {
@@ -3346,7 +3354,8 @@
     "vanilla_item": 77772042,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_town_right"
     ]
   },
   {
@@ -3359,7 +3368,8 @@
     "vanilla_item": 77772099,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_town_right"
     ]
   },
   {
@@ -3372,7 +3382,8 @@
     "vanilla_item": 77772101,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_town_right"
     ]
   },
   {
@@ -3386,7 +3397,8 @@
     "tags": [
       "twilight_town",
       "chapter_4",
-      "shop"
+      "shop",
+      "twilight_town_right"
     ]
   },
   {
@@ -3399,7 +3411,8 @@
     "vanilla_item": 77772108,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_town_right"
     ]
   },
   {
@@ -3413,7 +3426,8 @@
     "tags": [
       "twilight_town",
       "chapter_4",
-      "shop"
+      "shop",
+      "twilight_town_right"
     ]
   },
   {
@@ -3427,7 +3441,8 @@
     "tags": [
       "twilight_town",
       "chapter_4",
-      "shop"
+      "shop",
+      "twilight_town_right"
     ]
   },
   {
@@ -3441,7 +3456,8 @@
     "tags": [
       "twilight_town",
       "chapter_4",
-      "star_piece"
+      "star_piece",
+      "twilight_town_right"
     ]
   },
   {
@@ -3455,7 +3471,8 @@
     "tags": [
       "twilight_town",
       "chapter_4",
-      "shop"
+      "shop",
+      "twilight_town_right"
     ]
   },
   {
@@ -3469,7 +3486,8 @@
     "tags": [
       "twilight_town",
       "chapter_4",
-      "shop"
+      "shop",
+      "twilight_town_right"
     ]
   },
   {
@@ -3483,7 +3501,8 @@
     "tags": [
       "twilight_town",
       "chapter_4",
-      "shop"
+      "shop",
+      "twilight_town_right"
     ]
   },
   {
@@ -3496,7 +3515,8 @@
     "vanilla_item": 77772200,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_town_right"
     ]
   },
   {
@@ -3509,7 +3529,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_trail_entrance"
     ]
   },
   {
@@ -3522,7 +3543,8 @@
     "vanilla_item": 77772010,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_trail_entrance"
     ]
   },
   {
@@ -3535,7 +3557,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_trail_goomba"
     ]
   },
   {
@@ -3548,7 +3571,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_trail_goomba"
     ]
   },
   {
@@ -3561,7 +3585,8 @@
     "vanilla_item": 77772191,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_trail_goomba"
     ]
   },
   {
@@ -3574,7 +3599,8 @@
     "vanilla_item": 77772165,
     "tags": [
       "twilight_town",
-      "chapter_4"
+      "chapter_4",
+      "twilight_trail_tree"
     ]
   },
   {
@@ -3588,7 +3614,8 @@
     "tags": [
       "twilight_trail",
       "chapter_4",
-      "star_piece"
+      "star_piece",
+      "twilight_trail_tree"
     ]
   },
   {
@@ -3602,7 +3629,8 @@
     "tags": [
       "twilight_trail",
       "chapter_4",
-      "star_piece"
+      "star_piece",
+      "twilight_trail_tree"
     ]
   },
   {
@@ -3615,7 +3643,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "twilight_trail",
-      "chapter_4"
+      "chapter_4",
+      "twilight_trail_wood_one"
     ]
   },
   {
@@ -3628,7 +3657,8 @@
     "vanilla_item": 77772051,
     "tags": [
       "twilight_trail",
-      "chapter_4"
+      "chapter_4",
+      "twilight_trail_wood_one"
     ]
   },
   {
@@ -3641,7 +3671,8 @@
     "vanilla_item": 77772081,
     "tags": [
       "twilight_trail",
-      "chapter_4"
+      "chapter_4",
+      "twilight_trail_wood_two"
     ]
   },
   {
@@ -3654,7 +3685,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "twilight_trail",
-      "chapter_4"
+      "chapter_4",
+      "twilight_trail_wood_three"
     ]
   },
   {
@@ -3668,7 +3700,8 @@
     "tags": [
       "twilight_trail",
       "chapter_4",
-      "shine"
+      "shine",
+      "twilight_trail_wood_three"
     ]
   },
   {
@@ -3681,7 +3714,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "twilight_trail",
-      "chapter_4"
+      "chapter_4",
+      "twilight_trail_steeple"
     ]
   },
   {
@@ -3695,7 +3729,8 @@
     "tags": [
       "twilight_trail",
       "chapter_4",
-      "star_piece"
+      "star_piece",
+      "twilight_trail_steeple"
     ]
   },
   {
@@ -3708,7 +3743,8 @@
     "vanilla_item": 77772111,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_main"
     ]
   },
   {
@@ -3721,7 +3757,8 @@
     "vanilla_item": 77772180,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_main"
     ]
   },
   {
@@ -3734,7 +3771,8 @@
     "vanilla_item": 77772077,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_north"
     ]
   },
   {
@@ -3748,7 +3786,8 @@
     "vanilla_item": 77772158,
     "tags": [
       "creepy_steeple",
-      "star"
+      "star",
+      "steeple_spire"
     ]
   },
   {
@@ -3762,7 +3801,8 @@
     "tags": [
       "creepy_steeple",
       "chapter_4",
-      "panel"
+      "panel",
+      "steeple_back_stair"
     ]
   },
   {
@@ -3775,7 +3815,8 @@
     "vanilla_item": 77772037,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_cookbook"
     ]
   },
   {
@@ -3788,7 +3829,8 @@
     "vanilla_item": 77772097,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_cookbook"
     ]
   },
   {
@@ -3802,7 +3844,8 @@
     "tags": [
       "creepy_steeple",
       "chapter_4",
-      "shine"
+      "shine",
+      "steeple_cookbook"
     ]
   },
   {
@@ -3816,7 +3859,8 @@
     "tags": [
       "creepy_steeple",
       "chapter_4",
-      "star_piece"
+      "star_piece",
+      "steeple_cookbook"
     ]
   },
   {
@@ -3829,7 +3873,8 @@
     "vanilla_item": 77772062,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_statue"
     ]
   },
   {
@@ -3843,7 +3888,8 @@
     "tags": [
       "creepy_steeple",
       "chapter_4",
-      "star_piece"
+      "star_piece",
+      "steeple_boo_background"
     ]
   },
   {
@@ -3858,7 +3904,8 @@
     "vanilla_item": 77772204,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_boo"
     ]
   },
   {
@@ -3871,7 +3918,8 @@
     "vanilla_item": 77772118,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_parrot"
     ]
   },
   {
@@ -3884,7 +3932,8 @@
     "vanilla_item": 77772142,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_parrot"
     ]
   },
   {
@@ -3898,7 +3947,8 @@
     "tags": [
       "creepy_steeple",
       "chapter_4",
-      "panel"
+      "panel",
+      "steeple_parrot"
     ]
   },
   {
@@ -3911,7 +3961,8 @@
     "vanilla_item": 77772180,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_parrot"
     ]
   },
   {
@@ -3924,7 +3975,8 @@
     "vanilla_item": 77772194,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_parrot"
     ]
   },
   {
@@ -3938,7 +3990,8 @@
     "tags": [
       "creepy_steeple",
       "chapter_4",
-      "shine"
+      "shine",
+      "steeple_well_entrance"
     ]
   },
   {
@@ -3951,7 +4004,8 @@
     "vanilla_item": 77772198,
     "tags": [
       "creepy_steeple",
-      "chapter_4"
+      "chapter_4",
+      "steeple_well_buzzy"
     ]
   },
   {
@@ -3965,7 +4019,8 @@
     "tags": [
       "creepy_steeple",
       "chapter_4",
-      "shine"
+      "shine",
+      "steeple_underground_tube"
     ]
   },
   {
@@ -3979,7 +4034,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "panel"
+      "panel",
+      "keelhaul_landing"
     ]
   },
   {
@@ -3992,7 +4048,8 @@
     "vanilla_item": 77772212,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_landing"
     ]
   },
   {
@@ -4005,7 +4062,8 @@
     "vanilla_item": 77772212,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_landing"
     ]
   },
   {
@@ -4018,7 +4076,8 @@
     "vanilla_item": 77772212,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_landing"
     ]
   },
   {
@@ -4031,7 +4090,8 @@
     "vanilla_item": 77772212,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_landing"
     ]
   },
   {
@@ -4044,7 +4104,8 @@
     "vanilla_item": 77772212,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_landing"
     ]
   },
   {
@@ -4057,7 +4118,8 @@
     "vanilla_item": 77772212,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_landing"
     ]
   },
   {
@@ -4070,7 +4132,8 @@
     "vanilla_item": 77772212,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_landing"
     ]
   },
   {
@@ -4083,7 +4146,8 @@
     "vanilla_item": 77772212,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_landing"
     ]
   },
   {
@@ -4096,7 +4160,8 @@
     "vanilla_item": 77772030,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_town"
     ]
   },
   {
@@ -4110,7 +4175,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "shop"
+      "shop",
+      "keelhaul_town"
     ]
   },
   {
@@ -4124,7 +4190,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "shop"
+      "shop",
+      "keelhaul_town"
     ]
   },
   {
@@ -4138,7 +4205,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "shop"
+      "shop",
+      "keelhaul_town"
     ]
   },
   {
@@ -4152,7 +4220,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "shop"
+      "shop",
+      "keelhaul_town"
     ]
   },
   {
@@ -4166,7 +4235,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "shop"
+      "shop",
+      "keelhaul_town"
     ]
   },
   {
@@ -4180,7 +4250,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "star_piece"
+      "star_piece",
+      "keelhaul_town"
     ]
   },
   {
@@ -4194,7 +4265,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "star_piece"
+      "star_piece",
+      "keelhaul_town"
     ]
   },
   {
@@ -4208,7 +4280,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "shop"
+      "shop",
+      "keelhaul_town"
     ]
   },
   {
@@ -4221,7 +4294,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_jungle_entrance"
     ]
   },
   {
@@ -4234,7 +4308,8 @@
     "vanilla_item": 77772038,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_jungle_entrance"
     ]
   },
   {
@@ -4247,7 +4322,8 @@
     "vanilla_item": 77772086,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_jungle_entrance"
     ]
   },
   {
@@ -4260,7 +4336,8 @@
     "vanilla_item": 77772103,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_jungle_entrance"
     ]
   },
   {
@@ -4274,7 +4351,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "star_piece"
+      "star_piece",
+      "keelhaul_jungle_entrance"
     ]
   },
   {
@@ -4287,7 +4365,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_winding"
     ]
   },
   {
@@ -4300,7 +4379,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_winding"
     ]
   },
   {
@@ -4313,7 +4393,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_winding"
     ]
   },
   {
@@ -4326,7 +4407,8 @@
     "vanilla_item": 77772101,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_winding"
     ]
   },
   {
@@ -4339,7 +4421,8 @@
     "vanilla_item": 77772115,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_winding"
     ]
   },
   {
@@ -4353,7 +4436,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "shine"
+      "shine",
+      "keelhaul_winding"
     ]
   },
   {
@@ -4367,7 +4451,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "star_piece"
+      "star_piece",
+      "keelhaul_winding"
     ]
   },
   {
@@ -4380,7 +4465,8 @@
     "vanilla_item": 77772196,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_winding"
     ]
   },
   {
@@ -4393,7 +4479,8 @@
     "vanilla_item": 77772033,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_jungle_bridge"
     ]
   },
   {
@@ -4406,7 +4493,8 @@
     "vanilla_item": 77772033,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_jungle_bridge"
     ]
   },
   {
@@ -4419,7 +4507,8 @@
     "vanilla_item": 77772096,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_jungle_bridge"
     ]
   },
   {
@@ -4432,7 +4521,8 @@
     "vanilla_item": 77772099,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_jungle_bridge"
     ]
   },
   {
@@ -4446,7 +4536,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "shine"
+      "shine",
+      "keelhaul_jungle_bridge"
     ]
   },
   {
@@ -4459,7 +4550,8 @@
     "vanilla_item": 77772016,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_grotto_entrance"
     ]
   },
   {
@@ -4472,7 +4564,8 @@
     "vanilla_item": 77772168,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_grotto_entrance"
     ]
   },
   {
@@ -4485,7 +4578,8 @@
     "vanilla_item": 77772175,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_grotto_entrance"
     ]
   },
   {
@@ -4499,7 +4593,8 @@
     "tags": [
       "keelhaul_key",
       "chapter_5",
-      "star_piece"
+      "star_piece",
+      "keelhaul_grotto_entrance"
     ]
   },
   {
@@ -4512,7 +4607,8 @@
     "vanilla_item": 77772211,
     "tags": [
       "keelhaul_key",
-      "chapter_5"
+      "chapter_5",
+      "keelhaul_grotto_entrance"
     ]
   },
   {
@@ -4525,7 +4621,8 @@
     "vanilla_item": 77772159,
     "tags": [
       "pirates_grotto",
-      "chapter_5"
+      "chapter_5",
+      "grotto_entrance"
     ]
   },
   {
@@ -4538,7 +4635,8 @@
     "vanilla_item": 77772071,
     "tags": [
       "pirates_grotto",
-      "chapter_5"
+      "chapter_5",
+      "grotto_handle_canal"
     ]
   },
   {
@@ -4552,7 +4650,8 @@
     "tags": [
       "pirates_grotto",
       "chapter_5",
-      "shine"
+      "shine",
+      "grotto_handle"
     ]
   },
   {
@@ -4566,7 +4665,8 @@
     "tags": [
       "pirates_grotto",
       "chapter_5",
-      "star_piece"
+      "star_piece",
+      "grotto_handle"
     ]
   },
   {
@@ -4580,7 +4680,8 @@
     "tags": [
       "pirates_grotto",
       "chapter_5",
-      "panel"
+      "panel",
+      "grotto_gate_upper"
     ]
   },
   {
@@ -4593,7 +4694,8 @@
     "vanilla_item": 77772080,
     "tags": [
       "pirates_grotto",
-      "chapter_5"
+      "chapter_5",
+      "grotto_storeroom"
     ]
   },
   {
@@ -4607,7 +4709,8 @@
     "tags": [
       "pirates_grotto",
       "chapter_5",
-      "shine"
+      "shine",
+      "grotto_storeroom"
     ]
   },
   {
@@ -4621,7 +4724,8 @@
     "tags": [
       "pirates_grotto",
       "chapter_5",
-      "star_piece"
+      "star_piece",
+      "grotto_storeroom"
     ]
   },
   {
@@ -4634,7 +4738,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "pirates_grotto",
-      "chapter_5"
+      "chapter_5",
+      "grotto_staircase"
     ]
   },
   {
@@ -4647,7 +4752,8 @@
     "vanilla_item": 77772043,
     "tags": [
       "pirates_grotto",
-      "chapter_5"
+      "chapter_5",
+      "grotto_staircase_canal"
     ]
   },
   {
@@ -4661,7 +4767,8 @@
     "tags": [
       "pirates_grotto",
       "chapter_5",
-      "shine"
+      "shine",
+      "grotto_staircase"
     ]
   },
   {
@@ -4675,7 +4782,8 @@
     "tags": [
       "pirates_grotto",
       "chapter_5",
-      "panel"
+      "panel",
+      "grotto_parabuzzy"
     ]
   },
   {
@@ -4689,7 +4797,8 @@
     "vanilla_item": 77772011,
     "tags": [
       "pirates_grotto",
-      "chapter_5"
+      "chapter_5",
+      "grotto_curse"
     ]
   },
   {
@@ -4702,7 +4811,8 @@
     "vanilla_item": 77772015,
     "tags": [
       "pirates_grotto",
-      "chapter_5"
+      "chapter_5",
+      "grotto_curse"
     ]
   },
   {
@@ -4715,7 +4825,8 @@
     "vanilla_item": 77772126,
     "tags": [
       "pirates_grotto",
-      "chapter_5"
+      "chapter_5",
+      "grotto_curse"
     ]
   },
   {
@@ -4728,7 +4839,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "pirates_grotto",
-      "chapter_5"
+      "chapter_5",
+      "grotto_barrel"
     ]
   },
   {
@@ -4742,7 +4854,8 @@
     "tags": [
       "pirates_grotto",
       "chapter_5",
-      "shine"
+      "shine",
+      "grotto_barrel"
     ]
   },
   {
@@ -4756,7 +4869,8 @@
     "tags": [
       "pirates_grotto",
       "chapter_5",
-      "shine"
+      "shine",
+      "grotto_spike_wall"
     ]
   },
   {
@@ -4769,7 +4883,8 @@
     "vanilla_item": 77772160,
     "tags": [
       "pirates_grotto",
-      "star"
+      "star",
+      "grotto_cortez_hoard"
     ]
   },
   {
@@ -4782,7 +4897,8 @@
     "vanilla_item": 77772007,
     "tags": [
       "excess_express",
-      "chapter_6"
+      "chapter_6",
+      "express_locomotive"
     ]
   },
   {
@@ -4797,7 +4913,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "panel"
+      "panel",
+      "express_locomotive"
     ]
   },
   {
@@ -4810,7 +4927,8 @@
     "vanilla_item": 77772207,
     "tags": [
       "excess_express",
-      "chapter_6"
+      "chapter_6",
+      "express_front_car"
     ]
   },
   {
@@ -4824,7 +4942,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "excess_express",
-      "chapter_6"
+      "chapter_6",
+      "express_front_car"
     ]
   },
   {
@@ -4837,7 +4956,8 @@
     "vanilla_item": 77772012,
     "tags": [
       "excess_express",
-      "chapter_6"
+      "chapter_6",
+      "express_middle_car"
     ]
   },
   {
@@ -4850,7 +4970,8 @@
     "vanilla_item": 77772018,
     "tags": [
       "excess_express",
-      "chapter_6"
+      "chapter_6",
+      "express_middle_car"
     ]
   },
   {
@@ -4863,7 +4984,8 @@
     "vanilla_item": 77772049,
     "tags": [
       "excess_express",
-      "chapter_6"
+      "chapter_6",
+      "express_middle_car"
     ]
   },
   {
@@ -4876,7 +4998,8 @@
     "vanilla_item": 77772069,
     "tags": [
       "excess_express",
-      "chapter_6"
+      "chapter_6",
+      "express_middle_car"
     ]
   },
   {
@@ -4889,7 +5012,8 @@
     "vanilla_item": 77772074,
     "tags": [
       "excess_express",
-      "chapter_6"
+      "chapter_6",
+      "express_middle_car"
     ]
   },
   {
@@ -4902,7 +5026,8 @@
     "vanilla_item": 77772161,
     "tags": [
       "excess_express",
-      "chapter_6"
+      "chapter_6",
+      "express_middle_car"
     ]
   },
   {
@@ -4916,7 +5041,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "shine"
+      "shine",
+      "express_middle_car"
     ]
   },
   {
@@ -4930,7 +5056,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "panel"
+      "panel",
+      "express_middle_car"
     ]
   },
   {
@@ -4944,7 +5071,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "shop"
+      "shop",
+      "express_diner"
     ]
   },
   {
@@ -4958,7 +5086,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "shop"
+      "shop",
+      "express_diner"
     ]
   },
   {
@@ -4972,7 +5101,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "shop"
+      "shop",
+      "express_diner"
     ]
   },
   {
@@ -4986,7 +5116,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "star_piece"
+      "star_piece",
+      "express_diner"
     ]
   },
   {
@@ -5000,7 +5131,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "star_piece"
+      "star_piece",
+      "express_diner"
     ]
   },
   {
@@ -5014,7 +5146,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "shop"
+      "shop",
+      "express_diner"
     ]
   },
   {
@@ -5028,7 +5161,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "shop"
+      "shop",
+      "express_diner"
     ]
   },
   {
@@ -5042,7 +5176,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "shop"
+      "shop",
+      "express_diner"
     ]
   },
   {
@@ -5055,7 +5190,8 @@
     "vanilla_item": 77772120,
     "tags": [
       "excess_express",
-      "chapter_6"
+      "chapter_6",
+      "express_back_car"
     ]
   },
   {
@@ -5069,7 +5205,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "shine"
+      "shine",
+      "express_back_car"
     ]
   },
   {
@@ -5083,7 +5220,8 @@
     "tags": [
       "excess_express",
       "chapter_6",
-      "star_piece"
+      "star_piece",
+      "express_back_car"
     ]
   },
   {
@@ -5096,7 +5234,8 @@
     "vanilla_item": 77772153,
     "tags": [
       "excess_express",
-      "chapter_6"
+      "chapter_6",
+      "express_storage"
     ]
   },
   {
@@ -5109,7 +5248,8 @@
     "vanilla_item": 77772178,
     "tags": [
       "riverside",
-      "chapter_6"
+      "chapter_6",
+      "riverside_drawbridge"
     ]
   },
   {
@@ -5123,7 +5263,8 @@
     "vanilla_item": 77772032,
     "tags": [
       "riverside",
-      "chapter_6"
+      "chapter_6",
+      "riverside_entrance"
     ]
   },
   {
@@ -5137,7 +5278,8 @@
     "tags": [
       "riverside",
       "chapter_6",
-      "star_piece"
+      "star_piece",
+      "riverside_clockwork"
     ]
   },
   {
@@ -5150,7 +5292,8 @@
     "vanilla_item": 77772179,
     "tags": [
       "riverside",
-      "chapter_6"
+      "chapter_6",
+      "riverside_clockwork"
     ]
   },
   {
@@ -5163,7 +5306,8 @@
     "vanilla_item": 77772094,
     "tags": [
       "riverside",
-      "chapter_6"
+      "chapter_6",
+      "riverside_back"
     ]
   },
   {
@@ -5177,7 +5321,8 @@
     "tags": [
       "riverside",
       "chapter_6",
-      "shine"
+      "shine",
+      "riverside_back"
     ]
   },
   {
@@ -5190,7 +5335,8 @@
     "vanilla_item": 77772196,
     "tags": [
       "riverside",
-      "chapter_6"
+      "chapter_6",
+      "riverside_back"
     ]
   },
   {
@@ -5203,7 +5349,8 @@
     "vanilla_item": 77772049,
     "tags": [
       "riverside",
-      "chapter_6"
+      "chapter_6",
+      "riverside_tube"
     ]
   },
   {
@@ -5216,7 +5363,8 @@
     "vanilla_item": 77772128,
     "tags": [
       "riverside",
-      "chapter_6"
+      "chapter_6",
+      "riverside_tube"
     ]
   },
   {
@@ -5230,7 +5378,8 @@
     "vanilla_item": 77772052,
     "tags": [
       "riverside",
-      "chapter_6"
+      "chapter_6",
+      "riverside_ultra_boots"
     ]
   },
   {
@@ -5243,7 +5392,8 @@
     "vanilla_item": 77772202,
     "tags": [
       "riverside",
-      "chapter_6"
+      "chapter_6",
+      "riverside_ultra_boots"
     ]
   },
   {
@@ -5257,7 +5407,8 @@
     "tags": [
       "riverside",
       "chapter_6",
-      "shine"
+      "shine",
+      "riverside_goomba"
     ]
   },
   {
@@ -5271,7 +5422,8 @@
     "tags": [
       "poshley_heights",
       "chapter_6",
-      "chapter_7"
+      "chapter_7",
+      "poshley_station"
     ]
   },
   {
@@ -5284,7 +5436,8 @@
     "vanilla_item": 77772093,
     "tags": [
       "poshley_heights",
-      "chapter_6"
+      "chapter_6",
+      "poshley_station"
     ]
   },
   {
@@ -5298,7 +5451,8 @@
     "tags": [
       "poshley_heights",
       "chapter_6",
-      "star_piece"
+      "star_piece",
+      "poshley_station"
     ]
   },
   {
@@ -5312,7 +5466,8 @@
     "tags": [
       "poshley_heights",
       "chapter_6",
-      "star_piece"
+      "star_piece",
+      "poshley_station"
     ]
   },
   {
@@ -5326,7 +5481,8 @@
     "tags": [
       "poshley_heights",
       "chapter_6",
-      "panel"
+      "panel",
+      "poshley_station"
     ]
   },
   {
@@ -5340,7 +5496,8 @@
     "tags": [
       "poshley_heights",
       "chapter_6",
-      "shine"
+      "shine",
+      "poshley_sanctum_exterior"
     ]
   },
   {
@@ -5353,7 +5510,8 @@
     "vanilla_item": 77772070,
     "tags": [
       "poshley_heights",
-      "star"
+      "star",
+      "poshley_sanctum_altar"
     ]
   },
   {
@@ -5366,7 +5524,8 @@
     "vanilla_item": 77772105,
     "tags": [
       "poshley_heights",
-      "chapter_6"
+      "chapter_6",
+      "poshley_sanctum_altar"
     ]
   },
   {
@@ -5380,7 +5539,8 @@
     "tags": [
       "poshley_heights",
       "chapter_6",
-      "shine"
+      "shine",
+      "poshley_sanctum_altar"
     ]
   },
   {
@@ -5393,7 +5553,8 @@
     "vanilla_item": 77772067,
     "tags": [
       "poshley_heights",
-      "chapter_6"
+      "chapter_6",
+      "poshley_downtown"
     ]
   },
   {
@@ -5406,7 +5567,8 @@
     "vanilla_item": 77772099,
     "tags": [
       "poshley_heights",
-      "chapter_6"
+      "chapter_6",
+      "poshley_downtown"
     ]
   },
   {
@@ -5419,7 +5581,8 @@
     "vanilla_item": 77772125,
     "tags": [
       "poshley_heights",
-      "chapter_6"
+      "chapter_6",
+      "poshley_downtown"
     ]
   },
   {
@@ -5433,7 +5596,8 @@
     "tags": [
       "poshley_heights",
       "chapter_6",
-      "star_piece"
+      "star_piece",
+      "poshley_downtown"
     ]
   },
   {
@@ -5446,7 +5610,8 @@
     "vanilla_item": 77772047,
     "tags": [
       "fahr_outpost",
-      "chapter_7"
+      "chapter_7",
+      "fahr_entrance"
     ]
   },
   {
@@ -5460,7 +5625,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "panel"
+      "panel",
+      "fahr_entrance"
     ]
   },
   {
@@ -5474,7 +5640,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "star_piece"
+      "star_piece",
+      "fahr_town_outskirts"
     ]
   },
   {
@@ -5488,7 +5655,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "shop"
+      "shop",
+      "fahr_town_outskirts"
     ]
   },
   {
@@ -5501,7 +5669,8 @@
     "vanilla_item": 77772099,
     "tags": [
       "fahr_outpost",
-      "chapter_7"
+      "chapter_7",
+      "fahr_town"
     ]
   },
   {
@@ -5515,7 +5684,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "shop"
+      "shop",
+      "fahr_town"
     ]
   },
   {
@@ -5529,7 +5699,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "shop"
+      "shop",
+      "fahr_town"
     ]
   },
   {
@@ -5543,7 +5714,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "shine"
+      "shine",
+      "fahr_town"
     ]
   },
   {
@@ -5556,7 +5728,8 @@
     "vanilla_item": 77772164,
     "tags": [
       "fahr_outpost",
-      "shop"
+      "shop",
+      "fahr_town"
     ]
   },
   {
@@ -5569,7 +5742,8 @@
     "vanilla_item": 77772173,
     "tags": [
       "fahr_outpost",
-      "chapter_7"
+      "chapter_7",
+      "fahr_town"
     ]
   },
   {
@@ -5583,7 +5757,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "panel"
+      "panel",
+      "fahr_town"
     ]
   },
   {
@@ -5597,7 +5772,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "star_piece"
+      "star_piece",
+      "fahr_town"
     ]
   },
   {
@@ -5611,7 +5787,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "shop"
+      "shop",
+      "fahr_town"
     ]
   },
   {
@@ -5625,7 +5802,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "shop"
+      "shop",
+      "fahr_town"
     ]
   },
   {
@@ -5639,7 +5817,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "shine"
+      "shine",
+      "fahr_west_enemy"
     ]
   },
   {
@@ -5653,7 +5832,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "star_piece"
+      "star_piece",
+      "fahr_west_enemy"
     ]
   },
   {
@@ -5666,7 +5846,8 @@
     "vanilla_item": 77772095,
     "tags": [
       "fahr_outpost",
-      "chapter_7"
+      "chapter_7",
+      "fahr_east_enemy"
     ]
   },
   {
@@ -5680,7 +5861,8 @@
     "tags": [
       "fahr_outpost",
       "chapter_7",
-      "star_piece"
+      "star_piece",
+      "fahr_east_enemy"
     ]
   },
   {
@@ -5693,7 +5875,8 @@
     "vanilla_item": 77772182,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "moon_landing"
     ]
   },
   {
@@ -5706,7 +5889,8 @@
     "vanilla_item": 77772209,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "moon_east_one"
     ]
   },
   {
@@ -5719,7 +5903,8 @@
     "vanilla_item": 77772144,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "moon_fortress_view"
     ]
   },
   {
@@ -5733,7 +5918,8 @@
     "tags": [
       "xnaut_fortress",
       "chapter_7",
-      "star_piece"
+      "star_piece",
+      "moon_fortress_view"
     ]
   },
   {
@@ -5746,7 +5932,8 @@
     "vanilla_item": 77772159,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "moon_west_two"
     ]
   },
   {
@@ -5759,7 +5946,8 @@
     "vanilla_item": 77772038,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "moon_west_one"
     ]
   },
   {
@@ -5772,7 +5960,8 @@
     "vanilla_item": 77772053,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_elevator_key"
     ]
   },
   {
@@ -5785,7 +5974,8 @@
     "vanilla_item": 77772191,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_elevator_key"
     ]
   },
   {
@@ -5798,7 +5988,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_crane"
     ]
   },
   {
@@ -5811,7 +6002,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_crane"
     ]
   },
   {
@@ -5824,7 +6016,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_crane"
     ]
   },
   {
@@ -5837,7 +6030,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_crane"
     ]
   },
   {
@@ -5850,7 +6044,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_crane"
     ]
   },
   {
@@ -5863,7 +6058,8 @@
     "vanilla_item": 77772000,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_crane"
     ]
   },
   {
@@ -5876,7 +6072,8 @@
     "vanilla_item": 77772056,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_crane"
     ]
   },
   {
@@ -5889,7 +6086,8 @@
     "vanilla_item": 77772057,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_crane"
     ]
   },
   {
@@ -5903,7 +6101,8 @@
     "tags": [
       "xnaut_fortress",
       "chapter_7",
-      "star_piece"
+      "star_piece",
+      "fortress_crane"
     ]
   },
   {
@@ -5917,7 +6116,8 @@
     "vanilla_item": 77772054,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_quiz"
     ]
   },
   {
@@ -5930,7 +6130,8 @@
     "vanilla_item": 77772021,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_card_a"
     ]
   },
   {
@@ -5943,7 +6144,8 @@
     "vanilla_item": 77772169,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_card_a"
     ]
   },
   {
@@ -5956,7 +6158,8 @@
     "vanilla_item": 77772034,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_teleporter"
     ]
   },
   {
@@ -5970,7 +6173,8 @@
     "tags": [
       "xnaut_fortress",
       "chapter_7",
-      "star_piece"
+      "star_piece",
+      "fortress_vents"
     ]
   },
   {
@@ -5983,7 +6187,8 @@
     "vanilla_item": 77772022,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_office"
     ]
   },
   {
@@ -5996,7 +6201,8 @@
     "vanilla_item": 77772023,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_card_b"
     ]
   },
   {
@@ -6009,7 +6215,8 @@
     "vanilla_item": 77772092,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_card_b"
     ]
   },
   {
@@ -6022,7 +6229,8 @@
     "vanilla_item": 77772024,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_factory"
     ]
   },
   {
@@ -6035,7 +6243,8 @@
     "vanilla_item": 77772204,
     "tags": [
       "xnaut_fortress",
-      "chapter_7"
+      "chapter_7",
+      "fortress_factory"
     ]
   },
   {
@@ -6049,7 +6258,8 @@
     "tags": [
       "xnaut_fortress",
       "chapter_7",
-      "star"
+      "star",
+      "fortress_boss"
     ]
   },
   {

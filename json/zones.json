@@ -85,7 +85,7 @@
         "name": "Rogueport Blimp - Train",
         "map": "gor_04",
         "bero": "n_bero",
-        "target": "",
+        "target": "Excess Express Front Passenger Car - South",
         "region": "blimp",
         "rules": {
             "has": "Train Ticket"
@@ -236,7 +236,7 @@
         "name": "Rogueport Sewers Town - Teleporter",
         "map": "tik_00",
         "bero": null,
-        "target": "",
+        "target": "X-Naut Fortress Teleporter Room - Teleporter",
         "region": "sewer_town_teleporter",
         "rules": null
     },
@@ -262,14 +262,6 @@
         "bero": "n_bero",
         "target": "Rogueport Sewers Twilight - Door",
         "region": "sewer_west_west",
-        "rules": null
-    },
-    {
-        "name": "Rogueport Sewers West - Fahr Outpost Pipe",
-        "map": "tik_07",
-        "bero": "dokan_1",
-        "target": "",
-        "region": "sewer_west_fahr",
         "rules": null
     },
     {
@@ -311,7 +303,7 @@
         "name": "Rogueport Sewers Twilight - Pipe",
         "map": "tik_08",
         "bero": "dokan",
-        "target": "",
+        "target": "Twilight Town Leftside - Pipe",
         "region": "rogue_twilight",
         "rules": null
     },
@@ -443,7 +435,7 @@
         "name": "Rogueport Sewers West Warp Room - CH Five Warp",
         "map": "tik_17",
         "bero": "dokan_2",
-        "target": "",
+        "target": "Keelhaul Key Jungle Entrance - Pipe",
         "region": "sewer_west_warp_top",
         "rules": null
     },
@@ -451,7 +443,7 @@
         "name": "Rogueport Sewers West Warp Room - CH Six Warp",
         "map": "tik_17",
         "bero": "dokan_1",
-        "target": "",
+        "target": "Poshley Heights Sanctum Exterior - Pipe",
         "region": "sewer_west_warp_top",
         "rules": null
     },
@@ -625,28 +617,12 @@
         "region": "petal_meadow_entrance"
     },
     {
-        "name": "filler",
-        "map": "<null>",
-        "bero": "<null>",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
         "name": "Petal Meadows Field - West",
         "map": "hei_13",
         "bero": "w_bero",
         "target": "Petal Meadows Entrance - East",
         "rules": null,
         "region": "petal_meadow_field"
-    },
-    {
-        "name": "Exit Combat",
-        "map": "8ME01",
-        "bero": "<null>",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
     },
     {
         "name": "Petal Meadows Entrance - East",
@@ -1364,30 +1340,6 @@
         "region": "boggly_flurrie_outside"
     },
     {
-        "name": "load game",
-        "map": "dmo_00",
-        "bero": "<null>",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "load title screen",
-        "map": "title",
-        "bero": "<null>",
-        "target": "load game",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "load prologue",
-        "map": "aaa_00",
-        "bero": "prologue",
-        "target": "load title screen",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
         "name": "Boggly Woods Plane Panel Room - East",
         "map": "win_02",
         "bero": "e_bero",
@@ -1847,22 +1799,6 @@
         "region": "tree_ambush"
     },
     {
-        "name": "filler",
-        "map": "tou_00",
-        "bero": "modoru",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "filler",
-        "map": "tou_00",
-        "bero": "<null>",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
         "name": "Glitzville Main Square - Blimp",
         "map": "tou_01",
         "bero": "<null>",
@@ -1985,30 +1921,6 @@
         "region": "glitzville_hall"
     },
     {
-        "name": "filler",
-        "map": "tou_04",
-        "bero": "<null>",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "filler",
-        "map": "tou_10",
-        "bero": "<null>",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "filler",
-        "map": "tou_03",
-        "bero": "<null>",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
         "name": "Glitzville Hall - Minor League Door",
         "map": "tou_04",
         "bero": "s_bero_7",
@@ -2025,22 +1937,6 @@
         "target": "Glitzville Hall - Minor League Door",
         "rules": null,
         "region": "glitzville_minor"
-    },
-    {
-        "name": "filler",
-        "map": "tou_05",
-        "bero": "<null>",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "filler",
-        "map": "tou_08",
-        "bero": "<null>",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
     },
     {
         "name": "Glitzville Hall - Major League Door",
@@ -2069,62 +1965,6 @@
         "target": "Glitzville Hall - Major League Door",
         "rules": null,
         "region": "glitzville_major"
-    },
-    {
-        "name": "Glitzville Old Minor League - North",
-        "map": "tou_11",
-        "bero": "<null>",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "filler",
-        "map": "tou_11",
-        "bero": "nidome",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "filler",
-        "map": "tou_11",
-        "bero": "sandome",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "filler",
-        "map": "tou_09",
-        "bero": "a_door_9_omote",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "filler",
-        "map": "tou_04",
-        "bero": "toire",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "filler",
-        "map": "tou_08",
-        "bero": "dokan",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
-    },
-    {
-        "name": "filler",
-        "map": "tou_07",
-        "bero": "<null>",
-        "target": "filler",
-        "rules": null,
-        "region": "rogue_center"
     },
     {
         "name": "Glitzville Hall - Champ's Room Door",
@@ -2373,5 +2213,1948 @@
             "function": "super_hammer"
         },
         "region": "glitzville_vent"
+    },
+    {
+        "name": "Twilight Trail Dark Woods First Room - East",
+        "map": "gra_03",
+        "bero": "e_bero",
+        "target": "Twilight Trail Fallen Tree - Pipe",
+        "rules": {
+            "has": "Paper Mode"
+        },
+        "region": "twilight_trail_wood_one"
+    },
+    {
+        "name": "Twilight Trail Fallen Tree - Pipe",
+        "map": "gra_02",
+        "bero": "w_bero_2",
+        "target": "Twilight Trail Dark Woods First Room - East",
+        "rules": {
+            "and": [
+                {
+                    "function": "tube_curse"
+                },
+                {
+                    "has": "Flurrie"
+                }
+            ]
+        },
+        "region": "twilight_trail_tree"
+    },
+    {
+        "name": "Twilight Trail Dark Woods Second Room - East",
+        "map": "gra_04",
+        "bero": "e_bero",
+        "target": "Twilight Trail Dark Woods First Room - West",
+        "rules": null,
+        "region": "twilight_trail_wood_two"
+    },
+    {
+        "name": "Twilight Trail Dark Woods First Room - West",
+        "map": "gra_03",
+        "bero": "w_bero",
+        "target": "Twilight Trail Dark Woods Second Room - East",
+        "rules": {
+            "has": "Paper Mode"
+        },
+        "region": "twilight_trail_wood_one"
+    },
+    {
+        "name": "Twilight Trail Dark Woods Third Room - West",
+        "map": "gra_05",
+        "bero": "w_bero",
+        "target": "Twilight Trail Dark Woods Second Room - West",
+        "rules": null,
+        "region": "twilight_trail_wood_three"
+    },
+    {
+        "name": "Twilight Trail Dark Woods Second Room - West",
+        "map": "gra_04",
+        "bero": "e_bero_2",
+        "target": "Twilight Trail Dark Woods Third Room - West",
+        "rules": {
+            "and": [
+                {
+                    "has": "Flurrie"
+                },
+                {
+                    "has": "Paper Mode"
+                }
+            ]
+        },
+        "region": "twilight_trail_wood_two"
+    },
+    {
+        "name": "Twilight Trail Steeple Exterior - West",
+        "map": "gra_06",
+        "bero": "sw_bero",
+        "target": "Twilight Trail Dark Woods Thrid Room - East",
+        "rules": null,
+        "region": "twilight_trail_steeple"
+    },
+    {
+        "name": "Twilight Trail Dark Woods Thrid Room - East",
+        "map": "gra_05",
+        "bero": "e_bero",
+        "target": "Twilight Trail Steeple Exterior - West",
+        "rules": {
+            "and": [
+                {
+                    "has": "Flurrie"
+                },
+                {
+                    "function": "super_boots"
+                }
+            ]
+        },
+        "region": "twilight_trail_wood_three"
+    },
+    {
+        "name": "Creepy Steeple Well Entrance - Entrance",
+        "map": "jin_09",
+        "bero": "<null>",
+        "target": "Twilight Trail Steeple Exterior - Well",
+        "rules": null,
+        "region": "steeple_well_entrance"
+    },
+    {
+        "name": "Twilight Trail Steeple Exterior - Well",
+        "map": "gra_06",
+        "bero": "ana",
+        "target": "Creepy Steeple Well Entrance - Entrance",
+        "rules": null,
+        "region": "twilight_trail_steeple"
+    },
+    {
+        "name": "Creepy Steeple Well Buzzy Room - West",
+        "map": "jin_10",
+        "bero": "w_bero",
+        "target": "Creepy Steeple Well Entrance - East",
+        "rules": {
+            "has": "null"
+        },
+        "region": "steeple_well_buzzy"
+    },
+    {
+        "name": "Creepy Steeple Well Entrance - East",
+        "map": "jin_09",
+        "bero": "e_bero",
+        "target": "Creepy Steeple Well Buzzy Room - West",
+        "rules": null,
+        "region": "steeple_well_entrance"
+    },
+    {
+        "name": "Creepy Steeple Underground Tube Passage - South",
+        "map": "jin_11",
+        "bero": "s_bero",
+        "target": "Creepy Steeple Well Buzzy Room - North",
+        "rules": null,
+        "region": "steeple_underground_tube"
+    },
+    {
+        "name": "Creepy Steeple Well Buzzy Room - North",
+        "map": "jin_10",
+        "bero": "n_bero",
+        "target": "Creepy Steeple Underground Tube Passage - South",
+        "rules": {
+            "has": "Vivian"
+        },
+        "region": "steeple_well_buzzy"
+    },
+    {
+        "name": "Creepy Steeple Boo Chest Room Background - Ceiling Panel",
+        "map": "jin_07",
+        "bero": "<null>",
+        "target": "One Way",
+        "src_region": "steeple_underground_tube",
+        "rules": {
+            "and": [
+                {
+                    "function": "super_boots"
+                },
+                {
+                    "function": "tube_curse"
+                }
+            ]
+        },
+        "region": "steeple_boo_background"
+    },
+    {
+        "name": "Creepy Steeple Parrot Room - East Tube",
+        "map": "jin_08",
+        "bero": "e_bero_2",
+        "target": "One Way",
+        "src_region": "steeple_boo_background",
+        "rules": {
+            "function": "tube_curse"
+        },
+        "region": "steeple_parrot"
+    },
+    {
+        "name": "Creepy Steeple Boo Chest Room - West",
+        "map": "jin_07",
+        "bero": "w_bero_1",
+        "target": "Creepy Steeple Parrot Room - East Door",
+        "rules": {
+            "or": [
+                {
+                    "has": "Steeple Key 1"
+                },
+                {
+                    "can_reach_region": "Creepy Steeple Parrot Room"
+                }
+            ]
+        },
+        "region": "steeple_boo"
+    },
+    {
+        "name": "Creepy Steeple Parrot Room - East Door",
+        "map": "jin_08",
+        "bero": "e_bero_1",
+        "target": "Creepy Steeple Boo Chest Room - West",
+        "rules": null,
+        "region": "steeple_parrot"
+    },
+    {
+        "name": "Creepy Steeple Under Statue - West",
+        "map": "jin_06",
+        "bero": "w_bero",
+        "target": "Creepy Steeple Boo Chest Room - East",
+        "rules": null,
+        "region": "steeple_statue"
+    },
+    {
+        "name": "Creepy Steeple Boo Chest Room - East",
+        "map": "jin_07",
+        "bero": "e_bero",
+        "target": "Creepy Steeple Under Statue - West",
+        "rules": null,
+        "region": "steeple_boo"
+    },
+    {
+        "name": "Creepy Steeple Main Hall - Statue",
+        "map": "jin_00",
+        "bero": "ana",
+        "target": "Creepy Steeple Under Statue - Ceiling",
+        "rules": null,
+        "region": "steeple_main"
+    },
+    {
+        "name": "Creepy Steeple Under Statue - Ceiling",
+        "map": "jin_06",
+        "bero": "<null>",
+        "target": "Creepy Steeple Main Hall - Statue",
+        "rules": null,
+        "region": "steeple_statue"
+    },
+    {
+        "name": "Creepy Steeple Cookbook Room - South",
+        "map": "jin_05",
+        "bero": "s_bero",
+        "target": "Creepy Steeple Main Hall - North Tube",
+        "rules": {
+            "function": "tube_curse"
+        },
+        "region": "steeple_cookbook"
+    },
+    {
+        "name": "Creepy Steeple Main Hall - North Tube",
+        "map": "jin_00",
+        "bero": "n_bero_1",
+        "target": "Creepy Steeple Cookbook Room - South",
+        "rules": {
+            "function": "tube_curse"
+        },
+        "region": "steeple_main"
+    },
+    {
+        "name": "Twilight Trail Steeple Exterior - North",
+        "map": "gra_06",
+        "bero": "n_bero",
+        "target": "Creepy Steeple Main Hall - West",
+        "rules": {
+            "function": "tube_curse"
+        },
+        "region": "twilight_trail_steeple"
+    },
+    {
+        "name": "Creepy Steeple Main Hall - West",
+        "map": "jin_00",
+        "bero": "w_bero",
+        "target": "Twilight Trail Steeple Exterior - North",
+        "rules": null,
+        "region": "steeple_main"
+    },
+    {
+        "name": "Creepy Steeple North Hall - Southwest",
+        "map": "jin_01",
+        "bero": "s_bero_1",
+        "target": "Creepy Steeple Main Hall - North Door",
+        "rules": null,
+        "region": "steeple_north"
+    },
+    {
+        "name": "Creepy Steeple Main Hall - North Door",
+        "map": "jin_00",
+        "bero": "n_bero_3",
+        "target": "Creepy Steeple North Hall - Southwest",
+        "rules": {
+            "can_reach_region": "Creepy Steeple Boo Chest Room"
+        },
+        "region": "steeple_main"
+    },
+    {
+        "name": "Creepy Steeple South Hall - Northwest",
+        "map": "jin_02",
+        "bero": "n_bero_1",
+        "target": "Creepy Steeple Main Hall - South",
+        "rules": null,
+        "region": "steeple_south"
+    },
+    {
+        "name": "Creepy Steeple Main Hall - South",
+        "map": "jin_00",
+        "bero": "s_bero",
+        "target": "Creepy Steeple South Hall - Northwest",
+        "rules": {
+            "can_reach_region": "Creepy Steeple Boo Chest Room"
+        },
+        "region": "steeple_main"
+    },
+    {
+        "name": "Creepy Steeple Back Stairs - South",
+        "map": "jin_03",
+        "bero": "s_bero",
+        "target": "Creepy Steeple South Hall - Northeast",
+        "rules": null,
+        "region": "steeple_back_stair"
+    },
+    {
+        "name": "Creepy Steeple South Hall - Northeast",
+        "map": "jin_02",
+        "bero": "n_bero_2",
+        "target": "Creepy Steeple Back Stairs - South",
+        "rules": null,
+        "region": "steeple_south"
+    },
+    {
+        "name": "Creepy Steeple North Hall - Southwest",
+        "map": "jin_01",
+        "bero": "s_bero_2",
+        "target": "Creepy Steeple Back Stairs - North",
+        "rules": null,
+        "region": "steeple_north"
+    },
+    {
+        "name": "Creepy Steeple Back Stairs - North",
+        "map": "jin_03",
+        "bero": "n_bero",
+        "target": "Creepy Steeple North Hall - Southwest",
+        "rules": null,
+        "region": "steeple_back_stair"
+    },
+    {
+        "name": "Creepy Steeple Main Hall - East",
+        "map": "jin_00",
+        "bero": "e_bero_2",
+        "target": "One Way",
+        "src_region": "steeple_back_stair",
+        "rules": null,
+        "region": "steeple_main"
+    },
+    {
+        "name": "Creepy Steeple Main Hall - Southeast",
+        "map": "jin_00",
+        "bero": "e_bero_3",
+        "target": "Creepy Steeple Back Stairs - Southwest",
+        "rules": {
+            "has": "null"
+        },
+        "region": "steeple_main"
+    },
+    {
+        "name": "Creepy Steeple Back Stairs - Southwest",
+        "map": "jin_03",
+        "bero": "w_bero3",
+        "target": "Creepy Steeple Main Hall - Southeast",
+        "rules": {
+            "can_reach_region": "Creepy Steeple South Hall"
+        },
+        "region": "steeple_back_stair"
+    },
+    {
+        "name": "Creepy Steeple Main Hall - Northeast",
+        "map": "jin_00",
+        "bero": "e_bero_1",
+        "target": "Creepy Steeple Main Hall - Northwest",
+        "rules": {
+            "can_reach_entrance": "Creepy Steeple Main Hall - Spire Door"
+        },
+        "region": "steeple_main"
+    },
+    {
+        "name": "Creepy Steeple Main Hall - Northwest",
+        "map": "jin_03",
+        "bero": "w_bero1",
+        "target": "Creepy Steeple Main Hall - Northeast",
+        "rules": {
+            "can_reach_region": "Creepy Steeple North Hall"
+        },
+        "region": "steeple_back_stair"
+    },
+    {
+        "name": "Creepy Steeple Spire - South",
+        "map": "jin_04",
+        "bero": "s_bero",
+        "target": "Creepy Steeple Main Hall - Spire Door",
+        "rules": null,
+        "region": "steeple_spire"
+    },
+    {
+        "name": "Creepy Steeple Main Hall - Spire Door",
+        "map": "jin_00",
+        "bero": "n_bero_2",
+        "target": "Creepy Steeple Spire - South",
+        "rules": {
+            "can_reach_entrance": "Creepy Steeple Main Hall - Northeast"
+        },
+        "region": "steeple_main"
+    },
+    {
+        "name": "Keelhaul Key Town - Boat Re-Entry",
+        "map": "muj_01",
+        "bero": "<null>",
+        "target": "One Way",
+        "src_region": "rogue_dock",
+        "rules": {
+            "and": [
+                {
+                    "can_reach": "Rogueport Eastside: Shine Sprite 3"
+                },
+                {
+                    "has": "Old Letter"
+                }
+            ]
+        },
+        "region": "keelhaul_town"
+    },
+    {
+        "name": "Keelhaul Key Landing Site - East",
+        "map": "muj_00",
+        "bero": "e_bero",
+        "target": "Keelhaul Key Town - West",
+        "rules": null,
+        "region": "keelhaul_landing"
+    },
+    {
+        "name": "Keelhaul Key Town - West",
+        "map": "muj_01",
+        "bero": "w_bero",
+        "target": "Keelhaul Key Landing Site - East",
+        "rules": null,
+        "region": "keelhaul_town"
+    },
+    {
+        "name": "Keelhaul Key Jungle Entrance - West",
+        "map": "muj_02",
+        "bero": "w_bero",
+        "target": "Keelhaul Key Town - East",
+        "rules": null,
+        "region": "keelhaul_jungle_entrance"
+    },
+    {
+        "name": "Keelhaul Key Town - East",
+        "map": "muj_01",
+        "bero": "e_bero1",
+        "target": "Keelhaul Key Jungle Entrance - West",
+        "rules": null,
+        "region": "keelhaul_town"
+    },
+    {
+        "name": "Keelhaul Key Jungle Winding Climb - West",
+        "map": "muj_03",
+        "bero": "w_bero",
+        "target": "Keelhaul Key Jungle Entrance - East",
+        "rules": null,
+        "region": "keelhaul_winding"
+    },
+    {
+        "name": "Keelhaul Key Jungle Entrance - East",
+        "map": "muj_02",
+        "bero": "e_bero",
+        "target": "Keelhaul Key Jungle Winding Climb - West",
+        "rules": null,
+        "region": "keelhaul_jungle_entrance"
+    },
+    {
+        "name": "Keelhaul Key Jungle Bridge - West",
+        "map": "muj_04",
+        "bero": "w_bero",
+        "target": "Keelhaul Key Jungle Winding Climb - East",
+        "rules": null,
+        "region": "keelhaul_jungle_bridge"
+    },
+    {
+        "name": "Keelhaul Key Jungle Winding Climb - East",
+        "map": "muj_03",
+        "bero": "e_bero",
+        "target": "Keelhaul Key Jungle Bridge - West",
+        "rules": {
+            "has": "Yoshi"
+        },
+        "region": "keelhaul_winding"
+    },
+    {
+        "name": "Keelhaul Key Grotto Entrance - West",
+        "map": "muj_05",
+        "bero": "w_bero",
+        "target": "Keelhaul Key Bridge - East",
+        "rules": null,
+        "region": "keelhaul_grotto_entrance"
+    },
+    {
+        "name": "Keelhaul Key Bridge - East",
+        "map": "muj_04",
+        "bero": "e_bero",
+        "target": "Keelhaul Key Grotto Entrance - West",
+        "rules": null,
+        "region": "keelhaul_jungle_bridge"
+    },
+    {
+        "name": "Pirate's Grotto Entrance - West",
+        "map": "dou_00",
+        "bero": "w_bero",
+        "target": "Keelhaul Key Grotto Entrance - East",
+        "rules": null,
+        "region": "grotto_entrance"
+    },
+    {
+        "name": "Keelhaul Key Grotto Entrance - East",
+        "map": "muj_05",
+        "bero": "e_bero",
+        "target": "Pirate's Grotto Entrance - West",
+        "rules": {
+            "and": [
+                {
+                    "has": "Skull Gem"
+                },
+                {
+                    "has": "Bobbery"
+                }
+            ]
+        },
+        "region": "keelhaul_grotto_entrance"
+    },
+    {
+        "name": "Pirate's Grotto Spring Room - West",
+        "map": "dou_01",
+        "bero": "w_bero",
+        "target": "Pirate's Grotto Entrance - East",
+        "rules": null,
+        "region": "grotto_spring"
+    },
+    {
+        "name": "Pirate's Grotto Entrance - East",
+        "map": "dou_00",
+        "bero": "e_bero",
+        "target": "Pirate's Grotto Spring Room - West",
+        "rules": null,
+        "region": "grotto_entrance"
+    },
+    {
+        "name": "Pirate's Grotto Handle Room - West",
+        "map": "dou_02",
+        "bero": "w_bero_1",
+        "target": "Pirate's Grotto Spring Room - East",
+        "rules": {
+            "or": [
+                {
+                    "has": "Yoshi"
+                },
+                {
+                    "has": "Vivian"
+                }
+            ]
+        },
+        "region": "grotto_handle"
+    },
+    {
+        "name": "Pirate's Grotto Spring Room - East",
+        "map": "dou_01",
+        "bero": "e_bero",
+        "target": "Pirate's Grotto Handle Room - West",
+        "rules": null,
+        "region": "grotto_spring"
+    },
+    {
+        "name": "Pirate's Grotto Bullet Bill Bridge - West Door",
+        "map": "dou_12",
+        "bero": "w_bero_2",
+        "target": "Pirate's Grotto Handle Room - East Door",
+        "rules": null,
+        "region": "grotto_bullet_bridge"
+    },
+    {
+        "name": "Pirate's Grotto Handle Room - East Door",
+        "map": "dou_02",
+        "bero": "e_bero_2",
+        "target": "Pirate's Grotto Bullet Bill Bridge - West Door",
+        "rules": {
+            "or": [
+                {
+                    "has": "Yoshi"
+                },
+                {
+                    "has": "Vivian"
+                }
+            ]
+        },
+        "region": "grotto_handle"
+    },
+    {
+        "name": "Pirate's Grotto Sluice Gate - West Bottom Door",
+        "map": "dou_03",
+        "bero": "w_bero_2",
+        "target": "Pirate's Grotto Bullet Bill Bridge - East Door",
+        "rules": null,
+        "region": "grotto_gate"
+    },
+    {
+        "name": "Pirate's Grotto Bullet Bill Bridge - East Door",
+        "map": "dou_12",
+        "bero": "e_bero_2",
+        "target": "Pirate's Grotto Sluice Gate - West Bottom Door",
+        "rules": null,
+        "region": "grotto_bullet_bridge"
+    },
+    {
+        "name": "Pirate's Grotto Staircase - West Bottom",
+        "map": "dou_05",
+        "bero": "w_bero_1",
+        "target": "Pirate's Grotto Sluice Gate - East Bottom Door",
+        "rules": null,
+        "region": "grotto_staircase"
+    },
+    {
+        "name": "Pirate's Grotto Sluice Gate - East Bottom Door",
+        "map": "dou_03",
+        "bero": "e_bero_1",
+        "target": "Pirate's Grotto Staircase - West Bottom",
+        "rules": null,
+        "region": "grotto_gate"
+    },
+    {
+        "name": "Pirate's Grotto Parabuzzy Room - West",
+        "map": "dou_06",
+        "bero": "w_bero",
+        "target": "Pirate's Grotto Staircase - East",
+        "rules": null,
+        "region": "grotto_parabuzzy"
+    },
+    {
+        "name": "Pirate's Grotto Staircase - East",
+        "map": "dou_05",
+        "bero": "e_bero",
+        "target": "Pirate's Grotto Parabuzzy Room - West",
+        "rules": {
+            "has": "Grotto Key"
+        },
+        "region": "grotto_staircase"
+    },
+    {
+        "name": "Pirate's Grotto Spike Wall Room - North",
+        "map": "dou_10",
+        "bero": "n_bero",
+        "target": "Pirate's Grotto Parabuzzy Room - South",
+        "rules": {
+            "or": [
+                {
+                    "function": "tube_curse"
+                },
+                {
+                    "has": "Vivian"
+                }
+            ]
+        },
+        "region": "grotto_spike_wall"
+    },
+    {
+        "name": "Pirate's Grotto Parabuzzy Room - South",
+        "map": "dou_06",
+        "bero": "s_bero",
+        "target": "Pirate's Grotto Spike Wall Room - North",
+        "rules": null,
+        "region": "grotto_parabuzzy"
+    },
+    {
+        "name": "Pirate's Grotto Barrel Room - East Door",
+        "map": "dou_09",
+        "bero": "e_bero_2",
+        "target": "Pirate's Grotto Spike Wall Room - West Door",
+        "rules": null,
+        "region": "grotto_barrel"
+    },
+    {
+        "name": "Pirate's Grotto Spike Wall Room - West Door",
+        "map": "dou_10",
+        "bero": "w_bero_2",
+        "target": "Pirate's Grotto Barrel Room - East Door",
+        "rules": {
+            "or": [
+                {
+                    "has": "Yoshi"
+                },
+                {
+                    "has": "Vivian"
+                }
+            ]
+        },
+        "region": "grotto_spike_wall"
+    },
+    {
+        "name": "Pirate's Grotto Bullet Bill Steps Room - East",
+        "map": "dou_13",
+        "bero": "e_bero_1",
+        "target": "Pirate's Grotto Barrel Room - West Door",
+        "rules": null,
+        "region": "grotto_bullet_step"
+    },
+    {
+        "name": "Pirate's Grotto Barrel Room - West Door",
+        "map": "dou_09",
+        "bero": "w_bero",
+        "target": "Pirate's Grotto Bullet Bill Steps Room - East",
+        "rules": null,
+        "region": "grotto_barrel"
+    },
+    {
+        "name": "Pirate's Grotto Broken Ship Exterior - East",
+        "map": "dou_08",
+        "bero": "e_bero",
+        "target": "Pirate's Grotto Bullet Bill Steps Room - West",
+        "rules": {
+            "has": "Boat Mode"
+        },
+        "region": "grotto_broken_ship"
+    },
+    {
+        "name": "Pirate's Grotto Bullet Bill Steps Room - West",
+        "map": "dou_13",
+        "bero": "w_bero",
+        "target": "Pirate's Grotto Broken Ship Exterior - East",
+        "rules": null,
+        "region": "grotto_bullet_step"
+    },
+    {
+        "name": "Pirate's Grotto Curse Chest Room - South",
+        "map": "dou_07",
+        "bero": "s_bero",
+        "target": "Pirate's Grotto Broken Ship Exterior - North",
+        "rules": null,
+        "region": "grotto_curse"
+    },
+    {
+        "name": "Pirate's Grotto Broken Ship Exterior - North",
+        "map": "dou_08",
+        "bero": "n_bero",
+        "target": "Pirate's Grotto Curse Chest Room - South",
+        "rules": null,
+        "region": "grotto_broken_ship"
+    },
+    {
+        "name": "Pirate's Grotto Sluice Gate - East Top Door",
+        "map": "dou_03",
+        "bero": "e_bero_3",
+        "target": "Pirate's Grotto Staircase - West Top Door",
+        "rules": null,
+        "region": "grotto_gate_upper"
+    },
+    {
+        "name": "Pirate's Grotto Staircase - West Top Door",
+        "map": "dou_05",
+        "bero": "w_bero_3",
+        "target": "Pirate's Grotto Sluice Gate - East Top Door",
+        "rules": {
+            "has": "Bobbery"
+        },
+        "region": "grotto_staircase"
+    },
+    {
+        "name": "Pirate's Grotto Storeroom - East",
+        "map": "dou_04",
+        "bero": "e_bero",
+        "target": "Pirate's Grotto Sluice Gate - West Top Door",
+        "rules": null,
+        "region": "grotto_storeroom"
+    },
+    {
+        "name": "Pirate's Grotto Sluice Gate - West Top Door",
+        "map": "dou_03",
+        "bero": "w_bero_3",
+        "target": "Pirate's Grotto Storeroom - East",
+        "rules": null,
+        "region": "grotto_gate_upper"
+    },
+    {
+        "name": "Pirate's Grotto Staircase - West Top Canal",
+        "map": "dou_05",
+        "bero": "w_bero_2",
+        "target": "Pirate's Grotto Sluice Gate - East Top Canal",
+        "rules": null,
+        "region": "grotto_staircase_canal"
+    },
+    {
+        "name": "Pirate's Grotto Sluice Gate - East Top Canal",
+        "map": "dou_03",
+        "bero": "e_bero_2",
+        "target": "Pirate's Grotto Staircase - West Top Canal",
+        "rules": null,
+        "region": "grotto_gate_upper_canal"
+    },
+    {
+        "name": "Pirate's Grotto Bullet Bill Bridge - East Canal",
+        "map": "dou_12",
+        "bero": "e_bero_1",
+        "target": "Pirate's Grotto Sluice Gate - West Bottom Canal",
+        "rules": null,
+        "region": "grotto_bullet_bridge_canal"
+    },
+    {
+        "name": "Pirate's Grotto Sluice Gate - West Bottom Canal",
+        "map": "dou_03",
+        "bero": "w_bero_1",
+        "target": "Pirate's Grotto Bullet Bill Bridge - East Canal",
+        "rules": null,
+        "region": "grotto_gate_canal"
+    },
+    {
+        "name": "Pirate's Grotto Handle Room - East Canal",
+        "map": "dou_02",
+        "bero": "e_bero_1",
+        "target": "Pirate's Grotto Bullet Bill Bridge - West Canal",
+        "rules": null,
+        "region": "grotto_handle_canal"
+    },
+    {
+        "name": "Pirate's Grotto Bullet Bill Bridge - West Canal",
+        "map": "dou_12",
+        "bero": "w_bero_1",
+        "target": "Pirate's Grotto Handle Room - East Canal",
+        "rules": null,
+        "region": "grotto_bullet_bridge_canal"
+    },
+    {
+        "name": "Pirate's Grotto Barrel Room - North",
+        "map": "dou_09",
+        "bero": "n_bero",
+        "target": "Pirate's Grotto Sluice Gate - South",
+        "rules": null,
+        "region": "grotto_barrel_canal"
+    },
+    {
+        "name": "Pirate's Grotto Sluice Gate - South",
+        "map": "dou_03",
+        "bero": "s_bero",
+        "target": "Pirate's Grotto Barrel Room - North",
+        "rules": {
+            "and": [
+                {
+                    "can_reach_region": "Pirate's Grotto Sluice Gate"
+                },
+                {
+                    "has": "Gate Handle"
+                }
+            ]
+        },
+        "region": "grotto_gate_canal"
+    },
+    {
+        "name": "Pirate's Grotto Spike Wall Room - West Canal",
+        "map": "dou_10",
+        "bero": "w_bero_1",
+        "target": "Pirate's Grotto Barrel Room - East Canal",
+        "rules": null,
+        "region": "grotto_spike_wall_canal"
+    },
+    {
+        "name": "Pirate's Grotto Barrel Room - East Canal",
+        "map": "dou_09",
+        "bero": "e_bero_1",
+        "target": "Pirate's Grotto Spike Wall Room - West Canal",
+        "rules": null,
+        "region": "grotto_barrel_canal"
+    },
+    {
+        "name": "Pirate's Grotto Toad Boat Room - West",
+        "map": "dou_11",
+        "bero": "w_bero",
+        "target": "Pirate's Grotto Barrel Room - East Canal",
+        "rules": {
+            "has": "null"
+        },
+        "region": "grotto_toad"
+    },
+    {
+        "name": "Pirate's Grotto Barrel Room - East Canal",
+        "map": "dou_10",
+        "bero": "e_bero",
+        "target": "Pirate's Grotto Toad Boat Room - West",
+        "rules": null,
+        "region": "grotto_spike_wall_canal"
+    },
+    {
+        "name": "Pirate's Grotto Cortez's Ship Exterior - West",
+        "map": "muj_10",
+        "bero": "w_bero",
+        "target": "Pirate's Grotto Toad Boat Room - East",
+        "rules": null,
+        "region": "grotto_cortez_exterior"
+    },
+    {
+        "name": "Pirate's Grotto Toad Boat Room - East",
+        "map": "dou_11",
+        "bero": "e_bero",
+        "target": "Pirate's Grotto Cortez's Ship Exterior - West",
+        "rules": {
+            "and": [
+                {
+                    "has": "Boat Mode"
+                },
+                {
+                    "has": "Plane Mode"
+                }
+            ]
+        },
+        "region": "grotto_toad"
+    },
+    {
+        "name": "Pirate's Grotto Cortez's Ship Hall - West",
+        "map": "muj_11",
+        "bero": "w_bero",
+        "target": "Pirate's Grotto Cortez's Ship Exterior - East",
+        "rules": null,
+        "region": "grotto_cortez_hall"
+    },
+    {
+        "name": "Pirate's Grotto Cortez's Ship Exterior - East",
+        "map": "muj_10",
+        "bero": "A_b_bero03",
+        "target": "Pirate's Grotto Cortez's Ship Hall - West",
+        "rules": null,
+        "region": "grotto_cortez_exterior"
+    },
+    {
+        "name": "Pirate's Grotto Cortez's Hoard - West",
+        "map": "muj_12",
+        "bero": "w_bero",
+        "target": "One Way",
+        "src_region": "grotto_cortez_hall",
+        "rules": null,
+        "region": "grotto_cortez_hoard"
+    },
+    {
+        "name": "Excess Express Dining Car - East",
+        "map": "rsh_03_a",
+        "bero": "e_bero",
+        "target": "Excess Express Middle Passenger Car - West",
+        "rules": null,
+        "region": "express_diner"
+    },
+    {
+        "name": "Excess Express Middle Passenger Car - West",
+        "map": "rsh_02_a",
+        "bero": "w_bero",
+        "target": "Excess Express Dining Car - East",
+        "rules": null,
+        "region": "express_middle_car"
+    },
+    {
+        "name": "Excess Express Back Passenger Car - East",
+        "map": "rsh_04_a",
+        "bero": "e_bero",
+        "target": "Excess Express Dining Car - West",
+        "rules": null,
+        "region": "express_back_car"
+    },
+    {
+        "name": "Excess Express Dining Car - West",
+        "map": "rsh_03_a",
+        "bero": "w_bero",
+        "target": "Excess Express Back Passenger Car - East",
+        "rules": null,
+        "region": "express_diner"
+    },
+    {
+        "name": "Excess Express Storage Car - East",
+        "map": "rsh_05_a",
+        "bero": "e_bero",
+        "target": "Excess Express Back Passenger Car - West",
+        "rules": null,
+        "region": "express_storage"
+    },
+    {
+        "name": "Excess Express Back Passenger Car - West",
+        "map": "rsh_04_a",
+        "bero": "w_bero",
+        "target": "Excess Express Storage Car - East",
+        "rules": null,
+        "region": "express_back_car"
+    },
+    {
+        "name": "Excess Express Front Passenger Car - West",
+        "map": "rsh_01_a",
+        "bero": "w_bero",
+        "target": "Excess Express Middle Passenger Car - East",
+        "rules": null,
+        "region": "express_front_car"
+    },
+    {
+        "name": "Excess Express Middle Passenger Car - East",
+        "map": "rsh_02_a",
+        "bero": "e_bero",
+        "target": "Excess Express Front Passenger Car - West",
+        "rules": null,
+        "region": "express_middle_car"
+    },
+    {
+        "name": "Excess Express Locomotive - West",
+        "map": "rsh_00_a",
+        "bero": "w_bero",
+        "target": "Excess Express Front Passenger Car - East",
+        "rules": null,
+        "region": "express_locomotive"
+    },
+    {
+        "name": "Excess Express Front Passenger Car - East",
+        "map": "rsh_01_a",
+        "bero": "e_bero",
+        "target": "Excess Express Locomotive - West",
+        "rules": null,
+        "region": "express_front_car"
+    },
+    {
+        "name": "Excess Express Front Passenger Car - South",
+        "map": "rsh_01_a",
+        "bero": "s_bero",
+        "target": "Rogueport Blimp - Train",
+        "rules": null,
+        "region": "express_front_car"
+    },
+    {
+        "name": "Riverside Station Drawbridge - Train Door",
+        "map": "hom_00",
+        "bero": "n_bero_1",
+        "target": "Excess Express Front Passenger Car - South Riverside Entrance",
+        "rules": null,
+        "region": "riverside_drawbridge"
+    },
+    {
+        "name": "Excess Express Front Passenger Car - South Riverside Entrance",
+        "map": "rsh_01_b",
+        "bero": "s_bero",
+        "target": "Riverside Station Drawbridge - Train Door",
+        "rules": null,
+        "region": "express_front_car"
+    },
+    {
+        "name": "Riverside Station Entrance - South",
+        "map": "eki_00",
+        "bero": "s_bero",
+        "target": "Riverside Station Drawbridge - North",
+        "rules": null,
+        "region": "riverside_entrance"
+    },
+    {
+        "name": "Riverside Station Drawbridge - North",
+        "map": "hom_00",
+        "bero": "n_bero_2",
+        "target": "Riverside Station Entrance - South",
+        "rules": {
+            "has": "Station Key 1"
+        },
+        "region": "riverside_drawbridge"
+    },
+    {
+        "name": "Riverside Station Stairs - West Bottom",
+        "map": "eki_01",
+        "bero": "w_dero",
+        "target": "Riverside Station Entrance - East",
+        "rules": null,
+        "region": "riverside_stairs"
+    },
+    {
+        "name": "Riverside Station Entrance - East",
+        "map": "eki_00",
+        "bero": "e_bero",
+        "target": "Riverside Station Stairs - West Bottom",
+        "rules": null,
+        "region": "riverside_entrance"
+    },
+    {
+        "name": "Riverside Station Clockwork Room - South",
+        "map": "eki_02",
+        "bero": "s_bero",
+        "target": "Riverside Station Stairs - North",
+        "rules": null,
+        "region": "riverside_clockwork"
+    },
+    {
+        "name": "Riverside Station Stairs - North",
+        "map": "eki_01",
+        "bero": "n_bero",
+        "target": "Riverside Station Clockwork Room - South",
+        "rules": {
+            "function": "tube_curse"
+        },
+        "region": "riverside_stairs"
+    },
+    {
+        "name": "Riverside Station Back Exterior - West Top",
+        "map": "eki_03",
+        "bero": "w_bero_1",
+        "target": "Riverside Station Stairs - East",
+        "rules": null,
+        "region": "riverside_back"
+    },
+    {
+        "name": "Riverside Station Stairs - East",
+        "map": "eki_01",
+        "bero": "e_bero",
+        "target": "Riverside Station Back Exterior - West Top",
+        "rules": {
+            "has": "Station Key 2"
+        },
+        "region": "riverside_stairs"
+    },
+    {
+        "name": "Riverside Station Tube Mode Maze - East",
+        "map": "eki_04",
+        "bero": "e_bero",
+        "target": "Riverside Sation Back Exterior - West Bottom",
+        "rules": null,
+        "region": "riverside_tube"
+    },
+    {
+        "name": "Riverside Sation Back Exterior - West Bottom",
+        "map": "eki_03",
+        "bero": "w_bero_2",
+        "target": "Riverside Station Tube Mode Maze - East",
+        "rules": {
+            "has": "Flurrie"
+        },
+        "region": "riverside_back"
+    },
+    {
+        "name": "Riverside Station Ultra Boots Room - North",
+        "map": "eki_05",
+        "bero": "n_bero",
+        "target": "Riverside Station Tube Mode Maze - South",
+        "rules": {
+            "or": [
+                {
+                    "function": "ultra_boots"
+                },
+                {
+                    "can_reach_entrance": "Riverside Station Ultra Boots Room - West Bottom"
+                }
+            ]
+        },
+        "region": "riverside_ultra_boots"
+    },
+    {
+        "name": "Riverside Station Tube Mode Maze - South",
+        "map": "eki_04",
+        "bero": "s_bero",
+        "target": "Riverside Station Ultra Boots Room - North",
+        "rules": {
+            "function": "tube_curse"
+        },
+        "region": "riverside_tube"
+    },
+    {
+        "name": "Riverside Station Goomba Room - East Bottom",
+        "map": "eki_06",
+        "bero": "e_bero_1",
+        "target": "Riverside Station Ultra Boots Room - West Bottom",
+        "rules": null,
+        "region": "riverside_goomba"
+    },
+    {
+        "name": "Riverside Station Ultra Boots Room - West Bottom",
+        "map": "eki_05",
+        "bero": "w_bero_2",
+        "target": "Riverside Station Goomba Room - East Bottom",
+        "rules": {
+            "or": [
+                {
+                    "function": "ultra_boots"
+                },
+                {
+                    "can_reach_entrance": "Riverside Station Ultra Boots Room - West Bottom"
+                }
+            ]
+        },
+        "region": "riverside_ultra_boots"
+    },
+    {
+        "name": "Riverside Station Ultra Boots Room - West Top",
+        "map": "eki_05",
+        "bero": "w_bero_1",
+        "target": "One Way",
+        "src_region": "riverside_goomba",
+        "rules": null,
+        "region": "riverside_ultra_boots"
+    },
+    {
+        "name": "Excess Express Roof - East",
+        "map": "rsh_06_a",
+        "bero": "w_bero",
+        "target": "Excess Express Storage Car - West",
+        "rules": null,
+        "region": "express_roof"
+    },
+    {
+        "name": "Excess Express Storage Car - West",
+        "map": "rsh_05_a",
+        "bero": "w_bero",
+        "target": "Excess Express Roof - East",
+        "rules": {
+            "and": [
+                {
+                    "can_reach_region": "Riverside Station Entrance"
+                },
+                {
+                    "has": "Elevator Key (Station)"
+                },
+                {
+                    "can_reach": "Excess Express Middle Passenger Car: Briefcase"
+                }
+            ]
+        },
+        "region": "express_storage"
+    },
+    {
+        "name": "Poshley Heights Station - North",
+        "map": "pik_00",
+        "bero": "n_bero",
+        "target": "Excess Express Front Passenger Car - South",
+        "rules": {
+            "and": [
+                {
+                    "can_reach_region": "Excess Express Roof"
+                },
+                {
+                    "can_reach_entrance": "Excess Express Storage Car - West"
+                }
+            ]
+        },
+        "region": "poshley_station"
+    },
+    {
+        "name": "Poshley Heights Downtown - Northwest",
+        "map": "pik_04",
+        "bero": "nw_bero",
+        "target": "Poshley Heights Station - Southeast",
+        "rules": null,
+        "region": "poshley_downtown"
+    },
+    {
+        "name": "Poshley Heights Station - Southeast",
+        "map": "pik_00",
+        "bero": "se_bero",
+        "target": "Poshley Heights Downtown - Northwest",
+        "rules": null,
+        "region": "poshley_station"
+    },
+    {
+        "name": "Poshley Heights Sanctum Exterior - Northwest",
+        "map": "pik_01",
+        "bero": "nw_bero",
+        "target": "Poshley Heights Downtown - Southeast",
+        "rules": null,
+        "region": "poshley_sanctum_exterior"
+    },
+    {
+        "name": "Poshley Heights Downtown - Southeast",
+        "map": "pik_04",
+        "bero": "se_bero",
+        "target": "Poshley Heights Sanctum Exterior - Northwest",
+        "rules": null,
+        "region": "poshley_downtown"
+    },
+    {
+        "name": "Poshley Heights Sanctum - South",
+        "map": "pik_02",
+        "bero": "s_bero",
+        "target": "Poshley Heights Sanctum Exterior - Northeast",
+        "rules": null,
+        "region": "poshley_sanctum"
+    },
+    {
+        "name": "Poshley Heights Sanctum Exterior - Northeast",
+        "map": "pik_01",
+        "bero": "n_bero",
+        "target": "Poshley Heights Sanctum - South",
+        "rules": {
+            "and": [
+                {
+                    "can_reach_region": "Excess Express Roof"
+                },
+                {
+                    "can_reach_entrance": "Excess Express Storage Car - West"
+                }
+            ]
+        },
+        "region": "poshley_sanctum_exterior"
+    },
+    {
+        "name": "Poshley Heights Sanctum Altar - South",
+        "map": "pik_03",
+        "bero": "s_bero",
+        "target": "Poshley Heights Sanctum - North",
+        "rules": null,
+        "region": "poshley_sanctum_altar"
+    },
+    {
+        "name": "Poshley Heights Sanctum - North",
+        "map": "pik_02",
+        "bero": "h_bero",
+        "target": "Poshley Heights Sanctum Altar - South",
+        "rules": {
+            "and": [
+                {
+                    "has": "Plane Mode"
+                },
+                {
+                    "function": "ultra_boots"
+                }
+            ]
+        },
+        "region": "poshley_sanctum"
+    },
+    {
+        "name": "Fahr Outpost Entrance - Pipe",
+        "map": "bom_00",
+        "bero": "dokan",
+        "target": "Rogueport Sewers West - Fahr Outpost Pipe",
+        "rules": null,
+        "region": "fahr_entrance"
+    },
+    {
+        "name": "Rogueport Sewers West - Fahr Outpost Pipe",
+        "map": "tik_07",
+        "bero": "dokan__1",
+        "target": "Fahr Outpost Entrance - Pipe",
+        "rules": null,
+        "region": "sewer_west_fahr"
+    },
+    {
+        "name": "Fahr Outpost West Enemy Room - West",
+        "map": "bom_03",
+        "bero": "w_bero",
+        "target": "Fahr Outpost Entrance - East",
+        "rules": null,
+        "region": "fahr_west_enemy"
+    },
+    {
+        "name": "Fahr Outpost Entrance - East",
+        "map": "bom_00",
+        "bero": "e_bero",
+        "target": "Fahr Outpost West Enemy Room - West",
+        "rules": null,
+        "region": "fahr_entrance"
+    },
+    {
+        "name": "Fahr Outpost East Enemy Room - West",
+        "map": "bom_04",
+        "bero": "w_bero4",
+        "target": "Fahr Outpost West Enemy Room - East",
+        "rules": null,
+        "region": "fahr_east_enemy"
+    },
+    {
+        "name": "Fahr Outpost West Enemy Room - East",
+        "map": "bom_03",
+        "bero": "e_bero",
+        "target": "Fahr Outpost East Enemy Room - West",
+        "rules": null,
+        "region": "fahr_west_enemy"
+    },
+    {
+        "name": "Fahr Outpost Town Outskirts - West",
+        "map": "bom_01",
+        "bero": "w_bero",
+        "target": "Fahr Outpost East Enemy Room - East",
+        "rules": null,
+        "region": "fahr_town_outskirts"
+    },
+    {
+        "name": "Fahr Outpost East Enemy Room - East",
+        "map": "bom_04",
+        "bero": "e_bero4",
+        "target": "Fahr Outpost Town Outskirts - West",
+        "rules": null,
+        "region": "fahr_east_enemy"
+    },
+    {
+        "name": "Fahr Outpost Town - West",
+        "map": "bom_02",
+        "bero": "w_bero",
+        "target": "Fahr Outpost Town Outskirts - East",
+        "rules": null,
+        "region": "fahr_town"
+    },
+    {
+        "name": "Fahr Outpost Town Outskirts - East",
+        "map": "bom_01",
+        "bero": "e_bero",
+        "target": "Fahr Outpost Town - West",
+        "rules": null,
+        "region": "fahr_town_outskirts"
+    },
+    {
+        "name": "Moon Landing Site - Landing",
+        "map": "moo_00",
+        "bero": "<null>",
+        "target": "One Way",
+        "src_region": "fahr_town_outskirts",
+        "rules": {
+            "and": [
+                {
+                    "can_reach_region": "Fahr Outpost Town"
+                },
+                {
+                    "has": "Bobbery"
+                }
+            ]
+        },
+        "region": "moon_landing"
+    },
+    {
+        "name": "Moon West Room 1 - East",
+        "map": "moo_07",
+        "bero": "e_bero",
+        "target": "Moon Landing Site - West",
+        "rules": null,
+        "region": "moon_west_one"
+    },
+    {
+        "name": "Moon Landing Site - West",
+        "map": "moo_00",
+        "bero": "w_bero",
+        "target": "Moon West Room 1 - East",
+        "rules": null,
+        "region": "moon_landing"
+    },
+    {
+        "name": "Moon West Room 2 - East",
+        "map": "moo_06",
+        "bero": "e_bero",
+        "target": "Moon West Room 1 - West",
+        "rules": null,
+        "region": "moon_west_two"
+    },
+    {
+        "name": "Moon West Room 1 - West",
+        "map": "moo_07",
+        "bero": "w_bero",
+        "target": "Moon West Room 2 - East",
+        "rules": null,
+        "region": "moon_west_one"
+    },
+    {
+        "name": "Moon Fortress View - East",
+        "map": "moo_02",
+        "bero": "e_bero",
+        "target": "Moon West Room 2 - West",
+        "rules": null,
+        "region": "moon_fortress_view"
+    },
+    {
+        "name": "Moon West Room 2 - West",
+        "map": "moo_06",
+        "bero": "w_bero",
+        "target": "Moon Fortress View - East",
+        "rules": null,
+        "region": "moon_west_two"
+    },
+    {
+        "name": "Moon East Room 1 - West",
+        "map": "moo_01",
+        "bero": "w_bero",
+        "target": "Moon Landing Site - East",
+        "rules": null,
+        "region": "moon_east_one"
+    },
+    {
+        "name": "Moon Landing Site - East",
+        "map": "moo_00",
+        "bero": "e_bero",
+        "target": "Moon East Room 1 - West",
+        "rules": null,
+        "region": "moon_landing"
+    },
+    {
+        "name": "Moon East Room 2 - West",
+        "map": "moo_05",
+        "bero": "w_bero",
+        "target": "Moon East Room 1 - East",
+        "rules": null,
+        "region": "moon_east_two"
+    },
+    {
+        "name": "Moon East Room 1 - East",
+        "map": "moo_01",
+        "bero": "e_bero",
+        "target": "Moon East Room 2 - West",
+        "rules": null,
+        "region": "moon_east_one"
+    },
+    {
+        "name": "Moon Fortress View - West",
+        "map": "moo_02",
+        "bero": "w_bero",
+        "target": "Moon East Room 2 - East",
+        "rules": null,
+        "region": "moon_fortress_view"
+    },
+    {
+        "name": "Moon East Room 2 - East",
+        "map": "moo_05",
+        "bero": "e_bero",
+        "target": "Moon Fortress View - West",
+        "rules": null,
+        "region": "moon_fortress_view"
+    },
+    {
+        "name": "X-Naut Fortress Escalator - West",
+        "map": "aji_19",
+        "bero": "w_bero",
+        "target": "Moon Fortress View - Pipe",
+        "rules": null,
+        "region": "fortress_escalator"
+    },
+    {
+        "name": "Moon Fortress View - Pipe",
+        "map": "moo_02",
+        "bero": "n_bero",
+        "target": "X-Naut Fortress Escalator - West",
+        "rules": {
+            "has": "Bobbery"
+        },
+        "region": "moon_fortress_view"
+    },
+    {
+        "name": "X-Naut Fortress Entrance - West",
+        "map": "aji_00",
+        "bero": "w_bero",
+        "target": "X-Naut Fortress Escalator - East",
+        "rules": null,
+        "region": "fortress_entrance"
+    },
+    {
+        "name": "X-Naut Fortress Escalator - East",
+        "map": "aji_19",
+        "bero": "e_bero",
+        "target": "X-Naut Fortress Entrance - West",
+        "rules": null,
+        "region": "fortress_escalator"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Ground Floor West",
+        "map": "aji_01",
+        "bero": "w_bero_1",
+        "target": "X-Naut Fortress Entrance - East",
+        "rules": null,
+        "region": "fortress_hall_ground"
+    },
+    {
+        "name": "X-Naut Fortress Entrance - East",
+        "map": "aji_00",
+        "bero": "e_bero",
+        "target": "X-Naut Fortress Hall - Ground Floor West",
+        "rules": null,
+        "region": "fortress_entrance"
+    },
+    {
+        "name": "X-Naut Fortress Elevator Key Room - West",
+        "map": "aji_02",
+        "bero": "w_bero",
+        "target": "X-Naut Fortress Hall - Ground Floor East",
+        "rules": null,
+        "region": "fortress_elevator_key"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Ground Floor East",
+        "map": "aji_01",
+        "bero": "e_bero_1",
+        "target": "X-Naut Fortress Elevator Key Room - West",
+        "rules": null,
+        "region": "fortress_hall_ground"
+    },
+    {
+        "name": "X-Naut Fortress Crane Room - East",
+        "map": "aji_03",
+        "bero": "e_bero",
+        "target": "X-Naut Fortress Hall - Sublevel One West",
+        "rules": null,
+        "region": "fortress_crane"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Sublevel One West",
+        "map": "aji_01",
+        "bero": "w_bero_2",
+        "target": "X-Naut Fortress Crane Room - East",
+        "rules": null,
+        "region": "fortress_hall_sublevel_one"
+    },
+    {
+        "name": "X-Naut Fortress Quiz Room - West",
+        "map": "aji_04",
+        "bero": "w_bero",
+        "target": "X-Naut Fortress Hall - Sublevel One East",
+        "rules": null,
+        "region": "fortress_quiz"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Sublevel One East",
+        "map": "aji_01",
+        "bero": "e_bero_2",
+        "target": "X-Naut Fortress Quiz Room - West",
+        "rules": null,
+        "region": "fortress_hall_sublevel_one"
+    },
+    {
+        "name": "X-Naut Fortress Card Key Room A - East",
+        "map": "aji_05",
+        "bero": "e_bero",
+        "target": "X-Naut Fortress Hall - Sublevel Two West",
+        "rules": null,
+        "region": "fortress_card_a"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Sublevel Two West",
+        "map": "aji_01",
+        "bero": "w_bero_3",
+        "target": "X-Naut Fortress Card Key Room A - East",
+        "rules": null,
+        "region": "fortress_hall_sublevel_two"
+    },
+    {
+        "name": "X-Naut Fortress Potion Lab - South",
+        "map": "aji_06",
+        "bero": "s_bero",
+        "target": "X-Naut Fortress Hall - Sublevel Two North One",
+        "rules": null,
+        "region": "fortress_potion"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Sublevel Two North One",
+        "map": "aji_01",
+        "bero": "n_bero_1",
+        "target": "X-Naut Fortress Potion Lab - South",
+        "rules": null,
+        "region": "fortress_hall_sublevel_two"
+    },
+    {
+        "name": "X-Naut Fortress Teleporter Room - South",
+        "map": "aji_07",
+        "bero": "s_bero",
+        "target": "X-Naut Fortress Hall - Sublevel Two North Two",
+        "rules": null,
+        "region": "fortress_teleporter"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Sublevel Two North Two",
+        "map": "aji_01",
+        "bero": "n_bero_2",
+        "target": "X-Naut Fortress Teleporter Room - South",
+        "rules": null,
+        "region": "fortress_hall_sublevel_two"
+    },
+    {
+        "name": "X-Naut Fortress Teleporter Room - Teleporter",
+        "map": "aji_07",
+        "bero": "<null>",
+        "target": "Rogueport Sewers Town - Teleporter",
+        "rules": null,
+        "region": "fortress_teleporter"
+    },
+    {
+        "name": "X-Naut Fortress Vents Room - South",
+        "map": "aji_08",
+        "bero": "s_bero_1",
+        "target": "X-Naut Fortress Hall - Sublevel Two North Three",
+        "rules": null,
+        "region": "fortress_vents"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Sublevel Two North Three",
+        "map": "aji_01",
+        "bero": "n_bero_3",
+        "target": "X-Naut Fortress Vents Room - South",
+        "rules": null,
+        "region": "fortress_hall_sublevel_two"
+    },
+    {
+        "name": "X-Naut Fortress Teleporter Room - Vents",
+        "map": "aji_07",
+        "bero": "tenjo",
+        "target": "One Way",
+        "src_region": "fortress_vents",
+        "rules": {
+            "and": [
+                {
+                    "function": "ultra_boots"
+                },
+                {
+                    "has": "Paper Mode"
+                }
+            ]
+        },
+        "region": "fortress_teleporter"
+    },
+    {
+        "name": "X-Naut Fortress Potion Lab - Vents",
+        "map": "aji_06",
+        "bero": "tenjo",
+        "target": "One Way",
+        "src_region": "fortress_vents",
+        "rules": {
+            "and": [
+                {
+                    "function": "ultra_boots"
+                },
+                {
+                    "has": "Paper Mode"
+                }
+            ]
+        },
+        "region": "fortress_potion"
+    },
+    {
+        "name": "X-Naut Fortress Changing Room - South",
+        "map": "aji_09",
+        "bero": "s_bero",
+        "target": "X-Naut Fortress Hall - Sublevel Two North Four",
+        "rules": null,
+        "region": "fortress_changing"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Sublevel Two North Four",
+        "map": "aji_01",
+        "bero": "n_bero_4",
+        "target": "X-Naut Fortress Changing Room - South",
+        "rules": null,
+        "region": "fortress_hall_sublevel_two"
+    },
+    {
+        "name": "X-Naut Fortress Changing Room - Vent",
+        "map": "aji_09",
+        "bero": "tenjo",
+        "target": "One Way",
+        "src_region": "fortress_vents",
+        "rules": {
+            "and": [
+                {
+                    "function": "ultra_boots"
+                },
+                {
+                    "has": "Paper Mode"
+                }
+            ]
+        },
+        "region": "fortress_changing"
+    },
+    {
+        "name": "X-Naut Fortress Intermission Meeting Room - West",
+        "map": "aji_10",
+        "bero": "w_bero",
+        "target": "X-Naut Fortress Hall - Sublevel Two East",
+        "rules": null,
+        "region": "fortress_intermission_meeting"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Sublevel Two East",
+        "map": "aji_01",
+        "bero": "e_bero3",
+        "target": "X-Naut Fortress Intermission Meeting Room - West",
+        "rules": null,
+        "region": "fortress_hall_sublevel_two"
+    },
+    {
+        "name": "X-Naut Fortress Office - West",
+        "map": "aji_11",
+        "bero": "w_bero",
+        "target": "X-Naut Fortress Intermission Meeting Room - East",
+        "rules": null,
+        "region": "fortress_office"
+    },
+    {
+        "name": "X-Naut Fortress Intermission Meeting Room - East",
+        "map": "aji_10",
+        "bero": "e_bero",
+        "target": "X-Naut Fortress Office - West",
+        "rules": null,
+        "region": "fortress_intermission_meeting"
+    },
+    {
+        "name": "X-Naut Fortress Card Key Room B - East",
+        "map": "aji_12",
+        "bero": "e_bero",
+        "target": "X-Naut Fortress Hall - Sublevel 3 West",
+        "rules": null,
+        "region": "fortress_card_b"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Sublevel 3 West",
+        "map": "aji_01",
+        "bero": "w_bero_4",
+        "target": "X-Naut Fortress Card Key Room B - East",
+        "rules": null,
+        "region": "fortress_hall_sublevel_three"
+    },
+    {
+        "name": "X-Naut Fortress Triple Card Key Room - West",
+        "map": "aji_18",
+        "bero": "w_bero",
+        "target": "X-Naut Fortress Hall - Sublevel 3 East",
+        "rules": null,
+        "region": "fortress_triple_card"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Sublevel 3 East",
+        "map": "aji_01",
+        "bero": "e_bero_4",
+        "target": "X-Naut Fortress Triple Card Key Room - West",
+        "rules": null,
+        "region": "fortress_hall_sublevel_three"
+    },
+    {
+        "name": "X-Naut Fortress Peach's Room - East",
+        "map": "aji_16",
+        "bero": "e_bero",
+        "target": "X-Naut Fortress Hall - Sublevel 4 West",
+        "rules": null,
+        "region": "fortress_peach_room"
+    },
+    {
+        "name": "X-Naut Fortress Hall - Sublevel 4 West",
+        "map": "aji_01",
+        "bero": "w_bero_5",
+        "target": "X-Naut Fortress Peach's Room - East",
+        "rules": null,
+        "region": "fortress_hall_sublevel_four"
+    },
+    {
+        "name": "X-Naut Fortress Peach's Bathroom - East",
+        "map": "aji_15",
+        "bero": "e_bero",
+        "target": "X-Naut Fortress Peach's Room - West",
+        "rules": null,
+        "region": "fortress_peach_bathroom"
+    },
+    {
+        "name": "X-Naut Fortress Peach's Room - West",
+        "map": "aji_16",
+        "bero": "w_bero",
+        "target": "X-Naut Fortress Peach's Bathroom - East",
+        "rules": null,
+        "region": "fortress_peach_room"
+    },
+    {
+        "name": "X-Naut Fortress Factory - West",
+        "map": "aji_13",
+        "bero": "w_bero",
+        "target": "X-Naut Fortress Triple Card Key Room - East",
+        "rules": {
+            "has": "Paper Mode"
+        },
+        "region": "fortress_factory"
+    },
+    {
+        "name": "X-Naut Fortress Triple Card Key Room - East",
+        "map": "aji_18",
+        "bero": "e_bero",
+        "target": "X-Naut Fortress Factory - West",
+        "rules": {
+            "and": [
+                {
+                    "has": "Card Key 1"
+                },
+                {
+                    "has": "Card Key 2"
+                },
+                {
+                    "has": "Card Key 3"
+                }
+            ]
+        },
+        "region": "fortress_triple_card"
+    },
+    {
+        "name": "X-Naut Fortress Boss Room - West",
+        "map": "aji_14",
+        "bero": "w_bero",
+        "target": "X-Naut Fortress Factory - East",
+        "rules": null,
+        "region": "fortress_boss"
+    },
+    {
+        "name": "X-Naut Fortress Factory - East",
+        "map": "aji_13",
+        "bero": "e_bero",
+        "target": "X-Naut Fortress Boss Room - West",
+        "rules": {
+            "and": [
+                {
+                    "has": "Vivian"
+                },
+                {
+                    "has": "Bobbery"
+                },
+                {
+                    "has": "Paper Mode"
+                },
+                {
+                    "has": "Card Key 4"
+                }
+            ]
+        },
+        "region": "fortress_factory"
+    },
+    {
+        "name": "Keelhaul Key Jungle Entrance - Pipe",
+        "map": "muj_02",
+        "bero": "dokan_1",
+        "target": "Rogueport Sewers West Warp Room - CH Five Warp",
+        "rules": {
+            "and": [
+                {
+                    "can_reach_region": "Rogueport Sewers West Warp Room Top"
+                },
+                {
+                    "function": "super_boots"
+                }
+            ]
+        },
+        "region": "keelhaul_jungle_entrance"
+    },
+    {
+        "name": "Poshley Heights Sanctum Exterior - Pipe",
+        "map": "pik_01",
+        "bero": "dokan_1",
+        "target": "Rogueport Sewers West Warp Room - CH Six Warp",
+        "rules": {
+            "and": [
+                {
+                    "can_reach_region": "Rogueport Sewers West Warp Room Top"
+                },
+                {
+                    "function": "super_boots"
+                }
+            ]
+        },
+        "region": "poshley_sanctum_exterior"
     }
 ]

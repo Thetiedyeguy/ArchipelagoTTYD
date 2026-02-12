@@ -8,3 +8,6 @@ Chapter 3 cutscenes:
     currently cutscenes connect Grubba's Office to minor league, minor league to major league, and major league to champs room
     Can the pre Rawk Hawk fight loading zones be safely randomized?
 
+Steeple Stairs:
+    Could require extensive backtracking to be possible
+

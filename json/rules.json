@@ -28,16 +28,20 @@
   "Great Tree Red Key Room: Mushroom": {
     "can_reach": "Great Tree Entrance: Emerald Star"
   },
-  "Keelhaul Key Grotto Entrance: Wedding Ring": {
-    "has": "Yoshi"
-  },
   "Creepy Steeple Main Hall: Steeple Key": {
-    "or": [
+    "and": [
       {
-        "has": "Koops"
+        "or": [
+          {
+            "has": "Koops"
+          },
+          {
+            "has": "Yoshi"
+          }
+        ]
       },
       {
-        "has": "Yoshi"
+        "can_reach_entrance": "Creepy Steeple Main Hall - Southeast"
       }
     ]
   },
@@ -51,34 +55,35 @@
       },
       {
         "has": "The Letter \"p\""
+      },
+      {
+        "can_reach_entrance": "Creepy Steeple Main Hall - Northeast"
+      },
+      {
+        "can_reach_region": "Twilight Trail Entrance"
       }
     ]
   },
-  "Creepy Steeple Underground Tube Passage: Shine Sprite": {
-    "has": "Vivian"
-  },
-  "Creepy Steeple Boo Chest Room: Star Piece": {
-    "has": "Vivian"
-  },
-  "Creepy Steeple Parrot Room: Mr. Softener": {
-    "has": "Vivian"
-  },
-  "Creepy Steeple Parrot Room: Power Plus": {
-    "has": "Vivian"
-  },
   "Creepy Steeple Parrot Room: Star Piece": {
-    "has": "Vivian"
+    "function": "super_boots"
   },
-  "Creepy Steeple Parrot Room: Steeple Key 2": {
-    "has": "Vivian"
+  "Creepy Steeple Back Stairs: Star Piece": {
+    "function": "super_boots"
   },
-  "Creepy Steeple Parrot Room: The Letter \"p\"": {
-    "has": "Vivian"
+  "Excess Express Middle Passenger Car: Galley Pot": {
+    "and": [
+      {
+        "can_reach_region": "Excess Express Back Passenger Car"
+      },
+      {
+        "can_reach_region": "Excess Express Dining Car"
+      }
+    ]
   },
   "Excess Express Middle Passenger Car: Blanket": {
     "and": [
       {
-        "has": "Autograph"
+        "can_reach": "Excess Express Back Passenger Car: Shine Sprite"
       },
       {
         "has": "Vivian"
@@ -89,21 +94,22 @@
     ]
   },
   "Excess Express Back Passenger Car: Shine Sprite": {
-    "has": "Autograph"
-  },
-  "Excess Express Back Passenger Car: Mushroom": {
     "and": [
       {
         "has": "Autograph"
       },
       {
+        "can_reach": "Excess Express Locomotive: Autograph"
+      }
+    ]
+  },
+  "Excess Express Back Passenger Car: Mushroom": {
+    "and": [
+      {
+        "can_reach": "Excess Express Middle Passenger Car: Blanket"
+      },
+      {
         "has": "Blanket"
-      },
-      {
-        "has": "Ragged Diary"
-      },
-      {
-        "has": "Vivian"
       }
     ]
   },
@@ -118,72 +124,32 @@
     ]
   },
   "Excess Express Front Passenger Car: Vital Paper": {
-    "and": [
-      {
-        "has": "Autograph"
-      },
-      {
-        "has": "Vivian"
-      },
-      {
-        "has": "Ragged Diary"
-      },
-      {
-        "has": "Blanket"
-      }
-    ]
+    "can_reach": "Excess Express Back Passenger Car: Mushroom"
   },
   "Excess Express Middle Passenger Car: Briefcase": {
     "and": [
       {
-        "has": "Autograph"
-      },
-      {
-        "has": "Vivian"
-      },
-      {
-        "has": "Ragged Diary"
-      },
-      {
-        "has": "Blanket"
+        "can_reach": "Excess Express Front Passenger Car: Vital Paper"
       },
       {
         "has": "Vital Paper"
       }
     ]
   },
-  "Excess Express Middle Passenger Car: Gold Ring": {
+  "Excess Express Middle Passenger Car: Gold Ring":  {
     "and": [
       {
-        "has": "Autograph"
-      },
-      {
-        "has": "Vivian"
-      },
-      {
-        "has": "Ragged Diary"
-      },
-      {
-        "has": "Blanket"
+        "can_reach": "Excess Express Front Passenger Car: Vital Paper"
       },
       {
         "has": "Vital Paper"
       }
     ]
   },
-  "Excess Express Middle Passenger Car: Shell Earrings": {
+  "Excess Express Middle Passenger Car: Shell Earrings":  {
     "and": [
       {
-        "has": "Autograph"
-      },
-      {
-        "has": "Vivian"
-      },
-      {
-        "has": "Ragged Diary"
-      },
-      {
-        "has": "Blanket"
+        "can_reach": "Excess Express Front Passenger Car: Vital Paper"
       },
       {
         "has": "Vital Paper"
@@ -441,10 +407,24 @@
     "function": "super_boots"
   },
   "Keelhaul Key Jungle Winding Climb: Coin 2": {
-    "has": "Yoshi"
+    "or": [
+      {
+        "has": "Yoshi"
+      },
+      {
+        "can_reach_entrance": "Keelhaul Key Jungle Winding Climb - East"
+      }
+    ]
   },
   "Keelhaul Key Jungle Winding Climb: Thunder Rage": {
-    "has": "Yoshi"
+    "or": [
+      {
+        "has": "Yoshi"
+      },
+      {
+        "can_reach_entrance": "Keelhaul Key Jungle Winding Climb - East"
+      }
+    ]
   },
   "Keelhaul Key Jungle Bridge: Coconut 1": {
     "has": "Yoshi"
@@ -452,32 +432,20 @@
   "Keelhaul Key Jungle Bridge: Coconut 2": {
     "has": "Yoshi"
   },
-  "Keelhaul Key Jungle Bridge: Inn Coupon": {
-    "has": "Yoshi"
-  },
-  "Keelhaul Key Jungle Bridge: Shine Sprite": {
-    "has": "Yoshi"
-  },
-  "Keelhaul Key Grotto Entrance: Spite Pouch": {
-    "has": "Yoshi"
-  },
-  "Keelhaul Key Grotto Entrance: Star Piece": {
-    "has": "Yoshi"
-  },
   "Keelhaul Key Jungle Bridge: Ice Power": {
-    "and": [
-      {
-        "has": "Yoshi"
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
+    "has": "Paper Mode"
   },
   "Keelhaul Key Jungle Winding Climb: Jammin' Jelly": {
     "and": [
       {
-        "has": "Yoshi"
+        "or": [
+          {
+            "has": "Yoshi"
+          },
+          {
+            "can_reach_entrance": "Keelhaul Key Jungle Winding Climb - East"
+          }
+        ]
       },
       {
         "or": [
@@ -505,19 +473,12 @@
     ]
   },
   "Keelhaul Key Grotto Entrance: Bobbery": {
-    "and": [
-      {
-        "has": "Yoshi"
-      },
-      {
-        "has": "Chuckola Cola"
-      }
-    ]
+    "has": "Chuckola Cola"
   },
   "Keelhaul Key Grotto Entrance: Skull Gem": {
     "and": [
       {
-        "has": "Yoshi"
+        "can_reach_region": "Keelhaul Key Town"
       },
       {
         "has": "Coconut"
@@ -525,17 +486,28 @@
     ]
   },
   "Keelhaul Key Town: Chuckola Cola": {
-    "and": [
-      {
-        "has": "Yoshi"
-      },
-      {
-        "has": "Coconut"
-      }
-    ]
+    "has": "Coconut"
   },
   "Palace of Shadow Dark Bones Room: Palace Key": {
     "function": "tube_curse"
+  },
+  "Moon East Room 1: Volt Shroom": {
+    "has": "Bobbery"
+  },
+  "Moon Fortress View: Power Punch": {
+    "has": "Bobbery"
+  },
+  "Moon Fortress View: Star Piece": {
+    "has": "Bobbery"
+  },
+  "Moon Landing Site: Stopwatch": {
+    "has": "Bobbery"
+  },
+  "Moon West Room 2: Ruin Powder": {
+    "has": "Bobbery"
+  },
+  "Moon West Room 1: Courage Shell": {
+    "has": "Bobbery"
   },
   "Palace of Shadow Second Bullet Bill Hallway: Ultra Shroom": {
     "and": [
@@ -789,49 +761,19 @@
   "Petalburg Westside: Star Piece": {
     "function": "super_boots"
   },
-  "Pirate's Grotto Staircase: Coin": {
-    "has": "Yoshi"
-  },
-  "Pirate's Grotto Staircase: Shine Sprite": {
-    "has": "Yoshi"
-  },
   "Pirate's Grotto Storeroom: Grotto Key": {
-    "and": [
-      {
-        "has": "Yoshi"
-      },
-      {
-        "has": "Bobbery"
-      }
-    ]
+    "has": "Yoshi"
   },
   "Pirate's Grotto Storeroom: Shine Sprite": {
-    "and": [
-      {
-        "has": "Yoshi"
-      },
-      {
-        "has": "Bobbery"
-      }
-    ]
+    "has": "Yoshi"
   },
   "Pirate's Grotto Storeroom: Star Piece": {
-    "and": [
-      {
-        "has": "Yoshi"
-      },
-      {
-        "has": "Bobbery"
-      }
-    ]
+    "has": "Yoshi"
   },
   "Pirate's Grotto Gate Handle Room: Gate Handle": {
     "and": [
       {
-        "has": "Yoshi"
-      },
-      {
-        "has": "Bobbery"
+        "can_reach_entrance": "Pirate's Grotto Handle Room - East Canal"
       },
       {
         "has": "Boat Mode"
@@ -844,7 +786,7 @@
         "has": "Yoshi"
       },
       {
-        "has": "Bobbery"
+        "can": "Bobbery"
       },
       {
         "has": "Boat Mode"
@@ -980,7 +922,7 @@
   "Poshley Heights Station: Goldbob Guide": {
     "and": [
       {
-        "function": "fahr_outpost"
+        "can_reach_region": "Fahr Outpost Town"
       },
       {
         "has": "Bobbery"
@@ -1278,128 +1220,28 @@
     ]
   },
   "Riverside Station Tube Mode Maze: Dried Shroom": {
-    "and": [
-      {
-        "has": "Station Key 1"
-      },
-      {
-        "has": "Station Key 2"
-      },
-      {
-        "function": "tube_curse"
-      },
-      {
-        "has": "Flurrie"
-      }
-    ]
+    "function": "tube_curse"
   },
   "Riverside Station Tube Mode Maze: P-Up, D-Down": {
-    "and": [
-      {
-        "has": "Station Key 1"
-      },
-      {
-        "has": "Station Key 2"
-      },
-      {
-        "function": "tube_curse"
-      },
-      {
-        "has": "Flurrie"
-      }
-    ]
+    "function": "tube_curse"
   },
   "Riverside Station Back Exterior: HP Plus": {
-    "and": [
-      {
-        "has": "Station Key 1"
-      },
-      {
-        "has": "Station Key 2"
-      },
-      {
-        "function": "tube_curse"
-      }
-    ]
+    "function": "tube_curse"
   },
-  "Riverside Station Back Exterior: Shine Sprite": {
-    "and": [
+  "Riverside Station Goomba Room: Shine Sprite":  {
+    "or": [
       {
-        "has": "Station Key 1"
+        "function": "ultra_boots"
       },
       {
-        "has": "Station Key 2"
-      }
-    ]
-  },
-  "Riverside Station Back Exterior: Thunder Rage": {
-    "and": [
-      {
-        "has": "Station Key 1"
-      },
-      {
-        "has": "Station Key 2"
-      }
-    ]
-  },
-  "Riverside Station Ultra Boots Room: Ultra Boots": {
-    "and": [
-      {
-        "has": "Station Key 1"
-      },
-      {
-        "has": "Station Key 2"
-      },
-      {
-        "function": "tube_curse"
-      },
-      {
-        "has": "Flurrie"
-      }
-    ]
-  },
-  "Riverside Station Goomba Room: Shine Sprite": {
-    "and": [
-      {
-        "has": "Station Key 1"
-      },
-      {
-        "has": "Station Key 2"
-      },
-      {
-        "function": "tube_curse"
-      },
-      {
-        "or": [
-          {
-            "function": "ultra_boots"
-          },
-          {
-            "has": "Koops"
-          }
-        ]
-      },
-      {
-        "has": "Flurrie"
+        "has": "Koops"
       }
     ]
   },
   "Riverside Station Ultra Boots Room: Elevator Key (Station)": {
     "and": [
       {
-        "has": "Station Key 1"
-      },
-      {
-        "has": "Station Key 2"
-      },
-      {
-        "function": "tube_curse"
-      },
-      {
         "function": "ultra_boots"
-      },
-      {
-        "has": "Flurrie"
       },
       {
         "has": "Yoshi"
@@ -1407,20 +1249,10 @@
     ]
   },
   "Riverside Station Clockwork Room: Star Piece": {
-    "and": [
-      {
-        "has": "Station Key 1"
-      },
-      {
-        "function": "tube_curse"
-      }
-    ]
+    "function": "tube_curse"
   },
   "Riverside Station Clockwork Room: Station Key 2": {
     "and": [
-      {
-        "has": "Station Key 1"
-      },
       {
         "function": "tube_curse"
       },
@@ -1437,78 +1269,25 @@
     ]
   },
   "Riverside Station Entrance: Close Call P": {
-    "and": [
-      {
-        "has": "Station Key 1"
-      },
-      {
-        "function": "ultra_boots"
-      }
-    ]
-  },
-  "Poshley Heights Sanctum Altar: Garnet Star": {
-    "and": [
-      {
-        "function": "riverside"
-      },
-      {
-        "has": "Station Key 1"
-      },
-      {
-        "function": "ultra_boots"
-      },
-      {
-        "has": "Elevator Key (Station)"
-      },
-      {
-        "has": "Plane Mode"
-      },
-      {
-        "function": "super_hammer"
-      }
-    ]
+    "function": "ultra_boots"
   },
   "Poshley Heights Sanctum Altar: L Emblem": {
     "and": [
       {
-        "function": "riverside"
-      },
-      {
-        "has": "Station Key 1"
-      },
-      {
         "function": "ultra_boots"
       },
       {
-        "has": "Elevator Key (Station)"
-      },
-      {
         "has": "Plane Mode"
-      },
-      {
-        "function": "super_hammer"
       }
     ]
   },
   "Poshley Heights Sanctum Altar: Shine Sprite": {
     "and": [
       {
-        "function": "riverside"
-      },
-      {
-        "has": "Station Key 1"
-      },
-      {
         "function": "ultra_boots"
       },
       {
-        "has": "Elevator Key (Station)"
-      },
-      {
         "has": "Plane Mode"
-      },
-      {
-        "function": "super_hammer"
       }
     ]
   },
@@ -1626,6 +1405,9 @@
   "Twilight Trail Fallen Tree: Shop Key": {
     "or": [
       {
+        "can_reach_entrance": "Twilight Trail Fallen Tree - Pipe"
+      },
+      {
         "has": "Koops"
       },
       {
@@ -1633,237 +1415,140 @@
       }
     ]
   },
+   "Twilight Trail Fallen Tree: Star Piece 1": {
+    "or": [
+      {
+        "can_reach_entrance": "Twilight Trail Fallen Tree - Pipe"
+      },
+      {
+        "function": "tube_curse"
+      }
+    ]
+  },
   "Twilight Trail Fallen Tree: Star Piece 2": {
-    "has": "Flurrie"
-  },
-  "Twilight Trail Dark Woods First Room: 10 Coins": {
-    "has": "Flurrie"
-  },
-  "Twilight Trail Dark Woods First Room: Earth Quake": {
-    "has": "Flurrie"
-  },
-  "Twilight Trail Dark Woods Second Room: Hammer Throw": {
-    "has": "Flurrie"
-  },
-  "Twilight Trail Dark Woods Third Room: 10 Coins": {
-    "has": "Flurrie"
-  },
-  "Twilight Trail Dark Woods Third Room: Shine Sprite": {
     "and": [
       {
         "has": "Flurrie"
       },
       {
-        "function": "super_boots"
+        "or": [
+          {
+            "can_reach_entrance": "Twilight Trail Fallen Tree - Pipe"
+          },
+          {
+            "function": "tube_curse"
+          }
+        ]
+      }
+    ]
+  },
+  "Twilight Trail Dark Woods First Room: 10 Coins": {
+    "or": [
+      {
+        "can_reach_entrance": "Twilight Trail Dark Woods First Room - East"
+      },
+      {
+        "function": "tube_curse"
+      }
+    ]
+  },
+  "Twilight Trail Dark Woods First Room: Earth Quake": {
+    "or": [
+      {
+        "can_reach_entrance": "Twilight Trail Dark Woods First Room - West"
+      },
+      {
+        "function": "tube_curse"
+      }
+    ]
+  },
+  "Twilight Trail Dark Woods Third Room: Shine Sprite": {
+    "or":[
+      {
+          "and": [
+          {
+            "has": "Flurrie"
+          },
+          {
+            "function": "super_boots"
+          }
+        ]
+      },
+      {
+        "can_reach_entrance": "Twilight Trail Dark Woods Thrid Room - East"
       }
     ]
   },
   "Twilight Trail Steeple Exterior: Coin": {
-    "and": [
+    "or": [
       {
-        "has": "Flurrie"
+        "can_reach_entrance": "Twilight Trail Steeple Exterior - North"
       },
       {
-        "function": "super_boots"
+        "function": "tube_curse"
       }
     ]
   },
   "Twilight Trail Steeple Exterior: Star Piece": {
-    "and": [
+    "or": [
       {
-        "has": "Flurrie"
+        "can_reach_entrance": "Twilight Trail Steeple Exterior - North"
       },
       {
-        "function": "super_boots"
+        "function": "tube_curse"
       }
     ]
   },
   "X-Naut Fortress Crane Room: Coin 1": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Cog"
-      }
-    ]
+    "has": "Cog"
   },
   "X-Naut Fortress Crane Room: Coin 2": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Cog"
-      }
-    ]
+    "has": "Cog"
   },
   "X-Naut Fortress Crane Room: Coin 3": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Cog"
-      }
-    ]
+    "has": "Cog"
   },
   "X-Naut Fortress Crane Room: Coin 4": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Cog"
-      }
-    ]
+    "has": "Cog"
   },
   "X-Naut Fortress Crane Room: Coin 5": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Cog"
-      }
-    ]
+    "has": "Cog"
   },
   "X-Naut Fortress Crane Room: Coin 6": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Cog"
-      }
-    ]
+    "has": "Cog"
   },
   "X-Naut Fortress Crane Room: Feeling Fine": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Cog"
-      }
-    ]
+    "has": "Cog"
   },
   "X-Naut Fortress Crane Room: Feeling Fine P": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Cog"
-      }
-    ]
+    "has": "Cog"
   },
   "X-Naut Fortress Crane Room: Star Piece": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Cog"
-      }
-    ]
+    "has": "Cog"
   },
   "X-Naut Fortress Ceiling Grate Room: Star Piece": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "function": "ultra_boots"
-      }
-    ]
+    "function": "ultra_boots"
   },
   "X-Naut Fortress Teleporter Room: Cog": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "function": "ultra_boots"
-      },
-      {
-        "has": "Paper Mode"
-      }
-    ]
-  },
-  "X-Naut Fortress Quiz Room: Elevator Key 2": {
-    "has": "Elevator Key 1"
-  },
-  "X-Naut Fortress Card Key Room A: Card Key 1": {
-    "has": "Elevator Key 1"
-  },
-  "X-Naut Fortress Card Key Room A: Sleepy Sheep": {
-    "has": "Elevator Key 1"
-  },
-  "X-Naut Fortress Office: Card Key 2": {
-    "has": "Elevator Key 1"
-  },
-  "X-Naut Fortress Card Key Room B: Card Key 3": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Elevator Key 2"
-      }
-    ]
-  },
-  "X-Naut Fortress Card Key Room B: HP Drain": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Elevator Key 2"
-      }
-    ]
+    "can_reach_entrance": "X-Naut Fortress Teleporter Room - Vents"
   },
   "X-Naut Fortress Factory: Ultra Shroom": {
     "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Elevator Key 2"
-      },
-      {
-        "has": "Card Key 1"
-      },
-      {
-        "has": "Card Key 2"
-      },
-      {
-        "has": "Card Key 3"
-      },
       {
         "has": "Paper Mode"
       },
       {
         "has": "Vivian"
+      },
+      {
+        "has": "Bobbery"
       }
     ]
   },
   "X-Naut Fortress Factory: Card Key 4": {
     "and": [
       {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Elevator Key 2"
-      },
-      {
-        "has": "Card Key 1"
-      },
-      {
-        "has": "Card Key 2"
-      },
-      {
-        "has": "Card Key 3"
+        "has": "Bobbery"
       },
       {
         "has": "Paper Mode"
@@ -1873,34 +1558,6 @@
       },
       {
         "has": "Plane Mode"
-      }
-    ]
-  },
-  "X-Naut Fortress Boss Room: Crystal Star": {
-    "and": [
-      {
-        "has": "Elevator Key 1"
-      },
-      {
-        "has": "Elevator Key 2"
-      },
-      {
-        "has": "Card Key 1"
-      },
-      {
-        "has": "Card Key 2"
-      },
-      {
-        "has": "Card Key 3"
-      },
-      {
-        "has": "Card Key 4"
-      },
-      {
-        "has": "Paper Mode"
-      },
-      {
-        "has": "Vivian"
       }
     ]
   },
