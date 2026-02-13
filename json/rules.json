@@ -1693,61 +1693,61 @@
   },
   "Pit of 100 Trials Floor 10: Sleepy Stomp": {
     "function": {
-      "name": "chapter_completions",
+      "name": "ChapterCompletions",
       "count": 1
     }
   },
   "Pit of 100 Trials Floor 20: Fire Drive": {
     "function": {
-      "name": "chapter_completions",
+      "name": "ChapterCompletions",
       "count": 1
     }
   },
   "Pit of 100 Trials Floor 30: Zap Tap": {
     "function": {
-      "name": "chapter_completions",
+      "name": "ChapterCompletions",
       "count": 2
     }
   },
   "Pit of 100 Trials Floor 40: Pity Flower": {
     "function": {
-      "name": "chapter_completions",
+      "name": "ChapterCompletions",
       "count": 2
     }
   },
   "Pit of 100 Trials Floor 50: Strange Sack": {
     "function": {
-      "name": "chapter_completions",
+      "name": "ChapterCompletions",
       "count": 3
     }
   },
   "Pit of 100 Trials Floor 60: Double Dip": {
     "function": {
-      "name": "chapter_completions",
+      "name": "ChapterCompletions",
       "count": 3
     }
   },
   "Pit of 100 Trials Floor 70: Double Dip P": {
     "function": {
-      "name": "chapter_completions",
+      "name": "ChapterCompletions",
       "count": 4
     }
   },
   "Pit of 100 Trials Floor 80: Bump Attack": {
     "function": {
-      "name": "chapter_completions",
+      "name": "ChapterCompletions",
       "count": 4
     }
   },
   "Pit of 100 Trials Floor 90: Lucky Day": {
     "function": {
-      "name": "chapter_completions",
+      "name": "ChapterCompletions",
       "count": 5
     }
   },
   "Pit of 100 Trials Floor 100: Return Postage": {
     "function": {
-      "name": "chapter_completions",
+      "name": "ChapterCompletions",
       "count": 5
     }
   },

@@ -8,6 +8,7 @@ import pkgutil
 import random
 from .Data import warp_table
 from .Rules import _build_single_lambda
+from rule_builder.rules import Rule, Has, True_
 from collections import defaultdict, deque
 
 if typing.TYPE_CHECKING:
@@ -76,132 +77,132 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
     If a rule is None, the connection is always available.
     """
     return {
-        ("Menu", "Rogueport Center"): None,
-        ("Rogueport West Tall Pipe", "Rogueport West"): None,
+        ("Menu", "Rogueport Center"): True_,
+        ("Rogueport West Tall Pipe", "Rogueport West"): True_,
         ("Rogueport Sewers East", "Rogueport Sewers East Bobbery Pipe"): 
-        lambda state: state.has("Bobbery", world.player),
+        Has("Bobbery"),
         ("Rogueport Sewers East Bobbery Pipe", "Rogueport Sewers East"): 
-        lambda state: state.has("Bobbery", world.player),
+        Has("Bobbery"),
         ("Rogueport Sewers East", "Rogueport Sewers East Fortune"):
-        lambda state: state.has("Paper Mode", world.player),
-        ("Rogueport Sewers East Fortune", "Rogueport Sewers East"): None,
+        Has("Paper Mode"),
+        ("Rogueport Sewers East Fortune", "Rogueport Sewers East"): True_,
         ("Rogueport Sewers East", "Rogueport Sewers East Plane Mode"):
-        lambda state: state.has("Plane Mode", world.player),
-        ("Rogueport Sewers East Plane Mode", "Rogueport Sewers East"): None,
-        ("Rogueport Sewers East Top", "Rogueport Sewers East"): None,
+        Has("Plane Mode"),
+        ("Rogueport Sewers East Plane Mode", "Rogueport Sewers East"): True_,
+        ("Rogueport Sewers East Top", "Rogueport Sewers East"): True_,
         ("Rogueport Sewers East Top", "Rogueport Sewers East Fortune"):
-        lambda state: state.has("Yoshi", world.player),
-        ("Rogueport Sewers East Top", "Rogueport Sewers East Plane Mode"): None,
-        ("Rogueport Sewers Blooper", "Rogueport Sewers Blooper Pipe"): None,
+        Has("Yoshi"),
+        ("Rogueport Sewers East Top", "Rogueport Sewers East Plane Mode"): True_,
+        ("Rogueport Sewers Blooper", "Rogueport Sewers Blooper Pipe"): True_,
         ("Rogueport Sewers Town", "Rogueport Sewers Town Dazzle"):
-        lambda state: StateLogic.fallen_pipe(state, world.player),
+        StateLogic.fallen_pipe(),
         ("Rogueport Sewers Town Dazzle", "Rogueport Sewers Town"):
-        lambda state: StateLogic.fallen_pipe(state, world.player),
-        ("Rogueport Sewers Town Teleporter", "Rogueport Sewers Town"): None,
-        ("Rogueport Sewers Town", "Rogueport Sewers Town Teleporter"): None,
+        StateLogic.fallen_pipe(),
+        ("Rogueport Sewers Town Teleporter", "Rogueport Sewers Town"): True_,
+        ("Rogueport Sewers Town", "Rogueport Sewers Town Teleporter"): True_,
         ("Rogueport Sewers West", "Rogueport Sewers West West"):
-        lambda state: state.has("Yoshi", world.player),
+        Has("Yoshi"),
         ("Rogueport Sewers West West", "Rogueport Sewers West"):
-        lambda state: state.has("Yoshi", world.player),
-        ("Rogueport Sewers West", "Rogueport Sewers West Bottom"): None,
-        ("Rogueport Sewers West West", "Rogueport Sewers West Bottom"): None,
+        Has("Yoshi"),
+        ("Rogueport Sewers West", "Rogueport Sewers West Bottom"): True_,
+        ("Rogueport Sewers West West", "Rogueport Sewers West Bottom"): True_,
         ("Rogueport Sewers West Bottom", "Rogueport Sewers West West"):
-        lambda state: StateLogic.ultra_boots(state, world.player),
+        StateLogic.ultra_boots(),
         ("Rogueport Sewers West West", "Rogueport Sewers West Fahr"):
-        lambda state: StateLogic.ultra_hammer(state, world.player),
+        StateLogic.ultra_hammer(),
         ("Rogueport Sewers West Fahr", "Rogueport Sewers West West"):
-        lambda state: StateLogic.ultra_hammer(state, world.player),
+        StateLogic.ultra_hammer(),
         ("Rogueport Sewers East Enemy Hall", "Rogueport Sewers East Enemy Hall Barred Door"):
-        lambda state: state.has("Paper Mode", world.player),
+        Has("Paper Mode"),
         ("Rogueport Sewers East Enemy Hall Barred Door", "Rogueport Sewers East Enemy Hall"):
-        lambda state: state.has("Paper Mode", world.player),
+        Has("Paper Mode"),
         ("Rogueport Sewers West Enemy Hall", "Rogueport Sewers West Enemy Hall Flurrie"):
-        lambda state: state.has("Flurrie", world.player),
+        Has("Flurrie"),
         ("Rogueport Sewers West Enemy Hall Flurrie", "Rogueport Sewers West Enemy Hall"):
-        lambda state: state.has("Flurrie", world.player),
+        Has("Flurrie"),
         ("Rogueport Sewers West Warp Room Left", "Rogueport Sewers West Warp Room Right"):
-        lambda state: StateLogic.ultra_hammer(state, world.player),
+        StateLogic.ultra_hammer(),
         ("Rogueport Sewers West Warp Room Right", "Rogueport Sewers West Warp Room Left"):
-        lambda state: StateLogic.ultra_hammer(state, world.player),
+        StateLogic.ultra_hammer(),
         ("Rogueport Sewers West Warp Room Left", "Rogueport Sewers West Warp Room Top"):
-        lambda state: StateLogic.ultra_hammer(state, world.player),
-        ("Rogueport Sewers West Warp Room Top", "Rogueport Sewers West Warp Room Left"): None,
+        StateLogic.ultra_hammer(),
+        ("Rogueport Sewers West Warp Room Top", "Rogueport Sewers West Warp Room Left"): True_,
         ("Rogueport Sewers West Warp Room Right", "Rogueport Sewers West Warp Room Top"):
-        lambda state: StateLogic.ultra_hammer(state, world.player),
-        ("Rogueport Sewers West Warp Room Top", "Rogueport Sewers West Warp Room Right"): None,
+        StateLogic.ultra_hammer(),
+        ("Rogueport Sewers West Warp Room Top", "Rogueport Sewers West Warp Room Right"): True_,
         ("Rogueport Sewers East Warp Room Left", "Rogueport Sewers East Warp Room Right"):
-        lambda state: StateLogic.ultra_hammer(state, world.player),
+        StateLogic.ultra_hammer(),
         ("Rogueport Sewers East Warp Room Right", "Rogueport Sewers East Warp Room Left"):
-        lambda state: StateLogic.ultra_hammer(state, world.player),
+        StateLogic.ultra_hammer(),
         ("Rogueport Sewers East Warp Room Left", "Rogueport Sewers East Warp Room Top"):
-        lambda state: StateLogic.ultra_hammer(state, world.player),
-        ("Rogueport Sewers East Warp Room Top", "Rogueport Sewers East Warp Room Left"): None,
+        StateLogic.ultra_hammer(),
+        ("Rogueport Sewers East Warp Room Top", "Rogueport Sewers East Warp Room Left"): True_,
         ("Rogueport Sewers East Warp Room Right", "Rogueport Sewers East Warp Room Top"):
-        lambda state: StateLogic.ultra_hammer(state, world.player),
-        ("Rogueport Sewers East Warp Room Top", "Rogueport Sewers East Warp Room Right"): None,
+        StateLogic.ultra_hammer(),
+        ("Rogueport Sewers East Warp Room Top", "Rogueport Sewers East Warp Room Right"): True_,
         ("Rogueport Sewers Black Key Room", "Rogueport Sewers Black Key Room Puni Door"):
-        lambda state: state.has("Paper Mode", world.player),
+        Has("Paper Mode"),
         ("Rogueport Sewers Black Key Room Puni Door", "Rogueport Sewers Black Key Room"):
-        lambda state: state.has("Paper Mode", world.player),
+        Has("Paper Mode"),
         ("Rogueport Sewers Puni Room", "Rogueport Sewers Puni Room Exit"): None,
         ("Petal Meadows Bridge West", "Petal Meadows Bridge East"): None,
         ("Hooktail's Castle Drawbridge East Bottom", "Hooktail's Castle Drawbridge West Bottom"):
-        lambda state: state.has("Yoshi", world.player),
-        ("Hooktail's Castle Drawbridge West Bottom", "Hooktail's Castle Drawbridge East Bottom"): None,
-        ("Hooktail's Castle Drawbridge East Top", "Hooktail's Castle Drawbridge East Bottom"): None,
+        Has("Yoshi"),
+        ("Hooktail's Castle Drawbridge West Bottom", "Hooktail's Castle Drawbridge East Bottom"): True_,
+        ("Hooktail's Castle Drawbridge East Top", "Hooktail's Castle Drawbridge East Bottom"): True_,
         ("Hooktail's Castle Drawbridge East Top", "Hooktail's Castle Drawbridge West Bottom"): 
-        lambda state: state.has("Plane Mode", world.player),
-        ("Hooktail's Castle Drawbridge West Top", "Hooktail's Castle Drawbridge West Bottom"): None,
-        ("Hooktail's Castle Stair Switch Room Upper Level", "Hooktail's Castle Stair Switch Room"): None,
+        Has("Plane Mode"),
+        ("Hooktail's Castle Drawbridge West Top", "Hooktail's Castle Drawbridge West Bottom"): True_,
+        ("Hooktail's Castle Stair Switch Room Upper Level", "Hooktail's Castle Stair Switch Room"): True_,
         ("Hooktail's Life Shroom Room", "Hooktail's Life Shroom Room Upper Level"):
-        lambda state: StateLogic.partner_press_switch(state, world.player),
-        ("Hooktail's Life Shroom Room Upper Level", "Hooktail's Life Shroom Room"): None,
-        ("Hooktail's Castle Central Staircase Upper Level", "Hooktail's Castle Central Staircase"): None,
+        StateLogic.partner_press_switch(),
+        ("Hooktail's Life Shroom Room Upper Level", "Hooktail's Life Shroom Room"): True_,
+        ("Hooktail's Castle Central Staircase Upper Level", "Hooktail's Castle Central Staircase"): True_,
         ("Boggly Woods Plane Panel Room", "Boggly Woods Plane Panel Room Upper"):
-        lambda state: state.has("Plane Mode", world.player),
-        ("Boggly Woods Plane Panel Room Upper", "Boggly Woods Plane Panel Room"): None,
+        Has("Plane Mode"),
+        ("Boggly Woods Plane Panel Room Upper", "Boggly Woods Plane Panel Room"): True_,
         ("Boggly Woods Outside Flurrie's House", "Boggly Woods Outside Flurrie's House Grass Area"):
-        lambda state: state.has("Paper Mode", world.player),
+        Has("Paper Mode"),
         ("Boggly Woods Outside Flurrie's House Grass Area", "Boggly Woods Outside Flurrie's House"):
-        lambda state: state.has("Paper Mode", world.player),
+        Has("Paper Mode"),
         ("Pirate's Grotto Handle Room Canal", "Pirate's Grotto Handle Room"):
-        lambda state: state.has("Paper Mode", world.player),
+        Has("Boat Mode"),
         ("Pirate's Grotto Sluice Gate Upper", "Pirate's Grotto Sluice Gate Upper Canal"):
-        lambda state: state.has("Boat Mode", world.player),
+        Has("Boat Mode"),
         ("Pirate's Grotto Sluice Gate Upper Canal", "Pirate's Grotto Sluice Gate Upper"):
-        lambda state: state.has("Boat Mode", world.player),
-        ("Pirate's Grotto Sluice Gate Upper Canal", "Pirate's Grotto Sluice Gate Canal"): None,
+        Has("Boat Mode"),
+        ("Pirate's Grotto Sluice Gate Upper Canal", "Pirate's Grotto Sluice Gate Canal"): True_,
         ("X-Naut Fortress Hall Ground Floor", "X-Naut Fortress Hall Sublevel One"):
-        lambda state: state.has("Elevator Key 1", world.player),
+        Has("Elevator Key 1"),
         ("X-Naut Fortress Hall Sublevel One", "X-Naut Fortress Hall Ground Floor"):
-        lambda state: state.has("Elevator Key 1", world.player),
+        Has("Elevator Key 1"),
         ("X-Naut Fortress Hall Ground Floor", "X-Naut Fortress Hall Sublevel Two"):
-        lambda state: state.has("Elevator Key 1", world.player),
+        Has("Elevator Key 1"),
         ("X-Naut Fortress Hall Sublevel One", "X-Naut Fortress Hall Sublevel Two"):
-        lambda state: state.has("Elevator Key 1", world.player),
+        Has("Elevator Key 1"),
         ("X-Naut Fortress Hall Sublevel Two", "X-Naut Fortress Hall Sublevel One"):
-        lambda state: state.has("Elevator Key 1", world.player),
+        Has("Elevator Key 1"),
         ("X-Naut Fortress Hall Sublevel Two", "X-Naut Fortress Hall Sublevel Three"):
-        lambda state: state.has("Elevator Key 2", world.player),
+        Has("Elevator Key 2"),
         ("X-Naut Fortress Hall Sublevel Three", "X-Naut Fortress Hall Sublevel Two"):
-        lambda state: state.has("Elevator Key 2", world.player),
+        Has("Elevator Key 2"),
         ("X-Naut Fortress Hall Sublevel Two", "X-Naut Fortress Hall Sublevel Four"):
-        lambda state: state.has("Elevator Key 2", world.player),
+        Has("Elevator Key 2"),
         ("X-Naut Fortress Hall Sublevel Four", "X-Naut Fortress Hall Sublevel Two"):
-        lambda state: state.has("Elevator Key 2", world.player),
+        Has("Elevator Key 2"),
         ("X-Naut Fortress Hall Sublevel Three", "X-Naut Fortress Hall Sublevel Four"):
-        lambda state: state.has("Elevator Key 2", world.player),
+        Has("Elevator Key 2"),
         ("X-Naut Fortress Hall Sublevel Four", "X-Naut Fortress Hall Sublevel Three"):
-        lambda state: state.has("Elevator Key 2", world.player),
+        Has("Elevator Key 2"),
         ("TTYD", "Palace of Shadow"): 
-        lambda state, star_shuffle=world.options.star_shuffle.value: StateLogic.palace(state, world.player, world.options.goal_stars.value, star_shuffle),
+        StateLogic.PalaceAccess(world.options.goal_stars.value),
         ("Palace of Shadow", "Palace of Shadow (Post-Riddle Tower)"): 
-        lambda state: StateLogic.riddle_tower(state, world.player),
+        StateLogic.riddle_tower(),
         ("Rogueport Sewers Pit Room", "Pit of 100 Trials"): 
-        lambda state: StateLogic.pit(state, world.player),
-        ("Menu", "Tattlesanity"): None,
+        StateLogic.pit(),
+        ("Menu", "Tattlesanity"): True_,
         ("TTYD", "Shadow Queen"):
-        lambda state, star_shuffle=world.options.star_shuffle.value: StateLogic.palace(state, world.player, world.options.goal_stars.value, star_shuffle)
+        StateLogic.PalaceAccess(world.options.goal_stars.value)
     }
 
     if world.options.blue_pipe_toggle:
@@ -260,7 +261,9 @@ def connect_regions(world: "TTYDWorld"):
         try:
             world.multiworld.get_region(source, world.player)
             world.multiworld.get_region(target, world.player)
-            connect(world, names, source, target, rule)
+            source_region = world.multiworld.get_region(source, world.player)
+            target_region = world.multiworld.get_region(target, world.player)
+            world.create_entrance(source_region, target_region, rule)
             add_edge(source, target)
         except Exception:
             continue
@@ -289,8 +292,9 @@ def connect_regions(world: "TTYDWorld"):
             src_region = tag_to_region[src["region"]]
             dst_region = tag_to_region[dst["region"]]
             rule = build_rule_lambda(src.get("rules"), world)
-
-            connect(world, src["name"], src_region, dst_region, rule)
+            source_region = world.multiworld.get_region(src_region, world.player)
+            target_region = world.multiworld.get_region(dst_region, world.player)
+            world.create_entrance(source_region, target_region, rule)
             add_edge(src_region, dst_region)
         elif src["target"] == "One Way":
             source = src["src_region"]
@@ -299,7 +303,7 @@ def connect_regions(world: "TTYDWorld"):
             try:
                 world.multiworld.get_region(source, world.player)
                 world.multiworld.get_region(target, world.player)
-                connect(world, src["name"], source, target, rule)
+                world.create_entrance(source, target, rule)
             except Exception:
                 continue
 
@@ -328,8 +332,11 @@ def connect_regions(world: "TTYDWorld"):
         warp_table[(src_target["map"], src_target["bero"])] = (dst_zone["map"], dst_zone["bero"])
         warp_table[(dst_target["map"], dst_target["bero"])] = (src_zone["map"], src_zone["bero"])
 
-        connect(world, src["name"], src_region, dst_region, src_rule)
-        connect(world, dst["name"], dst_region, src_region, dst_rule)
+        
+        source_region = world.multiworld.get_region(src_region, world.player)
+        target_region = world.multiworld.get_region(dst_region, world.player)
+        world.create_entrance(source_region, target_region, src_rule, dst["name"])
+        world.create_entrance(target_region, source_region, dst_rule, src["name"])
 
         mark_used(src_zone, dst_zone)
 
@@ -366,8 +373,10 @@ def connect_regions(world: "TTYDWorld"):
         warp_table[(src_target["map"], src_target["bero"])] = (dst_zone["map"], dst_zone["bero"])
         warp_table[(dst_target["map"], dst_target["bero"])] = (src_zone["map"], src_zone["bero"])
 
-        connect(world, src["name"], src_region, dst_region, src_rule)
-        connect(world, dst["name"], dst_region, src_region, dst_rule)
+        source_region = world.multiworld.get_region(src_region, world.player)
+        target_region = world.multiworld.get_region(dst_region, world.player)
+        world.create_entrance(source_region, target_region, src_rule, dst["name"])
+        world.create_entrance(target_region, source_region, dst_rule, src["name"])
     
     random.shuffle(one_way)
 
@@ -385,7 +394,10 @@ def connect_regions(world: "TTYDWorld"):
         try:
             world.multiworld.get_region(source, world.player)
             world.multiworld.get_region(target, world.player)
-            connect(world, src["name"], source, target, rule)
+            
+            source_region = world.multiworld.get_region(source, world.player)
+            target_region = world.multiworld.get_region(target, world.player)
+            world.create_entrance(source_region, target_region, rule)
         except Exception:
             continue
 
@@ -406,7 +418,7 @@ def write_rel_warp_table(warp_table, filename="json/warp_table.json"):
 
 def build_rule_lambda(rule_json: dict | None, world: "TTYDWorld"):
     if rule_json is None:
-        return None
+        return True_
     return _build_single_lambda(rule_json, world)
 
 def get_region_name_by_tag():
@@ -438,9 +450,6 @@ def add_edge(a: str, b: str):
     region_graph[a].add(b)
 
 
-def register_indirect_connections(world: "TTYDWorld"):
-    print("something")
-
 
 def create_region(world: "TTYDWorld", name: str, locations: list[LocationData]):
     """Create a region with the given name and locations."""
@@ -448,26 +457,4 @@ def create_region(world: "TTYDWorld", name: str, locations: list[LocationData]):
     reg.add_locations({loc.name: loc.id for loc in locations if loc.name not in world.disabled_locations}, TTYDLocation)
     world.multiworld.regions.append(reg)
 
-
-def connect(world: "TTYDWorld",
-            used_names: typing.Union[typing.Dict[str, int], str],
-            source: str,
-            target: str,
-            rule: typing.Optional[typing.Callable] = None):
-    """Connect two regions with an optional access rule."""
-    source_region = world.multiworld.get_region(source, world.player)
-    target_region = world.multiworld.get_region(target, world.player)
-
-    if isinstance(used_names, str):
-        name = used_names
-
-    else:
-        if target not in used_names:
-            used_names[target] = 1
-            name = target
-        else:
-            used_names[target] += 1
-            name = target + (" " * used_names[target])
-
-    source_region.connect(target_region, name, rule)
 

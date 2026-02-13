@@ -2,7 +2,7 @@ import json
 import pkgutil
 import typing
 
-from worlds.generic.Rules import add_rule, forbid_items_for_player
+from rule_builder.rules import Rule, False_, Has, CanReachLocation, CanReachRegion, CanReachEntrance
 from . import StateLogic
 from .Options import Goal, PitItems
 from .Data import stars, pit_exclusive_tattle_stars_required
@@ -16,11 +16,11 @@ if typing.TYPE_CHECKING:
 def set_rules(world: "TTYDWorld"):
     for location, rule in create_lambda_from_json(pkgutil.get_data(__name__, "json/rules.json").decode(), world).items():
         if location not in world.disabled_locations:
-            add_rule(world.multiworld.get_location(location, world.player), rule)
+            world.set_rule(location, rule)
 
     for location in ["Palace of Shadow Final Staircase: Ultra Shroom", "Palace of Shadow Final Staircase: Jammin' Jelly"]:
         if location not in world.disabled_locations:
-            add_rule(world.multiworld.get_location(location, world.player), lambda state: state.has("stars", world.player, world.options.goal_stars))
+            world.set_rule(world.multiworld.get_location(location, world.player), Has("stars", world.options.goal_stars))
 
     for location in get_locations_by_tags("shop"):
         if location.name in world.disabled_locations:
@@ -36,7 +36,7 @@ def set_tattle_rules(world: "TTYDWorld"):
     for location in get_locations_by_tags("tattle"):
         if location.name in world.disabled_locations:
             continue
-        add_rule(world.get_location(location.name), lambda state: state.has("Goombella", world.player))
+        world.set_rule(world.get_location(location.name), Has("Goombella"))
     for location_name, locations in get_tattle_rules_dict().items():
         if location_name in world.disabled_locations:
             continue
@@ -60,11 +60,11 @@ def set_tattle_rules(world: "TTYDWorld"):
             ]
             if len(valid_locations) == 0:
                 continue
-            extra_condition = lambda state, locs=valid_locations: any(
-                state.can_reach(loc, "Location", world.player) for loc in locs
+            extra_condition = lambda locs=valid_locations: any(
+                CanReachLocation(loc) for loc in locs
             )
 
-        add_rule(world.get_location(location_name), extra_condition)
+        world.set_rule(world.get_location(location_name), extra_condition)
 
 
 def create_lambda_from_json(json_string: str, world: "TTYDWorld") -> typing.Dict[str, typing.Callable]:
@@ -74,15 +74,25 @@ def create_lambda_from_json(json_string: str, world: "TTYDWorld") -> typing.Dict
     return lambda_functions
 
 
-def _build_single_lambda(req: typing.Dict, world: "TTYDWorld") -> typing.Callable:
-    def build_expression(r):
+def _build_single_rule(req: typing.Dict, world: "TTYDWorld") -> Rule:
+    def build_rule(r) -> Rule:
         if "or" in r:
-            conditions = [build_expression(condition) for condition in r["or"]]
-            return f"({' | '.join(conditions)})"
+            children = [build_rule(c) for c in r["or"]]
+            if not children:
+                return False_()
+            rule = children[0]
+            for child in children[1:]:
+                rule = rule | child
+            return rule
 
         elif "and" in r:
-            conditions = [build_expression(condition) for condition in r["and"]]
-            return f"({' & '.join(conditions)})"
+            children = [build_rule(c) for c in r["and"]]
+            if not children:
+                return False_()
+            rule = children[0]
+            for child in children[1:]:
+                rule = rule & child
+            return rule
 
         elif "has" in r:
             has_value = r["has"]
@@ -97,40 +107,47 @@ def _build_single_lambda(req: typing.Dict, world: "TTYDWorld") -> typing.Callabl
                 item = str(has_value)
                 count = r.get("count", 1)
 
-            # Escape quotes in item names by using repr() which handles escaping properly
-            escaped_item = repr(item)
-
-            if count == 1:
-                return f'state.has({escaped_item}, world.player)'
-            else:
-                return f'state.has({escaped_item}, world.player, {count})'
+            return Has(item, count=count)
 
         elif "function" in r:
-            function_name = r["function"]
-            count = 0
-            if isinstance(function_name, dict):
-                count = function_name.get("count", 0)
-                function_name = function_name.get("name", "")
-            if count > 0:
-                return f'StateLogic.{function_name}(state, world.player, {count})'
-            return f'StateLogic.{function_name}(state, world.player)'
+            function_data = r["function"]
+
+            if isinstance(function_data, dict):
+                name = function_data.get("name", "")
+                count = function_data.get("count", 0)
+            else:
+                name = function_data
+                count = None
+
+            logic_obj = getattr(StateLogic, name)
+
+            # Case 1: Rule class (ChapterCompletions, PalaceAccess)
+            if isinstance(logic_obj, type) and issubclass(logic_obj, Rule):
+                if count is not None:
+                    return logic_obj(count)
+                return logic_obj()
+
+            # Case 2: helper returning a Rule (fahr_outpost, westside, etc.)
+            if callable(logic_obj):
+                if count is not None:
+                    return logic_obj(count)
+                return logic_obj()
+
+            raise Exception(f"Invalid logic function: {name}")
 
         elif "can_reach" in r:
-            location = r["can_reach"]
-            return f'state.can_reach({repr(location)}, "Location", world.player)'
+            return CanReachLocation(r["can_reach"])
+
         elif "can_reach_region" in r:
-            location = r["can_reach_region"]
-            return f'state.can_reach({repr(location)}, "Region", world.player)'
+            return CanReachRegion(r["can_reach_region"])
+
         elif "can_reach_entrance" in r:
-            location = r["can_reach_entrance"]
-            return f'state.can_reach({repr(location)}, "Entrance", world.player)'
-
+            return CanReachEntrance(r["can_reach_entrance"])
         else:
-            return "False"
+            return False_()
 
-    expression = build_expression(req)
-    # Capture world and StateLogic in the lambda's closure
-    return eval(f"lambda state: {expression}", {"world": world, "StateLogic": StateLogic})
+    return build_rule(req)
+
 
 
 def get_tattle_rules_dict() -> dict[str, typing.List[int]]:

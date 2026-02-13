@@ -235,7 +235,7 @@
     {
         "name": "Rogueport Sewers Town - Teleporter",
         "map": "tik_00",
-        "bero": null,
+        "bero": "null",
         "target": "X-Naut Fortress Teleporter Room - Teleporter",
         "region": "sewer_town_teleporter",
         "rules": null
@@ -267,7 +267,7 @@
     {
         "name": "Rogueport Sewers West - Grate",
         "map": "tik_07",
-        "bero": null,
+        "bero": "null",
         "target": "One Way",
         "src_region": "rogue_west",
         "region": "sewer_west",
@@ -1801,7 +1801,7 @@
     {
         "name": "Glitzville Main Square - Blimp",
         "map": "tou_01",
-        "bero": "<null>",
+        "bero": "null",
         "target": "Rogueport Blimp - Blimp",
         "rules": null,
         "region": "glitzville_main_square"
@@ -2027,9 +2027,7 @@
         "map": "tou_05",
         "bero": "w_bero",
         "target": "Glitzville Vents - East",
-        "rules": {
-            "has": "null"
-        },
+        "rules": "False_",
         "region": "glitzville_promoter"
     },
     {
@@ -2312,7 +2310,7 @@
     {
         "name": "Creepy Steeple Well Entrance - Entrance",
         "map": "jin_09",
-        "bero": "<null>",
+        "bero": "null",
         "target": "Twilight Trail Steeple Exterior - Well",
         "rules": null,
         "region": "steeple_well_entrance"
@@ -2330,9 +2328,7 @@
         "map": "jin_10",
         "bero": "w_bero",
         "target": "Creepy Steeple Well Entrance - East",
-        "rules": {
-            "has": "null"
-        },
+        "rules": "False_",
         "region": "steeple_well_buzzy"
     },
     {
@@ -2364,7 +2360,7 @@
     {
         "name": "Creepy Steeple Boo Chest Room Background - Ceiling Panel",
         "map": "jin_07",
-        "bero": "<null>",
+        "bero": "null",
         "target": "One Way",
         "src_region": "steeple_underground_tube",
         "rules": {
@@ -2442,7 +2438,7 @@
     {
         "name": "Creepy Steeple Under Statue - Ceiling",
         "map": "jin_06",
-        "bero": "<null>",
+        "bero": "null",
         "target": "Creepy Steeple Main Hall - Statue",
         "rules": null,
         "region": "steeple_statue"
@@ -2567,9 +2563,7 @@
         "map": "jin_00",
         "bero": "e_bero_3",
         "target": "Creepy Steeple Back Stairs - Southwest",
-        "rules": {
-            "has": "null"
-        },
+        "rules": "False_",
         "region": "steeple_main"
     },
     {
@@ -2623,7 +2617,7 @@
     {
         "name": "Keelhaul Key Town - Boat Re-Entry",
         "map": "muj_01",
-        "bero": "<null>",
+        "bero": "null",
         "target": "One Way",
         "src_region": "rogue_dock",
         "rules": {
@@ -3089,9 +3083,7 @@
         "map": "dou_11",
         "bero": "w_bero",
         "target": "Pirate's Grotto Barrel Room - East Canal",
-        "rules": {
-            "has": "null"
-        },
+        "rules": "False_",
         "region": "grotto_toad"
     },
     {
@@ -3615,7 +3607,7 @@
     {
         "name": "Moon Landing Site - Landing",
         "map": "moo_00",
-        "bero": "<null>",
+        "bero": "null",
         "target": "One Way",
         "src_region": "fahr_town_outskirts",
         "rules": {
@@ -3875,7 +3867,7 @@
     {
         "name": "X-Naut Fortress Teleporter Room - Teleporter",
         "map": "aji_07",
-        "bero": "<null>",
+        "bero": "null",
         "target": "Rogueport Sewers Town - Teleporter",
         "rules": null,
         "region": "fortress_teleporter"
