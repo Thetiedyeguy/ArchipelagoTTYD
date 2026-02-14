@@ -19,6 +19,7 @@ region_graph: dict[str, set[str]] = defaultdict(set)
 used_zones: set[str] = set()
 
 
+
 def get_region_defs_from_json():
     raw = pkgutil.get_data(__name__, "json/regions.json")
     if raw is None:
@@ -330,7 +331,7 @@ def connect_regions(world: "TTYDWorld"):
             rule = build_rule_lambda(src.get("rules"), world)
             source_region = world.multiworld.get_region(src_region, world.player)
             target_region = world.multiworld.get_region(dst_region, world.player)
-            world.create_entrance(source_region, target_region, rule)
+            world.create_entrance(source_region, target_region, rule, dst["name"])
             add_edge(src_region, dst_region)
             mark_used(src, dst)
         elif src["target"] == "One Way":
@@ -342,11 +343,18 @@ def connect_regions(world: "TTYDWorld"):
             world.create_entrance(source, target, rule)
 
     random.shuffle(one_way)
+    while one_way[len(one_way) - 1]["src_region"] == one_way[0]["region"]:
+        random.shuffle(one_way)
+
 
     for i in range(len(one_way)):
         if i < len(one_way) - 1:
             a = one_way[i]
             b = one_way[i + 1]
+            while a["src_region"] == b["region"] or b["src_region"] == a["region"] or one_way[len(one_way) - 1]["src_region"] == one_way[0]["region"] or one_way[len(one_way) - 1]["region"] == one_way[0]["src_region"]:
+                tail = one_way[i + 1:]
+                random.shuffle(tail)
+                one_way[i + 1:] = tail
         else:
             a = one_way[i]
             b = one_way[0]
@@ -360,28 +368,35 @@ def connect_regions(world: "TTYDWorld"):
 
         source_region = world.multiworld.get_region(source, world.player)
         target_region = world.multiworld.get_region(target, world.player)
-        print(b["name"])
         world.create_entrance(source_region, target_region, rule, b["name"])
-
+    print(one_way)
+    limit = 0
     while unreached_regions:
         src_region_contenders = [
             r for r in reachable_regions if unused_zones(r)
         ]
+        dst_region_contenders = [
+            r for r in unreached_regions if unused_zones(r)
+        ]
 
 
         src_region = random.choice(src_region_contenders)
-        dst_region = random.choice(list(unreached_regions))
+        if len(dst_region_contenders) == 0:
+            print(unreached_regions)
+            print(src_region)
+            print(dst_region_contenders)
+            limit = limit + 1
+            if limit == 3:
+                break
+            continue
+        dst_region = random.choice(dst_region_contenders)
 
         src_zone_contenders = unused_zones(src_region)
         dst_zone_contenders = unused_zones(dst_region)
         if len(src_region_contenders) == 1 and len(src_zone_contenders) == 1 and len(dst_zone_contenders) == 1 and len(
                 unreached_regions) != 1:
             continue
-        if len(src_zone_contenders) == 0 or len(dst_zone_contenders) == 0:
-            print(unreached_regions)
-            print(src_region)
-            print(dst_region)
-            continue
+
 
 
         src_zone = random.choice(src_zone_contenders)
@@ -514,7 +529,6 @@ def connect_regions(world: "TTYDWorld"):
             # Create with proper entrance names
             world.create_entrance(source_region, target_region, src_rule, dst["name"])
             world.create_entrance(target_region, source_region, dst_rule, src["name"])
-    print(warp_table)
 
 # Helper function to check if a rule contains entrance dependencies
 def has_entrance_dependency(rule_dict):

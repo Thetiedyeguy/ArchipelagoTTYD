@@ -1062,12 +1062,12 @@
         "name": "Hooktail's Castle Spikes Room - West",
         "map": "gon_07",
         "bero": "w_bero",
-        "target": "Hooktail's Castle Prison - East",
+        "target": "Hooktail's Castle Prison - West",
         "rules": null,
         "region": "hooktail_spikes"
     },
     {
-        "name": "Hooktail's Castle Prison - East",
+        "name": "Hooktail's Castle Prison - West",
         "map": "gon_06",
         "bero": "e_bero",
         "target": "Hooktail's Castle Spikes Room - West",
@@ -1178,12 +1178,12 @@
         "name": "Hooktail's Castle Plane Rafters Room - West",
         "map": "gon_09",
         "bero": "w_bero",
-        "target": "Hooktai's Castle Life Shroom Room - East Top",
+        "target": "Hooktail's Castle Life Shroom Room - East Top",
         "rules": null,
         "region": "hooktail_plane_rafter"
     },
     {
-        "name": "Hooktai's Castle Life Shroom Room - East Top",
+        "name": "Hooktail's Castle Life Shroom Room - East Top",
         "map": "gon_08",
         "bero": "e_bero_2",
         "target": "Hooktail's Castle Plane Rafters Room - West",
@@ -2034,12 +2034,12 @@
         "name": "Glitzville Arena - West",
         "map": "tou_03",
         "bero": "w_bero",
-        "target": "Glitzvile Hall - Arena Door",
+        "target": "Glitzville Hall - Arena Door",
         "rules": null,
         "region": "glitzville_arena"
     },
     {
-        "name": "Glitzvile Hall - Arena Door",
+        "name": "Glitzville Hall - Arena Door",
         "map": "tou_04",
         "bero": "n_bero_2",
         "target": "Glitzville Arena - West",
@@ -2532,7 +2532,7 @@
         "region": "steeple_south"
     },
     {
-        "name": "Creepy Steeple North Hall - Southwest",
+        "name": "Creepy Steeple North Hall - Southeast",
         "map": "jin_01",
         "bero": "s_bero_2",
         "target": "Creepy Steeple Back Stairs - North",
@@ -2543,7 +2543,7 @@
         "name": "Creepy Steeple Back Stairs - North",
         "map": "jin_03",
         "bero": "n_bero",
-        "target": "Creepy Steeple North Hall - Southwest",
+        "target": "Creepy Steeple North Hall - Southeast",
         "rules": null,
         "region": "steeple_back_stair"
     },
@@ -2988,6 +2988,7 @@
         "map": "dou_05",
         "bero": "w_bero_2",
         "target": "Pirate's Grotto Sluice Gate - East Top Canal",
+        "is_vanilla": true,
         "rules": null,
         "region": "grotto_staircase_canal"
     },
@@ -2996,6 +2997,7 @@
         "map": "dou_03",
         "bero": "e_bero_2",
         "target": "Pirate's Grotto Staircase - West Top Canal",
+        "is_vanilla": true,
         "rules": null,
         "region": "grotto_gate_upper_canal"
     },
@@ -3004,6 +3006,7 @@
         "map": "dou_12",
         "bero": "e_bero_1",
         "target": "Pirate's Grotto Sluice Gate - West Bottom Canal",
+        "is_vanilla": true,
         "rules": null,
         "region": "grotto_bullet_bridge_canal"
     },
@@ -3012,6 +3015,7 @@
         "map": "dou_03",
         "bero": "w_bero_1",
         "target": "Pirate's Grotto Bullet Bill Bridge - East Canal",
+        "is_vanilla": true,
         "rules": null,
         "region": "grotto_gate_canal"
     },
@@ -3020,6 +3024,7 @@
         "map": "dou_02",
         "bero": "e_bero_1",
         "target": "Pirate's Grotto Bullet Bill Bridge - West Canal",
+        "is_vanilla": true,
         "rules": null,
         "region": "grotto_handle_canal"
     },
@@ -3028,6 +3033,7 @@
         "map": "dou_12",
         "bero": "w_bero_1",
         "target": "Pirate's Grotto Handle Room - East Canal",
+        "is_vanilla": true,
         "rules": null,
         "region": "grotto_bullet_bridge_canal"
     },
@@ -3036,6 +3042,7 @@
         "map": "dou_09",
         "bero": "n_bero",
         "target": "Pirate's Grotto Sluice Gate - South",
+        "is_vanilla": true,
         "rules": null,
         "region": "grotto_barrel_canal"
     },
@@ -3044,6 +3051,7 @@
         "map": "dou_03",
         "bero": "s_bero",
         "target": "Pirate's Grotto Barrel Room - North",
+        "is_vanilla": true,
         "rules": {
             "and": [
                 {
@@ -3061,6 +3069,7 @@
         "map": "dou_10",
         "bero": "w_bero_1",
         "target": "Pirate's Grotto Barrel Room - East Canal",
+        "is_vanilla": true,
         "rules": null,
         "region": "grotto_spike_wall_canal"
     },
@@ -3069,6 +3078,7 @@
         "map": "dou_09",
         "bero": "e_bero_1",
         "target": "Pirate's Grotto Spike Wall Room - West Canal",
+        "is_vanilla": true,
         "rules": null,
         "region": "grotto_barrel_canal"
     },
@@ -3076,15 +3086,17 @@
         "name": "Pirate's Grotto Toad Boat Room - West",
         "map": "dou_11",
         "bero": "w_bero",
-        "target": "Pirate's Grotto Barrel Room - East Canal",
+        "target": "Pirate's Grotto Spike Wall Room - East Canal",
+        "is_vanilla": true,
         "rules": null,
         "region": "grotto_toad"
     },
     {
-        "name": "Pirate's Grotto Barrel Room - East Canal",
+        "name": "Pirate's Grotto Spike Wall Room - East Canal",
         "map": "dou_10",
         "bero": "e_bero",
         "target": "Pirate's Grotto Toad Boat Room - West",
+        "is_vanilla": true,
         "rules": null,
         "region": "grotto_spike_wall_canal"
     },
@@ -3396,7 +3408,7 @@
         "name": "Poshley Heights Station - North",
         "map": "pik_00",
         "bero": "n_bero",
-        "target": "Excess Express Front Passenger Car - South",
+        "target": "Excess Express Front Passenger Car - South Poshley",
         "rules": {
             "and": [
                 {
@@ -3408,6 +3420,14 @@
             ]
         },
         "region": "poshley_station"
+    },
+    {
+        "name": "Excess Express Front Passenger Car - South Poshley",
+        "map": "rsh_01_c",
+        "bero": "s_bero",
+        "target": "Poshley Heights Station - North",
+        "rules": null,
+        "region": "express_front_car"
     },
     {
         "name": "Poshley Heights Downtown - Northwest",
