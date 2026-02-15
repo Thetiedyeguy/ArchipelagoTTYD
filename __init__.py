@@ -18,6 +18,7 @@ from .Regions import create_regions, connect_regions, get_regions_dict
 from .Rom import TTYDProcedurePatch, write_files
 from .Rules import set_rules, get_tattle_rules_dict, set_tattle_rules
 from worlds.LauncherComponents import Component, SuffixIdentifier, Type, components, launch_subprocess
+from Utils import visualize_regions
 
 
 def launch_client(*args):
@@ -251,6 +252,7 @@ class TTYDWorld(World):
                 self.limited_chapter_locations[i][chapter_keysanity_tags[i]].update(locations)
         if self.options.tattlesanity:
             self.limit_tattle_locations()
+        visualize_regions(self.multiworld.get_region("Menu", self.player), 'my_world.puml', show_entrance_names = True)
 
     def limit_tattle_locations(self):
         for stars_required, locations in pit_exclusive_tattle_stars_required.items():

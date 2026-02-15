@@ -381,11 +381,6 @@
         "chapter": "One"
     },
     {
-        "name": "Hooktail's Castle Stair Central Staircase",
-        "tag": "hooktail_stair_central",
-        "chapter": "One"
-    },
-    {
         "name": "Hooktail's Castle Prison",
         "tag": "hooktail_prison",
         "chapter": "One"
@@ -416,12 +411,7 @@
         "chapter": "One"
     },
     {
-        "name": "Hooktail's Life Shroom Room",
-        "tag": "hooktail_life_shroom",
-        "chapter": "One"
-    },
-    {
-        "name": "Hooktail's Life Shroom Room Upper Level",
+        "name": "Hooktail's Castle Life Shroom Room Upper Level",
         "tag": "hooktail_life_shroom_upper",
         "chapter": "One"
     },
@@ -977,6 +967,11 @@
     {
         "name": "Excess Express Storage Car",
         "tag": "express_storage",
+        "chapter": "Six"
+    },
+    {
+        "name": "Excess Express Storage Car West",
+        "tag": "express_storage_west",
         "chapter": "Six"
     },
     {

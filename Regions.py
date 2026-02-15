@@ -8,7 +8,7 @@ import pkgutil
 import random
 from .Data import warp_table
 from .Rules import _build_single_rule
-from rule_builder.rules import Rule, Has, True_
+from rule_builder.rules import Rule, Has, True_, CanReachRegion, CanReachLocation
 from collections import defaultdict, deque
 
 if typing.TYPE_CHECKING:
@@ -17,6 +17,7 @@ if typing.TYPE_CHECKING:
 zones_by_region: dict[str, list[dict]] = defaultdict(list)
 region_graph: dict[str, set[str]] = defaultdict(set)
 used_zones: set[str] = set()
+edge_dependencies = {}
 
 
 
@@ -155,9 +156,9 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         Has("Plane Mode"),
         ("Hooktail's Castle Drawbridge West Top", "Hooktail's Castle Drawbridge West Bottom"): True_(),
         ("Hooktail's Castle Stair Switch Room Upper Level", "Hooktail's Castle Stair Switch Room"): True_(),
-        ("Hooktail's Life Shroom Room", "Hooktail's Life Shroom Room Upper Level"):
+        ("Hooktail's Castle Life Shroom Room", "Hooktail's Castle Life Shroom Room Upper Level"):
         StateLogic.partner_press_switch(),
-        ("Hooktail's Life Shroom Room Upper Level", "Hooktail's Life Shroom Room"): True_(),
+        ("Hooktail's Castle Life Shroom Room Upper Level", "Hooktail's Castle Life Shroom Room Upper Level"): True_(),
         ("Hooktail's Castle Central Staircase Upper Level", "Hooktail's Castle Central Staircase"): True_(),
         ("Boggly Woods Plane Panel Room", "Boggly Woods Plane Panel Room Upper"):
         Has("Plane Mode"),
@@ -181,6 +182,10 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         ("Riverside Station Ultra Boots Room Upper", "Riverside Station Ultra Boots Room"): True_(),
         ("Pirate's Grotto Toad Boat Room", "Pirate's Grotto Toad Boat Room East"):
         Has("Boat Mode") & Has("Plane Mode"),
+        ("Excess Express Storage Car", "Excess Express Storage Car West"):
+        CanReachRegion("Riverside Station Entrance") & Has("Elevator Key (Station)")
+        & CanReachRegion("Excess Express Middle Passenger Car") & CanReachLocation("Excess Express Middle Passenger Car: Briefcase"),
+        ("Excess Express Storage Car West", "Excess Express Storage Car"): True_(),
         ("X-Naut Fortress Hall Ground Floor", "X-Naut Fortress Hall Sublevel One"):
         Has("Elevator Key 1"),
         ("X-Naut Fortress Hall Sublevel One", "X-Naut Fortress Hall Ground Floor"):
@@ -250,7 +255,6 @@ def create_regions(world: "TTYDWorld"):
 def connect_regions(world: "TTYDWorld"):
     one_way = []
     vanilla = []
-    deferred_connections = []
     unneeded_regions = {
         "Tattlesanity",
         "Palace of Shadow",
@@ -261,26 +265,6 @@ def connect_regions(world: "TTYDWorld"):
     connections_dict = get_region_connections_dict(world)
     zones = get_zone_dict_from_json()
     reachable_regions = {"Menu", "Rogueport Center"}
-
-    def has_entrance_dependency(rule_dict):
-        """Recursively check if rules contain can_reach_entrance"""
-        if not rule_dict:
-            return False
-
-        if isinstance(rule_dict, dict):
-            if "can_reach_entrance" in rule_dict:
-                return True
-
-            for key, value in rule_dict.items():
-                if key in ["and", "or"]:
-                    if isinstance(value, list):
-                        for sub_rule in value:
-                            if has_entrance_dependency(sub_rule):
-                                return True
-                    elif has_entrance_dependency(value):
-                        return True
-
-        return False
 
     # First pass: Create entrances without dependencies
     for (source, target), rule in connections_dict.items():
@@ -314,25 +298,18 @@ def connect_regions(world: "TTYDWorld"):
     all_regions = set(tag_to_region.values())
     unreached_regions = all_regions - reachable_regions - unneeded_regions
 
-    # Process vanilla connections, deferring those with entrance dependencies
-    vanilla_deferred = []
     for src in vanilla:
         if not (src["target"] == "" or src["target"] == "One Way" or src["target"] == "filler"):
             dst = zones[src["target"]]
 
-            # Check if this connection has entrance dependencies
-            if has_entrance_dependency(src.get("rules")):
-                vanilla_deferred.append((src, dst))
-                mark_used(src, dst)
-                continue
-
             src_region = tag_to_region[src["region"]]
             dst_region = tag_to_region[dst["region"]]
-            rule = build_rule_lambda(src.get("rules"), world)
+            rule_dict = src.get("rules")
+            rule = build_rule_lambda(rule_dict, world)
             source_region = world.multiworld.get_region(src_region, world.player)
             target_region = world.multiworld.get_region(dst_region, world.player)
             world.create_entrance(source_region, target_region, rule, dst["name"])
-            add_edge(src_region, dst_region)
+            add_edge(src_region, dst_region, has_region_dependency(rule_dict))
             mark_used(src, dst)
         elif src["target"] == "One Way":
             source = src["src_region"]
@@ -342,29 +319,26 @@ def connect_regions(world: "TTYDWorld"):
             world.multiworld.get_region(target, world.player)
             world.create_entrance(source, target, rule)
 
-    random.shuffle(one_way)
-    while one_way[len(one_way) - 1]["src_region"] == one_way[0]["region"]:
+    max_attempts = 1000
+    for attempt in range(max_attempts):
         random.shuffle(one_way)
-
+        if is_valid_one_way_arrangement(one_way):
+            break
+    else:
+        raise RuntimeError(f"Could not find valid one_way arrangement after {max_attempts} attempts")
 
     for i in range(len(one_way)):
-        if i < len(one_way) - 1:
-            a = one_way[i]
-            b = one_way[i + 1]
-            while a["src_region"] == b["region"] or b["src_region"] == a["region"] or one_way[len(one_way) - 1]["src_region"] == one_way[0]["region"] or one_way[len(one_way) - 1]["region"] == one_way[0]["src_region"]:
-                tail = one_way[i + 1:]
-                random.shuffle(tail)
-                one_way[i + 1:] = tail
-        else:
-            a = one_way[i]
-            b = one_way[0]
+        a = one_way[i]
+        b = one_way[(i + 1) % len(one_way)]
+
         warp_table[(a["map"], a["bero"])] = (b["map"], b["bero"])
         source = tag_to_region.get(a["src_region"])
         target = tag_to_region.get(b["region"])
-        rule = build_rule_lambda(a.get("rules"), world)
+        rule_dict = a.get("rules")
+        rule = build_rule_lambda(rule_dict, world)
         world.multiworld.get_region(source, world.player)
         world.multiworld.get_region(target, world.player)
-        add_edge(source, target)
+        add_edge(source, target, has_region_dependency(rule_dict))
 
         source_region = world.multiworld.get_region(source, world.player)
         target_region = world.multiworld.get_region(target, world.player)
@@ -372,51 +346,51 @@ def connect_regions(world: "TTYDWorld"):
     print(one_way)
     limit = 0
     while unreached_regions:
-        src_region_contenders = [
-            r for r in reachable_regions if unused_zones(r)
-        ]
+        # First, choose destination region and zone
         dst_region_contenders = [
             r for r in unreached_regions if unused_zones(r)
         ]
 
-
-        src_region = random.choice(src_region_contenders)
         if len(dst_region_contenders) == 0:
             print(unreached_regions)
-            print(src_region)
-            print(dst_region_contenders)
             limit = limit + 1
             if limit == 3:
                 break
             continue
-        dst_region = random.choice(dst_region_contenders)
 
-        src_zone_contenders = unused_zones(src_region)
+        dst_region = random.choice(dst_region_contenders)
         dst_zone_contenders = unused_zones(dst_region)
+        dst_zone = random.choice(dst_zone_contenders)
+
+        # Now find source regions that are reachable WITHOUT using edges dependent on dst_region
+        reachable_without_dst = get_reachable_regions_excluding_dependencies("Menu", dst_region)
+
+        src_region_contenders = [
+            r for r in reachable_without_dst if r in reachable_regions and unused_zones(r)
+        ]
+
+        if len(src_region_contenders) == 0:
+            print(f"No valid source regions for {dst_region}")
+            limit = limit + 1
+            if limit == 3:
+                break
+            continue
+
+        src_region = random.choice(src_region_contenders)
+        src_zone_contenders = unused_zones(src_region)
+
         if len(src_region_contenders) == 1 and len(src_zone_contenders) == 1 and len(dst_zone_contenders) == 1 and len(
                 unreached_regions) != 1:
             continue
 
-
-
         src_zone = random.choice(src_zone_contenders)
-        dst_zone = random.choice(dst_zone_contenders)
-
-        # Check if either zone has entrance dependencies
-        if has_entrance_dependency(src_zone.get("rules")) or has_entrance_dependency(dst_zone.get("rules")):
-            # Store the actual zone objects, not just region names
-            deferred_connections.append(("non_vanilla", src_region, dst_region, src_zone, dst_zone, zones))
-            mark_used(src_zone, dst_zone)
-            add_edge(src_region, dst_region)
-            add_edge(dst_region, src_region)
-            reachable_regions = compute_reachable("Menu")
-            unreached_regions = all_regions - reachable_regions - unneeded_regions
-            continue
 
         src_target = zones[src_zone["target"]]
         dst_target = zones[dst_zone["target"]]
-        src_rule = build_rule_lambda(src_zone.get("rules"), world)
-        dst_rule = build_rule_lambda(dst_zone.get("rules"), world)
+        src_rule_dict = src_zone.get("rules")
+        dst_rule_dict = dst_zone.get("rules")
+        src_rule = build_rule_lambda(src_rule_dict, world)
+        dst_rule = build_rule_lambda(dst_rule_dict, world)
 
         warp_table[(src_target["map"], src_target["bero"])] = (dst_zone["map"], dst_zone["bero"])
         warp_table[(dst_target["map"], dst_target["bero"])] = (src_zone["map"], src_zone["bero"])
@@ -428,8 +402,8 @@ def connect_regions(world: "TTYDWorld"):
         world.create_entrance(target_region, source_region, dst_rule, src_zone["name"])
 
         mark_used(src_zone, dst_zone)
-        add_edge(src_region, dst_region)
-        add_edge(dst_region, src_region)
+        add_edge(src_region, dst_region, has_region_dependency(src_rule_dict))
+        add_edge(dst_region, src_region, has_region_dependency(dst_rule_dict))
         reachable_regions = compute_reachable("Menu")
         unreached_regions = all_regions - reachable_regions - unneeded_regions
 
@@ -446,11 +420,6 @@ def connect_regions(world: "TTYDWorld"):
     for i in range(0, len(remaining_zones), 2):
         src = remaining_zones[i]
         dst = remaining_zones[i + 1]
-
-        # Check if either has entrance dependencies
-        if has_entrance_dependency(src.get("rules")) or has_entrance_dependency(dst.get("rules")):
-            deferred_connections.append(("remaining", src, dst, zones))
-            continue
 
         src_region = tag_to_region[src["region"]]
         dst_region = tag_to_region[dst["region"]]
@@ -469,89 +438,48 @@ def connect_regions(world: "TTYDWorld"):
         world.create_entrance(source_region, target_region, src_rule, dst["name"])
         world.create_entrance(target_region, source_region, dst_rule, src["name"])
 
-    # ==========================================
-    # SECOND PASS: Create deferred connections
-    # ==========================================
-    print("\n=== Creating deferred connections with entrance dependencies ===")
+    print(warp_table)
 
-    # Process deferred vanilla connections
-    for src, dst in vanilla_deferred:
-        src_region = tag_to_region[src["region"]]
-        dst_region = tag_to_region[dst["region"]]
-        rule = build_rule_lambda(src.get("rules"), world)
-        print("Deferred Vanilla source:", src["name"])
-        print("Deferred Vanilla target:", dst["name"])
-        source_region = world.multiworld.get_region(src_region, world.player)
-        target_region = world.multiworld.get_region(dst_region, world.player)
-        world.create_entrance(source_region, target_region, rule)
-        add_edge(src_region, dst_region)
 
-    # Process other deferred connections
-    for conn in deferred_connections:
-        if conn[0] == "non_vanilla":
-            _, src_region, dst_region, src_zone, dst_zone, zones_dict = conn
-            src_target = zones_dict[src_zone["target"]]
-            dst_target = zones_dict[dst_zone["target"]]
-            src_rule = build_rule_lambda(src_zone.get("rules"), world)
-            dst_rule = build_rule_lambda(dst_zone.get("rules"), world)
+def has_region_dependency(rule_dict):
+    """
+    Extract all region dependencies from a rule dictionary.
+    Returns a flat list of region names that this rule depends on.
+    """
+    dependency_list = []
 
-            warp_table[(src_target["map"], src_target["bero"])] = (dst_zone["map"], dst_zone["bero"])
-            warp_table[(dst_target["map"], dst_target["bero"])] = (src_zone["map"], src_zone["bero"])
-
-            print("Deferred Non-Vanilla source:", src_zone["name"])
-            print("Deferred Non-Vanilla target:", dst_zone["name"])
-            source_region = world.multiworld.get_region(src_region, world.player)
-            target_region = world.multiworld.get_region(dst_region, world.player)
-
-            # Create with proper entrance names
-            world.create_entrance(source_region, target_region, src_rule, dst_zone["name"])
-            world.create_entrance(target_region, source_region, dst_rule, src_zone["name"])
-
-        elif conn[0] == "remaining":
-            _, src, dst, zones_dict = conn
-            src_region = tag_to_region[src["region"]]
-            dst_region = tag_to_region[dst["region"]]
-
-            src_target = zones_dict[src["target"]]
-            dst_target = zones_dict[dst["target"]]
-
-            src_rule = build_rule_lambda(src.get("rules"), world)
-            dst_rule = build_rule_lambda(dst.get("rules"), world)
-
-            warp_table[(src_target["map"], src_target["bero"])] = (dst["map"], dst["bero"])
-            warp_table[(dst_target["map"], dst_target["bero"])] = (src["map"], src["bero"])
-
-            print("Deferred Remaining source:", src["name"])
-            print("Deferred Remaining target:", dst["name"])
-            source_region = world.multiworld.get_region(src_region, world.player)
-            target_region = world.multiworld.get_region(dst_region, world.player)
-
-            # Create with proper entrance names
-            world.create_entrance(source_region, target_region, src_rule, dst["name"])
-            world.create_entrance(target_region, source_region, dst_rule, src["name"])
-
-# Helper function to check if a rule contains entrance dependencies
-def has_entrance_dependency(rule_dict):
-    """Recursively check if rules contain can_reach_entrance"""
     if not rule_dict:
-        return False
+        return dependency_list
 
-    # Check if this is a can_reach_entrance rule
     if isinstance(rule_dict, dict):
-        if "can_reach_entrance" in rule_dict:
-            return True
+        # Check for direct region dependency
+        if "can_reach_region" in rule_dict:
+            dependency_list.append(rule_dict["can_reach_region"])
 
         # Recursively check nested rules (and, or conditions)
         for key, value in rule_dict.items():
             if key in ["and", "or"]:
                 if isinstance(value, list):
                     for sub_rule in value:
-                        if has_entrance_dependency(sub_rule):
-                            return True
-                elif has_entrance_dependency(value):
-                    return True
+                        # Use extend to flatten the list
+                        dependency_list.extend(has_region_dependency(sub_rule))
+                else:
+                    # Use extend to flatten the list
+                    dependency_list.extend(has_region_dependency(value))
 
-    return False
+    return dependency_list
+
+
+def is_valid_one_way_arrangement(one_way):
+    """Check if the one_way arrangement has no forbidden connections."""
+    for i in range(len(one_way)):
+        a = one_way[i]
+        b = one_way[(i + 1) % len(one_way)]  # Wrap around to first element
+
+        # Check if this connection is forbidden
+        if a["src_region"] == b["region"] or b["src_region"] == a["region"]:
+            return False
+    return True
 
         
 def write_rel_warp_table(warp_table, filename="json/warp_table.json"):
@@ -583,7 +511,14 @@ def mark_used(*zones):
     for z in zones:
         used_zones.add(z["name"])
 
-def compute_reachable(start: str) -> set[str]:
+
+def add_edge(a: str, b: str, dependencies: list[str] = None):
+    region_graph[a].add(b)
+    if dependencies:
+        edge_dependencies[(a, b)] = set(dependencies)
+
+
+def compute_reachable(start: str, excluding_region: str = None) -> set[str]:
     visited = set()
     queue = deque([start])
 
@@ -592,13 +527,25 @@ def compute_reachable(start: str) -> set[str]:
         if current in visited:
             continue
         visited.add(current)
-        queue.extend(region_graph[current] - visited)
+
+        # Get neighbors, filtering out edges dependent on excluded region
+        neighbors = set()
+        for neighbor in region_graph[current]:
+            edge = (current, neighbor)
+            # Check if this edge has dependencies
+            if excluding_region and edge in edge_dependencies:
+                # Skip this edge if it depends on the excluded region
+                if excluding_region in edge_dependencies[edge]:
+                    continue
+            neighbors.add(neighbor)
+
+        queue.extend(neighbors - visited)
 
     return visited
 
 
-def add_edge(a: str, b: str):
-    region_graph[a].add(b)
+def get_reachable_regions_excluding_dependencies(start: str, excluded_region: str) -> set[str]:
+    return compute_reachable(start, excluding_region=excluded_region)
 
 
 

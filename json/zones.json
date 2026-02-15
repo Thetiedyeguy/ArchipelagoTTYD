@@ -688,7 +688,7 @@
         "rules": {
             "and": [
                 {
-                    "can_reach": "Rogueport Sewers East Pipe Room: Shine Sprite"
+                    "can_reach_region": "Rogueport Sewers East Warp Room Top"
                 },
                 {
                     "function": "super_boots"
@@ -1023,7 +1023,7 @@
         "region": "hooktail_stair_switch"
     },
     {
-        "name": "Hooktail's Castle Stair Central Staircase - West",
+        "name": "Hooktail's Castle Central Staircase - West",
         "map": "gon_05",
         "bero": "w_bero_1",
         "target": "Hooktail's Castle Stair Switch Room - East Bottom",
@@ -1034,7 +1034,7 @@
         "name": "Hooktail's Castle Stair Switch Room - East Bottom",
         "map": "gon_04",
         "bero": "e_bero_1",
-        "target": "Hooktail's Castle Stair Central Staircase - West",
+        "target": "Hooktail's Castle Central Staircase - West",
         "rules": {
             "has": "Castle Key"
         },
@@ -1107,7 +1107,7 @@
         "bero": "e_bero_3",
         "target": "Hooktail's Castle Central Staircase - West Top",
         "rules": {
-            "has": "koops"
+            "has": "Koops"
         },
         "region": "hooktail_stair_switch_upper"
     },
@@ -1405,7 +1405,7 @@
         "rules": {
             "and": [
                 {
-                    "can_reach": "Rogueport Sewers East Pipe Room: Shine Sprite"
+                    "can_reach_region": "Rogueport Sewers East Warp Room Top"
                 },
                 {
                     "function": "super_boots"
@@ -2044,7 +2044,7 @@
         "bero": "n_bero_2",
         "target": "Glitzville Arena - West",
         "rules": {
-            "can_reach_entrance": "Glitzville Promoter's Office - West"
+            "can_reach_region": "Glitzville Promoter's Office Vent"
         },
         "region": "glitzville_hall"
     },
@@ -3319,12 +3319,12 @@
         "name": "Riverside Station Tube Mode Maze - East",
         "map": "eki_04",
         "bero": "e_bero",
-        "target": "Riverside Sation Back Exterior - West Bottom",
+        "target": "Riverside Station Back Exterior - West Bottom",
         "rules": null,
         "region": "riverside_tube"
     },
     {
-        "name": "Riverside Sation Back Exterior - West Bottom",
+        "name": "Riverside Station Back Exterior - West Bottom",
         "map": "eki_03",
         "bero": "w_bero_2",
         "target": "Riverside Station Tube Mode Maze - East",
@@ -3389,20 +3389,8 @@
         "map": "rsh_05_a",
         "bero": "w_bero",
         "target": "Excess Express Roof - East",
-        "rules": {
-            "and": [
-                {
-                    "can_reach_region": "Riverside Station Entrance"
-                },
-                {
-                    "has": "Elevator Key (Station)"
-                },
-                {
-                    "can_reach": "Excess Express Middle Passenger Car: Briefcase"
-                }
-            ]
-        },
-        "region": "express_storage"
+        "rules": null,
+        "region": "express_storage_west"
     },
     {
         "name": "Poshley Heights Station - North",
@@ -3415,7 +3403,7 @@
                     "can_reach_region": "Excess Express Roof"
                 },
                 {
-                    "can_reach_entrance": "Excess Express Storage Car - West"
+                    "can_reach_region": "Excess Express Storage Car West"
                 }
             ]
         },
@@ -3480,7 +3468,7 @@
                     "can_reach_region": "Excess Express Roof"
                 },
                 {
-                    "can_reach_entrance": "Excess Express Storage Car - West"
+                    "can_reach_region": "Excess Express Storage Car West"
                 }
             ]
         },
