@@ -180,7 +180,9 @@ class TTYDWorld(World):
                         self.disabled_locations.update([location_name])
 
     def create_regions(self) -> None:
+        print("creating regions")
         create_regions(self)
+        print("connecting regions")
         connect_regions(self)
         self.lock_item_remove_from_pool("Rogueport Center: Goombella",
                                         starting_partners[self.options.starting_partner.value - 1])
