@@ -538,29 +538,25 @@ def get_region_name_by_tag():
     region_defs = get_region_defs_from_json()
     return {r["tag"]: r["name"] for r in region_defs}
 
-
-def mark_used(state: RegionState, *zones):
-    for z in zones:
-        state.used_zones.add(z["name"])
-
+def unused_zones(region):
+    return [z for z in zones_by_region[region] if z["name"] not in used_zones]
 
 def mark_unused(state: RegionState, *zones):
     for z in zones:
-        state.used_zones.discard(z["name"])
+        used_zones.add(z["name"])
 
 
-def add_edge(state: RegionState, a: str, b: str, dependencies: list[str] = None):
-    state.region_graph[a].add(b)
+def add_edge(a: str, b: str, dependencies: list[str] = None):
+    region_graph[a].add(b)
     if dependencies:
         state.edge_dependencies[(a, b)] = set(dependencies)
-
 
 def remove_edge(state: RegionState, a: str, b: str):
     state.region_graph[a].discard(b)
     state.edge_dependencies.pop((a, b), None)
 
 
-def compute_reachable(state: RegionState, start: str, excluding_region: str = None) -> set[str]:
+def compute_reachable(start: str, excluding_region: str = None) -> set[str]:
     visited = set()
     queue = deque([start])
 
