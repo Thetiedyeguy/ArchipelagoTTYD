@@ -417,7 +417,6 @@ class TTYDOptions(PerGameCommonOptions):
     goal: Goal
     goal_stars: GoalStars
     palace_stars: PalaceStars
-    loading_zone: LoadingZoneShuffle
     required_stars_toggle: RequiredStarsToggle
     required_stars: RequiredStars
     star_shuffle: StarShuffle
@@ -454,3 +453,4 @@ class TTYDOptions(PerGameCommonOptions):
     starting_partner: StartingPartner
     yoshi_color: YoshiColor
     yoshi_name: YoshiName
+    loading_zone_shuffle: LoadingZoneShuffle

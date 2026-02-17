@@ -3412,7 +3412,25 @@
         "map": "rsh_05_a",
         "bero": "w_bero",
         "target": "Excess Express Roof - East",
-        "rules": null,
+        "rules": {
+            "and": [
+                {
+                    "can_reach_region": "Riverside Station Entrance"
+                },
+                {
+                    "can_reach_region": "Excess Express Middle Passenger Car"
+                },
+                {
+                    "can_reach_region": "Excess Express Locomotive"
+                },
+                {
+                    "can_reach_region": "Excess Express Back Passenger Car"
+                },
+                {
+                    "can_reach_region": "Excess Express Front Passenger Car"
+                }
+            ]
+        },
         "region": "express_storage_west"
     },
     {
@@ -3434,6 +3452,15 @@
                 ,
                 {
                     "can_reach_region": "Riverside Station Entrance"
+                },
+                {
+                    "can_reach_region": "Excess Express Locomotive"
+                },
+                {
+                    "can_reach_region": "Excess Express Back Passenger Car"
+                },
+                {
+                    "can_reach_region": "Excess Express Front Passenger Car"
                 }
             ]
         },
@@ -3502,10 +3529,18 @@
                 },
                 {
                     "can_reach_region": "Excess Express Middle Passenger Car"
-                }
-                ,
+                },
                 {
                     "can_reach_region": "Riverside Station Entrance"
+                },
+                {
+                    "can_reach_region": "Excess Express Locomotive"
+                },
+                {
+                    "can_reach_region": "Excess Express Back Passenger Car"
+                },
+                {
+                    "can_reach_region": "Excess Express Front Passenger Car"
                 }
             ]
         },

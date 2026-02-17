@@ -187,7 +187,8 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         ("Excess Express Storage Car", "Excess Express Storage Car West"):
             CanReachRegion("Riverside Station Entrance") & Has("Elevator Key (Station)")
             & CanReachRegion("Excess Express Middle Passenger Car") & CanReachLocation(
-                "Excess Express Middle Passenger Car: Briefcase"),
+                "Excess Express Middle Passenger Car: Briefcase") & CanReachRegion("Excess Express Locomotive")
+            & CanReachRegion("Excess Express Back Passenger Car") & CanReachRegion("Excess Express Front Passenger Car"),
         ("Excess Express Storage Car West", "Excess Express Storage Car"): True_(),
         ("X-Naut Fortress Hall Ground Floor", "X-Naut Fortress Hall Sublevel One"):
             Has("Elevator Key 1"),
@@ -254,6 +255,7 @@ def connect_regions(world: "TTYDWorld"):
 
     one_way = []
     vanilla = []
+    delayed_connections: dict[str, list] = defaultdict(list)
     unneeded_regions = {
         "Tattlesanity",
         "Palace of Shadow",
@@ -280,13 +282,15 @@ def connect_regions(world: "TTYDWorld"):
         target_region = world.multiworld.get_region(target, world.player)
         world.create_entrance(source_region, target_region, rule)
         if source == "Excess Express Storage Car" and target == "Excess Express Storage Car West":
-            add_edge(state, source, target, ["Riverside Station Entrance", "Excess Express Middle Passenger Car"])
+            add_edge(state, source, target, ["Riverside Station Entrance", "Excess Express Middle Passenger Car", "Excess Express Locomotive", "Excess Express Back Passenger Car", "Excess Express Front Passenger Car"])
         add_edge(state, source, target)
 
     tag_to_region = get_region_name_by_tag()
 
-    for z in zones.values():
-        if "is_vanilla" in z:
+    print(world.options.open_westside)
+    print(world.options.loading_zone_shuffle)
+    for z in zones.values() or not world.options.loading_zone_shuffle:
+        if "is_vanilla" in z or not world.options.loading_zone_shuffle:
             vanilla.append(z)
         elif z["target"] == "One Way":
             one_way.append(z)
@@ -309,17 +313,23 @@ def connect_regions(world: "TTYDWorld"):
             rule = build_rule_lambda(rule_dict, world)
             source_region = world.multiworld.get_region(src_region, world.player)
             target_region = world.multiworld.get_region(dst_region, world.player)
+            region_dependents = has_region_dependency(rule_dict)
+            if region_dependents != []:
+                for region in region_dependents:
+                    delayed_connections[region].append([region_dependents, src, dst])
+                continue
             print("Vanilla Entrance: ", dst["name"])
             world.create_entrance(source_region, target_region, rule, dst["name"])
             add_edge(state, src_region, dst_region, has_region_dependency(rule_dict))
             mark_used(state, src, dst)
         elif src["target"] == "One Way":
-            source = src["src_region"]
-            target = src["region"]
+            source = tag_to_region.get(src["src_region"])
+            target = tag_to_region.get(src["region"])
             rule = build_rule_lambda(src.get("rules"), world)
-            world.multiworld.get_region(source, world.player)
-            world.multiworld.get_region(target, world.player)
-            world.create_entrance(source, target, rule)
+            source_region = world.multiworld.get_region(source, world.player)
+            target_region = world.multiworld.get_region(target, world.player)
+            add_edge(state, source, target)
+            world.create_entrance(source_region, target_region, rule, src["name"])
 
     max_attempts = 1000
     for attempt in range(max_attempts):
@@ -329,6 +339,7 @@ def connect_regions(world: "TTYDWorld"):
     else:
         raise RuntimeError(f"Could not find valid one_way arrangement after {max_attempts} attempts")
 
+    print(one_way)
     for i in range(len(one_way)):
         a = one_way[i]
         b = one_way[(i + 1) % len(one_way)]
@@ -338,17 +349,24 @@ def connect_regions(world: "TTYDWorld"):
         target = tag_to_region.get(b["region"])
         rule_dict = a.get("rules")
         rule = build_rule_lambda(rule_dict, world)
-        world.multiworld.get_region(source, world.player)
-        world.multiworld.get_region(target, world.player)
-        add_edge(state, source, target, has_region_dependency(rule_dict))
+
 
         source_region = world.multiworld.get_region(source, world.player)
         target_region = world.multiworld.get_region(target, world.player)
+        region_dependents = has_region_dependency(rule_dict)
+        if region_dependents != []:
+            for region in region_dependents:
+                delayed_connections[region].append([region_dependents, a, b])
+            continue
+
         print("One Way Entrance: ", b["name"])
+        add_edge(state, source, target, has_region_dependency(rule_dict))
         world.create_entrance(source_region, target_region, rule, b["name"])
 
     consecutive_failures = 0
     max_consecutive_failures = 50
+    reachable_regions = compute_reachable(state, "Menu")
+    unreached_regions = all_regions - reachable_regions - unneeded_regions
     dst_zone_contenders = [
         z
         for r in unreached_regions
@@ -363,9 +381,14 @@ def connect_regions(world: "TTYDWorld"):
         if z["name"] not in state.used_zones and not any(
             dep in unreached_regions for dep in has_region_dependency(z.get("rules")))
     ]
-
+    print(unreached_regions)
     while unreached_regions:
+        if src_zone_contenders == []:
+            print(dst_zone_contenders)
+            print(unreached_regions)
         src_zone = random.choice(src_zone_contenders)
+        if dst_zone_contenders == []:
+            print(unreached_regions)
         dst_zone = random.choice(dst_zone_contenders)
         src_region = tag_to_region[src_zone.get("region")]
         dst_region = tag_to_region[dst_zone.get("region")]
@@ -431,6 +454,39 @@ def connect_regions(world: "TTYDWorld"):
                 print("YOU LOSE GOOD DAY SIR")
                 break
             continue
+
+        if dst_region in delayed_connections.keys():
+            connections = delayed_connections.get(dst_region)
+            del delayed_connections[dst_region]
+            for connection in connections:
+                connection[0].remove(dst_region)
+                region_dependents = connection[0]
+                dep_src = connection[1]
+                dep_dst = connection[2]
+                if region_dependents == []:
+                    if dep_src["target"] == "One Way":
+                        print("One Way For The Win")
+                        dep_src_region_name = tag_to_region[dep_src["src_region"]]
+                        dep_dst_region_name = tag_to_region[dep_dst["region"]]
+                        dep_src_region = world.multiworld.get_region(dep_src_region_name, world.player)
+                        dep_dst_region = world.multiworld.get_region(dep_dst_region_name, world.player)
+                        dep_rule_dict = dep_src["rules"]
+                        dep_rule = build_rule_lambda(dep_rule_dict, world)
+                        add_edge(state, dep_src_region_name, dep_dst_region_name)
+                        print("Delayed One Way Entrance: ", dep_dst["name"])
+                        world.create_entrance(dep_src_region, dep_dst_region, dep_rule, dep_dst["name"])
+                    else:
+                        dep_src_region_name = tag_to_region[dep_src["region"]]
+                        dep_dst_region_name = tag_to_region[dep_dst["region"]]
+                        dep_src_region = world.multiworld.get_region(dep_src_region_name, world.player)
+                        dep_dst_region = world.multiworld.get_region(dep_dst_region_name, world.player)
+                        dep_src_rule_dict = dep_src["rules"]
+                        dep_src_rule = build_rule_lambda(dep_src_rule_dict, world)
+                        add_edge(state, dep_src_region_name, dep_dst_region_name)
+                        print("Delayed Entrance: ", dep_dst["name"])
+                        world.create_entrance(dep_src_region, dep_dst_region, dep_src_rule, dep_dst["name"])
+            reachable_regions = compute_reachable(state, "Menu")
+            unreached_regions = all_regions - reachable_regions - unneeded_regions
 
         print("Unreached Entrance: ", dst_zone["name"])
         world.create_entrance(source_region, target_region, src_rule, dst_zone["name"])
@@ -505,6 +561,8 @@ def has_region_dependency(rule_dict):
 
 def is_valid_one_way_arrangement(one_way):
     """Check if the one_way arrangement has no forbidden connections."""
+    forbidden_one_ways = ["steeple_boo_background", "glitzville_attic"]
+    allowed = 0
     for i in range(len(one_way)):
         a = one_way[i]
         b = one_way[(i + 1) % len(one_way)]  # Wrap around to first element
@@ -512,6 +570,10 @@ def is_valid_one_way_arrangement(one_way):
         # Check if this connection is forbidden
         if a["src_region"] == b["region"] or b["src_region"] == a["region"]:
             return False
+        if a["src_region"] in forbidden_one_ways and b["region"] in forbidden_one_ways:
+            allowed += 1
+            if allowed == 2:
+                return False
     return True
 
 
@@ -539,7 +601,7 @@ def get_region_name_by_tag():
     return {r["tag"]: r["name"] for r in region_defs}
 
 def unused_zones(state: RegionState, region):
-    return [z for z in zones_by_region[region] if z["name"] not in used_zones]
+    return [z for z in state.zones_by_region[region] if z["name"] not in state.used_zones]
 
 def mark_used(state: RegionState, *zones):
     for z in zones:
@@ -547,11 +609,11 @@ def mark_used(state: RegionState, *zones):
 
 def mark_unused(state: RegionState, *zones):
     for z in zones:
-        used_zones.discard(z["name"])
+        state.used_zones.discard(z["name"])
 
 
-def add_edge(a: str, b: str, dependencies: list[str] = None):
-    region_graph[a].add(b)
+def add_edge(state: RegionState,a: str, b: str, dependencies: list[str] = None):
+    state.region_graph[a].add(b)
     if dependencies:
         state.edge_dependencies[(a, b)] = set(dependencies)
 
