@@ -104,7 +104,7 @@ class TTYDPatchExtension(APPatchExtension):
         caller.patcher.dol.data.seek(0x24B)
         caller.patcher.dol.data.write(seed_options["dazzle_rewards"].to_bytes(1, "big"))
         caller.patcher.dol.data.seek(0x24C)
-        caller.patcher.dol.data.write(seed_options["loading_zone_shuffle"].to_bytes(1, "big"))
+        caller.patcher.dol.data.write((1 if seed_options["loading_zone_shuffle"] or seed_options["dungeon_shuffle"] else 0).to_bytes(1, "big"))
         # caller.patcher.dol.data.seek(0x24C)
         # caller.patcher.dol.data.write() RESERVED
         caller.patcher.dol.data.seek(0x24D)

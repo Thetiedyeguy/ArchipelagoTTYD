@@ -9,10 +9,6 @@
         "tags": [
             "Prologue"
         ]
-        "rules": null,
-        "tags": [
-            "Prologue"
-        ]
     },
     {
         "name": "Rogueport Center - South",
@@ -5572,10 +5568,10 @@
         ]
     },
     {
-        "name": "Palace of Shadow - West",
+        "name": "Palace of Shadow Entrance - West",
         "map": "las_00",
         "bero": "w_bero",
-        "target": "Palace of Shadow Entrance - West",
+        "target": "TTYD - North",
         "rules": null,
         "region": "palace_entrance",
         "tags": [
@@ -5584,10 +5580,10 @@
         ]
     },
     {
-        "name": "Palace of Shadow Entrance - West",
+        "name": "TTYD - North",
         "map": "tik_05",
         "bero": "n_bero",
-        "target": "Palace of Shadow - West",
+        "target": "Palace of Shadow Entrance - West",
         "rules": {
             "function": {
                 "name": "PalaceAccess",

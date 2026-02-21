@@ -135,9 +135,6 @@ class TTYDWorld(World):
             logging.warning(f"{self.player}'s has enabled Loading Zone Shuffle and disabled Keysanity. "
                             f"Enabling Keysanity due to incompatibility")
             self.options.keysanity.value = Keysanity.option_true
-        if self.options.dungeon_shuffle and not self.options.loading_zone_shuffle:
-            logging.warning(f"{self.player}'s has enabled Dungeon Shuffle and disabled Loading Zone Shuffle. "
-                            f"Enabling Dungeon Shuffle due to incompatibility")
             self.options.loading_zone_shuffle.value = LoadingZoneShuffle.option_true
         if self.options.limit_chapter_eight and self.options.palace_skip:
             logging.warning(f"{self.player_name}'s has enabled both Palace Skip and Limit Chapter 8. "
