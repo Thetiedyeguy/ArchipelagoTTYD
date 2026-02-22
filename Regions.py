@@ -663,7 +663,8 @@ def has_region_dependency(world, rule_dict):
                     dependency_list.extend(has_region_dependency(world, value))
             if isinstance(value, dict):
                 if key == "function" and value["name"] and value["name"] == "PalaceAccess" and world.options.star_shuffle != StarShuffle.option_all:
-                    dependency_list.extend(["Poshley Heights Sanctum", "X-Naut Fortress Boss Room", "Hooktail's Castle Hooktail's Room", "Great Tree Entrance", "Creepy Steeple Spire", "Glitzville Arena", "Pirate's Grotto Cortez's Hoard"])
+                    dependency_list.extend(["Poshley Heights Sanctum", "X-Naut Fortress Boss Room", "Hooktail's Castle Hooktail's Room",
+                                            "Great Tree Entrance", "Creepy Steeple Spire", "Glitzville Arena", "Pirate's Grotto Cortez's Hoard"])
 
     return dependency_list
 

@@ -12,13 +12,14 @@ from .Data import starting_partners, stars, limit_pit, \
 from .Locations import all_locations, location_table, location_id_to_name, TTYDLocation, locationName_to_data, \
     get_locations_by_tags, get_vanilla_item_names, get_location_names, LocationData
 from .Options import Piecesanity, TTYDOptions, YoshiColor, StartingPartner, PitItems, LimitChapterEight, Goal, \
-    DazzleRewards, StarShuffle, Keysanity, LoadingZoneShuffle
+    DazzleRewards, StarShuffle, Keysanity, LoadingZoneShuffle, Shopsanity
 from .Items import TTYDItem, itemList, item_table, ItemData, items_by_id
 from .Regions import create_regions, connect_regions, get_regions_dict
 from .Rom import TTYDProcedurePatch, write_files
 from .Rules import set_rules, get_tattle_rules_dict, set_tattle_rules
 from worlds.LauncherComponents import Component, SuffixIdentifier, Type, components, launch_subprocess
 from Utils import visualize_regions
+from ..earthbound.modules import shopsanity
 
 
 def launch_client(*args):
@@ -135,7 +136,14 @@ class TTYDWorld(World):
             logging.warning(f"{self.player}'s has enabled Loading Zone Shuffle and disabled Keysanity. "
                             f"Enabling Keysanity due to incompatibility")
             self.options.keysanity.value = Keysanity.option_true
-            self.options.loading_zone_shuffle.value = LoadingZoneShuffle.option_true
+        if self.options.loading_zone_shuffle and not self.options.shopsanity:
+            logging.warning(f"{self.player}'s has enabled Loading Zone Shuffle and disabled shopsanity"
+                            f"Enabling shopsanity due to incompatibility")
+            self.options.shopsanity.value = Shopsanity.option_true
+        if self.options.loading_zone_shuffle and not self.options.piecesanity:
+            logging.warning(f"{self.player}'s has enabled Loading Zone Shuffle and disabled piesanity"
+                            f"Enabling piesanity due to incompatibility")
+            self.options.piecesanity.value = Piecesanity.option_all
         if self.options.limit_chapter_eight and self.options.palace_skip:
             logging.warning(f"{self.player_name}'s has enabled both Palace Skip and Limit Chapter 8. "
                             f"Disabling the Limit Chapter 8 option due to incompatibility.")

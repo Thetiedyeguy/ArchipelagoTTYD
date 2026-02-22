@@ -57,9 +57,6 @@
         "has": "The Letter \"p\""
       },
       {
-        "can_reach_entrance": "Creepy Steeple Main Hall - Northeast"
-      },
-      {
         "can_reach_region": "Twilight Trail Entrance"
       }
     ]
@@ -595,25 +592,6 @@
   },
   "Pirate's Grotto Staircase: Defend Plus P": {
     "has": "Boat Mode"
-  },
-  "Pirate's Grotto Cortez' Hoard: Sapphire Star": {
-    "and": [
-      {
-        "has": "Yoshi"
-      },
-      {
-        "has": "Bobbery"
-      },
-      {
-        "has": "Boat Mode"
-      },
-      {
-        "has": "Gate Handle"
-      },
-      {
-        "has": "Plane Mode"
-      }
-    ]
   },
   "Pirate's Grotto Sluice Gate: Star Piece": {
     "and": [
