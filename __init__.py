@@ -132,17 +132,17 @@ class TTYDWorld(World):
                 self.options.loading_zone_shuffle.value = slot_data["loading_zone_shuffle"]
                 self.options.dungeon_shuffle.value = slot_data["dungeon_shuffle"]
                 return
-        if self.options.loading_zone_shuffle and not self.options.keysanity:
+        if self.options.loading_zone_shuffle and self.options.keysanity == Keysanity.option_false:
             logging.warning(f"{self.player}'s has enabled Loading Zone Shuffle and disabled Keysanity. "
                             f"Enabling Keysanity due to incompatibility")
             self.options.keysanity.value = Keysanity.option_true
-        if self.options.loading_zone_shuffle and not self.options.shopsanity:
-            logging.warning(f"{self.player}'s has enabled Loading Zone Shuffle and disabled shopsanity"
+        if self.options.loading_zone_shuffle and self.options.shopsanity == Shopsanity.option_false:
+            logging.warning(f"{self.player}'s has enabled Loading Zone Shuffle and disabled shopsanity.  "
                             f"Enabling shopsanity due to incompatibility")
             self.options.shopsanity.value = Shopsanity.option_true
-        if self.options.loading_zone_shuffle and not self.options.piecesanity:
-            logging.warning(f"{self.player}'s has enabled Loading Zone Shuffle and disabled piesanity"
-                            f"Enabling piesanity due to incompatibility")
+        if self.options.loading_zone_shuffle and not self.options.piecesanity.value == Piecesanity.option_all:
+            logging.warning(f"{self.player}'s has enabled Loading Zone Shuffle and disabled piecesanity.  "
+                            f"Enabling piecesanity due to incompatibility")
             self.options.piecesanity.value = Piecesanity.option_all
         if self.options.limit_chapter_eight and self.options.palace_skip:
             logging.warning(f"{self.player_name}'s has enabled both Palace Skip and Limit Chapter 8. "

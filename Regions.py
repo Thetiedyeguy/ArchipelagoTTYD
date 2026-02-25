@@ -268,6 +268,7 @@ def connect_regions(world: "TTYDWorld"):
     vanilla = []
     dungeon_entrance = []
     dungeon_exit = []
+    ttyd_north_zone = None  # Will hold the TTYD - North zone for later processing
     delayed_connections: dict[str, list] = defaultdict(list)
     chapter_eight_conn = ["Palace of Shadow Far Hallway One", "Palace of Shadow Far Hallway One Post Riddle Tower",
                           "Palace of Shadow Far Hallway 2", "Palace of Shadow Far Hallway 2 Post Riddle",
@@ -334,6 +335,9 @@ def connect_regions(world: "TTYDWorld"):
         elif z["target"] == "One Way":
             print("One Way:", z["name"])
             one_way.append(z)
+        elif z["name"] == "TTYD - North":
+            print("TTYD - North: deferring to remaining zones pool")
+            ttyd_north_zone = z
         else:
             print("Generic:", z["name"])
             region = tag_to_region.get(z["region"])
@@ -599,12 +603,16 @@ def connect_regions(world: "TTYDWorld"):
 
     delayed_connections.clear()
 
-    # Process remaining zones
+    # Collect remaining zones, then inject TTYD - North back into the pool before pairing
     remaining_zones = [
         z for region in state.zones_by_region
         for z in state.zones_by_region[region]
         if z["name"] not in state.used_zones
     ]
+
+    if ttyd_north_zone is not None:
+        print("TTYD - North: adding back into remaining zones pool")
+        remaining_zones.append(ttyd_north_zone)
 
     random.shuffle(remaining_zones)
     assert len(remaining_zones) % 2 == 0
@@ -661,10 +669,6 @@ def has_region_dependency(world, rule_dict):
                 else:
                     # Use extend to flatten the list
                     dependency_list.extend(has_region_dependency(world, value))
-            if isinstance(value, dict):
-                if key == "function" and value["name"] and value["name"] == "PalaceAccess" and world.options.star_shuffle != StarShuffle.option_all:
-                    dependency_list.extend(["Poshley Heights Sanctum", "X-Naut Fortress Boss Room", "Hooktail's Castle Hooktail's Room",
-                                            "Great Tree Entrance", "Creepy Steeple Spire", "Glitzville Arena", "Pirate's Grotto Cortez's Hoard"])
 
     return dependency_list
 
