@@ -122,7 +122,8 @@
         },
         "tags": [
             "Prologue",
-            "Six"
+            "Six",
+            "Chapter Edge"
         ]
     },
     {
@@ -136,7 +137,8 @@
         },
         "tags": [
             "Prologue",
-            "Three"
+            "Three",
+            "Chapter Edge"
         ]
     },
     {
@@ -302,7 +304,8 @@
         "rules": null,
         "tags": [
             "Prologue",
-            "One"
+            "One",
+            "Chapter Edge"
         ]
     },
     {
@@ -326,7 +329,8 @@
         "tags": [
             "Prologue",
             "Seven",
-            "Dungeon Exit"
+            "Dungeon Exit",
+            "Chapter Edge"
         ]
     },
     {
@@ -418,7 +422,8 @@
         "rules": null,
         "tags": [
             "Prologue",
-            "Four"
+            "Four",
+            "Chapter Edge"
         ]
     },
     {
@@ -531,7 +536,8 @@
         "rules": null,
         "tags": [
             "Prologue",
-            "One"
+            "One",
+            "Chapter Edge"
         ]
     },
     {
@@ -543,7 +549,8 @@
         "rules": null,
         "tags": [
             "Prologue",
-            "Two"
+            "Two",
+            "Chapter Edge"
         ]
     },
     {
@@ -601,7 +608,8 @@
         "rules": null,
         "tags": [
             "Prologue",
-            "Five"
+            "Five",
+            "Chapter Edge"
         ]
     },
     {
@@ -613,7 +621,8 @@
         "rules": null,
         "tags": [
             "Prologue",
-            "Six"
+            "Six",
+            "Chapter Edge"
         ]
     },
     {
@@ -826,7 +835,8 @@
         "rules": null,
         "tags": [
             "Prologue",
-            "Two"
+            "Two",
+            "Chapter Edge"
         ]
     },
     {
@@ -838,7 +848,8 @@
         "region": "petal_meadow_entrance",
         "tags": [
             "One",
-            "Prologue"
+            "Prologue",
+            "Chapter Edge"
         ]
     },
     {
@@ -947,7 +958,8 @@
         "region": "petalburg_east",
         "tags": [
             "One",
-            "Prologue"
+            "Prologue",
+            "Chapter Edge"
         ]
     },
     {
@@ -1719,7 +1731,8 @@
         "region": "boggly_entrance",
         "tags": [
             "Two",
-            "Prologue"
+            "Prologue",
+            "Chapter Edge"
         ]
     },
     {
@@ -1896,7 +1909,8 @@
         "region": "boggly_outside_tree",
         "tags": [
             "Two",
-            "Prologue"
+            "Prologue",
+            "Chapter Edge"
         ]
     },
     {
@@ -2446,7 +2460,8 @@
         "region": "glitzville_main_square",
         "tags": [
             "Three",
-            "Prologue"
+            "Prologue",
+            "Chapter Edge"
         ]
     },
     {
@@ -2867,7 +2882,8 @@
         "region": "twilight_town_left",
         "tags": [
             "Four",
-            "Prologue"
+            "Prologue",
+            "Chapter Edge"
         ]
     },
     {
@@ -3520,7 +3536,8 @@
         "region": "keelhaul_town",
         "tags": [
             "Prologue",
-            "Five"
+            "Five",
+            "Chapter Edge"
         ]
     },
     {
@@ -4324,7 +4341,8 @@
         "region": "express_front_car",
         "tags": [
             "Six",
-            "Prologue"
+            "Prologue",
+            "Chapter Edge"
         ]
     },
     {
@@ -4743,7 +4761,8 @@
         "region": "fahr_entrance",
         "tags": [
             "Seven",
-            "Prologue"
+            "Prologue",
+            "Chapter Edge"
         ]
     },
     {
@@ -4755,7 +4774,8 @@
         "region": "sewer_west_fahr",
         "tags": [
             "Prologue",
-            "Seven"
+            "Seven",
+            "Chapter Edge"
         ]
     },
     {
@@ -5211,7 +5231,8 @@
         "tags": [
             "Seven",
             "Prologue",
-            "Dungeon Entrance"
+            "Dungeon Entrance",
+            "Chapter Edge"
         ]
     },
     {
@@ -5544,7 +5565,8 @@
         "region": "keelhaul_jungle_entrance",
         "tags": [
             "Five",
-            "Prologue"
+            "Prologue",
+            "Chapter Edge"
         ]
     },
     {
@@ -5565,7 +5587,8 @@
         "region": "poshley_sanctum_exterior",
         "tags": [
             "Six",
-            "Prologue"
+            "Prologue",
+            "Chapter Edge"
         ]
     },
     {
@@ -5577,7 +5600,8 @@
         "region": "palace_entrance",
         "tags": [
             "Eight",
-            "Prologue"
+            "Prologue",
+            "Chapter Edge"
         ]
     },
     {
@@ -5594,7 +5618,8 @@
         "region": "ttyd",
         "tags": [
             "Prologue",
-            "Eight"
+            "Eight",
+            "Chapter Edge"
         ]
     },
     {

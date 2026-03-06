@@ -19,7 +19,6 @@ from .Rom import TTYDProcedurePatch, write_files
 from .Rules import set_rules, get_tattle_rules_dict, set_tattle_rules
 from worlds.LauncherComponents import Component, SuffixIdentifier, Type, components, launch_subprocess
 from Utils import visualize_regions
-from ..earthbound.modules import shopsanity
 
 
 def launch_client(*args):
@@ -99,6 +98,7 @@ class TTYDWorld(World):
     locked_item_frequencies: Dict[str, int]
     in_pre_fill: bool
     ut_can_gen_without_yaml = True
+    warp_table: Dict[tuple[str, str], tuple[str, str]]
 
     def generate_early(self) -> None:
         self.disabled_locations = set()
@@ -111,6 +111,7 @@ class TTYDWorld(World):
         self.limited_items = {chapter: {tag: list() for tag in limited_tags[chapter]} for chapter in range(1, 9)}
         self.limited_misc_locations = set()
         self.locked_item_frequencies = {}
+        self.warp_table = {}
         # implementing yaml-less UT support
         if hasattr(self.multiworld, "re_gen_passthrough"):
             if self.game in self.multiworld.re_gen_passthrough:
@@ -141,7 +142,7 @@ class TTYDWorld(World):
                             f"Enabling shopsanity due to incompatibility")
             self.options.shopsanity.value = Shopsanity.option_true
         if self.options.loading_zone_shuffle and not self.options.piecesanity.value == Piecesanity.option_all:
-            logging.warning(f"{self.player}'s has enabled Loading Zone Shuffle and disabled piecesanity.  "
+            logging.warning(f"{self.player}'s has enabled Loading Zone Shuffle and disabled piesanity.  "
                             f"Enabling piecesanity due to incompatibility")
             self.options.piecesanity.value = Piecesanity.option_all
         if self.options.limit_chapter_eight and self.options.palace_skip:
@@ -545,7 +546,6 @@ class TTYDWorld(World):
                 state.update_reachable_regions(self.player)
                 reachable_regions = state.reachable_regions[self.player]
 
-                # Find locations in unreachable regions
                 for region in self.multiworld.get_regions(self.player):
                     if region not in reachable_regions:
                         for loc in region.locations:
@@ -553,17 +553,57 @@ class TTYDWorld(World):
             except Exception as e:
                 print(f"Could not check accessibility: {e}")
 
-            # Find all problematic regions (either unfilled OR inaccessible)
+            # Build per-region color mapping
+            region_colors: dict = {}
             problematic_regions = set()
+
             for region in self.multiworld.get_regions(self.player):
-                has_unfilled = any(loc in unfilled_set for loc in region.locations)
-                has_inaccessible = any(loc in inaccessible for loc in region.locations)
+                locs = region.locations
+                unfilled_locs = [loc for loc in locs if loc in unfilled_set]
+                inaccessible_locs = [loc for loc in locs if loc in inaccessible]
 
-                if has_unfilled or has_inaccessible:
-                    problematic_regions.add(region)
+                has_unfilled = len(unfilled_locs) > 0
+                has_inaccessible = len(inaccessible_locs) > 0
 
+                if not has_unfilled and not has_inaccessible:
+                    continue
 
-            # Generate visualization
+                problematic_regions.add(region)
+
+                all_unfilled = has_unfilled and len(unfilled_locs) == len(locs)
+                all_inaccessible = has_inaccessible and len(inaccessible_locs) == len(locs)
+
+                if has_unfilled and has_inaccessible:
+                    color = "FF00FF"  # mixed: both unfilled and inaccessible
+                elif all_unfilled:
+                    color = "FF0000"  # all locations unfilled
+                elif has_unfilled:
+                    color = "FF7777"  # some locations unfilled
+                elif all_inaccessible:
+                    color = "0000FF"  # all locations inaccessible
+                else:
+                    color = "7777FF"  # some locations inaccessible
+
+                region_colors[region] = color
+
+            # Print full sets
+            print("=== UNFILLED LOCATIONS ===")
+            for loc in sorted(unfilled_set, key=lambda l: l.name):
+                region_name = getattr(getattr(loc, 'parent_region', None), 'name', 'no region')
+                print(f"  {loc.name} ({region_name})")
+
+            print("=== INACCESSIBLE LOCATIONS ===")
+            for loc in sorted(inaccessible, key=lambda l: l.name):
+                region_name = getattr(getattr(loc, 'parent_region', None), 'name', 'no region')
+                print(f"  {loc.name} ({region_name})")
+
+            print("=== PROBLEMATIC REGIONS ===")
+            for region in sorted(problematic_regions, key=lambda r: r.name):
+                print(f"  {region.name} [{region_colors.get(region, '?')}]")
+
+            # Generate visualization using regions_to_highlight with the problematic set,
+            # then replace the hardcoded #00FF00 with per-region colors in post-processing
+            import re
             uml_list = visualize_regions(
                 self.multiworld.get_region("Menu", self.player),
                 "temp.puml",
@@ -571,14 +611,32 @@ class TTYDWorld(World):
                 regions_to_highlight=problematic_regions,
             )
 
+            # Build a lookup from sanitized region name -> color
+            def sanitize(name: str) -> str:
+                return re.sub(r'[\".:]', '', name)
+
+            name_to_color = {sanitize(region.name): color for region, color in region_colors.items()}
+
+            # Replace '#00FF00' with the correct per-region color in each UML line
+            processed = []
+            for line in uml_list:
+                # Lines with highlighted regions look like: class "RegionName" #00FF00
+                match = re.match(r'^class "(.*?)" #00FF00$', line)
+                if match:
+                    region_name = match.group(1)
+                    color = name_to_color.get(region_name, "00FF00")
+                    line = f'class "{region_name}" #{color}'
+                processed.append(line)
+
             print("===PUML_START===")
-            print('\n'.join(uml_list))
+            print('\n'.join(processed))
             print("===PUML_END===")
 
-            # Print summary
             print(f"DEBUG VIZ: {len(unfilled_set)} unfilled locations")
             print(f"DEBUG VIZ: {len(inaccessible)} inaccessible locations")
             print(f"DEBUG VIZ: {len(problematic_regions)} problematic regions highlighted")
 
         except Exception as e:
             print(f"ERROR: Failed to generate visualization: {e}")
+            import traceback
+            traceback.print_exc()

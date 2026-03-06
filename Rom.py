@@ -10,7 +10,7 @@ from BaseClasses import Location, ItemClassification
 from worlds.Files import APProcedurePatch, APTokenMixin, APPatchExtension, AutoPatchExtensionRegister
 from .Items import items_by_id, ItemData
 from .Locations import locationName_to_data, location_table, location_id_to_name
-from .Data import Rels, shop_items, item_prices, rel_filepaths, location_to_unit, shop_names, warp_table
+from .Data import Rels, shop_items, item_prices, rel_filepaths, location_to_unit, shop_names
 from .TTYDPatcher import TTYDPatcher
 
 if TYPE_CHECKING:
@@ -295,7 +295,7 @@ def write_files(world: "TTYDWorld", patch: TTYDProcedurePatch) -> None:
     buffer.write(b'\x00')  # null terminator for the end of the table
 
     warp_buffer = io.BytesIO()
-    for (src_map, src_bero), (target_map, target_bero) in warp_table.items():
+    for (src_map, src_bero), (target_map, target_bero) in world.warp_table.items():
         warp_buffer.write(src_map.encode("utf-8"))
         warp_buffer.write(b"\x00")
         warp_buffer.write(src_bero.encode("utf-8"))
