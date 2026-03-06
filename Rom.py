@@ -338,6 +338,7 @@ def write_files(world: "TTYDWorld", patch: TTYDProcedurePatch) -> None:
     patch.write_file("options.json", json.dumps(options_dict).encode("UTF-8"))
     patch.write_file(f"locations.json", json.dumps(locations_to_dict(world.multiworld.get_locations(world.player))).encode("UTF-8"))
     patch.write_file("enemies.bin", enemy_buffer.getvalue())
+    patch.write_file("warp.txt", warp_buffer.getvalue())
 
 def classification_to_color(classification: ItemClassification = ItemClassification.filler) -> str:
     if classification & ItemClassification.progression:
