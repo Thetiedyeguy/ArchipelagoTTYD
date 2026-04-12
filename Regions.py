@@ -121,8 +121,8 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         ("Rogueport Sewers Blooper", "Rogueport Sewers Blooper Pipe"):          True_(),
 
         # --- Rogueport Sewers Town ---
-        ("Rogueport Sewers Town", "Rogueport Sewers Town Dazzle"):              StateLogic.fallen_pipe(),
-        ("Rogueport Sewers Town Dazzle", "Rogueport Sewers Town"):              StateLogic.fallen_pipe(),
+        ("Rogueport Sewers Town", "Rogueport Sewers Town Dazzle"):              StateLogic.Rules.fallen_pipe(),
+        ("Rogueport Sewers Town Dazzle", "Rogueport Sewers Town"):              StateLogic.Rules.fallen_pipe(),
         ("Rogueport Sewers Town Teleporter", "Rogueport Sewers Town"):          True_(),
         ("Rogueport Sewers Town", "Rogueport Sewers Town Teleporter"):          True_(),
 
@@ -131,9 +131,9 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         ("Rogueport Sewers West West", "Rogueport Sewers West"):                Has("Yoshi"),
         ("Rogueport Sewers West", "Rogueport Sewers West Bottom"):              True_(),
         ("Rogueport Sewers West West", "Rogueport Sewers West Bottom"):         True_(),
-        ("Rogueport Sewers West Bottom", "Rogueport Sewers West West"):         StateLogic.ultra_boots(),
-        ("Rogueport Sewers West West", "Rogueport Sewers West Fahr"):           StateLogic.ultra_hammer(),
-        ("Rogueport Sewers West Fahr", "Rogueport Sewers West West"):           StateLogic.ultra_hammer(),
+        ("Rogueport Sewers West Bottom", "Rogueport Sewers West West"):         StateLogic.Rules.ultra_boots(),
+        ("Rogueport Sewers West West", "Rogueport Sewers West Fahr"):           StateLogic.Rules.ultra_hammer(),
+        ("Rogueport Sewers West Fahr", "Rogueport Sewers West West"):           StateLogic.Rules.ultra_hammer(),
 
         # --- Rogueport Sewers Enemy Halls ---
         ("Rogueport Sewers East Enemy Hall", "Rogueport Sewers East Enemy Hall Barred Door"):   Has("Paper Mode"),
@@ -143,18 +143,18 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
 
         # --- Rogueport Sewers Warp Rooms ---
         # West warp room — Ultra Hammer needed to move between left/right; top always drops down
-        ("Rogueport Sewers West Warp Room Left", "Rogueport Sewers West Warp Room Right"):      StateLogic.ultra_hammer(),
-        ("Rogueport Sewers West Warp Room Right", "Rogueport Sewers West Warp Room Left"):      StateLogic.ultra_hammer(),
-        ("Rogueport Sewers West Warp Room Left", "Rogueport Sewers West Warp Room Top"):        StateLogic.ultra_hammer(),
+        ("Rogueport Sewers West Warp Room Left", "Rogueport Sewers West Warp Room Right"):      StateLogic.Rules.ultra_hammer(),
+        ("Rogueport Sewers West Warp Room Right", "Rogueport Sewers West Warp Room Left"):      StateLogic.Rules.ultra_hammer(),
+        ("Rogueport Sewers West Warp Room Left", "Rogueport Sewers West Warp Room Top"):        StateLogic.Rules.ultra_hammer(),
         ("Rogueport Sewers West Warp Room Top", "Rogueport Sewers West Warp Room Left"):        True_(),
-        ("Rogueport Sewers West Warp Room Right", "Rogueport Sewers West Warp Room Top"):       StateLogic.ultra_hammer(),
+        ("Rogueport Sewers West Warp Room Right", "Rogueport Sewers West Warp Room Top"):       StateLogic.Rules.ultra_hammer(),
         ("Rogueport Sewers West Warp Room Top", "Rogueport Sewers West Warp Room Right"):       True_(),
         # East warp room — identical layout/rules to west
-        ("Rogueport Sewers East Warp Room Left", "Rogueport Sewers East Warp Room Right"):      StateLogic.ultra_hammer(),
-        ("Rogueport Sewers East Warp Room Right", "Rogueport Sewers East Warp Room Left"):      StateLogic.ultra_hammer(),
-        ("Rogueport Sewers East Warp Room Left", "Rogueport Sewers East Warp Room Top"):        StateLogic.ultra_hammer(),
+        ("Rogueport Sewers East Warp Room Left", "Rogueport Sewers East Warp Room Right"):      StateLogic.Rules.ultra_hammer(),
+        ("Rogueport Sewers East Warp Room Right", "Rogueport Sewers East Warp Room Left"):      StateLogic.Rules.ultra_hammer(),
+        ("Rogueport Sewers East Warp Room Left", "Rogueport Sewers East Warp Room Top"):        StateLogic.Rules.ultra_hammer(),
         ("Rogueport Sewers East Warp Room Top", "Rogueport Sewers East Warp Room Left"):        True_(),
-        ("Rogueport Sewers East Warp Room Right", "Rogueport Sewers East Warp Room Top"):       StateLogic.ultra_hammer(),
+        ("Rogueport Sewers East Warp Room Right", "Rogueport Sewers East Warp Room Top"):       StateLogic.Rules.ultra_hammer(),
         ("Rogueport Sewers East Warp Room Top", "Rogueport Sewers East Warp Room Right"):       True_(),
 
         # --- Rogueport Black Key Room ---
@@ -165,7 +165,7 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         ("Rogueport Sewers Puni Room", "Rogueport Sewers Puni Room Exit"):                      True_(),
 
         # --- Entering the Pit (Pit not Randomized) ---
-        ("Rogueport Sewers Pit Room", "Pit of 100 Trials"):                                     StateLogic.pit(),
+        ("Rogueport Sewers Pit Room", "Pit of 100 Trials"):                                     StateLogic.Rules.pit(),
 
         # --- Petal Meadows ---
         ("Petal Meadows Bridge West", "Petal Meadows Bridge East"):             True_(),
@@ -178,7 +178,7 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         ("Hooktail's Castle Drawbridge East Top", "Hooktail's Castle Drawbridge West Bottom"):      Has("Plane Mode"),
         ("Hooktail's Castle Drawbridge West Top", "Hooktail's Castle Drawbridge West Bottom"):      True_(),
         ("Hooktail's Castle Stair Switch Room Upper Level", "Hooktail's Castle Stair Switch Room"): True_(),
-        ("Hooktail's Castle Life Shroom Room", "Hooktail's Castle Life Shroom Room Upper Level"):   StateLogic.partner_press_switch(),
+        ("Hooktail's Castle Life Shroom Room", "Hooktail's Castle Life Shroom Room Upper Level"):   StateLogic.Rules.partner_press_switch(),
         ("Hooktail's Castle Life Shroom Room Upper Level", "Hooktail's Castle Life Shroom Room"): True_(),
         ("Hooktail's Castle Central Staircase Upper Level", "Hooktail's Castle Central Staircase"): True_(),
 
@@ -235,18 +235,18 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
 
         # --- Palace of Shadow ---
         # Each Far Hallway has a post Riddle Tower variant
-        ("Palace of Shadow Far Hallway One", "Palace of Shadow Far Hallway One Post Riddle Tower"): StateLogic.riddle_tower(),
-        ("Palace of Shadow Far Hallway 2",   "Palace of Shadow Far Hallway 2 Post Riddle"):         StateLogic.riddle_tower(),
-        ("Palace of Shadow Far Hallway 3",   "Palace of Shadow Far Hallway 3 Post Riddle"):         StateLogic.riddle_tower(),
-        ("Palace of Shadow Far Hallway 4",   "Palace of Shadow Far Hallway 4 Post Riddle"):         StateLogic.riddle_tower(),
+        ("Palace of Shadow Far Hallway One", "Palace of Shadow Far Hallway One Post Riddle Tower"): StateLogic.Rules.riddle_tower(),
+        ("Palace of Shadow Far Hallway 2",   "Palace of Shadow Far Hallway 2 Post Riddle"):         StateLogic.Rules.riddle_tower(),
+        ("Palace of Shadow Far Hallway 3",   "Palace of Shadow Far Hallway 3 Post Riddle"):         StateLogic.Rules.riddle_tower(),
+        ("Palace of Shadow Far Hallway 4",   "Palace of Shadow Far Hallway 4 Post Riddle"):         StateLogic.Rules.riddle_tower(),
         ("Palace of Shadow Far Backroom 2",     "Palace of Shadow Far Backroom 2 Top"):             Has("Bobbery"),
         ("Palace of Shadow Far Backroom 2 Top", "Palace of Shadow Far Backroom 2"):                 True_(),
         # Final staircase → Shadow Queen (standard route)
         ("Palace of Shadow Final Staircase", "Shadow Queen"):
-            StateLogic.PalaceAccess(world.options.goal_stars.value),
+            StateLogic.Rules.PalaceAccess(world.options.goal_stars.value, world.options.star_shuffle.value),
         # Direct TTYD → Shadow Queen shortcut used when palace_skip is enabled
         ("TTYD", "Shadow Queen"):
-            StateLogic.PalaceAccess(world.options.goal_stars.value),
+            StateLogic.Rules.PalaceAccess(world.options.goal_stars.value, world.options.star_shuffle.value),
     }
 
 
@@ -400,13 +400,12 @@ def connect_regions(world: "TTYDWorld") -> None:
         if world.options.palace_skip and any(tag == "Eight" for tag in z["tags"]):
             continue  # Entire palace chapter omitted for palace skip
 
-        is_vanilla = "vanilla" in z["tags"] or not world.options.loading_zone_shuffle or limited_zone
-        if is_vanilla:
-            vanilla.append(z)
-        elif world.options.dungeon_shuffle and any(tag == "Dungeon Entrance" for tag in z["tags"]):
+        if world.options.dungeon_shuffle and any(tag == "Dungeon Entrance" for tag in z["tags"]):
             dungeon_entrance.append(z)
         elif world.options.dungeon_shuffle and any(tag == "Dungeon Exit" for tag in z["tags"]):
             dungeon_exit.append(z)
+        elif "vanilla" in z["tags"] or not world.options.loading_zone_shuffle or limited_zone:
+            vanilla.append(z)
         elif z["target"] == "One Way":
             one_way.append(z)
         elif z["name"] == "TTYD - North":
@@ -483,7 +482,7 @@ def connect_regions(world: "TTYDWorld") -> None:
         world.create_entrance(source_region, target_region, rule, b["name"])
 
     # ------------------------------------------------------------------
-    # Step 6 — Wire dungeon entrance/exit pairs (shuffled if option is on)
+    # Step 6 — Wire dungeon entrance/exit pairs (shuffled if dungeon_shuffle is on)
     # ------------------------------------------------------------------
     world.multiworld.random.shuffle(dungeon_entrance)
 
@@ -651,6 +650,15 @@ def connect_regions(world: "TTYDWorld") -> None:
         target_region = world.multiworld.get_region(dst_region, world.player)
         world.create_entrance(source_region, target_region, src_rule, dst["name"])
         world.create_entrance(target_region, source_region, dst_rule, src["name"])
+
+
+def register_indirect_connections(world: "TTYDWorld") -> None:
+    """Register indirect conditions for entrances whose rules depend on region reachability.
+
+    Static connections that use rule_builder Rule objects are auto-registered by create_entrance.
+    Dynamic lambda-based connections only check item possession, so no manual registration is needed.
+    """
+    pass
 
 
 # ---------------------------------------------------------------------------

@@ -13,7 +13,7 @@ from .Enemy import Encounter, parse_json_encounters, randomize_encounters
 from .Locations import all_locations, location_table, location_id_to_name, TTYDLocation, locationName_to_data, \
     get_locations_by_tags, get_vanilla_item_names, get_location_names, LocationData
 from .Options import Piecesanity, TTYDOptions, YoshiColor, StartingPartner, PitItems, LimitChapterEight, Goal, \
-    DazzleRewards, StarShuffle, EnemyRandomizer
+    DazzleRewards, StarShuffle, EnemyRandomizer, Keysanity, Shopsanity
 from .Items import TTYDItem, itemList, item_table, ItemData, items_by_id
 from .Regions import create_regions, connect_regions, get_regions_dict, register_indirect_connections
 from .Rom import TTYDProcedurePatch, write_files
@@ -563,17 +563,24 @@ class TTYDWorld(World):
             unfilled = self.multiworld.get_unfilled_locations(self.player)
             unfilled_set = set(unfilled)
 
-            # Get inaccessible locations (can't be reached)
+            # Get inaccessible locations via sphere sweep (mirrors fulfills_accessibility logic).
+            # update_reachable_regions is called each round so that entrances with can_reach_region
+            # lambdas are re-evaluated after newly reachable regions are discovered.
             inaccessible = set()
             try:
-                state = self.multiworld.get_all_state(False)
-                state.update_reachable_regions(self.player)
-                reachable_regions = state.reachable_regions[self.player]
-
-                for region in self.multiworld.get_regions(self.player):
-                    if region not in reachable_regions:
-                        for loc in region.locations:
-                            inaccessible.add(loc)
+                from BaseClasses import CollectionState
+                state = CollectionState(self.multiworld)
+                remaining = [loc for loc in self.multiworld.get_locations(self.player)
+                             if loc.item is not None]
+                while remaining:
+                    state.update_reachable_regions(self.player)
+                    sphere = [loc for loc in remaining if loc.can_reach(state)]
+                    if not sphere:
+                        inaccessible.update(remaining)
+                        break
+                    remaining = [loc for loc in remaining if loc not in sphere]
+                    for loc in sphere:
+                        state.collect(loc.item, True, loc)
             except Exception as e:
                 print(f"Could not check accessibility: {e}")
 
@@ -628,12 +635,16 @@ class TTYDWorld(World):
             # Generate visualization using regions_to_highlight with the problematic set,
             # then replace the hardcoded #00FF00 with per-region colors in post-processing
             import re
-            uml_list = visualize_regions(
+            puml_path = "temp.puml"
+            visualize_regions(
                 self.multiworld.get_region("Menu", self.player),
-                "temp.puml",
+                puml_path,
                 show_entrance_names=True,
                 regions_to_highlight=problematic_regions,
             )
+            with open(puml_path, "r", encoding="utf-8") as f:
+                uml_list = f.read().splitlines()
+            os.remove(puml_path)
 
             # Build a lookup from sanitized region name -> color
             def sanitize(name: str) -> str:

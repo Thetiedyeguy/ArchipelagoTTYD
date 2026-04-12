@@ -123,14 +123,29 @@ def _build_single_lambda(req: typing.Dict, world: "TTYDWorld") -> typing.Callabl
                     raise ValueError(f"chapter_completions count must be > 0, got {count}")
                 return f"StateLogic.{function_name}(state, world.player, {count})"
 
+            # PalaceAccess needs both palace_stars and star_shuffle passed from world options
+            if function_name == "PalaceAccess":
+                return (
+                    "StateLogic.palace(state, world.player, "
+                    "world.options.palace_stars, world.options.star_shuffle.value)"
+                )
+
             # For other functions, only pass count if provided
             if count is not None:
-                return f"StateLogic.{function_name}(state, world.player, {int(count)})"
+                try:
+                    count_val = int(count)
+                except (ValueError, TypeError):
+                    count_val = count  # treat as a Python expression
+                return f"StateLogic.{function_name}(state, world.player, {count_val})"
             return f"StateLogic.{function_name}(state, world.player)"
 
         elif "can_reach" in r:
             location = r["can_reach"]
             return f'state.can_reach({repr(location)}, "Location", world.player)'
+
+        elif "can_reach_region" in r:
+            region = r["can_reach_region"]
+            return f'state.can_reach({repr(region)}, "Region", world.player)'
 
         else:
             return "False"
@@ -138,6 +153,10 @@ def _build_single_lambda(req: typing.Dict, world: "TTYDWorld") -> typing.Callabl
     expression = build_expression(req)
     # Capture world and StateLogic in the lambda's closure
     return eval(f"lambda state: {expression}", {"world": world, "StateLogic": StateLogic})
+
+
+# Alias used by Regions.py — returns a callable compatible with create_entrance
+_build_single_rule = _build_single_lambda
 
 
 def get_tattle_rules_dict() -> dict[str, typing.List[int]]:

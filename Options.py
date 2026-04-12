@@ -226,6 +226,23 @@ class BluePipeToggle(DefaultOnToggle):
     display_name = "Blue Pipe Warp"
 
 
+class LoadingZoneShuffle(Toggle):
+    """
+    Randomizes the loading zones (doors/pipes) between areas, creating a non-linear world layout.
+    Forces Piecesanity: All when enabled.
+    """
+    display_name = "Loading Zone Shuffle"
+
+
+class DungeonShuffle(Toggle):
+    """
+    Shuffles dungeon entrances with each other when Loading Zone Shuffle is enabled.
+    Dungeon entrances and exits are swapped as paired sets so each dungeon still has a valid exit.
+    Has no effect if Loading Zone Shuffle is disabled.
+    """
+    display_name = "Dungeon Shuffle"
+
+
 class PalaceSkip(Toggle):
     """
     Entering the Thousand-Year door will take you straight to Grodus.
@@ -540,6 +557,8 @@ class TTYDOptions(PerGameCommonOptions):
     limit_chapter_logic: LimitChapterLogic
     limit_chapter_eight: LimitChapterEight
     blue_pipe_toggle: BluePipeToggle
+    loading_zone_shuffle: LoadingZoneShuffle
+    dungeon_shuffle: DungeonShuffle
     palace_skip: PalaceSkip
     #partner_shuffle: PartnerShuffle
     cutscene_skip: CutsceneSkip
