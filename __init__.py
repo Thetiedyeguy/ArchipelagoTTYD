@@ -80,6 +80,7 @@ class TTYDWorld(World):
     """
     game = "Paper Mario: The Thousand-Year Door"
     web = TTYDWebWorld()
+    explicit_indirect_conditions = False
 
     options_dataclass = TTYDOptions
     options: TTYDOptions

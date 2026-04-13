@@ -400,12 +400,13 @@ def connect_regions(world: "TTYDWorld") -> None:
         if world.options.palace_skip and any(tag == "Eight" for tag in z["tags"]):
             continue  # Entire palace chapter omitted for palace skip
 
-        if world.options.dungeon_shuffle and any(tag == "Dungeon Entrance" for tag in z["tags"]):
+        is_vanilla = "vanilla" in z["tags"] or not world.options.loading_zone_shuffle or limited_zone
+        if is_vanilla:
+            vanilla.append(z)
+        elif world.options.dungeon_shuffle and any(tag == "Dungeon Entrance" for tag in z["tags"]):
             dungeon_entrance.append(z)
         elif world.options.dungeon_shuffle and any(tag == "Dungeon Exit" for tag in z["tags"]):
             dungeon_exit.append(z)
-        elif "vanilla" in z["tags"] or not world.options.loading_zone_shuffle or limited_zone:
-            vanilla.append(z)
         elif z["target"] == "One Way":
             one_way.append(z)
         elif z["name"] == "TTYD - North":
