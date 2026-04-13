@@ -104,8 +104,8 @@ class TTYDPatchExtension(APPatchExtension):
         caller.patcher.dol.data.write(seed_options["star_shuffle"].to_bytes(1, "big"))
         caller.patcher.dol.data.seek(0x24B)
         caller.patcher.dol.data.write(seed_options["dazzle_rewards"].to_bytes(1, "big"))
-        # caller.patcher.dol.data.seek(0x24C)
-        # caller.patcher.dol.data.write() RESERVED
+        caller.patcher.dol.data.seek(0x24C)
+        caller.patcher.dol.data.write((1 if seed_options["loading_zone_shuffle"] or seed_options["dungeon_shuffle"] else 0).to_bytes(1, "big"))
         caller.patcher.dol.data.seek(0x24D)
         caller.patcher.dol.data.write(seed_options["shop_purchase_limit"].to_bytes(1, "big"))
         caller.patcher.dol.data.seek(0x24E)
@@ -145,6 +145,7 @@ class TTYDPatchExtension(APPatchExtension):
         caller.patcher.iso.add_new_file("files/mod/enemies.bin", io.BytesIO(caller.get_file("enemies.bin")))
         caller.patcher.iso.add_new_file("files/msg/US/mod.txt", io.BytesIO(pkgutil.get_data(__name__, f"data/mod.txt")))
         caller.patcher.iso.add_new_file("files/msg/US/desc.txt", io.BytesIO(caller.get_file("desc.txt")))
+        caller.patcher.iso.add_new_file("files/msg/US/warp.txt", io.BytesIO(caller.get_file("warp.txt")))
 
 
 
@@ -299,7 +300,9 @@ def write_files(world: "TTYDWorld", patch: TTYDProcedurePatch) -> None:
         "shuffle_chapter_stats": world.options.shuffle_chapter_stats.value,
         "badge_bp": world.options.badge_bp.value,
         "badge_fp": world.options.badge_fp.value,
-        "partner_fp": world.options.partner_fp.value
+        "partner_fp": world.options.partner_fp.value,
+        "loading_zone_shuffle": world.options.loading_zone_shuffle.value,
+        "dungeon_shuffle": world.options.dungeon_shuffle.value
     }
 
     buffer = io.BytesIO()
