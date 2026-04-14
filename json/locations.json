@@ -6601,7 +6601,7 @@
     ]
   },
   {
-    "name": "Palace of Shadow Far Backroom 3: Coin",
+    "name": "Palace of Shadow Far Backroom 4: Coin",
     "id": 78780628,
     "rel": "las",
     "offsets": [
@@ -6615,7 +6615,7 @@
     ]
   },
   {
-    "name": "Palace of Shadow Far Backroom 3: Palace Key",
+    "name": "Palace of Shadow Far Backroom 4: Palace Key",
     "id": 78780629,
     "rel": "las",
     "offsets": [
@@ -6630,7 +6630,7 @@
     ]
   },
   {
-    "name": "Palace of Shadow Far Backroom 3: Point Swap",
+    "name": "Palace of Shadow Far Backroom 4: Point Swap",
     "id": 78780630,
     "rel": "las",
     "offsets": [

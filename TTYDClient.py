@@ -1,19 +1,24 @@
 import asyncio
+import json
+import pkgutil
 import struct
 import subprocess
 import traceback
 import typing
+
 
 import settings
 
 import Patch
 import Utils
 from CommonClient import ClientCommandProcessor, CommonContext, get_base_parser, gui_enabled, logger, server_loop
+from MultiServer import mark_raw
 import dolphin_memory_engine as dolphin
 
 from NetUtils import NetworkItem, ClientStatus
 from .Data import location_gsw_info, location_to_unit
 from .Items import items_by_id
+from . import StateLogic
 
 RECEIVED_INDEX = 0x803DB860
 RECEIVED_ITEM_ARRAY = 0x80001000
@@ -24,6 +29,7 @@ GSWF_BASE = 0x178
 GSW0 = 0x174
 GSW_BASE = 0x578
 ROOM = 0x803DF728
+BERO = 0x8041e5a8
 SHOP_POINTER = 0x8041EB60
 SHOP_ITEM_OFFSET = 0x2F
 SHOP_ITEM_PURCHASED = 0xD7
@@ -31,6 +37,182 @@ SHOP_ITEM_PURCHASED = 0xD7
 # GameCube disc header Game ID - used to verify DME is hooked to the correct process
 GAME_ID_ADDRESS = 0x80000000
 EXPECTED_GAME_ID = b"G8ME01"
+
+def _build_region_data():
+    zones_raw = pkgutil.get_data(__name__, "json/zones.json")
+    regions_raw = pkgutil.get_data(__name__, "json/regions.json")
+    locations_raw = pkgutil.get_data(__name__, "json/locations.json")
+    zones = json.loads(zones_raw.decode("utf-8"))
+    regions = json.loads(regions_raw.decode("utf-8"))
+    locations = json.loads(locations_raw.decode("utf-8"))
+
+    tag_to_name = {r["tag"]: r["name"] for r in regions}
+
+    # (map, bero) → region tag
+    map_bero_to_tag: dict[tuple[str, str], str] = {}
+    # region tag → list of (map, bero, zone_name, rule) for all zones in that region
+    tag_to_zones: dict[str, list[tuple[str, str, str, dict | None]]] = {}
+    for z in zones:
+        key = (z["map"], z["bero"])
+        tag = z["region"]
+        map_bero_to_tag[key] = tag
+        tag_to_zones.setdefault(tag, []).append((z["map"], z["bero"], z["name"], z.get("rules")))
+
+    # (map, bero) → human-readable region name
+    map_bero_to_region_name = {k: tag_to_name.get(v, v) for k, v in map_bero_to_tag.items()}
+
+    # region tag → list of location names
+    tag_to_locations: dict[str, list[str]] = {}
+    for loc in locations:
+        for tag in loc.get("tags", []):
+            tag_to_locations.setdefault(tag, []).append(loc["name"])
+
+    return map_bero_to_tag, map_bero_to_region_name, tag_to_zones, tag_to_locations
+
+MAP_BERO_TO_TAG, MAP_BERO_TO_REGION, REGION_TAG_TO_ZONES, REGION_TAG_TO_LOCATIONS = _build_region_data()
+
+def _build_location_rules() -> dict[str, dict]:
+    raw = pkgutil.get_data(__name__, "json/rules.json")
+    return json.loads(raw.decode("utf-8"))
+
+LOCATION_RULES: dict[str, dict] = _build_location_rules()
+
+ZONE_RULES: dict[str, dict | None] = {
+    name: rule
+    for zones in REGION_TAG_TO_ZONES.values()
+    for _, _, name, rule in zones
+}
+
+ALL_LOCATION_NAMES: set[str] = {
+    name
+    for names in REGION_TAG_TO_LOCATIONS.values()
+    for name in names
+}
+
+_FUNCTION_LABELS: dict[str, str] = {
+    "super_hammer": "Has Super Hammer",
+    "ultra_hammer": "Has Ultra Hammer",
+    "super_boots": "Has Super Boots",
+    "ultra_boots": "Has Ultra Boots",
+    "tube_curse": "Tube Curse (Paper Mode & Tube Mode)",
+    "sewer_westside": "Sewer Westside Access",
+    "sewer_westside_ground": "Sewer Westside Ground Access",
+    "twilight_town": "Twilight Town Access",
+    "fahr_outpost": "Fahr Outpost Access",
+    "keelhaul_key": "Keelhaul Key Access",
+    "riverside": "Riverside Station Access",
+    "pit": "Pit Access (Paper Mode & Plane Mode)",
+    "ttyd": "TTYD Access",
+    "palace": "Palace Access",
+    "PalaceAccess": "Palace Access",
+    "riddle_tower": "Riddle Tower Access",
+    "key_any": "Any Key (Red Key | Blue Key)",
+    "key_both": "Both Keys (Red Key & Blue Key)",
+    "chapter_completions": "Chapter Completions",
+}
+
+
+def _explain_rule_json(rule: dict | None, state: "_SimpleState", player: int,
+                       slot_data: dict) -> "list[dict]":
+    if rule is None:
+        return [{"type": "color", "color": "green", "text": "Always accessible"}]
+    if "or" in rule:
+        parts = [{"text": "("}]
+        for i, sub in enumerate(rule["or"]):
+            if i > 0:
+                parts.append({"text": " | "})
+            parts.extend(_explain_rule_json(sub, state, player, slot_data))
+        parts.append({"text": ")"})
+        return parts
+    if "and" in rule:
+        parts = [{"text": "("}]
+        for i, sub in enumerate(rule["and"]):
+            if i > 0:
+                parts.append({"text": " & "})
+            parts.extend(_explain_rule_json(sub, state, player, slot_data))
+        parts.append({"text": ")"})
+        return parts
+    if "has" in rule:
+        val = rule["has"]
+        item, count = (val, rule.get("count", 1)) if isinstance(val, str) else (val["item"], val.get("count", 1))
+        met = state.has(item, player, count)
+        color = "green" if met else "salmon"
+        parts = [{"text": "Has " if met else "Missing "}]
+        if count > 1:
+            parts.append({"type": "color", "color": "cyan", "text": f"{count}x "})
+        parts.append({"type": "color", "color": color, "text": item})
+        return parts
+    if "function" in rule:
+        fn = rule["function"]
+        name, count = (fn["name"], fn.get("count")) if isinstance(fn, dict) else (fn, None)
+        met = _eval_rule(rule, state, player, slot_data)
+        color = "green" if met else "salmon"
+        label = _FUNCTION_LABELS.get(name, name)
+        if count is not None:
+            label = f"{label}({count})"
+        return [{"type": "color", "color": color, "text": label}]
+    if "can_reach" in rule:
+        return [{"text": f"Can reach: {rule['can_reach']}"}]
+    if "can_reach_region" in rule:
+        return [{"text": f"Can reach region: {rule['can_reach_region']}"}]
+    return [{"text": "Unknown rule"}]
+
+
+class _SimpleState:
+    """Minimal CollectionState substitute for client-side reachability checks."""
+
+    def __init__(self, item_counts: dict[str, int], visited_regions: set[str]):
+        self._counts = item_counts
+        self.visited_regions = visited_regions
+
+    def has(self, item: str, player: int, count: int = 1) -> bool:
+        return self._counts.get(item, 0) >= count
+
+    def can_reach(self, *args, **kwargs) -> bool:
+        return False  # requires full world graph; conservative fallback
+
+
+def _eval_rule(rule: dict | None, state: _SimpleState, player: int, slot_data: dict) -> bool:
+    if rule is None:
+        return True
+    if "or" in rule:
+        return any(_eval_rule(r, state, player, slot_data) for r in rule["or"])
+    if "and" in rule:
+        return all(_eval_rule(r, state, player, slot_data) for r in rule["and"])
+    if "has" in rule:
+        val = rule["has"]
+        if isinstance(val, str):
+            return state.has(val, player, rule.get("count", 1))
+        return state.has(val["item"], player, val.get("count", 1))
+    if "function" in rule:
+        fn = rule["function"]
+        name, count = (fn["name"], fn.get("count")) if isinstance(fn, dict) else (fn, None)
+        if name == "chapter_completions":
+            return False  # requires full world graph
+        if name == "PalaceAccess":
+            return StateLogic.palace(state, player,
+                                     slot_data.get("palace_stars", 7),
+                                     slot_data.get("star_shuffle", 0))
+        fn_obj = getattr(StateLogic, name, None)
+        if fn_obj is None:
+            return False
+        try:
+            return fn_obj(state, player, int(count)) if count is not None else fn_obj(state, player)
+        except Exception:
+            return False
+    if "can_reach_region" in rule:
+        return rule["can_reach_region"] in state.visited_regions
+    return False  # can_reach / can_reach_entrance — requires full world graph
+
+
+def _get_item_counts(ctx: "TTYDContext") -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for net_item in ctx.items_received:
+        item_data = items_by_id.get(net_item.item)
+        if item_data:
+            counts[item_data.item_name] = counts.get(item_data.item_name, 0) + 1
+    return counts
+
 
 def _check_universal_tracker_version() -> bool:
     import re
@@ -128,6 +310,30 @@ class TTYDCommandProcessor(ClientCommandProcessor):
         result = gsw_check(int(gsw))
         logger.info(f"GSWF Check: {result}")
 
+    @mark_raw
+    def _cmd_explain(self, name: str = ""):
+        """Explain the access rules for a location or loading zone by name."""
+        name = name.strip()
+        if not name:
+            logger.info("Usage: /explain <location or zone name>")
+            return
+        ctx = self.ctx
+        item_counts = _get_item_counts(ctx)
+        state = _SimpleState(item_counts, ctx.visited_regions)
+        player = ctx.slot or 1
+        slot_data = ctx.slot_data or {}
+        if name in LOCATION_RULES:
+            rule = LOCATION_RULES[name]
+        elif name in ALL_LOCATION_NAMES:
+            rule = None
+        elif name in ZONE_RULES:
+            rule = ZONE_RULES[name]
+        else:
+            logger.info(f"No location or zone named '{name}' found.")
+            return
+        parts = [{"text": f"{name}: "}] + _explain_rule_json(rule, state, player, slot_data)
+        ctx.on_print_json({"data": parts})
+
 
 class TTYDContext(cmmCtx):
     command_processor = TTYDCommandProcessor
@@ -138,6 +344,8 @@ class TTYDContext(cmmCtx):
     slot_data: dict | None = {}
     checked_locations = set()
     previous_room = None
+    previous_bero = None
+    visited_regions: set[str] = set()
     death_sent: bool = False
 
     def __init__(self, server_address, password):
@@ -303,6 +511,46 @@ async def ttyd_sync_task(ctx: TTYDContext):
                         await asyncio.sleep(0.5)
                         continue
                     current_room = read_string(ROOM, 6)
+                    current_bero = read_string(BERO, 32)
+                    if current_room != ctx.previous_room or current_bero != ctx.previous_bero:
+                        key = (current_room, current_bero)
+                        region_tag = MAP_BERO_TO_TAG.get(key)
+                        region_name = MAP_BERO_TO_REGION.get(key, "Unknown")
+                        if region_name != "Unknown":
+                            ctx.visited_regions.add(region_name)
+                        ctx.on_print_json({"data": [{"type": "color", "color": "blue",
+                                                     "text": f"{current_room}:{current_bero} - {region_name}"}]})
+                        if region_tag:
+                            item_counts = _get_item_counts(ctx)
+                            state = _SimpleState(item_counts, ctx.visited_regions)
+                            slot_data = ctx.slot_data or {}
+                            player = ctx.slot or 1
+                            other_zones = [(name, rule) for map_, bero, name, rule
+                                           in REGION_TAG_TO_ZONES.get(region_tag, [])
+                                           if (map_, bero) != key]
+                            if other_zones:
+                                logger.info("")
+                                parts = []
+                                for i, (name, rule) in enumerate(other_zones):
+                                    if i > 0:
+                                        parts.append({"text": ", "})
+                                    color = "green" if _eval_rule(rule, state, player, slot_data) else "red"
+                                    parts.append({"type": "color", "color": color, "text": name})
+                                ctx.on_print_json({"data": parts})
+                            location_names = REGION_TAG_TO_LOCATIONS.get(region_tag, [])
+                            if location_names:
+                                logger.info("")
+                                parts = []
+                                for i, loc_name in enumerate(location_names):
+                                    if i > 0:
+                                        parts.append({"text": ", "})
+                                    rule = LOCATION_RULES.get(loc_name)
+                                    color = "green" if _eval_rule(rule, state, player, slot_data) else "red"
+                                    parts.append({"type": "color", "color": color, "text": loc_name})
+                                ctx.on_print_json({"data": parts})
+                        logger.info("")
+                        logger.info("")
+                        ctx.previous_bero = current_bero
                     if ctx.previous_room != current_room:
                         ctx.previous_room = current_room
                         await ctx.send_msgs([{
