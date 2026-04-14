@@ -67,9 +67,21 @@ def _build_region_data():
         for tag in loc.get("tags", []):
             tag_to_locations.setdefault(tag, []).append(loc["name"])
 
-    return map_bero_to_tag, map_bero_to_region_name, tag_to_zones, tag_to_locations
+    # map_id → set of region names sharing that map
+    map_to_region_names: dict[str, set[str]] = {}
+    for (map_id, _), region_name in map_bero_to_region_name.items():
+        map_to_region_names.setdefault(map_id, set()).add(region_name)
 
-MAP_BERO_TO_TAG, MAP_BERO_TO_REGION, REGION_TAG_TO_ZONES, REGION_TAG_TO_LOCATIONS = _build_region_data()
+    # region name → region tag
+    region_name_to_tag: dict[str, str] = {}
+    for (map_id, bero), region_name in map_bero_to_region_name.items():
+        tag = map_bero_to_tag.get((map_id, bero))
+        if tag:
+            region_name_to_tag[region_name] = tag
+
+    return map_bero_to_tag, map_bero_to_region_name, tag_to_zones, tag_to_locations, map_to_region_names, region_name_to_tag, tag_to_name
+
+MAP_BERO_TO_TAG, MAP_BERO_TO_REGION, REGION_TAG_TO_ZONES, REGION_TAG_TO_LOCATIONS, MAP_TO_REGION_NAMES, REGION_NAME_TO_TAG, REGION_TAG_TO_NAME = _build_region_data()
 
 def _build_location_rules() -> dict[str, dict]:
     raw = pkgutil.get_data(__name__, "json/rules.json")
@@ -88,6 +100,97 @@ ALL_LOCATION_NAMES: set[str] = {
     for names in REGION_TAG_TO_LOCATIONS.values()
     for name in names
 }
+
+_MISSING = object()
+
+ZONE_TO_REGION: dict[str, str] = {
+    name: REGION_TAG_TO_NAME.get(tag, tag)
+    for tag, zones in REGION_TAG_TO_ZONES.items()
+    for _, _, name, _ in zones
+}
+
+LOCATION_TO_REGION: dict[str, str] = {
+    name: REGION_TAG_TO_NAME.get(tag, tag)
+    for tag, locs in REGION_TAG_TO_LOCATIONS.items()
+    for name in locs
+}
+
+REGION_NAME_TO_MAP: dict[str, str] = {
+    region_name: map_id
+    for (map_id, _), region_name in MAP_BERO_TO_REGION.items()
+}
+
+
+def _rule_to_eval_dict(rule) -> "dict | None":
+    """Convert a rule_builder Rule object to the eval-dict format used by _eval_rule."""
+    cls = type(rule).__name__
+    if cls == "True_":
+        return None
+    if cls == "False_":
+        return {"__false__": True}
+    if cls == "Has":
+        if rule.count == 1:
+            return {"has": rule.item_name}
+        return {"has": rule.item_name, "count": rule.count}
+    if cls in ("And", "NestedRule"):
+        parts = [_rule_to_eval_dict(c) for c in rule.children]
+        real = [p for p in parts if p is not None]
+        if any(p.get("__false__") for p in real):
+            return {"__false__": True}
+        if not real:
+            return None
+        if len(real) == 1:
+            return real[0]
+        return {"and": real}
+    if cls == "Or":
+        parts = [_rule_to_eval_dict(c) for c in rule.children]
+        if any(p is None for p in parts):
+            return None
+        real = [p for p in parts if not p.get("__false__", False)]
+        if not real:
+            return {"__false__": True}
+        if len(real) == 1:
+            return real[0]
+        return {"or": real}
+    if cls == "CanReachRegion":
+        return {"can_reach_region": rule.region_name}
+    if cls == "CanReachLocation":
+        return {"can_reach": rule.location_name}
+    return {"__false__": True}
+
+
+def _build_intra_room_connections() -> "dict[tuple[str, str], dict | None]":
+    """Build intra-room region connections as eval-dicts for client-side reachability."""
+    from .Regions import get_region_connections_dict
+
+    class _Opts:
+        class _V:
+            def __init__(self, v):
+                self.value = v
+        goal_stars = _V(7)
+        star_shuffle = _V(0)
+
+    class _World:
+        options = _Opts()
+        player = 1
+
+    connections = get_region_connections_dict(_World())
+    return {k: _rule_to_eval_dict(v) for k, v in connections.items()}
+
+
+INTRA_ROOM_CONNECTIONS: dict[tuple[str, str], dict | None] = _build_intra_room_connections()
+
+
+def _and_rules(a: "dict | None", b: "dict | None") -> "dict | None":
+    """Combine two eval-dicts with AND. None represents always-True."""
+    if a is None:
+        return b
+    if b is None:
+        return a
+    if a.get("__false__") or b.get("__false__"):
+        return {"__false__": True}
+    return {"and": [a, b]}
+
 
 _FUNCTION_LABELS: dict[str, str] = {
     "super_hammer": "Has Super Hammer",
@@ -116,6 +219,8 @@ def _explain_rule_json(rule: dict | None, state: "_SimpleState", player: int,
                        slot_data: dict) -> "list[dict]":
     if rule is None:
         return [{"type": "color", "color": "green", "text": "Always accessible"}]
+    if "__false__" in rule:
+        return [{"type": "color", "color": "salmon", "text": "Unreachable from here"}]
     if "or" in rule:
         parts = [{"text": "("}]
         for i, sub in enumerate(rule["or"]):
@@ -175,6 +280,8 @@ class _SimpleState:
 def _eval_rule(rule: dict | None, state: _SimpleState, player: int, slot_data: dict) -> bool:
     if rule is None:
         return True
+    if "__false__" in rule:
+        return False
     if "or" in rule:
         return any(_eval_rule(r, state, player, slot_data) for r in rule["or"])
     if "and" in rule:
@@ -310,6 +417,12 @@ class TTYDCommandProcessor(ClientCommandProcessor):
         result = gsw_check(int(gsw))
         logger.info(f"GSWF Check: {result}")
 
+    def _cmd_toggle_log(self):
+        """Toggle automatic room/location logging when entering loading zones."""
+        self.ctx.room_logging_enabled = not self.ctx.room_logging_enabled
+        state = "enabled" if self.ctx.room_logging_enabled else "disabled"
+        logger.info(f"Room logging {state}.")
+
     @mark_raw
     def _cmd_explain(self, name: str = ""):
         """Explain the access rules for a location or loading zone by name."""
@@ -333,6 +446,25 @@ class TTYDCommandProcessor(ClientCommandProcessor):
             return
         parts = [{"text": f"{name}: "}] + _explain_rule_json(rule, state, player, slot_data)
         ctx.on_print_json({"data": parts})
+        # Show connection context when the item is in a different sub-region on the same map
+        item_region = ZONE_TO_REGION.get(name) or LOCATION_TO_REGION.get(name)
+        current_region = ctx.current_region_name
+        if item_region and current_region and item_region != current_region:
+            current_map = REGION_NAME_TO_MAP.get(current_region)
+            item_map = REGION_NAME_TO_MAP.get(item_region)
+            if current_map and item_map and current_map == item_map:
+                conn = INTRA_ROOM_CONNECTIONS.get((current_region, item_region), _MISSING)
+                if conn is _MISSING:
+                    ctx.on_print_json({"data": [{"type": "color", "color": "salmon",
+                                                 "text": f"[No path from {current_region} to {item_region}]"}]})
+                elif conn is not None and conn.get("__false__"):
+                    ctx.on_print_json({"data": [{"type": "color", "color": "salmon",
+                                                 "text": f"[Cannot reach {item_region} from {current_region}]"}]})
+                elif conn is not None:
+                    conn_parts = ([{"text": f"[Connection from {current_region}: "}]
+                                   + _explain_rule_json(conn, state, player, slot_data)
+                                   + [{"text": "]"}])
+                    ctx.on_print_json({"data": conn_parts})
 
 
 class TTYDContext(cmmCtx):
@@ -346,6 +478,8 @@ class TTYDContext(cmmCtx):
     previous_room = None
     previous_bero = None
     visited_regions: set[str] = set()
+    current_region_name: str | None = None
+    room_logging_enabled: bool = True
     death_sent: bool = False
 
     def __init__(self, server_address, password):
@@ -514,42 +648,58 @@ async def ttyd_sync_task(ctx: TTYDContext):
                     current_bero = read_string(BERO, 32)
                     if current_room != ctx.previous_room or current_bero != ctx.previous_bero:
                         key = (current_room, current_bero)
-                        region_tag = MAP_BERO_TO_TAG.get(key)
                         region_name = MAP_BERO_TO_REGION.get(key, "Unknown")
                         if region_name != "Unknown":
                             ctx.visited_regions.add(region_name)
-                        ctx.on_print_json({"data": [{"type": "color", "color": "blue",
-                                                     "text": f"{current_room}:{current_bero} - {region_name}"}]})
-                        if region_tag:
-                            item_counts = _get_item_counts(ctx)
-                            state = _SimpleState(item_counts, ctx.visited_regions)
-                            slot_data = ctx.slot_data or {}
-                            player = ctx.slot or 1
-                            other_zones = [(name, rule) for map_, bero, name, rule
-                                           in REGION_TAG_TO_ZONES.get(region_tag, [])
-                                           if (map_, bero) != key]
-                            if other_zones:
-                                logger.info("")
-                                parts = []
-                                for i, (name, rule) in enumerate(other_zones):
-                                    if i > 0:
-                                        parts.append({"text": ", "})
-                                    color = "green" if _eval_rule(rule, state, player, slot_data) else "red"
-                                    parts.append({"type": "color", "color": color, "text": name})
-                                ctx.on_print_json({"data": parts})
-                            location_names = REGION_TAG_TO_LOCATIONS.get(region_tag, [])
-                            if location_names:
-                                logger.info("")
-                                parts = []
-                                for i, loc_name in enumerate(location_names):
-                                    if i > 0:
-                                        parts.append({"text": ", "})
-                                    rule = LOCATION_RULES.get(loc_name)
-                                    color = "green" if _eval_rule(rule, state, player, slot_data) else "red"
-                                    parts.append({"type": "color", "color": color, "text": loc_name})
-                                ctx.on_print_json({"data": parts})
-                        logger.info("")
-                        logger.info("")
+                        ctx.current_region_name = region_name if region_name != "Unknown" else None
+                        if ctx.room_logging_enabled:
+                            ctx.on_print_json({"data": [{"type": "color", "color": "blue",
+                                                         "text": f"{current_room}:{current_bero} - {region_name}"}]})
+                            all_map_regions = MAP_TO_REGION_NAMES.get(current_room, set())
+                            if region_name != "Unknown" and region_name in all_map_regions:
+                                item_counts = _get_item_counts(ctx)
+                                state = _SimpleState(item_counts, ctx.visited_regions)
+                                slot_data = ctx.slot_data or {}
+                                player = ctx.slot or 1
+                                all_zone_parts: list[dict] = []
+                                all_loc_parts: list[dict] = []
+                                # Current region first, other sub-regions in the same map after
+                                sorted_regions = sorted(all_map_regions,
+                                                        key=lambda r: (r != region_name, r))
+                                for other_region in sorted_regions:
+                                    other_tag = REGION_NAME_TO_TAG.get(other_region)
+                                    if other_tag is None:
+                                        continue
+                                    if other_region == region_name:
+                                        conn_modifier = None
+                                    else:
+                                        _conn = INTRA_ROOM_CONNECTIONS.get(
+                                            (region_name, other_region), _MISSING)
+                                        conn_modifier = ({"__false__": True}
+                                                         if _conn is _MISSING else _conn)
+                                    for map_, bero, name, zone_rule in REGION_TAG_TO_ZONES.get(other_tag, []):
+                                        if (map_, bero) == key:
+                                            continue  # skip the zone the player just entered
+                                        combined = _and_rules(conn_modifier, zone_rule)
+                                        if all_zone_parts:
+                                            all_zone_parts.append({"text": ", "})
+                                        color = "green" if _eval_rule(combined, state, player, slot_data) else "red"
+                                        all_zone_parts.append({"type": "color", "color": color, "text": name})
+                                    for loc_name in REGION_TAG_TO_LOCATIONS.get(other_tag, []):
+                                        loc_rule = LOCATION_RULES.get(loc_name)
+                                        combined = _and_rules(conn_modifier, loc_rule)
+                                        if all_loc_parts:
+                                            all_loc_parts.append({"text": ", "})
+                                        color = "green" if _eval_rule(combined, state, player, slot_data) else "red"
+                                        all_loc_parts.append({"type": "color", "color": color, "text": loc_name})
+                                if all_zone_parts:
+                                    logger.info("")
+                                    ctx.on_print_json({"data": all_zone_parts})
+                                if all_loc_parts:
+                                    logger.info("")
+                                    ctx.on_print_json({"data": all_loc_parts})
+                            logger.info("")
+                            logger.info("")
                         ctx.previous_bero = current_bero
                     if ctx.previous_room != current_room:
                         ctx.previous_room = current_room
