@@ -4224,7 +4224,7 @@
     },
     {
         "name": "Excess Express Dining Car - East",
-        "map": "rsh_03_a",
+        "map": "rsh_03",
         "bero": "e_bero",
         "target": "Excess Express Middle Passenger Car - West",
         "rules": null,
@@ -4235,7 +4235,7 @@
     },
     {
         "name": "Excess Express Middle Passenger Car - West",
-        "map": "rsh_02_a",
+        "map": "rsh_02",
         "bero": "w_bero",
         "target": "Excess Express Dining Car - East",
         "rules": null,
@@ -4246,7 +4246,7 @@
     },
     {
         "name": "Excess Express Back Passenger Car - East",
-        "map": "rsh_04_a",
+        "map": "rsh_04",
         "bero": "e_bero",
         "target": "Excess Express Dining Car - West",
         "rules": null,
@@ -4257,7 +4257,7 @@
     },
     {
         "name": "Excess Express Dining Car - West",
-        "map": "rsh_03_a",
+        "map": "rsh_03",
         "bero": "w_bero",
         "target": "Excess Express Back Passenger Car - East",
         "rules": null,
@@ -4268,7 +4268,7 @@
     },
     {
         "name": "Excess Express Storage Car - East",
-        "map": "rsh_05_a",
+        "map": "rsh_05",
         "bero": "e_bero",
         "target": "Excess Express Back Passenger Car - West",
         "rules": null,
@@ -4279,7 +4279,7 @@
     },
     {
         "name": "Excess Express Back Passenger Car - West",
-        "map": "rsh_04_a",
+        "map": "rsh_04",
         "bero": "w_bero",
         "target": "Excess Express Storage Car - East",
         "rules": null,
@@ -4290,7 +4290,7 @@
     },
     {
         "name": "Excess Express Front Passenger Car - West",
-        "map": "rsh_01_a",
+        "map": "rsh_01",
         "bero": "w_bero",
         "target": "Excess Express Middle Passenger Car - East",
         "rules": null,
@@ -4301,7 +4301,7 @@
     },
     {
         "name": "Excess Express Middle Passenger Car - East",
-        "map": "rsh_02_a",
+        "map": "rsh_02",
         "bero": "e_bero",
         "target": "Excess Express Front Passenger Car - West",
         "rules": null,
@@ -4312,7 +4312,7 @@
     },
     {
         "name": "Excess Express Locomotive - West",
-        "map": "rsh_00_a",
+        "map": "rsh_00",
         "bero": "w_bero",
         "target": "Excess Express Front Passenger Car - East",
         "rules": null,
@@ -4323,7 +4323,7 @@
     },
     {
         "name": "Excess Express Front Passenger Car - East",
-        "map": "rsh_01_a",
+        "map": "rsh_01",
         "bero": "e_bero",
         "target": "Excess Express Locomotive - West",
         "rules": null,
@@ -4334,7 +4334,7 @@
     },
     {
         "name": "Excess Express Front Passenger Car - South",
-        "map": "rsh_01_a",
+        "map": "rsh_01",
         "bero": "s_bero",
         "target": "Rogueport Blimp - Train",
         "rules": null,
@@ -4358,7 +4358,7 @@
     },
     {
         "name": "Excess Express Front Passenger Car - South Riverside Entrance",
-        "map": "rsh_01_b",
+        "map": "rsh_01",
         "bero": "s_bero",
         "target": "Riverside Station Drawbridge - Train Door",
         "rules": null,
@@ -4547,7 +4547,7 @@
     },
     {
         "name": "Excess Express Roof - East",
-        "map": "rsh_06_a",
+        "map": "rsh_06",
         "bero": "w_bero",
         "target": "Excess Express Storage Car - West",
         "rules": null,
@@ -4558,7 +4558,7 @@
     },
     {
         "name": "Excess Express Storage Car - West",
-        "map": "rsh_05_a",
+        "map": "rsh_05",
         "bero": "w_bero",
         "target": "Excess Express Roof - East",
         "rules": {
@@ -4622,7 +4622,7 @@
     },
     {
         "name": "Excess Express Front Passenger Car - South Poshley",
-        "map": "rsh_01_c",
+        "map": "rsh_01",
         "bero": "s_bero",
         "target": "Poshley Heights Station - North",
         "rules": null,
