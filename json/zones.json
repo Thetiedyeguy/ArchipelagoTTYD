@@ -6457,7 +6457,8 @@
         "rules": null,
         "region": "palace_grodus",
         "tags": [
-            "Eight"
+            "Eight",
+            "vanilla"
         ]
     },
     {
@@ -6468,7 +6469,8 @@
         "rules": null,
         "region": "palace_pre_grodus",
         "tags": [
-            "Eight"
+            "Eight",
+            "vanilla"
         ]
     },
     {
@@ -6479,7 +6481,8 @@
         "rules": null,
         "region": "palace_final_stair",
         "tags": [
-            "Eight"
+            "Eight",
+            "vanilla"
         ]
     },
     {
@@ -6490,7 +6493,8 @@
         "rules": null,
         "region": "palace_grodus",
         "tags": [
-            "Eight"
+            "Eight",
+            "vanilla"
         ]
     }
 ]
