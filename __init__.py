@@ -163,7 +163,7 @@ class TTYDWorld(World):
             self.options.palace_stars.value = self.options.goal_stars.value
         chapters = [i for i in range(1, 8)]
         if not self.options.required_stars_toggle:
-            for i in range(self.options.goal_stars.value):
+            for _ in range(self.options.goal_stars.value):
                 self.required_chapters.append(chapters.pop(self.multiworld.random.randint(0, len(chapters) - 1)))
         else:
             star_names = self.options.required_stars.value
@@ -555,124 +555,32 @@ class TTYDWorld(World):
         )
         patch.write(rom_path)
 
-    def _generate_region_visualization(self) -> None:
-        """Highlight both unfilled and inaccessible locations"""
-        from Utils import visualize_regions
+    def write_spoiler(self, spoiler_handle) -> None:
+        player_name = self.multiworld.player_name[self.player]
+        spoiler_handle.write(f"\n\nRegion Connections ({player_name}):\n")
 
-        try:
-            # Get unfilled locations
-            unfilled = self.multiworld.get_unfilled_locations(self.player)
-            unfilled_set = set(unfilled)
-
-            # Get inaccessible locations via sphere sweep (mirrors fulfills_accessibility logic).
-            # update_reachable_regions is called each round so that entrances with can_reach_region
-            # lambdas are re-evaluated after newly reachable regions are discovered.
-            inaccessible = set()
-            try:
-                from BaseClasses import CollectionState
-                state = CollectionState(self.multiworld)
-                remaining = [loc for loc in self.multiworld.get_locations(self.player)
-                             if loc.item is not None]
-                while remaining:
-                    state.update_reachable_regions(self.player)
-                    sphere = [loc for loc in remaining if loc.can_reach(state)]
-                    if not sphere:
-                        inaccessible.update(remaining)
-                        break
-                    remaining = [loc for loc in remaining if loc not in sphere]
-                    for loc in sphere:
-                        state.collect(loc.item, True, loc)
-            except Exception as e:
-                print(f"Could not check accessibility: {e}")
-
-            # Build per-region color mapping
-            region_colors: dict = {}
-            problematic_regions = set()
-
-            for region in self.multiworld.get_regions(self.player):
-                locs = region.locations
-                unfilled_locs = [loc for loc in locs if loc in unfilled_set]
-                inaccessible_locs = [loc for loc in locs if loc in inaccessible]
-
-                has_unfilled = len(unfilled_locs) > 0
-                has_inaccessible = len(inaccessible_locs) > 0
-
-                if not has_unfilled and not has_inaccessible:
+        # Collect all directed edges: source -> {target, ...}
+        forward: dict[str, set[str]] = {}
+        for region in self.multiworld.get_regions(self.player):
+            for entrance in region.exits:
+                if entrance.connected_region is None:
                     continue
+                src = region.name
+                tgt = entrance.connected_region.name
+                forward.setdefault(src, set()).add(tgt)
 
-                problematic_regions.add(region)
-
-                all_unfilled = has_unfilled and len(unfilled_locs) == len(locs)
-                all_inaccessible = has_inaccessible and len(inaccessible_locs) == len(locs)
-
-                if has_unfilled and has_inaccessible:
-                    color = "FF00FF"  # mixed: both unfilled and inaccessible
-                elif all_unfilled:
-                    color = "FF0000"  # all locations unfilled
-                elif has_unfilled:
-                    color = "FF7777"  # some locations unfilled
-                elif all_inaccessible:
-                    color = "0000FF"  # all locations inaccessible
+        # Emit bidirectional pairs once, then one-way edges
+        printed: set[tuple[str, str]] = set()
+        for src in sorted(forward):
+            for tgt in sorted(forward[src]):
+                if (tgt, src) in printed:
+                    continue
+                if src in forward.get(tgt, set()):
+                    # Both directions exist
+                    spoiler_handle.write(f"\t{src} <-> {tgt}\n")
+                    printed.add((src, tgt))
+                    printed.add((tgt, src))
                 else:
-                    color = "7777FF"  # some locations inaccessible
-
-                region_colors[region] = color
-
-            # Print full sets
-            print("=== UNFILLED LOCATIONS ===")
-            for loc in sorted(unfilled_set, key=lambda l: l.name):
-                region_name = getattr(getattr(loc, 'parent_region', None), 'name', 'no region')
-                print(f"  {loc.name} ({region_name})")
-
-            print("=== INACCESSIBLE LOCATIONS ===")
-            for loc in sorted(inaccessible, key=lambda l: l.name):
-                region_name = getattr(getattr(loc, 'parent_region', None), 'name', 'no region')
-                print(f"  {loc.name} ({region_name})")
-
-            print("=== PROBLEMATIC REGIONS ===")
-            for region in sorted(problematic_regions, key=lambda r: r.name):
-                print(f"  {region.name} [{region_colors.get(region, '?')}]")
-
-            # Generate visualization using regions_to_highlight with the problematic set,
-            # then replace the hardcoded #00FF00 with per-region colors in post-processing
-            import re
-            puml_path = "temp.puml"
-            visualize_regions(
-                self.multiworld.get_region("Menu", self.player),
-                puml_path,
-                show_entrance_names=True,
-                regions_to_highlight=problematic_regions,
-            )
-            with open(puml_path, "r", encoding="utf-8") as f:
-                uml_list = f.read().splitlines()
-            os.remove(puml_path)
-
-            # Build a lookup from sanitized region name -> color
-            def sanitize(name: str) -> str:
-                return re.sub(r'[\".:]', '', name)
-
-            name_to_color = {sanitize(region.name): color for region, color in region_colors.items()}
-
-            # Replace '#00FF00' with the correct per-region color in each UML line
-            processed = []
-            for line in uml_list:
-                # Lines with highlighted regions look like: class "RegionName" #00FF00
-                match = re.match(r'^class "(.*?)" #00FF00$', line)
-                if match:
-                    region_name = match.group(1)
-                    color = name_to_color.get(region_name, "00FF00")
-                    line = f'class "{region_name}" #{color}'
-                processed.append(line)
-
-            print("===PUML_START===")
-            print('\n'.join(processed))
-            print("===PUML_END===")
-
-            print(f"DEBUG VIZ: {len(unfilled_set)} unfilled locations")
-            print(f"DEBUG VIZ: {len(inaccessible)} inaccessible locations")
-            print(f"DEBUG VIZ: {len(problematic_regions)} problematic regions highlighted")
-
-        except Exception as e:
-            print(f"ERROR: Failed to generate visualization: {e}")
-            import traceback
-            traceback.print_exc()
+                    # One-way only
+                    spoiler_handle.write(f"\t{src} -> {tgt}\n")
+                    printed.add((src, tgt))
