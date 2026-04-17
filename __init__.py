@@ -467,6 +467,10 @@ class TTYDWorld(World):
             "tattle_rules": get_random_enemy_tattle_rules_dict(self)
             if self.options.enemy_randomizer != EnemyRandomizer.option_vanilla
             else get_tattle_rules_dict(),
+            **({"warp_table": {
+                f"{sm}:{sb}": f"{dm}:{db}"
+                for (sm, sb), (dm, db) in self.warp_table.items()
+            }} if self.warp_table else {}),
         }
 
     def create_item(self, name: str) -> TTYDItem:

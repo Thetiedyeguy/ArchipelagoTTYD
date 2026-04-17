@@ -52,11 +52,22 @@ def _build_region_data():
     map_bero_to_tag: dict[tuple[str, str], str] = {}
     # region tag → list of (map, bero, zone_name, rule) for all zones in that region
     tag_to_zones: dict[str, list[tuple[str, str, str, dict | None]]] = {}
+    # zone_name → vanilla target zone name ("One Way" for one-way zones)
+    zone_vanilla_target: dict[str, str] = {}
+    # zone_name → (map, bero)
+    zone_name_to_map_bero: dict[str, tuple[str, str]] = {}
+    # zone_name → src_region tag (only present for one-way zones)
+    zone_src_region_tag: dict[str, str] = {}
     for z in zones:
         key = (z["map"], z["bero"])
         tag = z["region"]
+        name = z["name"]
         map_bero_to_tag[key] = tag
-        tag_to_zones.setdefault(tag, []).append((z["map"], z["bero"], z["name"], z.get("rules")))
+        tag_to_zones.setdefault(tag, []).append((z["map"], z["bero"], name, z.get("rules")))
+        zone_vanilla_target[name] = z["target"]
+        zone_name_to_map_bero[name] = key
+        if "src_region" in z:
+            zone_src_region_tag[name] = z["src_region"]
 
     # (map, bero) → human-readable region name
     map_bero_to_region_name = {k: tag_to_name.get(v, v) for k, v in map_bero_to_tag.items()}
@@ -79,9 +90,19 @@ def _build_region_data():
         if tag:
             region_name_to_tag[region_name] = tag
 
-    return map_bero_to_tag, map_bero_to_region_name, tag_to_zones, tag_to_locations, map_to_region_names, region_name_to_tag, tag_to_name
+    return (map_bero_to_tag, map_bero_to_region_name, tag_to_zones, tag_to_locations,
+            map_to_region_names, region_name_to_tag, tag_to_name,
+            zone_vanilla_target, zone_name_to_map_bero, zone_src_region_tag)
 
-MAP_BERO_TO_TAG, MAP_BERO_TO_REGION, REGION_TAG_TO_ZONES, REGION_TAG_TO_LOCATIONS, MAP_TO_REGION_NAMES, REGION_NAME_TO_TAG, REGION_TAG_TO_NAME = _build_region_data()
+(MAP_BERO_TO_TAG, MAP_BERO_TO_REGION, REGION_TAG_TO_ZONES, REGION_TAG_TO_LOCATIONS,
+ MAP_TO_REGION_NAMES, REGION_NAME_TO_TAG, REGION_TAG_TO_NAME,
+ ZONE_VANILLA_TARGET, ZONE_NAME_TO_MAP_BERO, ZONE_SRC_REGION_TAG) = _build_region_data()
+
+# One-way zone → the human-readable name of its src_region
+ZONE_ONE_WAY_SRC_REGION: dict[str, str] = {
+    zone_name: REGION_TAG_TO_NAME.get(src_tag, src_tag)
+    for zone_name, src_tag in ZONE_SRC_REGION_TAG.items()
+}
 
 def _build_location_rules() -> dict[str, dict]:
     raw = pkgutil.get_data(__name__, "json/rules.json")
@@ -394,6 +415,109 @@ def gsw_check(index):
     return dolphin.read_word(GP_BASE + GSW0) if index == 0 else dolphin.read_byte(GP_BASE + index + GSW_BASE)
 
 
+def _find_path_bfs(
+    ctx: "TTYDContext", target_location: str
+) -> "tuple[list[tuple[str | None, str]] | None, str | None]":
+    """
+    BFS over the loading-zone graph to find the shortest traversable path from the
+    player's current region to the region that contains target_location.
+
+    Returns (path, error). path is a list of (zone_name_or_None, dst_region) steps,
+    where zone_name is None for intra-map sub-region transitions (no loading zone used).
+    Returns (None, error_msg) on failure and ([], None) if already in the target region.
+
+    Zone connections are read from zones.json vanilla targets, redirected via the
+    warp_table in slot_data when loading zone shuffle is active.
+    """
+    if not ctx.current_region_name:
+        return None, "Not in any known region"
+
+    target_region = LOCATION_TO_REGION.get(target_location)
+    if not target_region:
+        return None, f"Unknown location: {target_location!r}"
+
+    item_counts = _get_item_counts(ctx)
+    state = _SimpleState(item_counts, ctx.visited_regions)
+    player = ctx.slot or 1
+    slot_data = ctx.slot_data or {}
+
+    # Parse warp_table from slot_data if the server sent one (loading zone shuffle)
+    warp_table: dict[tuple[str, str], tuple[str, str]] = {}
+    for k, v in slot_data.get("warp_table", {}).items():
+        sm, sb = k.split(":", 1)
+        dm, db = v.split(":", 1)
+        warp_table[(sm, sb)] = (dm, db)
+
+    start = ctx.current_region_name
+    if start == target_region:
+        return [], None
+
+    # Build adjacency list filtered to traversable edges for current items
+    adj: dict[str, list[tuple[str | None, str]]] = {}
+
+    for tag, zones_list in REGION_TAG_TO_ZONES.items():
+        zone_region = REGION_TAG_TO_NAME.get(tag, tag)
+        for map_, bero, zone_name, zone_rule in zones_list:
+            if not _eval_rule(zone_rule, state, player, slot_data):
+                continue
+
+            one_way_src = ZONE_ONE_WAY_SRC_REGION.get(zone_name)
+            vanilla_target = ZONE_VANILLA_TARGET.get(zone_name, "")
+
+            if vanilla_target == "One Way":
+                # One-way zone: warp_table maps the zone's OWN (map, bero) → destination
+                dst_mb = warp_table.get((map_, bero))
+                if not dst_mb:
+                    continue  # unknown without warp_table
+                dst_tag = MAP_BERO_TO_TAG.get(dst_mb)
+                dst_region = REGION_TAG_TO_NAME.get(dst_tag) if dst_tag else None
+                src = one_way_src if one_way_src else zone_region
+            else:
+                # Bidirectional zone: warp_table may redirect the vanilla target's (map, bero)
+                target_mb = ZONE_NAME_TO_MAP_BERO.get(vanilla_target)
+                if not target_mb:
+                    continue
+                actual_mb = warp_table.get(target_mb, target_mb)
+                dst_tag = MAP_BERO_TO_TAG.get(actual_mb)
+                dst_region = REGION_TAG_TO_NAME.get(dst_tag) if dst_tag else None
+                src = zone_region
+
+            if dst_region and dst_region != src:
+                adj.setdefault(src, []).append((zone_name, dst_region))
+
+    # Add intra-map sub-region transitions (no loading zone)
+    for (region_a, region_b), rule in INTRA_ROOM_CONNECTIONS.items():
+        if _eval_rule(rule, state, player, slot_data):
+            adj.setdefault(region_a, []).append((None, region_b))
+
+    # BFS
+    from collections import deque
+    queue: deque[str] = deque([start])
+    came_from: dict[str, tuple[str, str | None] | None] = {start: None}
+
+    while queue:
+        curr = queue.popleft()
+        if curr == target_region:
+            break
+        for zone_name, dst in adj.get(curr, []):
+            if dst not in came_from:
+                came_from[dst] = (curr, zone_name)
+                queue.append(dst)
+
+    if target_region not in came_from:
+        return None, "No path reachable with current items"
+
+    # Reconstruct path back to start
+    path: list[tuple[str | None, str]] = []
+    curr = target_region
+    while came_from[curr] is not None:
+        prev, zone_name = came_from[curr]
+        path.append((zone_name, curr))
+        curr = prev
+    path.reverse()
+    return path, None
+
+
 class TTYDCommandProcessor(ClientCommandProcessor):
     def __init__(self, ctx: cmmCtx):
         super().__init__(ctx)
@@ -422,6 +546,46 @@ class TTYDCommandProcessor(ClientCommandProcessor):
         self.ctx.room_logging_enabled = not self.ctx.room_logging_enabled
         state = "enabled" if self.ctx.room_logging_enabled else "disabled"
         logger.info(f"Room logging {state}.")
+
+    @mark_raw
+    def _cmd_find_path(self, location: str = ""):
+        """Find the shortest path of accessible loading zones to reach a check."""
+        location = location.strip()
+        if not location:
+            logger.info("Usage: /find_path <location name>")
+            return
+        ctx = self.ctx
+
+        if location not in ALL_LOCATION_NAMES:
+            matches = sorted(n for n in ALL_LOCATION_NAMES if location.lower() in n.lower())
+            if not matches:
+                logger.info(f"No location matching '{location}'.")
+                return
+            if len(matches) > 1:
+                preview = ", ".join(matches[:5])
+                suffix = f" (and {len(matches) - 5} more)" if len(matches) > 5 else ""
+                logger.info(f"Multiple matches for '{location}': {preview}{suffix}")
+                return
+            location = matches[0]
+
+        path, error = _find_path_bfs(ctx, location)
+        if error:
+            logger.info(f"No path to '{location}': {error}")
+            return
+        if not path:
+            logger.info(f"'{location}' is in your current region.")
+            return
+
+        parts: list[dict] = [{"text": f"Path to {location}:\n"}]
+        for i, (zone_name, dst_region) in enumerate(path, 1):
+            parts.append({"text": f"  {i}. "})
+            if zone_name:
+                parts.append({"type": "color", "color": "cyan", "text": zone_name})
+                parts.append({"text": f"\n       → {dst_region}\n"})
+            else:
+                parts.append({"type": "color", "color": "yellow", "text": f"Move to {dst_region}"})
+                parts.append({"text": "\n"})
+        ctx.on_print_json({"data": parts})
 
     @mark_raw
     def _cmd_explain(self, name: str = ""):

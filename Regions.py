@@ -205,7 +205,7 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         ("Pirate's Grotto Toad Boat Room East", "Pirate's Grotto Toad Boat Room"):  Has("Boat Mode"),
 
         # --- Riverside Station ---
-        ("Riverside Station Ultra Boots Room Upper", "Riverside Station Ultra Boots Room"): True_(),
+        ("Riverside Station Ultra Boots Room Upper", "Riverside Station Ultra Boots Room"): StateLogic.Rules.ultra_boots() & Has("Paper Mode"),
 
         # --- Excess Express ---
         # Storage Car West is unlocked only after completing a chain of story prerequisites

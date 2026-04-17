@@ -175,11 +175,32 @@
     "frequency": 1
   },
   {
-    "item_name": "Castle Key",
+    "item_name": "Castle Key 1",
     "id": 77772025,
     "progression": "progression",
     "rom_id": 12,
-    "frequency": 4
+    "frequency": 1
+  },
+  {
+    "item_name": "Castle Key 2",
+    "id": 77772231,
+    "progression": "progression",
+    "rom_id": 13,
+    "frequency": 1
+  },
+  {
+    "item_name": "Castle Key 3",
+    "id": 77772232,
+    "progression": "progression",
+    "rom_id": 14,
+    "frequency": 1
+  },
+  {
+    "item_name": "Castle Key 4",
+    "id": 77772233,
+    "progression": "progression",
+    "rom_id": 15,
+    "frequency": 1
   },
   {
     "item_name": "Champ's Belt",
