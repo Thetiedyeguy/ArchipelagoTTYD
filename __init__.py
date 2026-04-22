@@ -222,10 +222,12 @@ class TTYDWorld(World):
                 if "Palace Key (Tower)" in location.name:
                     self.lock_item_remove_from_pool(location.name, "Palace Key (Tower)")
                 elif "Palace Key" in location.name:
-                    self.lock_item_remove_from_pool(location.name, "Palace Key")
+                    self.lock_item_remove_from_pool(location.name, items_by_id[location.vanilla_item].item_name)
             self.lock_item_remove_from_pool("Palace of Shadow Gloomtail Room: Star Key", "Star Key")
         if self.options.palace_skip:
-            self.locked_item_frequencies["Palace Key"] = 3
+            self.locked_item_frequencies["Palace Key 1"] = 1
+            self.locked_item_frequencies["Palace Key 2"] = 1
+            self.locked_item_frequencies["Palace Key 3"] = 1
             self.locked_item_frequencies["Palace Key (Tower)"] = 8
             self.locked_item_frequencies["Star Key"] = 1
         if self.options.pit_items == PitItems.option_vanilla:
@@ -471,6 +473,12 @@ class TTYDWorld(World):
                 f"{sm}:{sb}": f"{dm}:{db}"
                 for (sm, sb), (dm, db) in self.warp_table.items()
             }} if self.warp_table else {}),
+            "own_item_locations": {
+                str(loc.address): loc.item.name
+                for loc in self.multiworld.get_locations(self.player)
+                if loc.item is not None and loc.item.player == self.player
+                and loc.address is not None
+            },
         }
 
     def create_item(self, name: str) -> TTYDItem:
@@ -563,28 +571,12 @@ class TTYDWorld(World):
         player_name = self.multiworld.player_name[self.player]
         spoiler_handle.write(f"\n\nRegion Connections ({player_name}):\n")
 
-        # Collect all directed edges: source -> {target, ...}
-        forward: dict[str, set[str]] = {}
-        for region in self.multiworld.get_regions(self.player):
-            for entrance in region.exits:
+        for region in sorted(self.multiworld.get_regions(self.player), key=lambda r: r.name):
+            for entrance in sorted(region.exits, key=lambda e: e.connected_region.name if e.connected_region else ""):
                 if entrance.connected_region is None:
                     continue
                 src = region.name
                 tgt = entrance.connected_region.name
-                forward.setdefault(src, set()).add(tgt)
-
-        # Emit bidirectional pairs once, then one-way edges
-        printed: set[tuple[str, str]] = set()
-        for src in sorted(forward):
-            for tgt in sorted(forward[src]):
-                if (tgt, src) in printed:
-                    continue
-                if src in forward.get(tgt, set()):
-                    # Both directions exist
-                    spoiler_handle.write(f"\t{src} <-> {tgt}\n")
-                    printed.add((src, tgt))
-                    printed.add((tgt, src))
-                else:
-                    # One-way only
-                    spoiler_handle.write(f"\t{src} -> {tgt}\n")
-                    printed.add((src, tgt))
+                auto_name = f"{src} -> {tgt}"
+                zone = entrance.name if entrance.name != auto_name else "intra-room connection"
+                spoiler_handle.write(f"\t{src} -> {tgt} [{zone}]\n")

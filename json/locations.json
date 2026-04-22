@@ -1743,7 +1743,7 @@
     "offsets": [
       "0xCC8C"
     ],
-    "vanilla_item": 77772025,
+    "vanilla_item": 77772231,
     "tags": [
       "hooktails_castle",
       "chapter_1",
@@ -1802,7 +1802,7 @@
     "offsets": [
       "0xE718"
     ],
-    "vanilla_item": 77772025,
+    "vanilla_item": 77772232,
     "tags": [
       "hooktails_castle",
       "chapter_1",
@@ -1945,7 +1945,7 @@
     "offsets": [
       "0x157D8"
     ],
-    "vanilla_item": 77772025,
+    "vanilla_item": 77772233,
     "tags": [
       "hooktails_castle",
       "chapter_1",
@@ -2645,7 +2645,7 @@
     "tags": [
       "great_tree",
       "chapter_2",
-      "tree_hundred_puni"
+      "tree_hundred_puni_lower"
     ]
   },
   {
@@ -6578,7 +6578,7 @@
     "offsets": [
       "0x2B6C0"
     ],
-    "vanilla_item": 77772130,
+    "vanilla_item": 77772234,
     "tags": [
       "riddle_tower",
       "chapter_8",
@@ -6621,7 +6621,7 @@
     "offsets": [
       "0x2C478"
     ],
-    "vanilla_item": 77772130,
+    "vanilla_item": 77772235,
     "tags": [
       "riddle_tower",
       "chapter_8",

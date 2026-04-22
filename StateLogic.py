@@ -1,6 +1,6 @@
 from .Data import star_locations
 from .Options import StarShuffle
-from rule_builder.rules import Has, True_
+from rule_builder.rules import Has, True_, CanReachRegion
 
 
 def super_hammer(state, player):
@@ -70,7 +70,7 @@ def palace(state, player, chapters: int, star_shuffle: int):
 
 
 def riddle_tower(state, player):
-    return tube_curse(state, player) and state.has("Palace Key", player) and state.has("Bobbery", player) and state.has("Boat Mode", player) and state.has("Star Key", player) and state.has("Palace Key (Tower)", player, 8)
+    return tube_curse(state, player) and state.has("Palace Key 1", player) and state.has("Bobbery", player) and state.has("Boat Mode", player) and state.has("Star Key", player) and state.has("Palace Key (Tower)", player, 8)
 
 
 def key_any(state, player):
@@ -87,6 +87,10 @@ def chapter_completions(state, player, count):
 
 class Rules:
     """Rule-builder counterparts to the StateLogic functions, for use in static region connection dicts."""
+
+    @staticmethod
+    def key_both():
+        return Has("Red Key") & Has("Blue Key") & Has("Puni Orb") & CanReachRegion("Great Tree Red/Blue Cages") & CanReachRegion("Great Tree Entrance")
 
     @staticmethod
     def fallen_pipe():

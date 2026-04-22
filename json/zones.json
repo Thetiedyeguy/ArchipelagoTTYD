@@ -1420,7 +1420,7 @@
         "bero": "e_bero_1",
         "target": "Hooktail's Castle Central Staircase - West",
         "rules": {
-            "has": "Castle Key"
+            "has": "Castle Key 1"
         },
         "region": "hooktail_stair_switch",
         "tags": [
@@ -1616,7 +1616,7 @@
         "rules": {
             "and": [
                 {
-                    "has": "Castle Key"
+                    "has": "Castle Key 2"
                 },
                 {
                     "or": [
@@ -1660,6 +1660,9 @@
                     "has": "Plane Mode"
                 },
                 {
+                    "has": "Paper Mode"
+                },
+                {
                     "or": [
                         {
                             "has": "Koops"
@@ -1693,7 +1696,7 @@
         "bero": "w_bero_5",
         "target": "Hooktail's Castle Hooktail's Room Exterior - East",
         "rules": {
-            "has": "Castle Key"
+            "has": "Castle Key 3"
         },
         "region": "hooktail_stair_central_upper",
         "tags": [
@@ -2344,7 +2347,7 @@
         "bero": "dokan",
         "target": "Great Tree Pool Room - Pipe Bottom",
         "rules": null,
-        "region": "tree_hundred_puni",
+        "region": "tree_hundred_puni_upper",
         "tags": [
             "Two"
         ]
@@ -2388,7 +2391,7 @@
         "bero": "e_bero",
         "target": "Great Tree Emerald Star Room - West",
         "rules": null,
-        "region": "tree_hundred_puni",
+        "region": "tree_hundred_puni_lower",
         "tags": [
             "Two"
         ]
@@ -5758,7 +5761,7 @@
         "bero": "e_bero_1",
         "target": "Palace of Shadow Second Bullet Bill Hallway - West",
         "rules": {
-            "has": "Palace Key"
+            "has": "Palace Key 1"
         },
         "region": "palace_dark_bones",
         "tags": [
@@ -6310,7 +6313,7 @@
         "bero": "w_bero",
         "target": "Palace of Shadow Far Backroom 1 - East",
         "rules": {
-            "has": "Palace Key"
+            "has": "Palace Key 2"
         },
         "region": "palace_far_backroom_two_top",
         "tags": [

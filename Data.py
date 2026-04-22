@@ -757,7 +757,10 @@ item_prices = {
     77772022: 30,  # Card Key 2
     77772023: 30,  # Card Key 3
     77772024: 30,  # Card Key 4
-    77772025: 30,  # Castle Key
+    77772025: 30,  # Castle Key 1
+    77772231: 30,  # Castle Key 2
+    77772232: 30,  # Castle Key 3
+    77772233: 30,  # Castle Key 4
     77772026: 30,  # Champ's Belt
     77772027: 30,  # Charge - 30 buy price
     77772028: 40,  # Charge P - 40 buy price
@@ -866,7 +869,9 @@ item_prices = {
     77772127: 50,  # P-Down, D-Up P - 50 buy price
     77772128: 50,  # P-Up, D-Down - 50 buy price
     77772129: 60,  # P-Up, D-Down P - 60 buy price
-    77772130: 30,  # Palace Key
+    77772130: 30,  # Palace Key 1
+    77772234: 30,  # Palace Key 2
+    77772235: 30,  # Palace Key 3
     77772131: 30,  # Palace Key (Tower)
     77772132: 30,  # Paper Mode
     77772133: 5,  # Peachy Peach
@@ -1098,7 +1103,7 @@ limited_tags = {
 limited_tag_items = {
     "petal_left": [],
     "petal_right": ["Sun Stone", "Moon Stone"],
-    "hooktails_castle": ["Castle Key", "Black Key (Paper)"],
+    "hooktails_castle": ["Castle Key 1", "Castle Key 2", "Castle Key 3", "Castle Key 4", "Black Key (Paper)"],
     "boggly_woods": ["Necklace"],
     "great_tree": ["Red Key", "Blue Key", "Puni Orb"],
     "glitzville": ["Storage Key 1", "Storage Key 2"],
@@ -1159,14 +1164,14 @@ dazzle_counts = [
 ]
 
 chapter_keys = {
-    1: ["Black Key (Paper)", "Castle Key"],
+    1: ["Black Key (Paper)", "Castle Key 1", "Castle Key 2", "Castle Key 3", "Castle Key 4"],
     2: ["Blue Key", "Red Key"],
     3: ["Storage Key 2", "Storage Key 1"],
     4: ["Steeple Key", "Black Key (Tube)", "Shop Key"],
     5: ["Black Key (Boat)", "Grotto Key"],
     6: ["Elevator Key (Station)", "Station Key 2", "Station Key 1"],
     7: [ "Card Key 4", "Card Key 3", "Card Key 2", "Card Key 1", "Elevator Key 2", "Elevator Key 1"],
-    8: ["Star Key", "Palace Key (Tower)", "Palace Key"],
+    8: ["Star Key", "Palace Key (Tower)", "Palace Key 1", "Palace Key 2", "Palace Key 3"],
 }
 
 chapter_keysanity_tags = {

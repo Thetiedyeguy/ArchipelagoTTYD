@@ -339,6 +339,19 @@ def _get_item_counts(ctx: "TTYDContext") -> dict[str, int]:
         item_data = items_by_id.get(net_item.item)
         if item_data:
             counts[item_data.item_name] = counts.get(item_data.item_name, 0) + 1
+
+    # Supplement with items from locally-detected game checks (handles the AP round-trip
+    # delay between the game setting a location flag and the server sending ReceivedItems back).
+    own_locs: dict = (ctx.slot_data or {}).get("own_item_locations", {})
+    if own_locs and ctx.locally_checked_location_ids:
+        game_counts: dict[str, int] = {}
+        for loc_id_raw, item_name in own_locs.items():
+            if int(loc_id_raw) in ctx.locally_checked_location_ids:
+                game_counts[item_name] = game_counts.get(item_name, 0) + 1
+        for item_name, cnt in game_counts.items():
+            if cnt > counts.get(item_name, 0):
+                counts[item_name] = cnt
+
     return counts
 
 
@@ -645,6 +658,7 @@ class TTYDContext(cmmCtx):
     current_region_name: str | None = None
     room_logging_enabled: bool = True
     death_sent: bool = False
+    locally_checked_location_ids: set[int] = set()
 
     def __init__(self, server_address, password):
         super().__init__(server_address, password)
@@ -730,6 +744,7 @@ class TTYDContext(cmmCtx):
                 elif gsw_type.value == 1:
                     if gswf_check(offset):
                         locations_to_send.add(location)
+            self.locally_checked_location_ids = locations_to_send
             if len(locations_to_send) > 0:
                 self.checked_locations &= locations_to_send
                 await self.send_msgs([{"cmd": 'LocationChecks', "locations": locations_to_send}])

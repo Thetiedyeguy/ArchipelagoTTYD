@@ -966,11 +966,25 @@
     "frequency": 1
   },
   {
-    "item_name": "Palace Key",
+    "item_name": "Palace Key 1",
     "id": 77772130,
     "progression": "progression",
     "rom_id": 46,
-    "frequency": 3
+    "frequency": 1
+  },
+  {
+    "item_name": "Palace Key 2",
+    "id": 77772234,
+    "progression": "progression",
+    "rom_id": 47,
+    "frequency": 1
+  },
+  {
+    "item_name": "Palace Key 3",
+    "id": 77772235,
+    "progression": "progression",
+    "rom_id": 48,
+    "frequency": 1
   },
   {
     "item_name": "Palace Key (Tower)",

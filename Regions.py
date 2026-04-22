@@ -187,6 +187,7 @@ def get_region_connections_dict(world: "TTYDWorld") -> dict[tuple[str, str], typ
         ("Boggly Woods Plane Panel Room Upper", "Boggly Woods Plane Panel Room"):                   True_(),
         ("Boggly Woods Outside Flurrie's House", "Boggly Woods Outside Flurrie's House Grass Area"):       Has("Paper Mode"),
         ("Boggly Woods Outside Flurrie's House Grass Area", "Boggly Woods Outside Flurrie's House"):       Has("Paper Mode"),
+        ("Great Tree 100-Puni Pedestal Upper", "Great Tree 100-Puni Pedestal Lower"):       StateLogic.Rules.key_both(),
 
         # --- Glitzville ---
         ("Glitzville Promoter's Office Vent", "Glitzville Promoter's Office"):  True_(),
@@ -436,7 +437,7 @@ def connect_regions(world: "TTYDWorld") -> None:
 
             source_region = world.multiworld.get_region(src_region, world.player)
             target_region = world.multiworld.get_region(dst_region, world.player)
-            world.create_entrance(source_region, target_region, rule, dst["name"])
+            world.create_entrance(source_region, target_region, rule, src["name"])
             if "Chapter Edge" not in src["tags"]:
                 add_edge(state, src_region, dst_region, region_deps)
             mark_used(state, src, dst)
@@ -480,7 +481,7 @@ def connect_regions(world: "TTYDWorld") -> None:
         source_region = world.multiworld.get_region(source, world.player)
         target_region = world.multiworld.get_region(target, world.player)
         add_edge(state, source, target)
-        world.create_entrance(source_region, target_region, rule, b["name"])
+        world.create_entrance(source_region, target_region, rule, a["name"])
 
     # ------------------------------------------------------------------
     # Step 6 — Wire dungeon entrance/exit pairs (shuffled if dungeon_shuffle is on)
@@ -503,8 +504,8 @@ def connect_regions(world: "TTYDWorld") -> None:
         source_region = world.multiworld.get_region(src_region, world.player)
         target_region = world.multiworld.get_region(dst_region, world.player)
 
-        world.create_entrance(source_region, target_region, src_rule, dst["name"])
-        world.create_entrance(target_region, source_region, dst_rule, src["name"])
+        world.create_entrance(source_region, target_region, src_rule, src["name"])
+        world.create_entrance(target_region, source_region, dst_rule, dst["name"])
 
         add_edge(state, src_region, dst_region)
         add_edge(state, dst_region, src_region)
@@ -598,8 +599,8 @@ def connect_regions(world: "TTYDWorld") -> None:
 
         source_region = world.multiworld.get_region(src_region, world.player)
         target_region = world.multiworld.get_region(dst_region, world.player)
-        world.create_entrance(source_region, target_region, src_rule, dst_zone["name"])
-        world.create_entrance(target_region, source_region, dst_rule, src_zone["name"])
+        world.create_entrance(source_region, target_region, src_rule, src_zone["name"])
+        world.create_entrance(target_region, source_region, dst_rule, dst_zone["name"])
 
     # ------------------------------------------------------------------
     # Step 8 — Flush any remaining delayed connections
@@ -649,8 +650,8 @@ def connect_regions(world: "TTYDWorld") -> None:
 
         source_region = world.multiworld.get_region(src_region, world.player)
         target_region = world.multiworld.get_region(dst_region, world.player)
-        world.create_entrance(source_region, target_region, src_rule, dst["name"])
-        world.create_entrance(target_region, source_region, dst_rule, src["name"])
+        world.create_entrance(source_region, target_region, src_rule, src["name"])
+        world.create_entrance(target_region, source_region, dst_rule, dst["name"])
 
 
 def register_indirect_connections(world: "TTYDWorld") -> None:
@@ -704,12 +705,12 @@ def _create_delayed_entrance(
         src_name = tag_to_region[dep_src["src_region"]]
         dst_name = tag_to_region[dep_dst["region"]]
         rule = build_rule_lambda(dep_src["rules"], world)
-        label = dep_dst["name"]
+        label = dep_src["name"]
     else:
         src_name = tag_to_region[dep_src["region"]]
         dst_name = tag_to_region[dep_dst["region"]]
         rule = build_rule_lambda(dep_src["rules"], world)
-        label = dep_dst["name"]
+        label = dep_src["name"]
 
     src_region = world.multiworld.get_region(src_name, world.player)
     dst_region = world.multiworld.get_region(dst_name, world.player)
